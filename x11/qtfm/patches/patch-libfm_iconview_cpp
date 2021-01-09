@@ -1,0 +1,16 @@
+$OpenBSD$
+
+Fix the build with Qt 5.15 (missing QPainterPath include)
+From https://github.com/rodlie/qtfm/commit/c80a7f7
+
+Index: libfm/iconview.cpp
+--- libfm/iconview.cpp.orig
++++ libfm/iconview.cpp
+@@ -1,5 +1,7 @@
+ #include "iconview.h"
+ 
++#include <QPainterPath>
++
+ bool IconViewDelegate::eventFilter(QObject *object,
+                                    QEvent *event)
+ {

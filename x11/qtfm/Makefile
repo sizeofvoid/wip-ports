@@ -6,7 +6,7 @@ CATEGORIES =	x11
 GH_ACCOUNT =	rodlie
 GH_PROJECT =	qtfm
 GH_TAGNAME =	6.2.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://qtfm.eu/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
