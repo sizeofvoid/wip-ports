@@ -22,7 +22,7 @@ Index: src/CMakeLists.txt
                                                  KF5::I18n
                                                  KF5::Completion
                                                  KF5::ConfigCore
-@@ -126,7 +128,7 @@ install(TARGETS
+@@ -131,7 +133,7 @@ install(TARGETS
  
  
  

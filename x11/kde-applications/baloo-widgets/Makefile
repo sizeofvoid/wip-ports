@@ -11,8 +11,9 @@ SHARED_LIBS +=  KF5BalooWidgets       1.0 # 19.12.3
 WANTLIB += ${COMPILER_LIBCXX} KF5Baloo KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5CoreAddons KF5FileMetaData KF5I18n
 WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5Service
-WANTLIB += KF5WidgetsAddons KF5WindowSystem Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml c m
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
+WANTLIB += c m
 
 MODKDE5_TRANSLATIONS = yes
 

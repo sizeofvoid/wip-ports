@@ -27,6 +27,6 @@ Index: src/lib/localeHandling.cpp
  {
 -#ifdef Q_OS_FREEBSD
 +#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
-     setlocale(LC_ALL, "C");
+     setlocale(LC_ALL, "C.UTF-8");
  #else
-     std::setlocale(LC_ALL, "C");
+     std::setlocale(LC_ALL, "C.UTF-8");

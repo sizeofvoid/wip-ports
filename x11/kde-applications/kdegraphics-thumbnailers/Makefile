@@ -7,7 +7,7 @@ CATEGORIES =	devel graphics
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Completion KF5ConfigCore
 WANTLIB += KF5CoreAddons KF5JobWidgets KF5KDcraw KF5KExiv2 KF5KIOCore
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5WidgetsAddons
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5Service KF5Solid KF5WidgetsAddons
 WANTLIB += KF5WindowSystem Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets m
 

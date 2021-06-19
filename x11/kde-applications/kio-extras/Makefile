@@ -3,7 +3,6 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	0
 
 SHARED_LIBS +=  kioarchive                3.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08

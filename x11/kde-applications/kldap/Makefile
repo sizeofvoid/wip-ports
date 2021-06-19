@@ -3,7 +3,6 @@
 COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  KF5Ldap                   3.0 # 5.9
 
