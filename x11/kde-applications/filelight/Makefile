@@ -23,10 +23,12 @@ BUILD_DEPENDS =	devel/kf6/kitemviews \
 		devel/kf6/solid \
 		devel/kf6/qqc2-desktop-style \
 		devel/kf6/kirigami \
+		graphics/kirigami-addons \
 		x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION}
 
 RUN_DEPENDS =	devel/kf6/qqc2-desktop-style \
 		devel/kf6/kirigami \
+		graphics/kirigami-addons \
 		x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \

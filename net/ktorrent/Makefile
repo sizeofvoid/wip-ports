@@ -6,20 +6,6 @@ DISTNAME =	ktorrent-${MODKDE_VERSION}
 
 SHARED_LIBS +=  ktcore                    3.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6ColorScheme
-WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6DNSSD KF6GlobalAccel
-WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KCMUtils
-WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6NotifyConfig
-WANTLIB += KF6Parts KF6Plotting KF6Service KF6Solid KF6SonnetUi
-WANTLIB += KF6StatusNotifierItem KF6Syndication KF6TextWidgets
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 c gcrypt gmp m phonon4qt6 tag
-
 CATEGORIES =	net
 
 HOMEPAGE =	https://apps.kde.org/ktorrent/
@@ -42,7 +28,8 @@ WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
 WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 c gcrypt gmp m phonon4qt6 tag
+WANTLIB += Qt6Widgets Qt6Xml X11 c gcrypt gmp m maxminddb phonon4qt6
+WANTLIB += tag
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
@@ -57,6 +44,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/taglib \
+			devel/gmp \
 			devel/kf6/karchive \
 			devel/kf6/kbookmarks \
 			devel/kf6/kcmutils \
@@ -87,10 +75,10 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf6/solid \
 			devel/kf6/sonnet \
 			devel/kf6/syndication \
-			devel/gmp \
-			security/libgcrypt \
 			multimedia/phonon,qt6 \
 			net/libktorrent>=${MODKDE_VERSION} \
+			net/libmaxminddb \
+			security/libgcrypt \
 			x11/qt6/qt5compat \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtpositioning \
