@@ -22,7 +22,7 @@
      SUBDIR += khard
      SUBDIR += kmymoney
      SUBDIR += ktimetracker
-     SUBDIR += kuserfeedback
+     # KDE6 SUBDIR += kuserfeedback
      SUBDIR += ledger
      SUBDIR += libalkimia
      SUBDIR += libphonenumber

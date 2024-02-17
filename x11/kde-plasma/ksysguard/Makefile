@@ -11,7 +11,7 @@ WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets KF5NewStuff
 WANTLIB += KF5NewStuffCore KF5Notifications KF5Service KF5Solid
 WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui KSysGuardFormatter
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets
-WANTLIB += Qt5Xml X11 c ksgrd ksignalplotter kvm m processcore
+WANTLIB += Qt5Xml X11 c ksignalplotter kvm m processcore
 WANTLIB += processui
 
 MODKDE5_TRANSLATIONS =	Yes
