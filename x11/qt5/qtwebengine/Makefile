@@ -4,7 +4,7 @@
 # Patched with security patches up to: 119.0.6045.123
 
 USE_WXNEEDED =		Yes
-USE_NOBTCFI =		Yes
+#USE_NOBTCFI =		Yes
 
 QT5NAME =		QtWebEngine
 KDE_COMMIT =		224806a7022eed6d5c75b486bec8715a618cb314

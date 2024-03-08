@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
+--- src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h.orig
++++ src/3rdparty/chromium/v8/src/regexp/x64/regexp-macro-assembler-x64.h
+@@ -53,6 +53,7 @@ class V8_EXPORT_PRIVATE RegExpMacroAssemblerX64
+   // the end of the string.
+   void CheckPosition(int cp_offset, Label* on_outside_input) override;
+   bool CheckSpecialCharacterClass(uc16 type, Label* on_no_match) override;
++  void BindJumpTarget(Label* label) override;
+   void Fail() override;
+   Handle<HeapObject> GetCode(Handle<String> source) override;
+   void GoTo(Label* label) override;
