@@ -2,6 +2,7 @@
 @bin bin/dragon
 lib/qt6/plugins/kf6/parts/
 @so lib/qt6/plugins/kf6/parts/dragonpart.so
+@man man/man1/dragon.1
 man/sr@latin/
 man/sr@latin/man1/
 @man man/sr@latin/man1/dragon.1

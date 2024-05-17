@@ -36,9 +36,7 @@ RUN_DEPENDS =	archivers/bzip2 \
 
 LIB_DEPENDS =	archivers/libarchive \
 		archivers/libzip \
-		 \
 		devel/kf6/kbookmarks \
-		 \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
@@ -55,7 +53,6 @@ LIB_DEPENDS =	archivers/libarchive \
 		devel/kf6/kparts \
 		devel/kf6/kpty \
 		devel/kf6/kservice \
-		 \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \

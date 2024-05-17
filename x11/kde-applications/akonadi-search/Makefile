@@ -23,7 +23,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf6/kcalendarcore \
 		devel/kf6/kcmutils \
 		devel/kf6/kcodecs \
-		devel/kf6/kcolorscheme  \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
@@ -33,7 +33,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf6/kitemmodels \
 		devel/kf6/krunner \
 		devel/kf6/kwidgetsaddons \
-		textproc/ktextaddons  \
+		textproc/ktextaddons \
 		x11/qt6/qtdeclarative \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \

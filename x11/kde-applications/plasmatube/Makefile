@@ -20,7 +20,7 @@ LIB_DEPENDS =		devel/kf6/kconfig \
 			devel/kf6/ki18n \
 			devel/kf6/kwindowsystem \
 			multimedia/mpvqt \
-			security/qtkeychain,qt6  \
+			security/qtkeychain,qt6 \
 			x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@ CATEGORIES =	devel graphics
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDcrawQt6 KExiv2Qt6 KF6Archive
 WANTLIB += KF6ConfigCore KF6CoreAddons KF6KIOCore KF6KIOGui KF6Service
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network m
+WANTLIB += QMobipocket6 Qt6Core Qt6DBus Qt6Gui Qt6Network m
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kconfig \

@@ -39,14 +39,12 @@ MODKF5_I18N_CONFLICT = yes
 BUILD_DEPENDS =	devel/boost \
 		devel/kf6/kitemviews \
 		devel/kf6/ktexteditor \
-		devel/kf6/solid  \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/kimap>=${MODKDE_VERSION} \
 		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
 
 RUN_DEPENDS =	devel/kf6/kitemviews \
 		devel/kf6/ktexteditor \
-		devel/kf6/solid  \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
 		x11/kde-applications/kimap>=${MODKDE_VERSION} \

@@ -30,11 +30,11 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/ki18n \
-		devel/kf6/kio  \
-		devel/kf6/kitemviews  \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
-		devel/kf6/knotifications  \
-		devel/kf6/kservice  \
+		devel/kf6/knotifications \
+		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \

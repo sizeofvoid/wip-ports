@@ -23,7 +23,7 @@ LIB_DEPENDS =	devel/kf6/kcompletion \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
 		devel/kf6/kjobwidgets \
-		devel/kf6/knotifications  \
+		devel/kf6/knotifications \
 		devel/kf6/kservice \
 		devel/kf6/solid \
 		devel/kf6/ktextwidgets \

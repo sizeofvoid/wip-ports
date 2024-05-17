@@ -29,7 +29,7 @@ LIB_DEPENDS =	devel/kf5/kcmutils \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/ki18n  \
+		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kitemviews \
 		devel/kf5/kservice \

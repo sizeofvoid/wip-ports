@@ -1,4 +1,4 @@
-BROKEN =	Missinf KPipeWire
+BROKEN =	Missing KPipeWire
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
@@ -16,11 +16,9 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-BUILD_DEPENDS =	 \
-		wayland/libinput-openbsd \
+BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
-
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 

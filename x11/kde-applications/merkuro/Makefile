@@ -65,7 +65,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
 		devel/kf6/ktexttemplate \
-		devel/kf6/kwidgetsaddons  \
+		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		security/gpgme \

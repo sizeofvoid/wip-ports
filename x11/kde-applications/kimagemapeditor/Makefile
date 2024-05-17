@@ -19,16 +19,16 @@ MODKDE5_ICON_CACHE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-LIB_DEPENDS =	devel/kf6/kcolorscheme  \
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
-		devel/kf6/kconfigwidgets  \
+		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		devel/kf6/kparts \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		x11/qt6/qtdeclarative  \
+		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine

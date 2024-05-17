@@ -33,7 +33,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kparts  \
+		devel/kf5/kparts \
 		devel/kf5/kservice \
 		devel/kf5/ktexteditor \
 		devel/kf5/ktextwidgets \

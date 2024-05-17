@@ -16,8 +16,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-LIB_DEPENDS =	devel/kf6/kcolorscheme  \
-		devel/kf6/kcompletion  \
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \

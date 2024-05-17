@@ -70,7 +70,6 @@ LIB_DEPENDS =	devel/gettext \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
 		lang/luajit \
-		lang/python/3.10 \
 		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt5 \

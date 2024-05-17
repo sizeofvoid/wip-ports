@@ -34,7 +34,7 @@ BUILD_DEPENDS =		archivers/gtar \
 BUILD_DEPENDS +=	databases/mariadb,-server \
 			databases/postgresql,-server \
 			devel/kf6/kcompletion \
-			devel/kf6/kdbusaddons  \
+			devel/kf6/kdbusaddons \
 			x11/qt6/qtbase,-mysql \
 			x11/qt6/qtbase,-psql \
 			databases/sqlite3

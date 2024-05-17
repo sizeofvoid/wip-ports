@@ -48,7 +48,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/purpose \
 		devel/kf6/solid \
 		textproc/ktextaddons \
-		 \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi-search>=${MODKDE_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
