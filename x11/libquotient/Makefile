@@ -3,7 +3,7 @@ COMMENT =	Qt6 library for writing cross-platform Matrix clients
 GH_ACCOUNT =	quotient-im
 GH_PROJECT =	libQuotient
 GH_TAGNAME =	0.8.1.2
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  QuotientQt6               0.0 # 0.0
 
