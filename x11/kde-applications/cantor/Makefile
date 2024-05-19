@@ -71,6 +71,7 @@ LIB_DEPENDS =	devel/gettext \
 		devel/kf5/syntax-highlighting \
 		lang/luajit \
 		math/libqalculate \
+		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt5 \
 		x11/qt5/qtdeclarative \
@@ -80,6 +81,9 @@ LIB_DEPENDS =	devel/gettext \
 		x11/qt5/qtwebchannel \
 		x11/qt5/qtwebengine \
 		x11/qt5/qtxmlpatterns
+
+LIB_DEPENDS +=	math/R
+WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
 #x11/kde-applications/analitza>=${MODKDE_VERSION}
 
