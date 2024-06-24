@@ -1,0 +1,13 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_driver/media_top_cmake.cmake
+--- media_driver/media_top_cmake.cmake.orig
++++ media_driver/media_top_cmake.cmake
+@@ -672,7 +672,7 @@ if (NOT DEFINED INCLUDED_LIBS OR "${INCLUDED_LIBS}" ST
+     endif()
+ 
+     target_compile_options( ${LIB_NAME} PUBLIC ${LIBGMM_CFLAGS_OTHER})
+-    target_link_libraries ( ${LIB_NAME} ${LIBGMM_LIBRARIES})
++    target_link_libraries ( ${LIB_NAME} ${LIBGMM_LIBRARIES} drm)
+ 
+     include(${MEDIA_EXT_CMAKE}/ext/media_feature_include_ext.cmake OPTIONAL)
+ 
