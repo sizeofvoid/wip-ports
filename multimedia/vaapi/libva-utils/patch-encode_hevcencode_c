@@ -1,0 +1,19 @@
+Index: encode/hevcencode.c
+--- encode/hevcencode.c.orig
++++ encode/hevcencode.c
+@@ -2183,6 +2183,7 @@ static int init_va(void)
+     if (attrib[VAConfigAttribEncMacroblockInfo].value != VA_ATTRIB_NOT_SUPPORTED) {
+         printf("Support VAConfigAttribEncMacroblockInfo\n");
+     }
++    /*
+     if (attrib[VAConfigAttribEncHEVCBlockSizes].value != VA_ATTRIB_NOT_SUPPORTED) {
+         printf("Support VAConfigAttribEncHEVCBlockSizes\n");
+         uint32_t tmp = attrib[VAConfigAttribEncHEVCBlockSizes].value;
+@@ -2229,6 +2230,7 @@ static int init_va(void)
+         config_attrib[config_attrib_num].value = attrib[VAConfigAttribEncHEVCFeatures].value;
+         config_attrib_num++;
+     }
++    */
+ 
+     free(entrypoints);
+     return 0;
