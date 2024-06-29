@@ -1,2 +1,2 @@
 lib/dri/
-@so lib/dri/i965_drv_video.so
+@so lib/dri/iHD_drv_video.so

@@ -12,6 +12,8 @@ CATEGORIES = graphics multimedia
 # MIT & BSD-3-Clause
 PERMIT_PACKAGE=	Yes
 
+WANTLIB += ${COMPILER_LIBCXX} c drm execinfo igdgmm m
+
 MODULES =	devel/cmake
 
 LIB_DEPENDS =	devel/intel-gmmlib
@@ -22,8 +24,7 @@ CONFIGURE_ARGS =	-DMEDIA_RUN_TEST_SUITE=ON
 CONFIGURE_ARGS +=	-DMEDIA_BUILD_FATAL_WARNINGS=OFF \
 			-DBUILD_CMRTLIB=OFF
 
-MODCMAKE_LDFLAGS = -L${X11BASE}/lib -L${LOCALBASE}/lib
+MODCMAKE_LDFLAGS = -L${X11BASE}/lib -L${LOCALBASE}/lib -lc
 CXXFLAGS = -I${X11BASE}/include
-CXXFLAGS +=                -std=c++17
 
 .include <bsd.port.mk>
