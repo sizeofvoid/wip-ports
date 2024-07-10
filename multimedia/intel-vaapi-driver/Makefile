@@ -6,11 +6,16 @@ GH_TAGNAME =	2.4.1
 
 CATEGORIES = graphics multimedia
 
-#Generic License inside the COPYING file.  Permits all.
+# MIT & BSD-3-Clause
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += drm drm_intel m
 
 MODULES =	devel/meson
+
+MODMESON_CONFIGURE_ARGS +=	-Ddriverdir="${LOCALBASE}/lib/xorg/modules"
+
+pre-fake:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/xorg/modules
 
 .include <bsd.port.mk>
