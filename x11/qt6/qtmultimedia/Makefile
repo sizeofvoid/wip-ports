@@ -16,7 +16,7 @@ WANTLIB += Xrandr avcodec avformat avutil c drm glib-2.0 gobject-2.0
 WANTLIB += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstgl-1.0 gstpbutils-1.0 gstphotography-1.0 gstreamer-1.0
 WANTLIB += gstvideo-1.0 gthread-2.0 intl m pulse swresample swscale
-WANTLIB += xkbcommon
+WANTLIB += va va-drm xkbcommon
 
 BUILD_DEPENDS =	graphics/vulkan-loader \
 		x11/qt6/qtshadertools \
