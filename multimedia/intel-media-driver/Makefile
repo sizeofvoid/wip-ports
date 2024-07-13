@@ -16,6 +16,8 @@ WANTLIB += ${COMPILER_LIBCXX} c drm execinfo igdgmm m
 
 MODULES =	devel/cmake
 
+COMPILER =	base-clang ports-gcc
+
 LIB_DEPENDS =	devel/intel-gmmlib
 
 # XXX Unbundle googletest
@@ -26,8 +28,9 @@ CONFIGURE_ARGS +=	-DMEDIA_BUILD_FATAL_WARNINGS=OFF \
 
 CONFIGURE_ARGS +=	-DLIBVA_DRIVERS_PATH="${LOCALBASE}/lib/xorg/modules"
 
-MODCMAKE_LDFLAGS = -L${X11BASE}/lib -L${LOCALBASE}/lib -lc
-CXXFLAGS = -I${X11BASE}/include
+# build dependency on libva
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lc
+CXXFLAGS =		-I${X11BASE}/include
 
 pre-fake:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/xorg/modules

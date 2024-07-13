@@ -13,6 +13,8 @@ WANTLIB += drm drm_intel m
 
 MODULES =	devel/meson
 
+COMPILER =	base-clang ports-gcc
+
 MODMESON_CONFIGURE_ARGS +=	-Ddriverdir="${LOCALBASE}/lib/xorg/modules"
 
 pre-fake:

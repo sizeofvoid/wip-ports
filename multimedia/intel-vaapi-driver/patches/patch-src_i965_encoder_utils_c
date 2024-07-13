@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Index: src/i965_encoder_utils.c
 --- src/i965_encoder_utils.c.orig
 +++ src/i965_encoder_utils.c

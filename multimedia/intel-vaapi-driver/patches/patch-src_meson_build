@@ -1,5 +1,3 @@
-$OpenBSD$
-
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build

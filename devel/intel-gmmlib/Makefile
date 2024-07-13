@@ -20,6 +20,8 @@ PERMIT_PACKAGE=	Yes
 
 MODULES =	devel/cmake
 
+COMPILER =	base-clang ports-gcc
+
 # XXX Unbundle googletest
 CONFIGURE_ARGS =	-DRUN_TEST_SUITE=OFF
 

@@ -20,3 +20,5 @@ MODMESON_CONFIGURE_ARGS =	-Dtests=true \
 
 # XXX Broken for now?
 TEST_IS_INTERACTIVE =	X11
+
+.include <bsd.port.mk>
