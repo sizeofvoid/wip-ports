@@ -1,4 +1,3 @@
-BROKEN =	Missing KPipeWire
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
@@ -20,6 +19,8 @@ BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
-CXXFLAGS +=	-I${LOCALBASE}/include
+LIB_DEPENDS =	x11/kde-plasma/kpipewire
+
+CXXFLAGS +=	-I${LOCALBASE}/include -DNONETWORK=1
 
 .include <bsd.port.mk>

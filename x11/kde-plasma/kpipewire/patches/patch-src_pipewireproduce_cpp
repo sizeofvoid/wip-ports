@@ -1,0 +1,31 @@
+Index: src/pipewireproduce.cpp
+--- src/pipewireproduce.cpp.orig
++++ src/pipewireproduce.cpp
+@@ -15,6 +15,9 @@
+ #include <memory>
+ #include <qstringliteral.h>
+ 
++#include <pthread.h>
++#include <pthread_np.h>
++
+ #include "h264vaapiencoder_p.h"
+ #include "libvpxencoder_p.h"
+ #include "libvpxvp9encoder_p.h"
+@@ -128,7 +131,7 @@ void PipeWireProduce::setupStream()
+             m_frameReceivedCondition.notify_all();
+         }
+     });
+-    pthread_setname_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
++    pthread_set_name_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
+ 
+     m_outputThread = std::thread([this]() {
+         m_outputRunning = true;
+@@ -144,7 +147,7 @@ void PipeWireProduce::setupStream()
+             m_pendingEncodeFrames -= received;
+         }
+     });
+-    pthread_setname_np(m_outputThread.native_handle(), "PipeWireProduce::output");
++    pthread_set_name_np(m_outputThread.native_handle(), "PipeWireProduce::output");
+ }
+ 
+ void PipeWireProduce::deactivate()

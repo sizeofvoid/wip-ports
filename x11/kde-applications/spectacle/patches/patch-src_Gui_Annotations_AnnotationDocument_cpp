@@ -1,0 +1,20 @@
+Not supportted in our c++ version
+Index: src/Gui/Annotations/AnnotationDocument.cpp
+--- src/Gui/Annotations/AnnotationDocument.cpp.orig
++++ src/Gui/Annotations/AnnotationDocument.cpp
+@@ -72,6 +72,7 @@ QRectF AnnotationDocument::canvasRect() const
+ void AnnotationDocument::setCanvas(const QRectF &rect, qreal dpr)
+ {
+     // Don't allow an invalid canvas rect or device pixel ratio.
++    /**
+     if (rect.isEmpty()) {
+         Log::warning() << std::format("`{}`:\n\t`rect` is empty. This should not happen.",
+                                       std::source_location::current().function_name());
+@@ -81,6 +82,7 @@ void AnnotationDocument::setCanvas(const QRectF &rect,
+                                       std::source_location::current().function_name());
+         return;
+     }
++    */
+     const bool posChanged = m_canvasRect.topLeft() != rect.topLeft();
+     const bool sizeChanged = m_canvasRect.size() != rect.size();
+     const bool dprChanged = m_imageDpr != dpr;
