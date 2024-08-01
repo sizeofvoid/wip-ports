@@ -6456,6 +6456,7 @@ share/metainfo/org.kde.plasma.appmenu.appdata.xml
 share/metainfo/org.kde.plasma.battery.appdata.xml
 share/metainfo/org.kde.plasma.brightness.appdata.xml
 share/metainfo/org.kde.plasma.calendar.appdata.xml
+share/metainfo/org.kde.plasma.cameraindicator.appdata.xml
 share/metainfo/org.kde.plasma.clipboard.appdata.xml
 share/metainfo/org.kde.plasma.devicenotifier.appdata.xml
 share/metainfo/org.kde.plasma.digitalclock.appdata.xml
@@ -6637,6 +6638,12 @@ share/plasma/plasmoids/org.kde.plasma.calendar/contents/ui/
 share/plasma/plasmoids/org.kde.plasma.calendar/contents/ui/configGeneral.qml
 share/plasma/plasmoids/org.kde.plasma.calendar/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.calendar/metadata.json
+share/plasma/plasmoids/org.kde.plasma.cameraindicator/
+share/plasma/plasmoids/org.kde.plasma.cameraindicator/contents/
+share/plasma/plasmoids/org.kde.plasma.cameraindicator/contents/ui/
+share/plasma/plasmoids/org.kde.plasma.cameraindicator/contents/ui/FullRepresentation.qml
+share/plasma/plasmoids/org.kde.plasma.cameraindicator/contents/ui/main.qml
+share/plasma/plasmoids/org.kde.plasma.cameraindicator/metadata.json
 share/plasma/plasmoids/org.kde.plasma.clipboard/
 share/plasma/plasmoids/org.kde.plasma.clipboard/contents/
 share/plasma/plasmoids/org.kde.plasma.clipboard/contents/config/

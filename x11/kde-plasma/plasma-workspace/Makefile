@@ -1,5 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  colorcorrect              1.0 # 0.0
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0
@@ -25,7 +26,7 @@ WANTLIB += KF6NotifyConfig KF6Package KF6Parts KF6Prison KF6Runner
 WANTLIB += KF6Screen KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
 WANTLIB += KF6Svg KF6SyntaxHighlighting KF6TextEditor KF6TextWidgets
 WANTLIB += KF6UnitConversion KF6UserFeedbackCore KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KScreenLocker KSysGuardFormatter
+WANTLIB += KF6WindowSystem KF6XmlGui KPipeWire KScreenLocker KSysGuardFormatter
 WANTLIB += KSysGuardSensorFaces KSysGuardSensors KWaylandClient
 WANTLIB += LayerShellQtInterface Plasma Plasma5Support PlasmaActivities
 WANTLIB += PlasmaActivitiesStats PlasmaQuick QCoro6Core QCoro6DBus
@@ -33,16 +34,16 @@ WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM
 WANTLIB += X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
-WANTLIB += fontconfig freetype icui18n icuuc m phonon4qt6 processcore
-WANTLIB += qalculate udev wayland-client wayland-cursor xcb xcb-composite
-WANTLIB += xcb-damage xcb-image xcb-randr xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon z
+WANTLIB += fontconfig freetype icui18n icuuc m phonon4qt6 pipewire-0.3
+WANTLIB += processcore qalculate udev wayland-client wayland-cursor
+WANTLIB += xcb xcb-composite xcb-damage xcb-image xcb-randr xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xkbcommon z
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
 MODKDE_DOCS = Yes
 
-BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION} \
+BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION}p0 \
 		graphics/kirigami-addons \
 		x11/xdotool \
 		devel/kf6/kquickcharts
@@ -53,7 +54,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		multimedia/phonon-backend/vlc,qt6 \
 		sysutils/coreutils \
 		x11/dbus,-suid \
-		x11/kde-plasma/kwin>=${VERSION}
+		x11/kde-plasma/kwin>=${VERSION}p0
 
 LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/attica \
@@ -109,6 +110,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		wayland/wayland \
 		textproc/icu4c \
 		x11/kde-applications/kf6-libkexiv2 \
+		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
@@ -122,8 +124,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/qt6/qtsvg \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
-
-# XXX x11/kde-plasma/kpipewire>=${VERSION}
 
 CONFIGURE_ARGS = \
 	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes

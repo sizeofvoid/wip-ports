@@ -1,0 +1,12 @@
+Index: src/monitors/mediamonitor.cpp
+--- src/monitors/mediamonitor.cpp.orig
++++ src/monitors/mediamonitor.cpp
+@@ -148,6 +148,8 @@ int MediaMonitor::idleCount() const
+ 
+ void MediaMonitor::connectToCore()
+ {
++
++    return;
+     Q_ASSERT(!m_registry);
+     if (!m_componentReady || m_role == MediaRole::Unknown) {
+         return;

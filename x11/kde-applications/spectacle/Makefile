@@ -55,9 +55,4 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
 
-
-post-install:
-	${MODPY_COMPILEALL} \
-		${PREFIX}/share/kconf_update/50-clipboard_settings_change.py
-
 .include <bsd.port.mk>

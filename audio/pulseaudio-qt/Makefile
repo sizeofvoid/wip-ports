@@ -2,6 +2,7 @@ COMMENT =	Qt bindings for libpulse
 
 VERSION =	1.5.0
 DISTNAME =	pulseaudio-qt-${VERSION}
+REVISION =	0
 
 CATEGORIES =	audio
 
@@ -25,7 +26,5 @@ BUILD_DEPENDS =	audio/pulseaudio
 
 LIB_DEPENDS =	devel/gettext \
 		devel/glib2
-
-CONFIGURE_ARGS =	-DQT_MAJOR_VERSION=6
 
 .include <bsd.port.mk>

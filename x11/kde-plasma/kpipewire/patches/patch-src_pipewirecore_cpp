@@ -1,0 +1,11 @@
+Index: src/pipewirecore.cpp
+--- src/pipewirecore.cpp.orig
++++ src/pipewirecore.cpp
+@@ -82,6 +82,7 @@ PipeWireCore::~PipeWireCore()
+ 
+ bool PipeWireCore::init(int fd)
+ {
++    return false;
+     m_pwMainLoop = pw_loop_new(nullptr);
+     pw_loop_enter(m_pwMainLoop);
+ 

@@ -1,5 +1,6 @@
 COMMENT =	components relating to pipewire use in Plasma
 DISTNAME =	kpipewire-${VERSION}
+REVISION =	1
 
 SHARED_LIBS +=  KPipeWire                 0.0 # 0.0
 SHARED_LIBS +=  KPipeWireDmaBuf           0.0 # 0.0
@@ -13,6 +14,8 @@ WANTLIB += avcodec avfilter avformat avutil drm epoxy gbm m pipewire-0.3
 WANTLIB += swscale va va-drm xkbcommon
 
 RUN_DEPENDS =	multimedia/pipewire/pipewire
+
+BUILD_DEPENDS =	wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \

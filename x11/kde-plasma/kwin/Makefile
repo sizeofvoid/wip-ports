@@ -1,5 +1,6 @@
 COMMENT =	window manager for KDE Plasma Desktops
 DISTNAME =	kwin-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
@@ -35,11 +36,13 @@ MODULES +=	lang/python
 BUILD_DEPENDS =	devel/kf6/kdeclarative \
 		misc/hwdata \
 		wayland/xwayland \
+		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/breeze>=${VERSION} \
 		x11/kde-plasma/kscreenlocker>=${VERSION}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/hwdata \
+		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/breeze>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/attica \
@@ -84,7 +87,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
-CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
+CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT6_LIBDIR}/cmake
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
