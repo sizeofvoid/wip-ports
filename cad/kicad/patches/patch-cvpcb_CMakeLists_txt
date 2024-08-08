@@ -1,12 +1,12 @@
 Index: cvpcb/CMakeLists.txt
 --- cvpcb/CMakeLists.txt.orig
 +++ cvpcb/CMakeLists.txt
-@@ -85,7 +85,7 @@ target_link_libraries( cvpcb_kiface ${Boost_LIBRARIES}
+@@ -79,7 +79,7 @@ target_link_libraries( cvpcb_kiface
+     )
  
- if( UNIX AND NOT APPLE )
-     # -lrt must follow Boost
--    target_link_libraries( cvpcb_kiface rt )
-+    target_link_libraries( cvpcb_kiface )
- endif()
+ # -lrt must follow Boost on Linux platforms
+-target_link_libraries( cvpcb_kiface $<$<BOOL:${UNIX_NOT_APPLE}>:rt> )
++#target_link_libraries( cvpcb_kiface $<$<BOOL:${UNIX_NOT_APPLE}>:rt> )
  
  set_source_files_properties( cvpcb.cpp PROPERTIES
+     # The KIFACE is in cvpcb.cpp, export it:
