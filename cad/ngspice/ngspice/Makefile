@@ -1,4 +1,4 @@
-COMMENT =		circuit simulator, based on Berkeley SPICE
+COMMENT =	circuit simulator, based on Berkeley SPICE
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xft
 WANTLIB += Xmu Xpm Xrender Xt c curses expat fontconfig freetype

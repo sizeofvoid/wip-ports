@@ -18,12 +18,12 @@ AUTOMAKE_VERSION =	1.16
 
 CONFIGURE_STYLE =	autoreconf
 
-TAR =				${LOCALBASE}/bin/gtar
+TAR =			${LOCALBASE}/bin/gtar
 
 BUILD_DEPENDS +=	archivers/gtar
 
 CONFIGURE_ARGS +=	--enable-cider \
-					--enable-xspice \
-					--with-readline=yes
+			--enable-xspice \
+			--with-readline=yes
 
 CONFIGURE_ARGS +=	--disable-openmp
