@@ -1,0 +1,13 @@
+===> Building from scratch kicad-packages3D-8.0.4
+===> kicad-packages3D-8.0.4 depends on: cmake-* -> cmake-3.30.1v1
+===> kicad-packages3D-8.0.4 depends on: ninja-* -> ninja-1.11.1p0v0
+===> kicad-packages3D-8.0.4 depends on: bzip2-* -> bzip2-1.0.8p0
+===>  Checking files for kicad-packages3D-8.0.4
+`/usr/ports/distfiles/kicad-packages3D-8.0.4.tar.bz2' is up to date.
+>> (SHA256) kicad-packages3D-8.0.4.tar.bz2: OK
+===>  Extracting for kicad-packages3D-8.0.4
+
+Signal caught, cleaning up.
+*** Signal SIGINT in . (do-extract)
+*** Signal SIGINT in . (/usr/ports/pobj/kicad-packages3D-8.0.4/.extract_done)
+*** Error 1 in /home/rsadowski/wip-ports/cad/kicad-share/packages3D (/usr/ports/infrastructure/mk/bsd.port.mk:2704 'configure': @lock=kicad-...)

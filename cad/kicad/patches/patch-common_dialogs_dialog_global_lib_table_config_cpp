@@ -1,0 +1,24 @@
+Copying the default global library table can cause crashes on OpenBSD. Adding a
+recommendation for an empty global library table under OpenBSD
+
+Index: common/dialogs/dialog_global_lib_table_config.cpp
+--- common/dialogs/dialog_global_lib_table_config.cpp.orig
++++ common/dialogs/dialog_global_lib_table_config.cpp
+@@ -48,7 +48,7 @@ DIALOG_GLOBAL_LIB_TABLE_CONFIG::DIALOG_GLOBAL_LIB_TABL
+                    "use the default selection." ), aTableName, aTableName, aTableName );
+     m_staticText1->SetLabel( tmp );
+ 
+-    tmp.Printf( _( "Copy default global %s library table (recommended)"), aTableName );
++    tmp.Printf( _( "Copy default global %s library table (can lead to crashes under OpenBSD)"), aTableName );
+     m_defaultRb->SetLabel( tmp );
+     tmp.Printf( _( "Select this option if you not sure about configuring the global %s library "
+                    "table" ), aTableName );
+@@ -60,7 +60,7 @@ DIALOG_GLOBAL_LIB_TABLE_CONFIG::DIALOG_GLOBAL_LIB_TABL
+                 aTableName );
+     m_customRb->SetToolTip( tmp );
+ 
+-	tmp.Printf( _( "Create an empty global %s library table" ), aTableName );
++	tmp.Printf( _( "Create an empty global %s library table (recommended on OpenBSD to avoid crashes)" ), aTableName );
+     m_emptyRb->SetLabel( tmp );
+ 	tmp.Printf( _( "Select this option to define %s libraries in project specific library tables" ),
+                 aTableName );
