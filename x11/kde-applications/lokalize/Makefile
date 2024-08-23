@@ -21,8 +21,6 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5Sql Qt5Widgets Qt5Xml X11 c hunspell-1.7
 WANTLIB += m
 
-MODKDE_KF5 = yes
-
 MODULES +=	lang/python
 
 LIB_DEPENDS =	devel/kf5/kauth \

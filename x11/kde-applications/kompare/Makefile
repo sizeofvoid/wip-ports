@@ -21,8 +21,6 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 MODKDE_DESKTOP_FILE = yes
 
-MODKDE_KF5 =	yes
-
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \

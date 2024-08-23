@@ -238,7 +238,6 @@ RUN_DEPENDS-pim = \
 	x11/kde-applications/kleopatra \
 	x11/kde-applications/kmail \
 	x11/kde-applications/kmail-account-wizard \
-	x11/kde-applications/knotes \
 	x11/kde-applications/kontact \
 	x11/kde-applications/korganizer \
 	x11/kde-applications/kpimtextedit \
@@ -307,7 +306,6 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/libkeduvocdocument \
 	x11/kde-applications/libkexiv2 \
 	x11/kde-applications/libkgapi \
-	x11/kde-applications/libkipi \
 	x11/kde-applications/libkleo \
 	x11/kde-applications/libkmahjongg \
 	x11/kde-applications/libkomparediff2 \
@@ -350,7 +348,6 @@ RUN_DEPENDS-main = \
 	x11/kde-applications/keditbookmarks \
 	x11/kde-applications/kfind \
 	x11/kde-applications/khelpcenter \
-	x11/kde-applications/kipi-plugins \
 	x11/kde-applications/konqueror \
 	x11/kde-applications/konsole \
 	${BUILD_PKGPATH},-accessibility=${MODKDE_GEAR_VERSION} \

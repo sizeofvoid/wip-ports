@@ -5,8 +5,6 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
 
-MODKDE_KF5 =	Yes
-
 WANTLIB += ${COMPILER_LIBCXX} KF5ItemModels KF5Kirigami2 Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
 WANTLIB += Qt5Svg Qt5Widgets c m
