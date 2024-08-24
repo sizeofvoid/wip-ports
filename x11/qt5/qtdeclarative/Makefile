@@ -1,8 +1,8 @@
 QT5NAME =		QtDeclarative
 COMMENT-main =		Qt5 Quick and QML components
 
-KDE_COMMIT =		b99568135aa60de96ca2e121dc2e8d83fb1ca886
-KDE_VERSION =		30
+KDE_COMMIT =		50c8def854806485d66aabcf6918e8b987032e55
+KDE_VERSION =		28
 
 MULTI_PACKAGES =	-main -examples
 DPB_PROPERTIES =	parallel
