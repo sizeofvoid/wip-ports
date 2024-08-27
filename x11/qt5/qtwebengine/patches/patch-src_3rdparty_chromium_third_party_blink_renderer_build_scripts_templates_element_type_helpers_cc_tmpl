@@ -5,8 +5,8 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/
      const char* name;
      HTMLElementType type;
    } kTags[] = {
--    {% for tag in tags|sort %}
-+    {% for tag in tags|sort(attribute='name') %}
+-    {% for tag in tags|sort(attribute='name') %}
++    {% for tag in tags|sort %}
      { "{{tag.name}}", HTMLElementType::k{{tag.js_interface}} },
      {% endfor %}
    };
@@ -14,8 +14,8 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/
    if (it == html_type_map.end())
      return HTMLElementType::kHTMLUnknownElement;
  
--  {% for tag in tags|sort %}
-+  {% for tag in tags|sort(attribute='name') %}
+-  {% for tag in tags|sort(attribute='name') %}
++  {% for tag in tags|sort %}
    {% if tag.runtimeEnabled %}
    if (tagName == "{{tag.name}}") {
      if (!RuntimeEnabledFeatures::{{tag.runtimeEnabled}}Enabled(document->GetExecutionContext())) {

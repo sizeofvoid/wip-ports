@@ -1,11 +1,12 @@
 Index: src/3rdparty/chromium/tools/variations/fieldtrial_to_struct.py
 --- src/3rdparty/chromium/tools/variations/fieldtrial_to_struct.py.orig
 +++ src/3rdparty/chromium/tools/variations/fieldtrial_to_struct.py
-@@ -40,6 +40,7 @@ _platforms = [
+@@ -40,6 +40,8 @@ _platforms = [
      'linux',
      'mac',
      'windows',
 +    'openbsd',
++    'freebsd',
  ]
  
  _form_factors = [

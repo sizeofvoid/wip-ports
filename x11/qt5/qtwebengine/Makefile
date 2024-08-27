@@ -126,20 +126,19 @@ pre-configure:
 	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
 	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
-	# build with python3 (remove catapult)
-	@rm ${CHROMESRC}/content/browser/tracing/BUILD.gn
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-	# # Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
+	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	${QT5_GEN_INCLUDES}
 
 pre-build:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
 		${CHROMESRC}/v8/tools/run.py \
-		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py
+		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
 pre-fake:
 # Fix version mismatches for CMake

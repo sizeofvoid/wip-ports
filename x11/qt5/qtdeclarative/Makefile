@@ -15,7 +15,7 @@ SHARED_LIBS +=  Qt5QuickWidgets           3.0 # 5.9
 SHARED_LIBS +=  Qt5QuickShapes            0.0 # 5.13
 SHARED_LIBS +=  Qt5QmlModels              0.1 # 5.15
 SHARED_LIBS +=  Qt5QmlWorkerScript        0.0 # 5.15
-
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Sql
 WANTLIB-main += Qt5Test Qt5Widgets c m
 
