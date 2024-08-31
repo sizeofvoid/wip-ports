@@ -39,8 +39,6 @@ WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 z
 
 SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
-COMPILER =		ports-gcc
-
 MODULES =		devel/cmake \
 			lang/python
 
