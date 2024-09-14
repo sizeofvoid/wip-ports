@@ -1,0 +1,12 @@
+Index: src/core/ozone/BUILD.gn
+--- src/core/ozone/BUILD.gn.orig
++++ src/core/ozone/BUILD.gn
+@@ -20,7 +20,7 @@ source_set("qt") {
+ 
+   defines = [ "OZONE_IMPLEMENTATION" ]
+ 
+-  if (use_xkbcommon && use_x11) {
++  if (use_xkbcommon && is_bsd) {
+     libs = [ "xkbfile" ]
+   }
+ }

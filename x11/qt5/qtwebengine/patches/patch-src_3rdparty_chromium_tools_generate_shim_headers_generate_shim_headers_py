@@ -1,15 +1,6 @@
 Index: src/3rdparty/chromium/tools/generate_shim_headers/generate_shim_headers.py
 --- src/3rdparty/chromium/tools/generate_shim_headers/generate_shim_headers.py.orig
 +++ src/3rdparty/chromium/tools/generate_shim_headers/generate_shim_headers.py
-@@ -18,7 +18,7 @@ import sys
- 
- 
- SHIM_TEMPLATE = """
--#if defined(GOOGLE_CHROME_BUILD) && defined(OFFICIAL_BUILD)
-+if defined(GOOGLE_CHROME_BUILD)
- #error shim headers must not be used in official Chrome builds!
- #endif
- """
 @@ -65,6 +65,9 @@ def GeneratorMain(argv):
        if options.outputs:
          yield os.path.join(target_directory, header_filename)

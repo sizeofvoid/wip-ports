@@ -1,20 +1,7 @@
 Index: src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files.py
 --- src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files.py.orig
 +++ src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files.py
-@@ -816,10 +816,10 @@ def WriteAsmFiles(perlasms):
-                 perlasm['extra_args'] + extra_args)
-         asmfiles.setdefault(key, []).append(output)
- 
--  for (key, non_perl_asm_files) in NON_PERL_FILES.iteritems():
-+  for (key, non_perl_asm_files) in NON_PERL_FILES.items():
-     asmfiles.setdefault(key, []).extend(non_perl_asm_files)
- 
--  for files in asmfiles.itervalues():
-+  for files in asmfiles.values():
-     files.sort()
- 
-   return asmfiles
-@@ -869,10 +869,10 @@ def main(platforms):
+@@ -794,10 +794,10 @@ def main(platforms):
    ]
  
    # Generate err_data.c
@@ -29,7 +16,7 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files
    crypto_c_files.append('err_data.c')
    crypto_c_files.sort()
  
-@@ -885,11 +885,11 @@ def main(platforms):
+@@ -808,11 +808,11 @@ def main(platforms):
    crypto_test_files = []
    if EMBED_TEST_DATA:
      # Generate crypto_test_data.cc
@@ -43,15 +30,6 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/util/generate_build_files
 +#          ['go', 'run', 'util/embed_test_data.go'] + cmake['CRYPTO_TEST_DATA'],
 +#          cwd='src',
 +#          stdout=out)
-     crypto_test_files += ['crypto_test_data.cc']
+     crypto_test_files.append('crypto_test_data.cc')
  
-   crypto_test_files += FindCFiles(os.path.join('src', 'crypto'), OnlyTests)
-@@ -952,7 +952,7 @@ def main(platforms):
-       'urandom_test': urandom_test_files,
-   }
- 
--  asm_outputs = sorted(WriteAsmFiles(ReadPerlAsmOperations()).iteritems())
-+  asm_outputs = sorted(WriteAsmFiles(ReadPerlAsmOperations()).items())
- 
-   for platform in platforms:
-     platform.WriteFiles(files, asm_outputs)
+   crypto_test_files += PrefixWithSrc(cmake['CRYPTO_TEST_SOURCES'])

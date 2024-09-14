@@ -1,19 +1,17 @@
 Index: src/3rdparty/chromium/content/browser/BUILD.gn
 --- src/3rdparty/chromium/content/browser/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2169,7 +2169,6 @@ jumbo_static_library("browser") {
-   if (!is_android) {
-     deps += [
-       "//components/vector_icons",
--      "//content/browser/tracing:resources",
-     ]
+@@ -2459,6 +2459,13 @@ jumbo_source_set("browser") {
+     deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]
    }
  
-@@ -2802,7 +2801,6 @@ jumbo_static_library("browser") {
-     ]
-     deps += [
-       "//components/speech",
--      "//content/browser/speech/proto",
-       "//third_party/flac",
-     ]
-   }
++  if (is_bsd) {
++    sources -= [
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     sources += [
+       "handwriting/handwriting_recognition_service_impl_cros.cc",

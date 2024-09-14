@@ -1,18 +1,17 @@
 Index: src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
 --- src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/crashpad/crashpad/client/BUILD.gn
-@@ -82,7 +82,13 @@ crashpad_static_library("client") {
-     sources += [ "crashpad_client_fuchsia.cc" ]
+@@ -137,6 +137,13 @@ static_library("common") {
+   if (crashpad_is_win) {
+     sources += [ "crash_report_database_win.cc" ]
    }
- 
--  if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
++
 +  if (crashpad_is_posix) {
 +    sources += [
 +      "crashpad_client_posix.cc",
 +    ]
 +  }
 +
-+  if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia || crashpad_is_posix) {
-     sources += [ "crash_report_database_generic.cc" ]
-   }
- 
+   if (crashpad_is_linux || crashpad_is_android || crashpad_is_fuchsia) {
+     sources += [
+       "crash_report_database_generic.cc",

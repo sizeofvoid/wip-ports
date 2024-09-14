@@ -1,0 +1,11 @@
+Index: src/core/qtwebengine_sources.gni
+--- src/core/qtwebengine_sources.gni.orig
++++ src/core/qtwebengine_sources.gni
+@@ -47,7 +47,6 @@ source_set("qtwebengine_sources") {
+ 
+   deps = [
+     "//build:branding_buildflags",
+-    "//chrome/browser/resources/quota_internals:quota_internals_resources",
+     "//chrome/common:buildflags",
+     "//components/nacl/common:buildflags",
+     "//components/performance_manager",

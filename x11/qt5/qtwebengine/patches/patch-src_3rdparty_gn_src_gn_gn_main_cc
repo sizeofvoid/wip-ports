@@ -1,0 +1,21 @@
+Index: src/3rdparty/gn/src/gn/gn_main.cc
+--- src/3rdparty/gn/src/gn/gn_main.cc.orig
++++ src/3rdparty/gn/src/gn/gn_main.cc
+@@ -16,8 +16,6 @@
+ #include "util/msg_loop.h"
+ #include "util/sys_info.h"
+ 
+-#include "qt_version.h"
+-
+ namespace {
+ 
+ std::vector<std::string> GetArgs(const base::CommandLine& cmdline) {
+@@ -49,7 +47,7 @@ int main(int argc, char** argv) {
+     command = commands::kHelp;
+   } else if (cmdline.HasSwitch(switches::kVersion)) {
+     // Make "--version" print the version and exit.
+-    OutputString(std::string(QT_GN_VERSION) +"\n");
++    //OutputString(std::string(QT_GN_VERSION) +"\n");
+     exit(0);
+   } else if (args.empty()) {
+     // No command, print error and exit.

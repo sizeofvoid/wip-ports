@@ -1,0 +1,35 @@
+Index: src/3rdparty/chromium/v8/BUILD.gn
+--- src/3rdparty/chromium/v8/BUILD.gn.orig
++++ src/3rdparty/chromium/v8/BUILD.gn
+@@ -859,6 +859,9 @@ config("toolchain") {
+   } else if (target_os == "win") {
+     defines += [ "V8_HAVE_TARGET_OS" ]
+     defines += [ "V8_TARGET_OS_WIN" ]
++  } else if (target_os == "openbsd") {
++    defines += [ "V8_HAVE_TARGET_OS" ]
++    defines += [ "V8_TARGET_OS_OPENBSD" ]
+   }
+ 
+   # TODO(jochen): Support v8_enable_prof on Windows.
+@@ -4116,7 +4119,7 @@ v8_component("v8_libbase") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_openbsd) {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",
+       "src/base/platform/platform-linux.cc",
+@@ -4126,6 +4129,12 @@ v8_component("v8_libbase") {
+       "dl",
+       "rt",
+     ]
++  } else if (is_openbsd) {
++    sources += [
++      "src/base/debug/stack_trace_posix.cc",
++      "src/base/platform/platform-openbsd.cc",
++    ]
++    libs = [ "execinfo" ]
+   } else if (current_os == "aix") {
+     sources += [
+       "src/base/debug/stack_trace_posix.cc",

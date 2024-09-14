@@ -1,0 +1,12 @@
+/audio_manager_openbsd.cc/1.3/Sat May 16 07:02:59 2020//
+/audio_manager_openbsd.h/1.3/Sat May 16 07:02:59 2020//
+/hid_connection_fido.cc/1.1/Tue Jan 19 06:16:32 2021//
+/hid_connection_fido.h/1.1/Tue Jan 19 06:16:32 2021//
+/hid_service_fido.cc/1.1/Tue Jan 19 06:16:32 2021//
+/hid_service_fido.h/1.1/Tue Jan 19 06:16:32 2021//
+/openbsd.pri/1.4/Sat Nov 25 18:35:02 2023//
+/sndio_input.cc/1.4/Mon Jul 10 19:55:04 2023//
+/sndio_input.h/1.4/Tue Jan 19 06:16:32 2021//
+/sndio_output.cc/1.4/Tue Jan 19 06:16:32 2021//
+/sndio_output.h/1.3/Tue Jan 19 06:16:32 2021//
+D

@@ -1,11 +1,23 @@
 Index: src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
 --- src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc.orig
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
-@@ -627,7 +627,11 @@ void UnixSocket::ReadPeerCredentials() {
+@@ -44,7 +44,7 @@
+ #include <unistd.h>
+ #endif
  
- #if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE)
++#if PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) || defined(__FreeBSD__)
+ #include <sys/ucred.h>
+ #endif
+ 
+@@ -917,9 +917,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+     return;
+   PERFETTO_CHECK(peer_cred_mode_ != SockPeerCredMode::kIgnore);
+ 
+-#if PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
++#if !defined(__FreeBSD__) && PERFETTO_BUILDFLAG(PERFETTO_OS_LINUX) || \
      PERFETTO_BUILDFLAG(PERFETTO_OS_ANDROID)
-+#if PERFETTO_BUILDFLAG(PERFETTO_OS_OPENBSD)
++#if PERFETTO_BUILDFLAG(PERFETTO_OS_BSD)
 +  struct sockpeercred user_cred;
 +#else
    struct ucred user_cred;

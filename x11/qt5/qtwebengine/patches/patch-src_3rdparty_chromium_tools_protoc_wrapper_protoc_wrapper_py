@@ -1,20 +1,22 @@
 Index: src/3rdparty/chromium/tools/protoc_wrapper/protoc_wrapper.py
 --- src/3rdparty/chromium/tools/protoc_wrapper/protoc_wrapper.py.orig
 +++ src/3rdparty/chromium/tools/protoc_wrapper/protoc_wrapper.py
-@@ -140,6 +140,10 @@ def main(argv):
-       stripped_name = StripProtoExtension(filename)
-       headers.append(os.path.join(cc_out_dir, stripped_name + ".pb.h"))
+@@ -179,15 +179,19 @@ def main(argv):
+     if not options.exclude_imports:
+       protoc_cmd += ["--include_imports"]
  
-+    nenv = os.environ.copy()
-+    nenv["PATH"] = "${WRKOBJDIR}/bin:" + nenv["PATH"]
-+    nenv["LD_LIBRARY_PATH"] = "${WRKSRC}/out/Release"
++  nenv = os.environ.copy()
++  nenv["PATH"] = "/usr/ports/pobj/qtwebengine-5.15.17/bin:" + nenv["PATH"]
++  nenv["LD_LIBRARY_PATH"] = "/usr/ports/pobj/qtwebengine-5.15.17/qtwebengine-17fd3176988586168bee8654008a097a5f23ec1d/out/Release"
 +
-   if options.plugin_out_dir:
-     plugin_options = FormatGeneratorOptions(options.plugin_options)
-     protoc_cmd += [
-@@ -156,7 +160,7 @@ def main(argv):
-   if options.descriptor_set_out:
-     protoc_cmd += ["--descriptor_set_out", options.descriptor_set_out]
+   dependency_file_data = None
+   if options.descriptor_set_out and options.descriptor_set_dependency_file:
+     protoc_cmd += ['--dependency_out', options.descriptor_set_dependency_file]
+-    ret = subprocess.call(protoc_cmd)
++    ret = subprocess.call(protoc_cmd, env=nenv)
+ 
+     with open(options.descriptor_set_dependency_file, 'rb') as f:
+       dependency_file_data = f.read().decode('utf-8')
  
 -  ret = subprocess.call(protoc_cmd)
 +  ret = subprocess.call(protoc_cmd, env=nenv)

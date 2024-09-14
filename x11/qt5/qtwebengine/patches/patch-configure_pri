@@ -1,0 +1,31 @@
+Index: configure.pri
+--- configure.pri.orig
++++ configure.pri
+@@ -7,17 +7,7 @@ QTWEBENGINE_SOURCE_TREE = $$PWD
+ equals(QMAKE_HOST.os, Windows): EXE_SUFFIX = .exe
+ 
+ defineTest(isPythonVersionSupported) {
+-    python = $$system_quote($$system_path($$1))
+-    python_version = $$system('$$python -c "import sys; print(sys.version_info[0:3])"')
+-    python_version ~= s/[()]//g
+-    python_version = $$split(python_version, ',')
+-    python_major_version = $$first(python_version)
+-    python_minor_version = $$member(python_version, 1)
+-    python_patch_version = $$member(python_version, 2)
+-    greaterThan(python_major_version, 2): greaterThan(python_minor_version, 7): return(true)
+-    greaterThan(python_major_version, 1): greaterThan(python_minor_version, 6): greaterThan(python_patch_version, 4): return(true)
+-    qtLog("Unsupported python version: $${python_major_version}.$${python_minor_version}.$${python_patch_version}.")
+-    return(false)
++    return(true)
+ }
+ 
+ defineTest(qtConfTest_detectJumboBuild) {
+@@ -127,7 +117,7 @@ defineTest(qtwebengine_platformError) {
+ defineTest(qtConfTest_detectPlatform) {
+     QT_FOR_CONFIG += gui-private
+ 
+-    linux:qtwebengine_isLinuxPlatformSupported() {
++    unix:qtwebengine_isLinuxPlatformSupported() {
+         $${1}.platform = "linux"
+     }
+     win32:qtwebengine_isWindowsPlatformSupported() {

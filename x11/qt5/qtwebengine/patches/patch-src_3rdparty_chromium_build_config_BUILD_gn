@@ -1,14 +1,37 @@
 Index: src/3rdparty/chromium/build/config/BUILD.gn
 --- src/3rdparty/chromium/build/config/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/BUILD.gn
-@@ -233,9 +233,8 @@ config("default_libs") {
-       "CoreText.framework",
-       "Foundation.framework",
-     ]
--  } else if (is_linux || is_chromeos) {
-+  } else if ((is_linux && !is_openbsd) || is_chromeos) {
+@@ -126,7 +126,7 @@ config("debug") {
+       # builds, and we have to tell it to turn it off.
+       defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]
+     }
+-  } else if ((is_linux || is_chromeos) && current_cpu == "x64" &&
++  } else if ((is_linux || is_chromeos || is_bsd) && current_cpu == "x64" &&
+              enable_iterator_debugging) {
+     # Enable libstdc++ debugging facilities to help catch problems early, see
+     # http://crbug.com/65151 .
+@@ -218,11 +218,13 @@ config("default_libs") {
+     # Targets should choose to explicitly link frameworks they require. Since
+     # linking can have run-time side effects, nothing should be listed here.
+     libs = []
++  } else if (is_bsd) {
++    libs = [
++      "pthread",
++    ]
+   } else if (is_linux || is_chromeos) {
      libs = [
 -      "dl",
        "pthread",
-       "rt",
+-      "rt",
      ]
+   }
+ }
+@@ -322,7 +324,7 @@ config("executable_config") {
+       "//build/config/ios:ios_dynamic_flags",
+       "//build/config/ios:ios_executable_flags",
+     ]
+-  } else if (is_linux || is_chromeos || is_android || current_os == "aix") {
++  } else if (is_linux || is_bsd || is_chromeos || is_android || current_os == "aix") {
+     configs += [ "//build/config/gcc:executable_config" ]
+     if (is_castos || is_cast_android) {
+       configs += [ "//build/config/chromecast:executable_config" ]

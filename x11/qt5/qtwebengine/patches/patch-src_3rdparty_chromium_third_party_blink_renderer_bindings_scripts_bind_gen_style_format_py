@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
 --- src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py.orig
 +++ src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_gen/style_format.py
-@@ -20,7 +20,7 @@ def init(root_src_dir):
+@@ -28,7 +28,7 @@ def init(root_src_dir, enable_style_format=True):
      root_src_dir = os.path.abspath(root_src_dir)
  
      # Determine //buildtools/<platform>/ directory

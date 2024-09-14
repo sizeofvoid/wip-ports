@@ -1,58 +1,59 @@
 Index: src/3rdparty/chromium/base/rand_util_posix.cc
 --- src/3rdparty/chromium/base/rand_util_posix.cc.orig
 +++ src/3rdparty/chromium/base/rand_util_posix.cc
-@@ -21,7 +21,7 @@
+@@ -23,7 +23,7 @@
+ #include "base/time/time.h"
+ #include "build/build_config.h"
+ 
+-#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_NACL)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
  #include "third_party/lss/linux_syscall_support.h"
- #endif
- 
--#if !defined(OS_IOS) && !defined(OS_NACL) && defined(OS_MAC)
-+#if !defined(OS_IOS) && !defined(OS_NACL) && defined(OS_MAC)  && !defined(OS_BSD)
+ #elif BUILDFLAG(IS_MAC)
  // TODO(crbug.com/995996): Waiting for this header to appear in the iOS SDK.
- // (See below.)
- #include <sys/random.h>
-@@ -36,6 +36,7 @@ static constexpr int kOpenFlags = O_RDONLY;
- static constexpr int kOpenFlags = O_RDONLY | O_CLOEXEC;
- #endif
+@@ -40,6 +40,7 @@ namespace base {
  
-+#if !defined(OS_OPENBSD)
- // We keep the file descriptor for /dev/urandom around so we don't need to
- // reopen it (which is expensive), and since we may not even be able to reopen
- // it if we are later put in a sandbox. This class wraps the file descriptor so
-@@ -53,6 +54,7 @@ class URandomFd {
+ namespace {
+ 
++#if !BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_AIX)
+ // AIX has no 64-bit support for O_CLOEXEC.
+ static constexpr int kOpenFlags = O_RDONLY;
+@@ -64,10 +65,11 @@ class URandomFd {
   private:
    const int fd_;
  };
 +#endif
  
- }  // namespace
+ #if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+      BUILDFLAG(IS_ANDROID)) &&                        \
+-    !BUILDFLAG(IS_NACL)
++    !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
+ // TODO(pasko): Unify reading kernel version numbers in:
+ // mojo/core/channel_linux.cc
+ // chrome/browser/android/seccomp_support_detector.cc
+@@ -177,6 +179,7 @@ bool UseBoringSSLForRandBytes() {
+ namespace {
  
-@@ -64,7 +66,7 @@ namespace base {
- // (https://chromium-review.googlesource.com/c/chromium/src/+/1545096) and land
- // it or some form of it.
- void RandBytes(void* output, size_t output_length) {
--#if (defined(OS_LINUX) || defined(OS_CHROMEOS)) && !defined(OS_NACL)
-+#if !defined(OS_OPENBSD)
-   // We have to call `getrandom` via Linux Syscall Support, rather than through
-   // the libc wrapper, because we might not have an up-to-date libc (e.g. on
-   // some bots).
-@@ -84,7 +86,6 @@ void RandBytes(void* output, size_t output_length) {
-       return;
-     }
-   }
--#endif
- 
-   // If the OS-specific mechanisms didn't work, fall through to reading from
-   // urandom.
-@@ -95,11 +96,16 @@ void RandBytes(void* output, size_t output_length) {
-   const bool success =
-       ReadFromFD(urandom_fd, static_cast<char*>(output), output_length);
+ void RandBytes(span<uint8_t> output, bool avoid_allocation) {
++#if !BUILDFLAG(IS_BSD)
+ #if !BUILDFLAG(IS_NACL)
+   // The BoringSSL experiment takes priority over everything else.
+   if (!avoid_allocation && internal::UseBoringSSLForRandBytes()) {
+@@ -215,6 +218,9 @@ void RandBytes(span<uint8_t> output, bool avoid_alloca
+   const int urandom_fd = GetUrandomFD();
+   const bool success = ReadFromFD(urandom_fd, as_writable_chars(output));
    CHECK(success);
 +#else
-+  arc4random_buf(static_cast<char*>(output), output_length); 
++  arc4random_buf(output.data(), output.size());
 +#endif
  }
  
-+#if !defined(OS_OPENBSD)
+ }  // namespace
+@@ -239,9 +245,11 @@ void RandBytes(void* output, size_t output_length) {
+   RandBytes(make_span(reinterpret_cast<uint8_t*>(output), output_length));
+ }
+ 
++#if !BUILDFLAG(IS_BSD)
  int GetUrandomFD() {
    static NoDestructor<URandomFd> urandom_fd;
    return urandom_fd->fd();

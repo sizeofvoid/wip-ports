@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/screen-ai/BUILD.gn
+--- src/3rdparty/chromium/third_party/screen-ai/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/screen-ai/BUILD.gn
+@@ -9,7 +9,7 @@ group("screen_ai_linux") {
+   # need to remove/update the testonly variable below, we must go through a
+   # security review.
+   testonly = true
+-  if (!is_qtwebengine) {
++  if (!is_qtwebengine && !is_bsd) {
+     data_deps = [ "//third_party/screen-ai/linux:screen_ai_resources" ]
+   }
+ }

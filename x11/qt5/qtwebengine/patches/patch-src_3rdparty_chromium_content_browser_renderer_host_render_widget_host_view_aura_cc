@@ -1,44 +1,48 @@
 Index: src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_aura.cc
 --- src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_aura.cc.orig
 +++ src/3rdparty/chromium/content/browser/renderer_host/render_widget_host_view_aura.cc
-@@ -111,11 +111,11 @@
+@@ -120,7 +120,7 @@
  #include "ui/gfx/gdi_util.h"
  #endif
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "content/browser/accessibility/browser_accessibility_auralinux.h"
- #endif
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
- #endif
-@@ -492,7 +492,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
-   if (manager)
-     return ToBrowserAccessibilityWin(manager->GetRoot())->GetCOM();
+ #include "ui/base/ime/text_input_flags.h"
+@@ -458,7 +458,7 @@ gfx::NativeViewAccessible RenderWidgetHostViewAura::Ge
+     return ToBrowserAccessibilityWin(manager->GetBrowserAccessibilityRoot())
+         ->GetCOM();
  
--#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#elif BUILDFLAG(IS_LINUX)
++#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    BrowserAccessibilityManager* manager =
        host()->GetOrCreateRootBrowserAccessibilityManager();
-   if (manager && manager->GetRoot())
-@@ -2224,7 +2224,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
+   if (manager && manager->GetBrowserAccessibilityRoot())
+@@ -1696,7 +1696,7 @@ bool RenderWidgetHostViewAura::ShouldDoLearning() {
+   return GetTextInputManager() && GetTextInputManager()->should_do_learning();
+ }
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ bool RenderWidgetHostViewAura::SetCompositionFromExistingText(
+     const gfx::Range& range,
+     const std::vector<ui::ImeTextSpan>& ui_ime_text_spans) {
+@@ -2540,7 +2540,7 @@ bool RenderWidgetHostViewAura::NeedsInputGrab() {
  }
  
  bool RenderWidgetHostViewAura::NeedsMouseCapture() {
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
    return NeedsInputGrab();
  #else
    return false;
-@@ -2388,7 +2388,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
+@@ -2723,7 +2723,7 @@ void RenderWidgetHostViewAura::ForwardKeyboardEventWit
    if (!target_host)
      return;
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
-   ui::TextEditKeyBindingsDelegateAuraLinux* keybinding_delegate =
-       ui::GetTextEditKeyBindingsDelegate();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
+   if (!event.skip_if_unhandled && linux_ui && event.os_event &&

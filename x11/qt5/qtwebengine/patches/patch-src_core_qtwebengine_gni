@@ -1,0 +1,21 @@
+Index: src/core/qtwebengine.gni
+--- src/core/qtwebengine.gni.orig
++++ src/core/qtwebengine.gni
+@@ -52,13 +52,13 @@ if (enable_webrtc) {
+   deps += [ "//third_party/webrtc_overrides:webrtc_component" ]
+ }
+ 
++if (is_bsd) {
++  deps += [ "//ui/base/x" ]
++}
++
+ if (use_ozone) {
+   _ozone_extra_directory = get_path_info(ozone_extra_path, "dir")
+   deps += [ "$_ozone_extra_directory:qt" ]
+-}
+-
+-if (use_xscrnsaver) {
+-  deps += [ "//ui/base/x" ]
+ }
+ 
+ if (enable_extensions) {

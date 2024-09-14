@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/ipc/ipc_channel_mojo.cc
+--- src/3rdparty/chromium/ipc/ipc_channel_mojo.cc.orig
++++ src/3rdparty/chromium/ipc/ipc_channel_mojo.cc
+@@ -74,7 +74,7 @@ class MojoChannelFactory : public ChannelFactory {
+ };
+ 
+ base::ProcessId GetSelfPID() {
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
+   if (int global_pid = Channel::GetGlobalPid())
+     return global_pid;
+ #endif  // defined(OS_LINUX) || defined(OS_CHROMEOS)

@@ -25,19 +25,19 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/bindings/scripts/bind_ge
  
      # //buildtools/<platform>/gn
      _gn_command_path = os.path.join(buildtools_platform_dir,
-@@ -70,13 +80,8 @@ def gn_format(contents, filename=None):
+@@ -70,8 +80,13 @@ def gn_format(contents, filename=None):
  
  
  def _invoke_format_command(command_line, filename, contents):
--    kwargs = {}
--    if sys.version_info.major != 2:
--        kwargs['encoding'] = 'utf-8'
--    proc = subprocess.Popen(command_line,
--                            stdin=subprocess.PIPE,
--                            stdout=subprocess.PIPE,
--                            **kwargs)
-+    proc = subprocess.Popen(
-+        command_line, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+-    proc = subprocess.Popen(
+-        command_line, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
++    kwargs = {}
++    if sys.version_info.major != 2:
++        kwargs['encoding'] = 'utf-8'
++    proc = subprocess.Popen(command_line,
++                            stdin=subprocess.PIPE,
++                            stdout=subprocess.PIPE,
++                            **kwargs)
      stdout_output, stderr_output = proc.communicate(input=contents)
      exit_code = proc.wait()
  

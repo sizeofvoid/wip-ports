@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
+@@ -111,6 +111,7 @@ executable("character_data_generator") {
+     "//build/win:default_exe_manifest",
+     "//third_party/icu",
+   ]
++  libs = [ "c++abi" ]
+ }
+ 
+ # This isn't strictly necessary since we can just add the deps to "platform",

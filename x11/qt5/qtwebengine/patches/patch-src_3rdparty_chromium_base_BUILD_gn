@@ -1,115 +1,163 @@
 Index: src/3rdparty/chromium/base/BUILD.gn
 --- src/3rdparty/chromium/base/BUILD.gn.orig
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -54,7 +54,7 @@ declare_args() {
-   # replacement base::Location::Current(). On by default in non-official builds
-   # for testing purposes.
-   # TODO(https://crbug.com/974061): remove this eventually.
--  from_here_uses_location_builtins = !is_official_build
-+  from_here_uses_location_builtins = !is_official_build && !is_bsd
+@@ -188,7 +188,7 @@ buildflag_header("ios_cronet_buildflags") {
+   flags = [ "CRONET_BUILD=$is_cronet_build" ]
+ }
  
-   # Unsafe developer build. Has developer-friendly features that may weaken or
-   # disable security measures like sandboxing or ASLR.
-@@ -886,7 +886,7 @@ jumbo_component("base") {
-       "timer/hi_res_timer_manager_posix.cc",
-     ]
- 
--    if (!is_nacl && !is_apple) {
-+    if (!is_nacl && !is_apple && !is_openbsd) {
-       sources += [
-         "cpu_affinity_posix.cc",
-         "cpu_affinity_posix.h",
-@@ -899,6 +899,12 @@ jumbo_component("base") {
-     }
-   }
- 
-+  if (is_openbsd) {
-+    sources += [
-+      "profiler/stack_sampler_posix.cc",
-+    ]
-+  }
-+
-   jumbo_excluded_sources = [
-       "logging.cc",
-   ]
-@@ -1213,7 +1219,7 @@ jumbo_component("base") {
-       "process/process_metrics_linux.cc",
-       "threading/platform_thread_linux.cc",
-     ]
--    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
-+    #jumbo_excluded_sources += [ "process/memory_linux.cc" ]
-   }
- 
-   if (!is_nacl) {
-@@ -1308,11 +1314,16 @@ jumbo_component("base") {
+-enable_message_pump_epoll = is_linux || is_chromeos || is_android
++enable_message_pump_epoll = (is_linux || is_chromeos || is_android) && !is_bsd
+ buildflag_header("message_pump_buildflags") {
+   header = "message_pump_buildflags.h"
+   header_dir = "base/message_loop"
+@@ -1125,11 +1125,23 @@ jumbo_component("base") {
+   # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
-   if (!use_sysroot &&
--      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !use_qt)) &&
-+      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_openbsd)) &&
+-  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
++  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
  
-+  # OpenBSD needs libkvm
-+  if (is_openbsd) {
++  # *BSD needs libkvm
++  if (is_bsd) {
 +    libs += [ "kvm" ]
 +  }
 +
-   if (use_allocator_shim) {
-     sources += [
-       "allocator/allocator_shim.cc",
-@@ -1329,7 +1340,7 @@ jumbo_component("base") {
-     if (is_apple) {
-       sources += [ "allocator/allocator_shim_override_mac_symbols.h" ]
-     }
--    if (is_chromeos || is_linux) {
-+    if (is_chromeos || (is_linux && !is_openbsd)) {
-       sources += [ "allocator/allocator_shim_override_glibc_weak_symbols.h" ]
-     }
-     if (is_win) {
-@@ -1339,7 +1350,6 @@ jumbo_component("base") {
-         "allocator/winheap_stubs_win.h",
-       ]
-     }
--
-     if (use_allocator == "partition") {
-       sources +=
-           [ "allocator/allocator_shim_default_dispatch_to_partition_alloc.cc" ]
-@@ -1981,6 +1991,28 @@ jumbo_component("base") {
-       ]
-     }
-   }
-+  if (is_openbsd) {
-+    sources -= [
-+      "files/file_path_watcher_linux.cc",
-+      "files/file_util_linux.cc",
-+      "process/memory_linux.cc",
-+      "process/process_linux.cc",
-+      "system/sys_info_linux.cc",
-+      "process/process_iterator_linux.cc",
-+      "process/process_metrics_linux.cc",
-+      "process/process_handle_linux.cc"
++  if (is_freebsd) {
++    libs += [
++      "execinfo",
++      "util",
 +    ]
++  }
++
+   if (use_allocator_shim) {
+     if (is_apple) {
+       sources += [ "allocator/early_zone_registration_apple.h" ]
+@@ -1149,7 +1161,7 @@ jumbo_component("base") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -2100,6 +2112,22 @@ jumbo_component("base") {
+     ]
+   }
+ 
++  if (is_openbsd) {
 +    sources += [
-+      "process/memory_stubs.cc",
 +      "process/process_handle_openbsd.cc",
 +      "process/process_iterator_openbsd.cc",
 +      "process/process_metrics_openbsd.cc",
 +      "system/sys_info_openbsd.cc",
-+      "files/file_path_watcher_kqueue.cc",
-+      "files/file_path_watcher_kqueue.h",
-+      "files/file_path_watcher_stub.cc",
++    ]
++  } else if (is_freebsd) {
++    sources += [
++      "process/process_handle_freebsd.cc",
++      "process/process_iterator_freebsd.cc",
++      "process/process_metrics_freebsd.cc",
++      "system/sys_info_freebsd.cc",
 +    ]
 +  }
- 
++
    # iOS
    if (is_ios) {
-@@ -2568,6 +2600,7 @@ if (is_win) {
-     ]
+     sources += [
+@@ -2230,6 +2258,31 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_inotify.cc",
++      "files/scoped_file_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc",
++      "profiler/stack_copier_signal.cc",
++      "profiler/stack_copier_signal.h",
++      "profiler/thread_delegate_posix.cc",
++      "profiler/thread_delegate_posix.h",
++      "threading/platform_thread_linux.cc",
++      "stack_canary_linux.cc",
++      "stack_canary_linux.h",
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_bsd.cc",
++      "threading/platform_thread_bsd.cc",
++    ]
++  }
++
+   if (use_blink) {
+     sources += [
+       "files/file_path_watcher.cc",
+@@ -2240,7 +2293,7 @@ jumbo_component("base") {
+   }
+ 
+   if (dep_libevent) {
+-    deps += [ "//third_party/libevent" ]
++    public_deps += [ "//third_party/libevent" ]
+   }
+ 
+   if (use_libevent) {
+@@ -3005,7 +3058,7 @@ if (is_apple) {
    }
  }
-+
  
- if ((is_win && (current_cpu == "x64" || current_cpu == "arm64")) || is_mac ||
-     (is_android && (current_cpu == "arm" || current_cpu == "arm64"))) {
+-if (!is_nacl && (is_linux || is_chromeos)) {
++if (!is_nacl && !is_bsd && (is_linux || is_chromeos)) {
+   # This test must compile with -fstack-protector-all
+   source_set("stack_canary_linux_unittests") {
+     testonly = true
+@@ -3642,14 +3695,14 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+       "nix/mime_util_xdg_unittest.cc",
+     ]
+ 
+-    if (!is_nacl) {
++    if (!is_nacl && !is_bsd) {
+       deps += [ ":stack_canary_linux_unittests" ]
+     }
+   }
+@@ -3664,7 +3717,7 @@ test("base_unittests") {
+       "posix/file_descriptor_shuffle_unittest.cc",
+       "posix/unix_domain_socket_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "profiler/stack_base_address_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
+@@ -3675,7 +3728,7 @@ test("base_unittests") {
+ 
+   # Allow more direct string conversions on platforms with native utf8
+   # strings
+-  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia) {
++  if (is_apple || is_chromeos || is_castos || is_cast_android || is_fuchsia || is_bsd) {
+     defines += [ "SYSTEM_NATIVE_UTF8" ]
+   }
+ 
+@@ -3938,7 +3991,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_fuchsia || is_linux || is_chromeos) {
++  if ((is_fuchsia || is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/elf_reader_unittest.cc",
+       "debug/test_elf_image_builder.cc",

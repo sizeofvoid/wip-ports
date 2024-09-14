@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/chrome/common/chrome_switches.h
+--- src/3rdparty/chromium/chrome/common/chrome_switches.h.orig
++++ src/3rdparty/chromium/chrome/common/chrome_switches.h
+@@ -254,7 +254,7 @@ extern const char kAllowNaClSocketAPI[];
+ #endif
+ 
+ #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_MAC) || \
+-    defined(OS_WIN)
++    defined(OS_WIN) || defined(OS_BSD)
+ extern const char kEnableNewAppMenuIcon[];
+ extern const char kGuest[];
+ #endif

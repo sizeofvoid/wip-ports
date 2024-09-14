@@ -1,0 +1,115 @@
+Index: src/3rdparty/chromium/base/BUILD.gn
+--- src/3rdparty/chromium/base/BUILD.gn.orig
++++ src/3rdparty/chromium/base/BUILD.gn
+@@ -54,7 +54,7 @@ declare_args() {
+   # replacement base::Location::Current(). On by default in non-official builds
+   # for testing purposes.
+   # TODO(https://crbug.com/974061): remove this eventually.
+-  from_here_uses_location_builtins = !is_official_build
++  from_here_uses_location_builtins = !is_official_build && !is_bsd
+ 
+   # Unsafe developer build. Has developer-friendly features that may weaken or
+   # disable security measures like sandboxing or ASLR.
+@@ -886,7 +886,7 @@ jumbo_component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_openbsd) {
+       sources += [
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -899,6 +899,12 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_openbsd) {
++    sources += [
++      "profiler/stack_sampler_posix.cc",
++    ]
++  }
++
+   jumbo_excluded_sources = [
+       "logging.cc",
+   ]
+@@ -1213,7 +1219,7 @@ jumbo_component("base") {
+       "process/process_metrics_linux.cc",
+       "threading/platform_thread_linux.cc",
+     ]
+-    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
++    #jumbo_excluded_sources += [ "process/memory_linux.cc" ]
+   }
+ 
+   if (!is_nacl) {
+@@ -1308,11 +1314,16 @@ jumbo_component("base") {
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+   if (!use_sysroot &&
+-      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !use_qt)) &&
++      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !is_openbsd)) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+ 
++  # OpenBSD needs libkvm
++  if (is_openbsd) {
++    libs += [ "kvm" ]
++  }
++
+   if (use_allocator_shim) {
+     sources += [
+       "allocator/allocator_shim.cc",
+@@ -1329,7 +1340,7 @@ jumbo_component("base") {
+     if (is_apple) {
+       sources += [ "allocator/allocator_shim_override_mac_symbols.h" ]
+     }
+-    if (is_chromeos || is_linux) {
++    if (is_chromeos || (is_linux && !is_openbsd)) {
+       sources += [ "allocator/allocator_shim_override_glibc_weak_symbols.h" ]
+     }
+     if (is_win) {
+@@ -1339,7 +1350,6 @@ jumbo_component("base") {
+         "allocator/winheap_stubs_win.h",
+       ]
+     }
+-
+     if (use_allocator == "partition") {
+       sources +=
+           [ "allocator/allocator_shim_default_dispatch_to_partition_alloc.cc" ]
+@@ -1981,6 +1991,28 @@ jumbo_component("base") {
+       ]
+     }
+   }
++  if (is_openbsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/memory_linux.cc",
++      "process/process_linux.cc",
++      "system/sys_info_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc"
++    ]
++    sources += [
++      "process/memory_stubs.cc",
++      "process/process_handle_openbsd.cc",
++      "process/process_iterator_openbsd.cc",
++      "process/process_metrics_openbsd.cc",
++      "system/sys_info_openbsd.cc",
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_stub.cc",
++    ]
++  }
+ 
+   # iOS
+   if (is_ios) {
+@@ -2568,6 +2600,7 @@ if (is_win) {
+     ]
+   }
+ }
++
+ 
+ if ((is_win && (current_cpu == "x64" || current_cpu == "arm64")) || is_mac ||
+     (is_android && (current_cpu == "arm" || current_cpu == "arm64"))) {

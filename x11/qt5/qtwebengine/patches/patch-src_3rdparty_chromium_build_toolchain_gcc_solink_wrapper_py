@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py
 --- src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py.orig
 +++ src/3rdparty/chromium/build/toolchain/gcc_solink_wrapper.py
-@@ -37,7 +37,7 @@ def CollectDynSym(args):
+@@ -39,7 +39,7 @@ def CollectDynSym(args):
    """Replaces: nm --format=posix -g -D -p $sofile | cut -f1-2 -d' '"""
    toc = ''
    nm = subprocess.Popen(wrapper_utils.CommandToRun(

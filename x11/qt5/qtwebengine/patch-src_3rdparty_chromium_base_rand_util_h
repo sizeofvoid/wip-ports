@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/base/rand_util.h
+--- src/3rdparty/chromium/base/rand_util.h.orig
++++ src/3rdparty/chromium/base/rand_util.h
+@@ -69,7 +69,7 @@ void RandomShuffle(Itr first, Itr last) {
+   std::shuffle(first, last, RandomBitGenerator());
+ }
+ 
+-#if defined(OS_POSIX)
++#if defined(OS_POSIX) && !defined(OS_OPENBSD)
+ BASE_EXPORT int GetUrandomFD();
+ #endif
+ 

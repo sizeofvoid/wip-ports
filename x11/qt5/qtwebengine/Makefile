@@ -12,11 +12,13 @@ KDE_VERSION =		0
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
+DIST_VERSION =		${QT5_WEBENGINE_VERSION}
+QT5_VERSION =		${QT5_WEBENGINE_VERSION}
 
-PKGNAME =		${DISTNAME:C/-everywhere-opensource-src//:C/-${VERSION}/-${VERSION}/}
+PKGNAME =		${DISTNAME:C/-everywhere-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 
 DIST_TUPLE +=	kde qt qt/qtwebengine-chromium \
-		fdfef5b37af3bed8402d7c7e20a5487f2602b0a6 src/3rdparty
+		fc4dffdada44bac3e17c209854f58c1d5f448155 src/3rdparty
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
@@ -91,7 +93,19 @@ LIB_DEPENDS =	archivers/minizip \
 # These libraries are used from the system and the build infrastructure
 # removes them from the bundled third_party directory and replaces them
 # with hooks to use them from the system.
-GN_SYSTEM_LIBS =	libevent libxslt
+GN_SYSTEM_LIBS=	dav1d \
+		fontconfig \
+		icu \
+		libaom \
+		libevent \
+		libjpeg \
+		libpng \
+		libvpx \
+		libxml \
+		libxslt \
+		openh264 \
+		opus
+GN_SYSTEM_LIBS =       libevent libxslt icu
 
 
 CONFIGURE_ENV =		NINJAFLAGS="-j${MAKE_JOBS}" \
@@ -108,37 +122,68 @@ SUBST_VARS +=	WRKSRC WRKDIR WRKBUILD
 
 MODQMAKE_RECURSIVE =	No
 
+.if ${MACHINE_ARCH} == "aarch64"
+FFMPEG_TARGET=	arm64
+.elif ${MACHINE_ARCH} == "amd64"
+BUILD_DEPENDS+=	devel/nasm
+FFMPEG_TARGET=	x64
+.elif ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	devel/nasm
+FFMPEG_TARGET=	ia32
+.endif
+
+FFMPEG_BRAND=	Chrome
+FFMPEG_BDIR=	${CHROMESRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
+FFMPEG_CDIR=	${CHROMESRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
+
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-.for _arch in x64 ia32 arm64
-.  for _dir in avcodec avformat avutil
-	@cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
-		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
-.  endfor
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
+	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
+	cd ${CHROMESRC}/third_party/ffmpeg && \
+		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
+	#cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
+	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
+.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
-	@mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
-	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${CHROMESRC}/services/device/hid
-	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
-	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
-	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/buildtools/config/openbsd.pri
-	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
 	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
+	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py ${CHROMESRC}/v8/tools/run.py \
+		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+#.for _arch in x64 ia32 arm64
+#.  for _dir in avcodec avformat avutil
+#	@cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+#		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
+#.  endfor
+#.endfor
+#	@mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
+#	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${CHROMESRC}/services/device/hid
+#	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
+#	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
+	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/buildtools/config/openbsd.pri
+	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
+#	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
+#	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
+#	# build with python3 (remove catapult)
+#	#@rm ${CHROMESRC}/content/browser/tracing/BUILD.gn
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
-	@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
+	#@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	${QT5_GEN_INCLUDES}
 
+#Done. If desired you may copy config.h/config.asm into the source/config tree using copy_config.sh
+
 pre-build:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \
-		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
 		${CHROMESRC}/v8/tools/run.py \
-		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py
 
 pre-fake:
 # Fix version mismatches for CMake

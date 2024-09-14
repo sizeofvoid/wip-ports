@@ -1,21 +1,21 @@
 Index: src/3rdparty/chromium/base/system/sys_info.h
 --- src/3rdparty/chromium/base/system/sys_info.h.orig
 +++ src/3rdparty/chromium/base/system/sys_info.h
-@@ -202,6 +202,8 @@ class BASE_EXPORT SysInfo {
-   // On Desktop this returns true when memory <= 512MB.
-   static bool IsLowEndDevice();
+@@ -318,6 +318,8 @@ class BASE_EXPORT SysInfo {
+   static void ResetCpuSecurityMitigationsEnabledForTesting();
+ #endif
  
 +  static uint64_t MaxSharedMemorySize();
 +
   private:
+   friend class test::ScopedAmountOfPhysicalMemoryOverride;
    FRIEND_TEST_ALL_PREFIXES(SysInfoTest, AmountOfAvailablePhysicalMemory);
-   FRIEND_TEST_ALL_PREFIXES(debug::SystemMetricsTest, ParseMeminfo);
-@@ -212,7 +214,7 @@ class BASE_EXPORT SysInfo {
+@@ -330,7 +332,7 @@ class BASE_EXPORT SysInfo {
    static HardwareInfo GetHardwareInfoSync();
  
- #if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || \
--    defined(OS_AIX)
-+    defined(OS_AIX) || defined(OS_OPENBSD)
-   static int64_t AmountOfAvailablePhysicalMemory(
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
+-    BUILDFLAG(IS_AIX)
++    BUILDFLAG(IS_AIX) || BUILDFLAG(IS_BSD)
+   static uint64_t AmountOfAvailablePhysicalMemory(
        const SystemMemoryInfoKB& meminfo);
  #endif

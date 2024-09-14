@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
 --- src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig
 +++ src/3rdparty/chromium/components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -163,7 +163,7 @@ class RootCompositorFrameSinkImpl : public mojom::Comp
-   base::TimeDelta preferred_frame_interval_ =
-       FrameRateDecider::UnspecifiedFrameInterval();
+@@ -210,7 +210,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+   // to actually unref.
+   LocalSurfaceId to_evict_on_next_draw_and_swap_ = LocalSurfaceId();
  
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(IS_OZONE_X11)
    gfx::Size last_swap_pixel_size_;
- #endif
+ #endif  // BUILDFLAG(IS_LINUX) && BUILDFLAG(IS_OZONE_X11)
  

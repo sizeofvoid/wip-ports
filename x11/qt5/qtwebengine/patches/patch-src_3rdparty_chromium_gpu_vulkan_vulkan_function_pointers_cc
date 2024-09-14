@@ -1,21 +1,21 @@
 Index: src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.cc
 --- src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.cc.orig
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.cc
-@@ -862,7 +862,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+@@ -1289,7 +1289,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
+     }
    }
- #endif  // defined(OS_ANDROID)
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    if (gfx::HasExtension(enabled_extensions,
-                         VK_KHR_EXTERNAL_SEMAPHORE_FD_EXTENSION_NAME)) {
-     vkGetSemaphoreFdKHR = reinterpret_cast<PFN_vkGetSemaphoreFdKHR>(
-@@ -906,7 +906,7 @@ bool VulkanFunctionPointers::BindDeviceFunctionPointer
-   }
- #endif  // defined(OS_WIN)
+                         VK_EXT_IMAGE_DRM_FORMAT_MODIFIER_EXTENSION_NAME)) {
+     constexpr char kvkGetImageDrmFormatModifierPropertiesEXT[] =
+@@ -1489,7 +1489,7 @@ void VulkanFunctionPointers::ResetForTesting() {
+   vkGetSwapchainImagesKHR = nullptr;
+   vkQueuePresentKHR = nullptr;
  
--#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
-+#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
-   if (gfx::HasExtension(enabled_extensions,
-                         VK_KHR_EXTERNAL_MEMORY_FD_EXTENSION_NAME)) {
-     vkGetMemoryFdKHR = reinterpret_cast<PFN_vkGetMemoryFdKHR>(
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   vkGetImageDrmFormatModifierPropertiesEXT = nullptr;
+ #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
+ }

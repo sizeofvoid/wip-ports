@@ -1,28 +1,38 @@
 Index: src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
 --- src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc.orig
 +++ src/3rdparty/chromium/services/network/network_sandbox_hook_linux.cc
-@@ -4,6 +4,8 @@
+@@ -14,11 +14,14 @@
+ #include "sandbox/policy/features.h"
+ #include "third_party/abseil-cpp/absl/types/optional.h"
  
- #include "services/network/network_sandbox_hook_linux.h"
- #include "sandbox/linux/syscall_broker/broker_command.h"
-+#include "sandbox/linux/syscall_broker/broker_file_permission.h"
-+#include "sandbox/linux/syscall_broker/broker_file_permission.h"
++#if !BUILDFLAG(IS_BSD)
+ using sandbox::syscall_broker::BrokerFilePermission;
+ using sandbox::syscall_broker::MakeBrokerCommandSet;
++#endif
  
- #include "base/rand_util.h"
- #include "base/system/sys_info.h"
-@@ -14,6 +16,7 @@ using sandbox::syscall_broker::MakeBrokerCommandSet;
  namespace network {
  
- bool NetworkPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
-+#if !defined(OS_BSD)
-   auto* instance = sandbox::policy::SandboxLinux::GetInstance();
- 
-   // TODO(tsepez): remove universal permission under filesytem root.
-@@ -32,6 +35,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
-       sandbox::policy::SandboxLinux::PreSandboxHook(), options);
- 
-   instance->EngageNamespaceSandboxIfPossible();
++#if !BUILDFLAG(IS_BSD)
+ sandbox::syscall_broker::BrokerCommandSet GetNetworkBrokerCommandSet() {
+   return MakeBrokerCommandSet({
+       sandbox::syscall_broker::COMMAND_ACCESS,
+@@ -102,9 +105,11 @@ void LoadNetworkLibraries() {
+   }
+ }
+ #endif  // BUILDFLAG(IS_CHROMEOS)
 +#endif
+ 
+ bool NetworkPreSandboxHook(std::vector<std::string> network_context_parent_dirs,
+                            sandbox::policy::SandboxLinux::Options options) {
++#if !BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS)
+   LoadNetworkLibraries();
+ #endif
+@@ -117,6 +122,7 @@ bool NetworkPreSandboxHook(std::vector<std::string> ne
+       GetNetworkBrokerCommandSet(),
+       GetNetworkFilePermissions(std::move(network_context_parent_dirs)),
+       sandbox::policy::SandboxLinux::PreSandboxHook(), options);
++#endif
+ 
    return true;
  }
- 

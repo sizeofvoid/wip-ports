@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/gl/BUILD.gn
 --- src/3rdparty/chromium/ui/gl/BUILD.gn.orig
 +++ src/3rdparty/chromium/ui/gl/BUILD.gn
-@@ -159,8 +159,6 @@ jumbo_component("gl") {
+@@ -167,8 +167,6 @@ jumbo_component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
    }
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/ui/gl/BUILD.gn
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -174,7 +172,6 @@ jumbo_component("gl") {
+@@ -186,7 +184,6 @@ jumbo_component("gl") {
    ]
    public_deps = [
      "//base",
@@ -18,29 +18,19 @@ Index: src/3rdparty/chromium/ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -224,7 +221,7 @@ jumbo_component("gl") {
-       ]
-     }
- 
--    if (is_posix && !is_fuchsia && !is_mac) {
-+    if (is_posix && !is_fuchsia && !is_mac && !is_openbsd) {
-       # Windows has USE_EGL but doesn't support base::FileDescriptor.
-       # libsync isn't supported or needed on MacOSX.
-       # Fuchsia is excluded due to a libsync dependency and because it's
-@@ -382,7 +379,6 @@ jumbo_component("gl") {
+@@ -428,7 +425,6 @@ jumbo_component("gl") {
+     data_deps += [
+       "//third_party/angle:libEGL",
+       "//third_party/angle:libGLESv2",
+-      "//third_party/mesa_headers",
+     ]
+     if (enable_swiftshader) {
        data_deps += [
-         "//third_party/angle:libEGL",
-         "//third_party/angle:libGLESv2",
--        "//third_party/mesa_headers",
-       ]
-       if (enable_swiftshader) {
-         data_deps += [ "//third_party/swiftshader" ]
-@@ -639,8 +635,6 @@ test("gl_unittests") {
-     "//ui/platform_window",
-     "//ui/platform_window:platform_impls",
-   ]
--
--  data_deps = [ "//third_party/mesa_headers" ]
+@@ -646,7 +642,6 @@ test("gl_unittests") {
  
-   # TODO(https://crbug.com/789065): this must be moved to Ozone.
-   if (use_x11) {
+   data_deps = [
+     "//testing/buildbot/filters:gl_unittests_filters",
+-    "//third_party/mesa_headers",
+   ]
+ 
+   if (is_win) {

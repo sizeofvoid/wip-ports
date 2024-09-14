@@ -8,5 +8,5 @@ Index: src/3rdparty/chromium/build/config/freetype/freetype.gni
 -  use_system_freetype = false
 +  use_system_freetype = true
    use_qt_freetype = false
-   qt_freetype_includes = ""
+   qt_freetype_config = ""
  }

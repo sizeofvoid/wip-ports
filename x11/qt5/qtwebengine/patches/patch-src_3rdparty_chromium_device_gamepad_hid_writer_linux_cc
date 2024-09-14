@@ -9,4 +9,4 @@ Index: src/3rdparty/chromium/device/gamepad/hid_writer_linux.cc
 +
  #include "device/gamepad/hid_writer_linux.h"
  
- #include "base/posix/eintr_wrapper.h"
+ #include <unistd.h>
