@@ -246,10 +246,7 @@ include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arraybuffer_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arraydata_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arrayiterator_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arrayobject_p.h
-include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4assemblercommon_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4atomics_p.h
-include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4baselineassembler_p.h
-include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4baselinejit_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4booleanobject_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4bytecodegenerator_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4bytecodehandler_p.h
