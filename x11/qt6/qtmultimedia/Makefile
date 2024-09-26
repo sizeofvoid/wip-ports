@@ -1,7 +1,6 @@
 QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS +=  Qt6Multimedia             6.0 # 6.6
 SHARED_LIBS +=  Qt6MultimediaQuick        4.0 # 6.6
@@ -38,6 +37,8 @@ CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON \
 			-DQT_FEATURE_gstreamer_1_0=ON \
 			-DQT_FEATURE_vaapi=OFF
 
+#CXXFLAGS +=	-I${X11BASE}/include -I${LOCALBASE}/include
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
+#MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

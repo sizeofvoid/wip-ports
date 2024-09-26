@@ -65,6 +65,15 @@ Index: src/3rdparty/chromium/content/app/content_main_runner_impl.cc
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
+@@ -439,7 +453,7 @@ void PreSandboxInit() {
+   // Ensure access to the library CDMs before the sandbox is turned on.
+   PreloadLibraryCdms();
+ #endif
+-#if BUILDFLAG(ENABLE_WEBRTC)
++#if BUILDFLAG(ENABLE_WEBRTC) && !BUILDFLAG(IS_BSD)
+   InitializeWebRtcModule();
+ #endif
+ 
 @@ -838,11 +852,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
