@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 QT6NAME =	QtDeclarative
 COMMENT =	Qt6 Quick and QML components
 PKGSPEC =	qt6-qtdeclarative-${QT6_PKGSPEC}
-REVISION =	0
 
 SHARED_LIBS =   Qt6Qml                    5.0 # 6.6
 SHARED_LIBS +=  Qt6Quick                  6.0 # 6.6
@@ -32,6 +31,7 @@ SHARED_LIBS +=  Qt6QuickLayouts           3.1 # 6.6
 SHARED_LIBS +=  Qt6QuickTemplates2        5.0 # 6.6
 SHARED_LIBS +=  Qt6QmlCompiler            2.0 # 6.6
 SHARED_LIBS +=  Qt6QuickEffects           1.0 # 6.6
+SHARED_LIBS +=	Qt6QmlNetwork             0.0 # 0.0
 
 SHARED_LIBS +=	Qt6QuickControls2Basic    0.0 # 0.0
 SHARED_LIBS +=	Qt6QuickControls2BasicStyleImpl 0.0 # 0.0

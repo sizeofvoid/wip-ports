@@ -4,16 +4,12 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		1
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
 PKGNAME-mysql =		qt6-mysql-${VERSION}
 PKGNAME-global =	qt6-global-${VERSION}
 PKGNAME-psql =		qt6-postgresql-${VERSION}
-REVISION-global =	0
-REVISION-mysql =	0
-REVISION-psql =		0
 
 PKG_ARCH-global =	*
 
@@ -36,7 +32,7 @@ SHARED_LIBS +=  Qt6OpenGLExtensions          0.1 # 6.6
 SHARED_LIBS +=  Qt6XcbQpa                    3.0 # 6.6
 SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.2 # 6.6
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.6
-
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB-global =
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0

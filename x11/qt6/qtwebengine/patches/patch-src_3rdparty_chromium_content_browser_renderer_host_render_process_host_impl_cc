@@ -37,7 +37,20 @@ Index: src/3rdparty/chromium/content/browser/renderer_host/render_process_host_i
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -3287,7 +3287,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
+@@ -1771,10 +1771,12 @@ void RenderProcessHostImpl::CreateMessageFilters() {
+   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+   MediaInternals* media_internals = MediaInternals::GetInstance();
+ 
++#if 0 // XXX
+   scoped_refptr<RenderMessageFilter> render_message_filter =
+       base::MakeRefCounted<RenderMessageFilter>(
+           GetID(), GetBrowserContext(), widget_helper_.get(), media_internals);
+   AddFilter(render_message_filter.get());
++#endif
+ 
+ #if BUILDFLAG(ENABLE_PPAPI)
+   pepper_renderer_connection_ = base::MakeRefCounted<PepperRendererConnection>(
+@@ -3287,7 +3289,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
              base::TimeTicks::UnixEpoch().since_origin().InMicroseconds()));
    }
  
@@ -46,7 +59,7 @@ Index: src/3rdparty/chromium/content/browser/renderer_host/render_process_host_i
    // Append `kDisableVideoCaptureUseGpuMemoryBuffer` flag if there is no support
    // for NV12 GPU memory buffer.
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled() &&
-@@ -3347,6 +3347,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+@@ -3347,6 +3349,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
