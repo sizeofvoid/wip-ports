@@ -31,14 +31,15 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Designer Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6WebChannel
 WANTLIB += Qt6WebChannelQuick Qt6Widgets Qt6Xml X11 Xau Xcomposite
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xrandr Xrender Xtst avcodec
-WANTLIB += avformat avutil c cbor crypto dbus-1 drm event execinfo
-WANTLIB += expat fido2 fontconfig freetype glib-2.0 graphite2
-WANTLIB += harfbuzz harfbuzz-subset icudata icui18n icuuc intl
-WANTLIB += jpeg kvm lcms2 m minizip nspr4 nss3 nssutil3 openh264
-WANTLIB += openjp2 opus pcre2-8 plc4 plds4 png sharpyuv smime3
-WANTLIB += snappy sndio swresample tiff usbhid util vpx webp webpdemux
-WANTLIB += webpmux xcb xkbcommon xkbfile xml2 xshmfence xslt z
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xrandr Xrender Xtst c
+WANTLIB += cbor crypto dbus-1 drm event execinfo expat ffi fido2
+WANTLIB += freetype gbm glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 harfbuzz harfbuzz-subset icudata icui18n
+WANTLIB += icuuc intl jpeg kvm lcms2 lzma m minizip nspr4 nss3
+WANTLIB += nssutil3 openjp2 opus pcre2-8 plc4 plds4 png sharpyuv
+WANTLIB += smime3 snappy sndio tiff usbhid util uuid vpx webp
+WANTLIB += webpdemux webpmux xcb xkbcommon xkbfile xml2 xshmfence
+WANTLIB += xslt z
 
 MODULES +=	lang/python
 
