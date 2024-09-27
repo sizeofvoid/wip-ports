@@ -29,14 +29,13 @@ WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6WebChannel
 WANTLIB += Qt6WebChannelQuick Qt6Widgets Qt6Xml X11 Xau Xcomposite
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xrandr Xrender Xtst c
-WANTLIB += cbor crypto dbus-1 drm event execinfo expat ffi fido2
-WANTLIB += freetype gbm glib-2.0 gmodule-2.0 gobject-2.0 graphite2
-WANTLIB += gthread-2.0 harfbuzz harfbuzz-subset icudata icui18n
-WANTLIB += icuuc intl jpeg kvm lcms2 lzma m minizip nspr4 nss3
-WANTLIB += nssutil3 openjp2 opus pcre2-8 plc4 plds4 png sharpyuv
-WANTLIB += smime3 snappy sndio tiff usbhid util uuid vpx webp
-WANTLIB += webpdemux webpmux xcb xkbcommon xkbfile xml2 xshmfence
-WANTLIB += xslt z
+WANTLIB += cbor crypto dbus-1 drm event execinfo expat fido2 fontconfig
+WANTLIB += freetype gbm glib-2.0 graphite2 harfbuzz harfbuzz-subset
+WANTLIB += icudata icui18n icuuc intl jpeg kvm lcms2 lzma m minizip
+WANTLIB += nspr4 nss3 nssutil3 openh264 openjp2 opus pcre2-8 plc4
+WANTLIB += plds4 png sharpyuv smime3 snappy sndio tiff usbhid
+WANTLIB += util vpx webp webpdemux webpmux xcb xkbcommon xkbfile
+WANTLIB += xml2 xshmfence xslt z
 
 MODULES +=	lang/python
 
@@ -123,6 +122,8 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
 GN_SYSTEM_LIBS=	libevent \
 		libxml \
 		libxslt
+
+GN_SYSTEM_LIBS=        fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
