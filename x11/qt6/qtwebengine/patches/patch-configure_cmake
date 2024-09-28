@@ -64,6 +64,15 @@ Index: configure.cmake
     MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android."
  )
  if(LINUX AND CMAKE_CROSSCOMPILING)
+@@ -495,7 +473,7 @@ add_check_for_support(
+ )
+ add_check_for_support(
+     MODULES QtWebEngine
+-    CONDITION NOT (Nodejs_ARCH STREQUAL "ia32") AND
++    CONDITION NOT (Nodejs_ARCH STREQUAL "i386") AND
+               NOT (Nodejs_ARCH STREQUAL "x86") AND
+               NOT (Nodejs_ARCH STREQUAL "arm")
+     MESSAGE "32bit version of Nodejs is not supported."
 @@ -527,7 +505,7 @@ add_check_for_support(
  )
  add_check_for_support(
