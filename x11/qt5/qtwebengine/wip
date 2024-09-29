@@ -1,0 +1,13 @@
+Patch for src/3rdparty/chromium/content/browser/BUILD.gn updated
+Patch for src/3rdparty/chromium/mojo/public/tools/bindings/BUILD.gn updated
+Patch for src/3rdparty/chromium/third_party/blink/renderer/bindings/templates/dictionary_v8.cc.tmpl updated
+Patch for src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/element_factory.cc.tmpl updated
+Patch for src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/element_type_helpers.cc.tmpl updated
+Patch for src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/element_type_helpers.h.tmpl updated
+Patch for src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/macros.tmpl updated
+Patch for src/3rdparty/chromium/third_party/blink/renderer/build/scripts/templates/make_qualified_names.h.tmpl updated
+Patch for src/3rdparty/chromium/third_party/devtools-frontend/src/BUILD.gn updated
+Patch for src/3rdparty/chromium/third_party/sqlite/src/amalgamation/sqlite3.c updated
+Patch for src/3rdparty/chromium/v8/src/execution/isolate.cc updated
+*** Patch for src/3rdparty/chromium/gpu/vulkan/vulkan_function_pointers.h misses newline at end of file
+*** Patch for src/3rdparty/chromium/services/tracing/public/cpp/perfetto/trace_time.cc misses newline at end of file
