@@ -2,10 +2,10 @@ QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Designer             2.1 # 6.6
-SHARED_LIBS +=  Qt6DesignerComponents   1.0 # 6.6
-SHARED_LIBS +=  Qt6Help                 1.0 # 6.6
-SHARED_LIBS +=  Qt6UiTools              1.0 # 6.6
+SHARED_LIBS +=  Qt6Designer             3.0 # 6.7
+SHARED_LIBS +=  Qt6DesignerComponents   2.0 # 6.7
+SHARED_LIBS +=  Qt6Help                 1.0 # 6.7
+SHARED_LIBS +=  Qt6UiTools              2.0 # 6.7
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport Qt6Qml Qt6QmlModels
