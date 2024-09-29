@@ -1,7 +1,7 @@
 QT5NAME =		QtBase
 
-KDE_COMMIT =		2b71429330544809ff5f95111a020e7ceec643fd
-KDE_VERSION =		145
+KDE_COMMIT =		9f9a56d750caff8b4459e7e9bf82f1f4d725f72f
+KDE_VERSION =		143
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt5 documentation internals
@@ -34,7 +34,7 @@ SHARED_LIBS +=  Qt5EglFSDeviceIntegration    1.0 # 5.15
 SHARED_LIBS +=  Qt5EglFsKmsSupport           1.0 # 5.15
 SHARED_LIBS +=  Qt5OpenGLExtensions          0.0 # 5.15
 SHARED_LIBS +=  Qt5XcbQpa                    1.0 # 5.15
-
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb Xext atk-1.0
 WANTLIB-main += c cairo cairo-gobject crypto cups dbus-1 double-conversion
 WANTLIB-main += drm execinfo fontconfig freetype gbm gdk-3 gdk_pixbuf-2.0
