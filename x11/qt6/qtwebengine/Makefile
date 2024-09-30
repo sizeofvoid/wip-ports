@@ -63,7 +63,6 @@ LIB_DEPENDS =	archivers/minizip \
 		archivers/snappy \
 		audio/opus \
 		devel/glib2 \
-		sysutils/e2fsprogs \
 		devel/harfbuzz \
 		devel/pcre2 \
 		graphics/graphite2 \
