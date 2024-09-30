@@ -1,0 +1,12 @@
+Index: src/qml/memory/qv4stacklimits.cpp
+--- src/qml/memory/qv4stacklimits.cpp.orig
++++ src/qml/memory/qv4stacklimits.cpp
+@@ -189,7 +189,7 @@ StackProperties stackProperties()
+     // the logical top of the stack.
+ 
+     stack_t ss;
+-    rc = pthread_stackseg_np(pthread_self, &ss);
++    int rc = pthread_stackseg_np(pthread_self(), &ss);
+ #if Q_STACK_GROWTH_DIRECTION < 0
+     return createStackProperties(ss.ss_sp);
+ #else
