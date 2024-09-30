@@ -47,12 +47,12 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5WebChannel Qt5Widgets Qt5Xml
 WANTLIB += X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xi Xrandr
-WANTLIB += Xrender Xtst c cbor crypto cups dbus-1 drm event execinfo
-WANTLIB += expat fido2 fontconfig freetype gbm glib-2.0 graphite2
-WANTLIB += harfbuzz harfbuzz-subset intl jpeg kvm lcms2 m minizip
-WANTLIB += nspr4 nss3 nssutil3 opus pcre2-8 plc4 plds4 png sharpyuv
-WANTLIB += smime3 snappy sndio usbhid util vpx webp webpdemux
-WANTLIB += webpmux xcb xkbcommon xml2 xslt z lzma
+WANTLIB += Xrender Xtst c cbor crypto cups dbus-1 event execinfo
+WANTLIB += expat fido2 fontconfig freetype glib-2.0 graphite2
+WANTLIB += harfbuzz harfbuzz-subset intl jpeg kvm lcms2 lzma m
+WANTLIB += minizip nspr4 nss3 nssutil3 opus pcre2-8 plc4 plds4
+WANTLIB += png sharpyuv smime3 snappy sndio usbhid util vpx webp
+WANTLIB += webpdemux webpmux xcb xkbcommon xml2 xslt z
 
 # BSD-like, patents
 PERMIT_PACKAGE =	Yes
