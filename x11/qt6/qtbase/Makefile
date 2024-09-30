@@ -94,6 +94,7 @@ LIB_DEPENDS-psql =	${BASE_PKGPATH},-main \
 LIB_DEPENDS-psql +=	${MODGCC4_CPPLIBDEP}
 
 BUILD_DEPENDS =		graphics/vulkan-loader \
+			wayland/wayland-protocols \
 			x11/gnome/at-spi2-core
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
@@ -131,6 +132,8 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DFEATURE_libproxy=ON \
 			-DFEATURE_dtls=OFF
 
+# qt6/qtwayland depends on Qt6Gui wayland support
+CONFIGURE_ARGS +=	-DFEATURE_wayland=ON
 # TODO
 #CONFIGURE_ARGS +=	-DQT_BUILD_TESTS=ON
 
@@ -153,6 +156,9 @@ post-install:
 	${MODPY_COMPILEALL} \
 		${PREFIX}/lib/qt6/libexec/ \
 		${PREFIX}/lib/qt6/mkspecs/features/uikit/
+
+MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib -L${LOCALBASE}/lib
+CXXFLAGS +=	-I${X11BASE}/include -I${LOCALBASE}/include
 
 .include <bsd.port.mk>
 
