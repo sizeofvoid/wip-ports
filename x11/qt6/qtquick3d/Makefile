@@ -21,8 +21,6 @@ WANTLIB += Qt6Widgets assimp c m xkbcommon z
 
 WANTLIB += lib/inotify/inotify
 
-
-
 LIB_DEPENDS =	multimedia/assimp \
 		devel/libinotify \
 		x11/qt6/qtdeclarative \
