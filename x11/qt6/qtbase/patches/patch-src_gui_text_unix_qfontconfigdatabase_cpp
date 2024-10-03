@@ -1,0 +1,13 @@
+https://bugreports.qt.io/browse/QTBUG-129617
+Index: src/gui/text/unix/qfontconfigdatabase.cpp
+--- src/gui/text/unix/qfontconfigdatabase.cpp.orig
++++ src/gui/text/unix/qfontconfigdatabase.cpp
+@@ -580,7 +580,7 @@ void QFontconfigDatabase::populateFontDatabase()
+             ++p;
+         }
+ 
+-#ifdef FC_VARIABLE
++#if defined(FC_VARIABLE) && !defined(__OpenBSD__)
+         /* Support the named instance of Variable Fonts. */
+         FcPatternAddBool(pattern, FC_VARIABLE, FcFalse);
+ #endif
