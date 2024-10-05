@@ -8,18 +8,15 @@ USE_NOBTCFI =		Yes
 
 QT5NAME =		QtWebEngine
 KDE_COMMIT =		17fd3176988586168bee8654008a097a5f23ec1d
-KDE_VERSION =		0
+KDE_VERSION =		1
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
-DIST_VERSION =		${QT5_WEBENGINE_VERSION}
-QT5_VERSION =		${QT5_WEBENGINE_VERSION}
 
-PKGNAME =		${DISTNAME:C/-everywhere-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
 
 # https://invent.kde.org/qt/qt/qtwebengine-chromium/-/commits/87-based?ref_type=heads
 DIST_TUPLE +=	kde qt qt/qtwebengine-chromium \
-		1b22efb38915ba89f3fc532c02808649c9672a1a src/3rdparty
+		d11884ddfc41ebc812db74cac4a6bfea7fd0990d src/3rdparty
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
@@ -145,7 +142,7 @@ pre-build:
 pre-fake:
 # Fix version mismatches for CMake
 .for module in WebEngine WebEngineCore WebEngineWidgets
-	sed -i 's,${QT5_WEBENGINE_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},${VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},g' \
+	sed -i 's,${QT5_WEBENGINE_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},${QT5_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},g' \
 		${WRKBUILD}/lib/cmake/Qt5${module}/Qt5${module}Config.cmake
 .endfor
 
