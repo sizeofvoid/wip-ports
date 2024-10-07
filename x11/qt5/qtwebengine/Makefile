@@ -12,7 +12,7 @@ KDE_VERSION =		1
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
-
+QT5_VERSION =		${QT5_WEBENGINE_VERSION}
 
 # https://invent.kde.org/qt/qt/qtwebengine-chromium/-/commits/87-based?ref_type=heads
 DIST_TUPLE +=	kde qt qt/qtwebengine-chromium \
@@ -32,10 +32,8 @@ CATEGORIES =		www
 SHARED_LIBS +=  Qt5WebEngine              3.0 # 5.15
 SHARED_LIBS +=  Qt5WebEngineCore          3.0 # 5.15
 SHARED_LIBS +=  Qt5WebEngineWidgets       3.0 # 5.15
-SHARED_LIBS +=  Qt5Pdf                    0.0 # 5.15
-SHARED_LIBS +=  Qt5PdfWidgets             0.0 # 5.15
 
-# XXX libQt5Pdf.so.1.0: undefined symbol FPDF_InitLibrary
+# XXX TODO
 # libQt5Pdf needs to link explicitly against libQt5WebEngineCore?
 #SHARED_LIBS +=  Qt5Pdf                    1.0 # 5.15
 #SHARED_LIBS +=  Qt5PdfWidgets             1.0 # 5.15
@@ -44,8 +42,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Designer Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5QuickWidgets Qt5WebChannel Qt5Widgets Qt5Xml
 WANTLIB += X11 X11-xcb Xcomposite Xdamage Xext Xfixes Xi Xrandr
-WANTLIB += Xrender Xtst c cbor crypto cups dbus-1 event execinfo
-WANTLIB += expat fido2 fontconfig freetype glib-2.0 graphite2
+WANTLIB += Xrender Xtst c cbor crypto cups dbus-1 drm event execinfo
+WANTLIB += expat fido2 fontconfig freetype gbm glib-2.0 graphite2
 WANTLIB += harfbuzz harfbuzz-subset intl jpeg kvm lcms2 lzma m
 WANTLIB += minizip nspr4 nss3 nssutil3 opus pcre2-8 plc4 plds4
 WANTLIB += png sharpyuv smime3 snappy sndio usbhid util vpx webp
@@ -91,7 +89,6 @@ LIB_DEPENDS =	archivers/minizip \
 		x11/xkbcommon
 
 GN_SYSTEM_LIBS=	libevent libxml libxslt
-
 
 CONFIGURE_ENV =		NINJAFLAGS="-j${MAKE_JOBS}" \
 			NINJA_PATH="${LOCALBASE}/bin/ninja" \
@@ -142,8 +139,9 @@ pre-build:
 pre-fake:
 # Fix version mismatches for CMake
 .for module in WebEngine WebEngineCore WebEngineWidgets
-	sed -i 's,${QT5_WEBENGINE_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},${QT5_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},g' \
+	sed -i 's,${QT5_WEBENGINE_VERSION} $${_Qt5${module}_FIND_VERSION_EXACT},5.15.14 $${_Qt5${module}_FIND_VERSION_EXACT},g' \
 		${WRKBUILD}/lib/cmake/Qt5${module}/Qt5${module}Config.cmake
 .endfor
+
 
 .include <bsd.port.mk>
