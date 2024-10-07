@@ -1,7 +1,7 @@
 QT5NAME =		QtWebChannel
 COMMENT-main =		Qt5 seamless HTML/JavaScript integration
 
-KDE_COMMIT =		fca83088ef430f96257d2014e77d08bd350259af
+KDE_COMMIT =		ad85920e02049bf7ba06366046498e8366a98e8e
 KDE_VERSION =		3
 
 SHARED_LIBS +=  Qt5WebChannel            2.1 # 5.9
