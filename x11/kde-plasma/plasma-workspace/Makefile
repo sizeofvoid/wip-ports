@@ -141,7 +141,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kde-puffy.svgz \
 		${PREFIX}/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/
-	${MODPY_COMPILEALL} \
-		${PREFIX}/share/kconf_update/migrate-calendar-to-plugin-id.py
+#	${MODPY_COMPILEALL} \
+#		${PREFIX}/share/kconf_update/migrate-calendar-to-plugin-id.py
 
 .include <bsd.port.mk>
