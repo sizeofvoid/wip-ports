@@ -5,8 +5,9 @@ DISTNAME =	konqueror-${VERSION}
 CATEGORIES =	www
 
 SHARED_LIBS +=	KF6Konq                   0.0 # 0.0
-SHARED_LIBS +=  konquerorprivate     1.1 # 5.97.0
-SHARED_LIBS +=  konqsidebarplugin    1.1 # 20.08.0
+SHARED_LIBS +=  konquerorprivate          1.1 # 5.97.0
+SHARED_LIBS +=  konqsidebarplugin         1.1 # 20.08.0
+SHARED_LIBS +=	KF6KonqSettings           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
