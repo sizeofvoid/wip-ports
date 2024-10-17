@@ -2,8 +2,8 @@ COMMENT =	file compare utility for KDE
 DISTNAME =	kompare-${VERSION}
 CATEGORIES =	textproc devel
 
-SHARED_LIBS +=  komparedialogpages  3.0 # 0.0
-SHARED_LIBS +=  kompareinterface    3.0 # 0.0
+SHARED_LIBS +=  komparedialogpages  4.0 # 0.0
+SHARED_LIBS +=  kompareinterface    4.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

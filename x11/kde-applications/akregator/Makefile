@@ -7,7 +7,7 @@ CATEGORIES =	net www
 HOMEPAGE =	https://apps.kde.org/akregator
 
 SHARED_LIBS +=  akregatorinterfaces       2.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          3.1 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          4.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
