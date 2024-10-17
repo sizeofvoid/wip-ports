@@ -2,7 +2,7 @@ COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
 
-SHARED_LIBS +=  krdccore               3.0 # 5.0
+SHARED_LIBS +=  krdccore               3.1 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 

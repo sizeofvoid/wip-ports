@@ -5,7 +5,7 @@ CATEGORIES =	x11
 
 HOMEPAGE =	https://apps.kde.org/dolphin
 
-SHARED_LIBS +=  dolphinprivate            10.0 # 5.0
+SHARED_LIBS +=  dolphinprivate            11.0 # 5.0
 SHARED_LIBS +=  dolphinvcs                2.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6BookmarksWidgets

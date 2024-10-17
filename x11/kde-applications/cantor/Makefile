@@ -7,7 +7,7 @@ COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
 
-SHARED_LIBS +=  cantorlibs                54.1 # 17.08
+SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 
 MODKDE_KF5 = 	Yes
 
