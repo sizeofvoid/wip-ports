@@ -26,7 +26,7 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR} \
 		devel/py-setuptools${MODPY_FLAVOR}
