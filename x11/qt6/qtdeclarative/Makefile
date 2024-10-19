@@ -45,8 +45,8 @@ SHARED_LIBS +=	Qt6QuickControls2Universal 0.0 # 0.0
 SHARED_LIBS +=	Qt6QuickControls2UniversalStyleImpl 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6JsonRpc Qt6LanguageServer
-WANTLIB += Qt6Network Qt6OpenGL Qt6Sql Qt6Test Qt6Widgets c m
-WANTLIB += xkbcommon
+WANTLIB += Qt6Network Qt6OpenGL Qt6Sql Qt6Svg Qt6Test Qt6Widgets
+WANTLIB += c m xkbcommon
 
 MODULES =	lang/python
 CONFIGURE_STYLE = cmake
@@ -64,6 +64,7 @@ BUILD_DEPENDS =	x11/qt6/qtshadertools \
 
 LIB_DEPENDS =	x11/qt6/qtlanguageserver \
 		x11/qt6/qtbase \
+		x11/qt6/qtsvg \
 		x11/xkbcommon
 
 pre-configure:
