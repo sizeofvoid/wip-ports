@@ -10,6 +10,8 @@ WANTLIB += xkbcommon z
 
 BUILD_DEPENDS =	graphics/vulkan-loader
 
-LIB_DEPENDS =	x11/xkbcommon
+MODQT6_DEPS =	No
+LIB_DEPENDS =	x11/xkbcommon \
+		${MODQT6_LIB_DEPENDS}
 
 .include <bsd.port.mk>
