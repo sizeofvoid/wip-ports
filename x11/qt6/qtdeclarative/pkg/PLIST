@@ -246,10 +246,7 @@ include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arraybuffer_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arraydata_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arrayiterator_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4arrayobject_p.h
-include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4assemblercommon_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4atomics_p.h
-include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4baselineassembler_p.h
-include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4baselinejit_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4booleanobject_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4bytecodegenerator_p.h
 include/X11/qt6/QtQml/${VERSION}/QtQml/private/qv4bytecodehandler_p.h
@@ -2292,6 +2289,15 @@ lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateDependencies.cmake
 lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateTargets.cmake
 lib/cmake/Qt6QuickTestUtilsPrivate/Qt6QuickTestUtilsPrivateVersionlessTargets.cmake
+lib/cmake/Qt6QuickTools/
+lib/cmake/Qt6QuickTools/Qt6QuickToolsAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsConfig.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersion.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsConfigVersionImpl.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsDependencies.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QuickTools/Qt6QuickToolsTargets.cmake
+lib/cmake/Qt6QuickTools/Qt6QuickToolsVersionlessTargets.cmake
 lib/cmake/Qt6QuickWidgets/
 lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsConfig.cmake
@@ -2446,6 +2452,7 @@ lib/pkgconfig/Qt6QuickWidgets.pc
 @bin lib/qt6/bin/qmltc
 @bin lib/qt6/bin/qmltestrunner
 @bin lib/qt6/bin/qmltime
+@bin lib/qt6/bin/svgtoqml
 @bin lib/qt6/libexec/qmlcachegen
 @bin lib/qt6/libexec/qmlimportscanner
 @bin lib/qt6/libexec/qmljsrootgen
