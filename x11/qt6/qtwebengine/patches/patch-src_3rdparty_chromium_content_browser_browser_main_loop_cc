@@ -27,8 +27,8 @@ Index: src/3rdparty/chromium/content/browser/browser_main_loop.cc
  #endif
  
    // GLib's spawning of new processes is buggy, so it's important that at this
-@@ -581,7 +593,7 @@ int BrowserMainLoop::EarlyInitialization() {
-   base::PlatformThread::SetCurrentThreadType(base::ThreadType::kCompositing);
+@@ -584,7 +596,7 @@ int BrowserMainLoop::EarlyInitialization() {
+           features::kBrowserUseCompositingThreadPriority));
  
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_ANDROID)
