@@ -238,8 +238,6 @@ lib/cmake/Qt6ProtobufWellKnownTypes/Qt6ProtobufWellKnownTypesDependencies.cmake
 lib/cmake/Qt6ProtobufWellKnownTypes/Qt6ProtobufWellKnownTypesTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ProtobufWellKnownTypes/Qt6ProtobufWellKnownTypesTargets.cmake
 lib/cmake/Qt6ProtobufWellKnownTypes/Qt6ProtobufWellKnownTypesVersionlessTargets.cmake
-lib/cmake/Qt6Qml/
-lib/cmake/Qt6Qml/QmlPlugins/
 lib/cmake/Qt6Qml/QmlPlugins/Qt6grpcquickpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6grpcquickpluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6grpcquickpluginConfigVersion.cmake
@@ -290,7 +288,6 @@ lib/qt6/modules/Protobuf.json
 lib/qt6/modules/ProtobufQtCoreTypes.json
 lib/qt6/modules/ProtobufQtGuiTypes.json
 lib/qt6/modules/ProtobufWellKnownTypes.json
-lib/qt6/qml/
 lib/qt6/qml/QtGrpc/
 @so lib/qt6/qml/QtGrpc/libgrpcquickplugin.so
 lib/qt6/qml/QtGrpc/plugins.qmltypes
