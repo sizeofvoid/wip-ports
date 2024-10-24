@@ -12,7 +12,7 @@ WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets c m
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
 
-BUILD_DEPENDS =	devel/kf6/kpackage
+BUILD_DEPENDS =	devel/kf5/kpackage
 
 LIB_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/kitemmodels \

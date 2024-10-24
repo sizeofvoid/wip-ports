@@ -15,9 +15,9 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
-WANTLIB += KF6GuiAddons KF6I18n Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6Widgets m
+WANTLIB += KF6GlobalAccel KF6GuiAddons KF6I18n Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6Widgets m
 
 SITES =			${SITE_KDE:=stable/kirigami-addons/}
 EXTRACT_SUFX =		.tar.xz
@@ -33,6 +33,7 @@ RUN_DEPENDS =		devel/kf6/qqc2-desktop-style \
 LIB_DEPENDS =		devel/kf6/ki18n \
 			devel/kf6/kconfig \
 			devel/kf6/kcoreaddons \
+			devel/kf6/kglobalaccel \
 			devel/kf6/kguiaddons \
 			x11/qt6/qtdeclarative
 
