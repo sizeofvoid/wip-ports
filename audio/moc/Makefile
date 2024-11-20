@@ -1,3 +1,4 @@
+BROKEN =	Depends on ffmpeg4
 COMMENT =	console audio player
 DISTNAME =	moc-2.5.2
 CATEGORIES =	audio
