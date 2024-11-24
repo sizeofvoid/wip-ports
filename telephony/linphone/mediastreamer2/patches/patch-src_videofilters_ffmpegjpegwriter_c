@@ -8,7 +8,7 @@ Index: src/videofilters/ffmpegjpegwriter.c
  
  		av_frame_unref(s->pict);
 -		avpicture_fill((AVPicture *)s->pict, (uint8_t *)jpegm->b_rptr, avctx->pix_fmt, avctx->width, avctx->height);
-+    av_image_fill_arrays(s->pict->data,s->pict->linesize,(uint8_t*)jpegm->b_rptr,avctx->pix_fmt,avctx->width,avctx->height, 1);
++		av_image_fill_arrays(s->pict->data,s->pict->linesize,(uint8_t*)jpegm->b_rptr,avctx->pix_fmt,avctx->width,avctx->height, 1);
  		packet.data = comp_buf;
  		packet.size = (int)comp_buf_sz;
  		packet.pts = frame_ts;

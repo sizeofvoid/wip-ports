@@ -27,20 +27,20 @@ Index: src/utils/ffmpeg-priv.c
 -	return 0;
 -}
 +    *got_packet_ptr = 0;
-+ 
-+    ret = avcodec_send_frame(avctx, frame);
-+    if (ret < 0)
-+        return ret;
  
 -AVCodecContext *avcodec_alloc_context3(AVCodec *codec) {
 -	return avcodec_alloc_context();
 -}
++    ret = avcodec_send_frame(avctx, frame);
++    if (ret < 0)
++        return ret;
+ 
 +    ret = avcodec_receive_packet(avctx, avpkt);
 +    if (!ret)
 +        *got_packet_ptr = 1;
 +    if (ret == AVERROR(EAGAIN))
 +        return 0;
- 
++
 +    return ret;
 +}
  #endif

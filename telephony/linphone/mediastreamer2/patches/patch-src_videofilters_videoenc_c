@@ -32,7 +32,7 @@ Index: src/videofilters/videoenc.c
  	/* convert image if necessary */
  	av_frame_unref(s->pict);
 -	avpicture_fill((AVPicture *)s->pict, yuv.planes[0], c->pix_fmt, c->width, c->height);
-+  av_image_fill_arrays(s->pict->data,s->pict->linesize,yuv.planes[0],c->pix_fmt,c->width,c->height,1);
++	av_image_fill_arrays(s->pict->data,s->pict->linesize,yuv.planes[0],c->pix_fmt,c->width,c->height,1);
  
  	/* timestamp used by ffmpeg, unset here */
  	s->pict->pts = AV_NOPTS_VALUE;
