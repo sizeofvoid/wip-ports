@@ -6,7 +6,7 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			8.0.4
+V =			8.0.6
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
