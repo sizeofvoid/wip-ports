@@ -1,15 +1,13 @@
 COMMENT =	perl-compatible regular expression library, version 2
 
-DISTNAME =	pcre2-10.37
+DISTNAME =	pcre2-10.44
 
-SHARED_LIBS +=  pcre2-16                  0.5 # 10.37
-SHARED_LIBS +=  pcre2-32                  0.5 # 10.37
-SHARED_LIBS +=  pcre2-8                   0.6 # 10.37
+SHARED_LIBS +=  pcre2-16                  0.6 # 10.44
+SHARED_LIBS +=  pcre2-32                  0.6 # 10.44
+SHARED_LIBS +=  pcre2-8                   0.7 # 10.44
 SHARED_LIBS +=  pcre2-posix               1.0 # 2.3
 
 CATEGORIES =	devel
-
-REVISION =	2
 
 SITES = 	https://github.com/PCRE2Project/pcre2/releases/download/${DISTNAME}/ \
 		https://ftp.pcre.org/pub/pcre/ \
