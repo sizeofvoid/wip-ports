@@ -50,6 +50,7 @@ share/doc/qt6/global/externalsites/qtcreator.qdoc
 share/doc/qt6/global/externalsites/qtdesignstudio.qdoc
 share/doc/qt6/global/externalsites/rfc.qdoc
 share/doc/qt6/global/fileextensions.qdocconf
+share/doc/qt6/global/grid.qdocconf
 share/doc/qt6/global/html-config.qdocconf
 share/doc/qt6/global/html-footer-online.qdocconf
 share/doc/qt6/global/html-footer.qdocconf

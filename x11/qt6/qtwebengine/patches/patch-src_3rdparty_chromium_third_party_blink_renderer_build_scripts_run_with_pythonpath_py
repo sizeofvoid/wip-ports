@@ -5,7 +5,7 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/build/scripts/run_with_p
          existing_pp = (
              os.pathsep + env['PYTHONPATH']) if 'PYTHONPATH' in env else ''
          env['PYTHONPATH'] = os.pathsep.join(python_paths) + existing_pp
-+    env['LD_LIBRARY_PATH'] = "${WRKSRC}/out/Release"
++    env['LD_LIBRARY_PATH'] = "/usr/ports/pobj/qt6-qtwebengine-6.8.1/qtwebengine-everywhere-src-6.8.1/out/Release"
      sys.exit(subprocess.call([sys.executable] + args, env=env))
  
  
