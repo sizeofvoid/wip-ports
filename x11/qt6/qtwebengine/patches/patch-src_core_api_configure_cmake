@@ -9,9 +9,9 @@ Index: src/core/api/configure.cmake
          pkg_check_modules(POPPLER_CPP poppler-cpp IMPORTED_TARGET)
          pkg_check_modules(GBM gbm)
          pkg_check_modules(LIBVA libva>=1.14)
-@@ -90,6 +91,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
-     CONDITION TARGET Qt::PrintSupport AND QT_FEATURE_printer AND
-     (CUPS_FOUND OR WIN32)
+@@ -87,6 +88,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
+     AUTODETECT NOT QT_FEATURE_webengine_embedded_build
+     CONDITION TARGET Qt::PrintSupport AND QT_FEATURE_printer
  )
 +qt_feature("webengine-system-sndio" PRIVATE
 +    LABEL "Use sndio"
@@ -21,7 +21,7 @@ Index: src/core/api/configure.cmake
  qt_feature("webengine-pepper-plugins" PRIVATE
      LABEL "Pepper Plugins"
      PURPOSE "Enables use of Pepper plugins."
-@@ -222,7 +228,10 @@ qt_configure_add_summary_entry(
+@@ -219,7 +225,10 @@ qt_configure_add_summary_entry(
  )
  qt_configure_add_summary_entry(
      ARGS "webengine-system-pulseaudio"
