@@ -10,7 +10,7 @@ Index: cmake/Functions.cmake
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -671,6 +671,8 @@ function(get_gn_os result)
+@@ -672,6 +672,8 @@ function(get_gn_os result)
          set(${result} "win" PARENT_SCOPE)
      elseif(LINUX)
          set(${result} "linux" PARENT_SCOPE)
@@ -19,7 +19,7 @@ Index: cmake/Functions.cmake
      elseif(MACOS)
          set(${result} "mac" PARENT_SCOPE)
      elseif(IOS)
-@@ -894,7 +896,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -895,7 +897,7 @@ macro(append_compiler_linker_sdk_setup)
      extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
      extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
      extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
@@ -28,7 +28,7 @@ Index: cmake/Functions.cmake
  
      if(CLANG)
          if(MACOS)
-@@ -1324,7 +1326,7 @@ endfunction()
+@@ -1331,7 +1333,7 @@ endfunction()
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -37,7 +37,7 @@ Index: cmake/Functions.cmake
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1333,7 +1335,7 @@ function(check_for_ulimit)
+@@ -1340,7 +1342,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh
