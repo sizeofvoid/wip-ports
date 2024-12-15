@@ -7,7 +7,6 @@
 # Patched with security patches up to Chromium version: 131.0.6778.70
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
-BROKEN-i386 =		"ld.lld: error: relocation R_386_32 cannot be used against symbol 'ff_pw_16'; recompile with -fPIC", etc.
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
@@ -93,6 +92,7 @@ LIB_DEPENDS =	archivers/minizip \
 		x11/qt6/qtpositioning \
 		x11/qt6/qttools \
 		x11/qt6/qtwebchannel \
+		x11/qt6/qthttpserver \
 		x11/xkbcommon
 
 CONFIGURE_ENV =	LC_ALL=en_US.UTF-8 \
@@ -119,6 +119,7 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 			-DQT_FEATURE_webengine_system_sndio=ON \
 			-DQT_FEATURE_webengine_system_opus=ON \
 			-DQT_FEATURE_webengine_system_libwebp=ON \
+			-DQT_FEATURE_webengine_system_harfbuzz=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
 			-DQT_FEATURE_webengine_system_libpng=ON \
 			-DQT_FEATURE_webengine_system_zlib=ON
@@ -133,13 +134,13 @@ GN_ARGS=	enable_nacl=false \
 		enable_log_error_not_reached=true \
 		enable_rust=false \
 		use_kerberos=false \
-		use_cups=true \
 		use_sndio=true \
+		use_cups=true \
 		use_system_libdrm=true \
 		use_system_libjpeg=true \
 		use_system_harfbuzz=true \
 		use_system_freetype=false \
-		icu_use_data_file=false \
+		icu_use_data_file=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -156,14 +157,14 @@ GN_ARGS=	enable_nacl=false \
 		use_udev=true \
 		v8_enable_cet_ibt=true
 
-CONFIGURE_ARGS +=	-DgnArgArg="${GN_ARGS}"
+GN_SYSTEM_LIBS =        fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
 LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
 
-GN_SYSTEM_LIBS =        fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
+CONFIGURE_ARGS +=	-DgnArgArg="${GN_ARGS}"
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
