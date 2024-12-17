@@ -8,8 +8,7 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6I18n KF6SonnetCore KF6SonnetUi
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Multimedia Qt6Network
 WANTLIB += Qt6TextToSpeech Qt6Widgets m
 
-BUILD_DEPENDS =	devel/gettext,-tools \
-		x11/qt6/qtwebengine
+BUILD_DEPENDS =	devel/gettext,-tools
 
 LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/kcompletion>=${MODKF6_VERSION} \
