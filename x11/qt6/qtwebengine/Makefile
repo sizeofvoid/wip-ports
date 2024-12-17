@@ -119,11 +119,10 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 			-DQT_FEATURE_webengine_system_sndio=ON \
 			-DQT_FEATURE_webengine_system_opus=ON \
 			-DQT_FEATURE_webengine_system_libwebp=ON \
-			-DQT_FEATURE_webengine_system_harfbuzz=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
 			-DQT_FEATURE_webengine_system_libpng=ON \
-			-DQT_FEATURE_webengine-system-freetype=ON \
 			-DQT_FEATURE_webengine_system_zlib=ON
+
 
 GN_ARGS=	enable_nacl=false \
 		is_official_build=true \
@@ -137,11 +136,11 @@ GN_ARGS=	enable_nacl=false \
 		use_kerberos=false \
 		use_sndio=true \
 		use_cups=true \
+		icu_use_data_file=true \
 		use_system_libdrm=true \
 		use_system_libjpeg=true \
 		use_system_harfbuzz=true \
-		use_system_freetype=false \
-		icu_use_data_file=true \
+		use_system_icu=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
@@ -165,7 +164,7 @@ LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
 
-#CONFIGURE_ARGS +=	-DgnArgArg="${GN_ARGS}"
+CONFIGURE_ARGS +=	-DgnArgArg="${GN_ARGS}"
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
@@ -173,24 +172,9 @@ SUBST_VARS +=	WRKSRC WRKDIR
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-.if ${MACHINE_ARCH} == "aarch64"
-PKG_ARGS+=	-Dswiftshader=0
-FFMPEG_TARGET=	arm64
-.elif ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/nasm
-PKG_ARGS+=	-Dswiftshader=1
-FFMPEG_TARGET=	x64
-.elif ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	devel/nasm
-PKG_ARGS+=	-Dswiftshader=1
-FFMPEG_TARGET=	ia32
-.else
-PKG_ARGS+=	-Dswiftshader=0
 .endif
-
-FFMPEG_BRAND=	Chrome
-FFMPEG_BDIR=	${CHROMESRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
-FFMPEG_CDIR=	${CHROMESRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -202,7 +186,7 @@ pre-configure:
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
-	@cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
+	cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 
 .include <bsd.port.mk>
