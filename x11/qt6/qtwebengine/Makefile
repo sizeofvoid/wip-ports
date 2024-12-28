@@ -44,7 +44,7 @@ WANTLIB += xml2 xshmfence xslt z
 
 MODULES =	lang/clang lang/python
 
-MODCLANG_VERSION=	17
+MODCLANG_VERSION=	18
 MODPY_RUNDEP=		No
 
 COMPILER=		ports-clang
@@ -121,41 +121,7 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 			-DQT_FEATURE_webengine_system_libwebp=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
 			-DQT_FEATURE_webengine_system_libpng=ON \
-			-DQT_FEATURE_webengine_system_zlib=ON
-
-
-GN_ARGS=	enable_nacl=false \
-		is_official_build=true \
-		is_debug=false \
-		is_cfi=false \
-		optimize_webui=true \
-		enable_remoting=false \
-		enable_hangout_services_extension=true \
-		enable_log_error_not_reached=true \
-		enable_rust=false \
-		use_kerberos=false \
-		use_sndio=true \
-		use_cups=true \
-		icu_use_data_file=true \
-		use_system_libdrm=true \
-		use_system_libjpeg=true \
-		use_system_harfbuzz=true \
-		use_system_icu=true \
-		is_clang=true \
-		use_sysroot=false \
-		treat_warnings_as_errors=false \
-		clang_use_chrome_plugins=false \
-		use_allocator_shim=false \
-		use_partition_alloc=true \
-		use_partition_alloc_as_malloc=false \
-		enable_backup_ref_ptr_support=false \
-		disable_fieldtrial_testing_config=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		fatal_linker_warnings=false \
-		use_custom_libcxx=true \
-		use_custom_libunwind=true \
-		use_udev=true \
-		v8_enable_cet_ibt=true
+			-DQT_FEATURE_webengine_system_zlib=OFF
 
 GN_SYSTEM_LIBS=	fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
 
@@ -163,8 +129,6 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
 LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
-
-CONFIGURE_ARGS +=	-DgnArgArg="${GN_ARGS}"
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
@@ -188,5 +152,6 @@ pre-configure:
 		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 	cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-
+	cp /usr/include/c++/v1/__config_site \
+		${CHROMESRC}/third_party/libc++/src/include/__config_site
 .include <bsd.port.mk>
