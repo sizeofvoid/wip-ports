@@ -6,7 +6,7 @@ Index: cmake/Functions.cmake
      set(ldir_rsp "${buildDir}/${ninjaTarget}_ldir.rsp")
      set_target_properties(${cmakeTarget} PROPERTIES STATIC_LIBRARY_OPTIONS "@${objects_rsp}")
 -    if(LINUX OR ANDROID)
-+    if(UNIX OR ANDROID)
++    if(UNIX OR ANDROID OR UNIX)
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
@@ -15,11 +15,30 @@ Index: cmake/Functions.cmake
      elseif(LINUX)
          set(${result} "linux" PARENT_SCOPE)
 +    elseif(OPENBSD)
-+        set(${result} "linux" PARENT_SCOPE)
++        set(${result} "openbsd" PARENT_SCOPE)
      elseif(MACOS)
          set(${result} "mac" PARENT_SCOPE)
      elseif(IOS)
-@@ -895,7 +897,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -817,16 +819,13 @@ endmacro()
+ macro(append_build_type_setup)
+     list(APPEND gnArgArg
+         is_qtwebengine=true
+-        init_stack_vars=false
+-        is_component_build=false
+-        is_shared=true
+         use_sysroot=false
+-        forbid_non_component_debug_builds=false
+         treat_warnings_as_errors=false
+         use_allocator_shim=false
+         use_partition_alloc=true
+         use_partition_alloc_as_malloc=false
+-        use_custom_libcxx=false
++        use_custom_libcxx=true
++        use_custom_libunwind=true
+         enable_rust=false # We do not yet support rust
+     )
+     if(${config} STREQUAL "Debug")
+@@ -895,7 +894,7 @@ macro(append_compiler_linker_sdk_setup)
      extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
      extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
      extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
@@ -28,7 +47,57 @@ Index: cmake/Functions.cmake
  
      if(CLANG)
          if(MACOS)
-@@ -1331,7 +1333,7 @@ endfunction()
+@@ -910,13 +909,12 @@ macro(append_compiler_linker_sdk_setup)
+ 
+         string(REGEX MATCH "[0-9]+" clangVersion ${CMAKE_CXX_COMPILER_VERSION})
+         list(APPEND gnArgArg
+-            clang_base_path="${clangBasePath}"
+             clang_use_chrome_plugins=false
+             clang_version=${clangVersion}
+             fatal_linker_warnings=false
+         )
+ 
+-        if(MACOS)
++        if(APPLE)
+             list(APPEND gnArgArg
+                 use_system_xcode=true
+                 mac_deployment_target="${CMAKE_OSX_DEPLOYMENT_TARGET}"
+@@ -939,7 +937,7 @@ macro(append_compiler_linker_sdk_setup)
+                 use_libcxx=true
+             )
+         endif()
+-        if(DEFINED QT_FEATURE_stdlib_libcpp AND LINUX)
++        if(DEFINED QT_FEATURE_stdlib_libcpp AND UNIX)
+             extend_gn_list(gnArgArg ARGS use_libcxx
+                 CONDITION QT_FEATURE_stdlib_libcpp
+             )
+@@ -957,7 +955,6 @@ macro(append_compiler_linker_sdk_setup)
+             get_filename_component(clangBasePath ${CMAKE_LINKER} DIRECTORY)
+             get_filename_component(clangBasePath ${clangBasePath} DIRECTORY)
+             list(APPEND gnArgArg
+-                clang_base_path="${clangBasePath}"
+                 fatal_linker_warnings=false
+             )
+         endif()
+@@ -977,7 +974,7 @@ macro(append_compiler_linker_sdk_setup)
+         )
+     endif()
+     get_gn_arch(cpu ${TEST_architecture_arch})
+-    if(LINUX AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
++    if(UNIX AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
+ 
+         extend_gn_list_cflag(gnArgArg
+             ARG arm_tune
+@@ -1067,7 +1064,7 @@ macro(append_toolchain_setup)
+                 host_cpu="${cpu}"
+             )
+         endif()
+-    elseif(LINUX)
++    elseif(UNIX)
+         get_gn_arch(cpu ${TEST_architecture_arch})
+         list(APPEND gnArgArg
+             custom_toolchain="${buildDir}/target_toolchain:target"
+@@ -1331,7 +1328,7 @@ endfunction()
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -37,7 +106,7 @@ Index: cmake/Functions.cmake
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1340,7 +1342,7 @@ function(check_for_ulimit)
+@@ -1340,7 +1337,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh
