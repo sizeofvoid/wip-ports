@@ -6,31 +6,16 @@ Index: src/pdf/CMakeLists.txt
  ##
  
 -if(LINUX OR MINGW OR ANDROID)
-+if(UNIX OR MINGW OR ANDROID)
++if(LINUX OR MINGW OR ANDROID OR FREEBSD)
      setup_toolchains()
  endif()
  
-@@ -116,10 +116,10 @@ foreach(arch ${archs})
- 
-         list(APPEND gnArgArg
-           qtwebengine_target="${buildDir}/${config}/${arch}:QtPdf"
--          qt_libpng_config="${buildDir}/${config}/${arch}:qt_libpng_config"
--          qt_libjpeg_config="${buildDir}/${config}/${arch}:qt_libjpeg_config"
--          qt_harfbuzz_config="${buildDir}/${config}/${arch}:qt_harfbuzz_config"
--          qt_freetype_config="${buildDir}/${config}/${arch}:qt_freetype_config"
-+          #qt_libpng_config="${buildDir}/${config}/${arch}:qt_libpng_config"
-+          #qt_libjpeg_config="${buildDir}/${config}/${arch}:qt_libjpeg_config"
-+          #qt_harfbuzz_config="${buildDir}/${config}/${arch}:qt_harfbuzz_config"
-+          #qt_freetype_config="${buildDir}/${config}/${arch}:qt_freetype_config"
-           enable_swiftshader=false
-           enable_swiftshader_vulkan=false
-           angle_enable_swiftshader=false
 @@ -138,7 +138,7 @@ foreach(arch ${archs})
            v8_enable_webassembly=false
          )
  
 -        if(LINUX OR ANDROID)
-+        if(UNIX OR ANDROID)
++        if(LINUX OR ANDROID OR FREEBSD)
              list(APPEND gnArgArg
                  is_cfi=false
                  ozone_auto_platforms=false

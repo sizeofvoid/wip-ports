@@ -6,34 +6,45 @@ Index: src/core/CMakeLists.txt
  ##
  
 -if(LINUX)
-+if(UNIX)
++if(LINUX OR OPENBSD)
      setup_toolchains()
  endif()
  
-@@ -436,13 +436,12 @@ foreach(arch ${archs})
+@@ -200,7 +200,7 @@ foreach(arch ${archs})
+                 accessibility_activation_observer.cpp accessibility_activation_observer.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX OR WIN32
++        extend_gn_target(${buildGn} CONDITION LINUX OR OPENBSD OR WIN32
+             SOURCES
+                 compositor/content_gpu_client_qt.cpp compositor/content_gpu_client_qt.h
+                 ozone/gl_context_qt.cpp ozone/gl_context_qt.h
+@@ -213,7 +213,7 @@ foreach(arch ${archs})
+                 ozone/gl_surface_wgl_qt.cpp ozone/gl_surface_wgl_qt.h
+         )
+ 
+-        extend_gn_target(${buildGn} CONDITION LINUX
++        extend_gn_target(${buildGn} CONDITION LINUX OR OPENBSD
+             SOURCES
+                 ozone/gl_ozone_angle_qt.cpp ozone/gl_ozone_angle_qt.h
+                 ozone/gl_ozone_egl_qt.cpp ozone/gl_ozone_egl_qt.h
+@@ -436,7 +436,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webenginedriver
          )
  
 -        if(LINUX)
-+        if(UNIX)
++        if(LINUX OR OPENBSD)
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-                 use_qt=false # Qt5 toolkit bindings
-                 use_gio=false
--                use_bundled_fontconfig=false
-                 use_glib=false
-                 use_bluez=false
-                 use_udev=true
-@@ -509,6 +508,11 @@ foreach(arch ${archs})
-                 ARGS use_system_minigbm
-                 CONDITION QT_FEATURE_webengine_system_gbm
-             )
-+            # XXX TODO
-+            #extend_gn_list(gnArgArg
-+            #    ARGS use_sndio
-+            #    CONDITION QT_FEATURE_webengine_sndio
-+            #)
+@@ -504,6 +504,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
-                 ARGS use_vaapi
-                 CONDITION QT_FEATURE_webengine_vaapi
+                 ARGS use_pulseaudio
+                 CONDITION QT_FEATURE_webengine_system_pulseaudio
++            )
++            extend_gn_list(gnArgArg
++                ARGS use_sndio
++                CONDITION QT_FEATURE_webengine_system_sndio
+             )
+             extend_gn_list(gnArgArg
+                 ARGS use_system_minigbm
