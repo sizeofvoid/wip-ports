@@ -6,29 +6,20 @@ Index: cmake/Functions.cmake
      set(ldir_rsp "${buildDir}/${ninjaTarget}_ldir.rsp")
      set_target_properties(${cmakeTarget} PROPERTIES STATIC_LIBRARY_OPTIONS "@${objects_rsp}")
 -    if(LINUX OR ANDROID)
-+    if(UNIX OR ANDROID OR UNIX)
++    if(LINUX OR ANDROID OR OPENBSD)
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -672,6 +672,8 @@ function(get_gn_os result)
-         set(${result} "win" PARENT_SCOPE)
-     elseif(LINUX)
-         set(${result} "linux" PARENT_SCOPE)
-+    elseif(OPENBSD)
-+        set(${result} "openbsd" PARENT_SCOPE)
-     elseif(MACOS)
+@@ -676,6 +676,8 @@ function(get_gn_os result)
          set(${result} "mac" PARENT_SCOPE)
      elseif(IOS)
-@@ -817,16 +819,13 @@ endmacro()
- macro(append_build_type_setup)
-     list(APPEND gnArgArg
-         is_qtwebengine=true
--        init_stack_vars=false
--        is_component_build=false
--        is_shared=true
-         use_sysroot=false
--        forbid_non_component_debug_builds=false
-         treat_warnings_as_errors=false
+         set(${result} "ios" PARENT_SCOPE)
++    elseif(OPENBSD)
++        set(${result} "openbsd" PARENT_SCOPE)
+     else()
+         message(DEBUG "Unrecognized OS")
+     endif()
+@@ -826,7 +828,8 @@ macro(append_build_type_setup)
          use_allocator_shim=false
          use_partition_alloc=true
          use_partition_alloc_as_malloc=false
@@ -38,66 +29,64 @@ Index: cmake/Functions.cmake
          enable_rust=false # We do not yet support rust
      )
      if(${config} STREQUAL "Debug")
-@@ -895,7 +894,7 @@ macro(append_compiler_linker_sdk_setup)
-     extend_gn_list(gnArgArg ARGS is_clang CONDITION CLANG)
-     extend_gn_list(gnArgArg ARGS is_mingw CONDITION MINGW)
-     extend_gn_list(gnArgArg ARGS is_msvc CONDITION MSVC)
--    extend_gn_list(gnArgArg ARGS is_gcc CONDITION LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-+    extend_gn_list(gnArgArg ARGS is_gcc CONDITION UNIX AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+@@ -879,7 +882,7 @@ macro(append_build_type_setup)
  
-     if(CLANG)
-         if(MACOS)
-@@ -910,13 +909,12 @@ macro(append_compiler_linker_sdk_setup)
- 
-         string(REGEX MATCH "[0-9]+" clangVersion ${CMAKE_CXX_COMPILER_VERSION})
-         list(APPEND gnArgArg
--            clang_base_path="${clangBasePath}"
-             clang_use_chrome_plugins=false
-             clang_version=${clangVersion}
-             fatal_linker_warnings=false
-         )
- 
--        if(MACOS)
-+        if(APPLE)
-             list(APPEND gnArgArg
-                 use_system_xcode=true
-                 mac_deployment_target="${CMAKE_OSX_DEPLOYMENT_TARGET}"
-@@ -939,7 +937,7 @@ macro(append_compiler_linker_sdk_setup)
+     extend_gn_list(gnArgArg
+         ARGS enable_precompiled_headers
+-        CONDITION BUILD_WITH_PCH AND NOT LINUX
++        CONDITION BUILD_WITH_PCH AND NOT LINUX AND NOT FREEBSD
+     )
+     extend_gn_list(gnArgArg
+         ARGS dcheck_always_on
+@@ -939,7 +942,7 @@ macro(append_compiler_linker_sdk_setup)
                  use_libcxx=true
              )
          endif()
 -        if(DEFINED QT_FEATURE_stdlib_libcpp AND LINUX)
-+        if(DEFINED QT_FEATURE_stdlib_libcpp AND UNIX)
++        if(DEFINED QT_FEATURE_stdlib_libcpp AND (LINUX OR OPENBSD))
              extend_gn_list(gnArgArg ARGS use_libcxx
                  CONDITION QT_FEATURE_stdlib_libcpp
              )
-@@ -957,7 +955,6 @@ macro(append_compiler_linker_sdk_setup)
-             get_filename_component(clangBasePath ${CMAKE_LINKER} DIRECTORY)
-             get_filename_component(clangBasePath ${clangBasePath} DIRECTORY)
-             list(APPEND gnArgArg
--                clang_base_path="${clangBasePath}"
-                 fatal_linker_warnings=false
-             )
-         endif()
-@@ -977,7 +974,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -977,7 +980,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
 -    if(LINUX AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
-+    if(UNIX AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
++    if((LINUX OR OPENBSD) AND CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm")
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -1067,7 +1064,7 @@ macro(append_toolchain_setup)
+@@ -1067,7 +1070,7 @@ macro(append_toolchain_setup)
                  host_cpu="${cpu}"
              )
          endif()
 -    elseif(LINUX)
-+    elseif(UNIX)
++    elseif(LINUX OR OPENBSD)
          get_gn_arch(cpu ${TEST_architecture_arch})
          list(APPEND gnArgArg
              custom_toolchain="${buildDir}/target_toolchain:target"
-@@ -1331,7 +1328,7 @@ endfunction()
+@@ -1205,6 +1208,20 @@ function(add_gn_build_artifacts_to_target)
+             set_target_properties(${arg_CMAKE_TARGET} PROPERTIES
+                 LINK_DEPENDS ${arg_BUILDDIR}/${config}/${arch}/${arg_NINJA_STAMP}
+             )
++            # For some reason when the build of QtWebEngine's "convert_dict" is
++            # completed the "convert_dict.stamp" isn't created.
++            #
++            # Work around this issue by creating "convert_dict.stamp" manually.
++            if(${arg_NINJA_TARGET} STREQUAL "convert_dict")
++                add_custom_command(
++                    POST_BUILD
++                    COMMENT "Add workaround for missing ${arg_NINJA_TARGET}.stamp file after build"
++                    COMMAND ${CMAKE_COMMAND} -E touch ${buildDir}/${config}/${arch}/${arg_NINJA_TARGET}.stamp
++                    TARGET ${target}
++                    DEPENDS run_${module}_NinjaDone
++                    USES_TERMINAL
++            )
++            endif()
+             if(QT_IS_MACOS_UNIVERSAL)
+                 add_intermediate_archive(${target} ${arg_BUILDDIR}/${config}/${arch} ${arg_COMPLETE_STATIC})
+             elseif(IOS)
+@@ -1331,7 +1348,7 @@ endfunction()
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -106,7 +95,7 @@ Index: cmake/Functions.cmake
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1340,7 +1337,7 @@ function(check_for_ulimit)
+@@ -1340,7 +1357,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh
