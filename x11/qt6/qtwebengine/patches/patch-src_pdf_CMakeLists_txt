@@ -6,7 +6,7 @@ Index: src/pdf/CMakeLists.txt
  ##
  
 -if(LINUX OR MINGW OR ANDROID)
-+if(LINUX OR MINGW OR ANDROID OR FREEBSD)
++if(LINUX OR MINGW OR ANDROID OR OPENBSD)
      setup_toolchains()
  endif()
  
@@ -15,7 +15,7 @@ Index: src/pdf/CMakeLists.txt
          )
  
 -        if(LINUX OR ANDROID)
-+        if(LINUX OR ANDROID OR FREEBSD)
++        if(LINUX OR ANDROID OR OPENBSD)
              list(APPEND gnArgArg
                  is_cfi=false
                  ozone_auto_platforms=false

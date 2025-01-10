@@ -112,23 +112,35 @@ MAKE_ENV +=	CC="${CC}" CXX="${CXX}" \
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DQT_FEATURE_webengine_full_debug_info=ON \
 			-DQT_FEATURE_pdf_v8=ON \
-			-DQT_GENERATE_SBOM=OFF
+			-DQT_GENERATE_SBOM=OFF \
+			-DQT_FEATURE_webengine_embedded_build=OFF \
+			-DQT_FEATURE_webengine_extensions=ON \
+			-DQT_FEATURE_webengine_ozone_x11=ON \
+			-DQT_FEATURE_webengine_pepper_plugins=ON \
+			-DQT_FEATURE_webengine_printing_and_pdf=ON \
+			-DQT_FEATURE_webengine_spellchecker=ON \
+			-DQT_FEATURE_webengine_webchannel=ON \
+			-DQT_FEATURE_webengine_webrtc=ON
 
 CONFIGURE_ARGS +=	-DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
 			-DCMAKE_TOOLCHAIN_FILE="${LOCALBASE}/lib/cmake/Qt6/qt.toolchain.cmake"
 
-CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
-			-DQT_FEATURE_webengine_system_ffmpeg=ON \
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=OFF \
 			-DQT_FEATURE_webengine_system_minizip=ON \
 			-DQT_FEATURE_webengine_system_sndio=ON \
 			-DQT_FEATURE_webengine_system_opus=ON \
 			-DQT_FEATURE_webengine_system_libwebp=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
 			-DQT_FEATURE_webengine_system_libevent=ON \
-			-DQT_FEATURE_webengine_system_libpng=ON \
-			-DQT_FEATURE_webengine_system_zlib=OFF
+			-DQT_FEATURE_webengine_system_libpng=ON
 
-GN_SYSTEM_LIBS=	fontconfig freetype harfbuzz-ng libdrm libxml libpng libevent libxslt openh264 opus
+# needs a modified ffmpeg to be usable (bug #831487), and even then
+# it is picky about codecs/version and system's can lead to unexpected
+# issues (e.g. builds but some files don't play even with support)
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
+			-DQT_FEATURE_webengine_system_ffmpeg=ON
+
+GN_SYSTEM_LIBS=	freetype harfbuzz-ng libdrm libpng libevent libxml libxslt openh264 opus
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
 LIB_DEPENDS +=		textproc/icu4c
@@ -136,6 +148,8 @@ LIB_DEPENDS +=		textproc/icu4c
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
+
+#CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_spellchecker=OFF
 
 SUBST_VARS +=	WRKSRC WRKDIR
 
@@ -145,10 +159,21 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
+FFMPEG_BRAND=	Chrome
+FFMPEG_BDIR=	${CHROMESRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
+FFMPEG_CDIR=	${CHROMESRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
+
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
+	cd ${CHROMESRC}/third_party/ffmpeg && \
+		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
+	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
+	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
+.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
+.endfor
 	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} \
 		${CHROMESRC}/build/gn_run_binary.py \
@@ -159,17 +184,10 @@ pre-configure:
 		--system-libraries ${GN_SYSTEM_LIBS}
 	cp /usr/include/c++/v1/__config_site \
 		${CHROMESRC}/third_party/libc++/src/include/__config_site
-
-# Avoid running multiple make(1) jobs, but only those.  Otherwise the build
-# fails intermittently due race conditions if multiple ninja instances are
-# running at the same time (mostly for the targets "WebEngineCore" and
-# "convert_dict").
-#
-# MAKE_JOBS_UNSAFE is too invasive because it also affects the number of jobs
-# for ninja(1) and would slow everything down which we don't want.  We pass the
-# real number of make jobs via MAKE_JOBS_NUMBER to ninja(1) to CONFIGURE_ENV.
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1
+	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1 -t WebEngineCore_sync_all_public_headers
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1 
 
 .include <bsd.port.mk>
