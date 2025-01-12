@@ -138,11 +138,11 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=OFF \
 # it is picky about codecs/version and system's can lead to unexpected
 # issues (e.g. builds but some files don't play even with support)
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
-			-DQT_FEATURE_webengine_system_ffmpeg=ON
+			-DQT_FEATURE_webengine_system_ffmpeg=OFF
 
 GN_SYSTEM_LIBS=	freetype harfbuzz-ng libdrm libpng libevent libxml libxslt openh264 opus
 
-CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=OFF
 LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
@@ -155,18 +155,34 @@ SUBST_VARS +=	WRKSRC WRKDIR
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+.if ${MACHINE_ARCH} == "aarch64"
+FFMPEG_TARGET=	arm64
+.elif ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
+FFMPEG_TARGET=	x64
+.elif ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	devel/nasm
+FFMPEG_TARGET=	ia32
 .endif
 
 FFMPEG_BRAND=	Chrome
 FFMPEG_BDIR=	${CHROMESRC}/build.${FFMPEG_TARGET}.openbsd/${FFMPEG_BRAND}
 FFMPEG_CDIR=	${CHROMESRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/openbsd/${FFMPEG_TARGET}
 
-pre-configure:
+post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
+	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
+	${SUBST_CMD} \
+		${CHROMESRC}/build/gn_run_binary.py \
+		${CHROMESRC}/v8/tools/run.py \
+		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
+		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+	cp /usr/include/c++/v1/__config_site \
+		${CHROMESRC}/third_party/libc++/src/include/__config_site
+
+pre-configure:
 	cd ${CHROMESRC}/third_party/ffmpeg && \
 		${MODPY_BIN} chromium/scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
 	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
@@ -174,20 +190,13 @@ pre-configure:
 .for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
 	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
-	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
-	${SUBST_CMD} \
-		${CHROMESRC}/build/gn_run_binary.py \
-		${CHROMESRC}/v8/tools/run.py \
-		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
-		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 	cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-	cp /usr/include/c++/v1/__config_site \
-		${CHROMESRC}/third_party/libc++/src/include/__config_site
+
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1 -t WebEngineCore_sync_all_public_headers
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1 
+	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1
 
 .include <bsd.port.mk>
