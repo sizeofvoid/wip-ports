@@ -125,7 +125,7 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 CONFIGURE_ARGS +=	-DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
 			-DCMAKE_TOOLCHAIN_FILE="${LOCALBASE}/lib/cmake/Qt6/qt.toolchain.cmake"
 
-CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=OFF \
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=ON \
 			-DQT_FEATURE_webengine_system_minizip=ON \
 			-DQT_FEATURE_webengine_system_sndio=ON \
 			-DQT_FEATURE_webengine_system_opus=ON \
@@ -142,7 +142,7 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 
 GN_SYSTEM_LIBS=	freetype harfbuzz-ng libdrm libpng libevent libxml libxslt openh264 opus
 
-CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=OFF
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
 LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
