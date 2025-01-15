@@ -193,10 +193,8 @@ pre-configure:
 	cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 
-do-build:
+pre-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1 -t WebEngineCore_sync_all_public_headers
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1
 
 .include <bsd.port.mk>
