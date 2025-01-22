@@ -15,5 +15,6 @@
 @so lib/qt6/plugins/imageformats/kimg_ras.so
 @so lib/qt6/plugins/imageformats/kimg_raw.so
 @so lib/qt6/plugins/imageformats/kimg_rgb.so
+@so lib/qt6/plugins/imageformats/kimg_sct.so
 @so lib/qt6/plugins/imageformats/kimg_tga.so
 @so lib/qt6/plugins/imageformats/kimg_xcf.so
