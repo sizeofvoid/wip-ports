@@ -118,7 +118,7 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_minizip=ON \
 			-DQT_FEATURE_webengine_system_opus=ON \
 			-DQT_FEATURE_webengine_system_libwebp=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
-			-DQT_FEATURE_webengine_system_libpng=ON
+			-DQT_FEATURE_webengine_system_libpng=ON \
 			-DQT_FEATURE_webengine_system_zlib=ON
 
 # needs a modified ffmpeg to be usable (bug #831487), and even then
@@ -135,8 +135,6 @@ LIB_DEPENDS +=		textproc/icu4c
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
-
-#CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_spellchecker=OFF
 
 SUBST_VARS +=	WRKSRC WRKDIR
 

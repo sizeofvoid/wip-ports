@@ -15,7 +15,7 @@ Index: cmake/Functions.cmake
      elseif(IOS)
          set(${result} "ios" PARENT_SCOPE)
 +    elseif(OPENBSD)
-+        set(${result} "openbsd" PARENT_SCOPE)
++        set(${result} "linux" PARENT_SCOPE)
      else()
          message(DEBUG "Unrecognized OS")
      endif()
