@@ -41,12 +41,9 @@ WANTLIB += plds4 png sharpyuv smime3 snappy sndio tiff usbhid
 WANTLIB += util vpx webp webpdemux webpmux xcb xkbcommon xkbfile
 WANTLIB += xml2 xshmfence xslt z
 
-MODULES =	lang/clang lang/python
+MODULES =	lang/python
 
-MODCLANG_VERSION=	18
 MODPY_RUNDEP=		No
-
-COMPILER=		ports-clang
 
 RUN_DEPENDS =	fonts/noto/fonts \
 		graphics/libexif \
@@ -140,7 +137,8 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=ON \
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 			-DQT_FEATURE_webengine_system_ffmpeg=OFF
 
-GN_SYSTEM_LIBS=	freetype harfbuzz-ng libdrm libpng libevent libxml libxslt openh264 opus
+#GN_SYSTEM_LIBS=	freetype harfbuzz-ng libdrm libpng libevent libxml libxslt openh264 opus
+GN_SYSTEM_LIBS=fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
 LIB_DEPENDS +=		textproc/icu4c

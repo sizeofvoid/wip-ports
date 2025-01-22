@@ -1,12 +1,21 @@
 Index: src/3rdparty/gn/build/gen.py
 --- src/3rdparty/gn/build/gen.py.orig
 +++ src/3rdparty/gn/build/gen.py
-@@ -540,6 +540,8 @@ def WriteGNNinja(path, platform, host, options, args_l
+@@ -327,7 +327,7 @@ def WriteGenericNinja(path, static_libraries, executab
+       'linux': 'build_linux.ninja.template',
+       'freebsd': 'build_linux.ninja.template',
+       'aix': 'build_aix.ninja.template',
+-      'openbsd': 'build_openbsd.ninja.template',
++      'openbsd': 'build_linux.ninja.template',
+       'haiku': 'build_haiku.ninja.template',
+       'solaris': 'build_linux.ninja.template',
+       'netbsd': 'build_linux.ninja.template',
+@@ -539,6 +539,8 @@ def WriteGNNinja(path, platform, host, options, args_l
+ 
          '-std=c++20'
      ])
- 
-+    ldflags.append('-lkvm')
 +
++    ldflags.append('-lkvm')
+ 
      if is_gcc(cxx):
        cflags.append('-Wno-redundant-move')
-       # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=104336
