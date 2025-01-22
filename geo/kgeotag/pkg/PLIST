@@ -42,5 +42,6 @@ share/locale/tr/LC_MESSAGES/kgeotag.mo
 share/locale/uk/LC_MESSAGES/kgeotag.mo
 share/locale/zh_CN/LC_MESSAGES/kgeotag.mo
 share/locale/zh_TW/LC_MESSAGES/kgeotag.mo
+share/metainfo/
 share/metainfo/org.kde.kgeotag.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor

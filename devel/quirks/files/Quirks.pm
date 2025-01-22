@@ -614,6 +614,8 @@ my $stem_extensions = {
 	'gstreamer1-plugins-good' => 'gst-plugins-good',
 	'gstreamer1-plugins-libav' => 'gst-libav',
 	'gstreamer1-plugins-ugly' => 'gst-plugins-ugly',
+	'libksane-kf5' => 'libksane',
+	'marble-kf5' => 'marble',
 };
 
 my $obsolete_reason = {};
