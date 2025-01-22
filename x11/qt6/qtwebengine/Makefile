@@ -108,28 +108,18 @@ MAKE_ENV +=	CC="${CC}" CXX="${CXX}" \
 
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DQT_FEATURE_webengine_full_debug_info=ON \
-			-DQT_FEATURE_pdf_v8=ON \
-			-DQT_GENERATE_SBOM=OFF \
-			-DQT_FEATURE_webengine_embedded_build=OFF \
-			-DQT_FEATURE_webengine_extensions=ON \
-			-DQT_FEATURE_webengine_ozone_x11=ON \
-			-DQT_FEATURE_webengine_pepper_plugins=ON \
-			-DQT_FEATURE_webengine_printing_and_pdf=ON \
-			-DQT_FEATURE_webengine_spellchecker=ON \
-			-DQT_FEATURE_webengine_webchannel=ON \
-			-DQT_FEATURE_webengine_webrtc=ON
+			-DQT_FEATURE_pdf_v8=ON
 
 CONFIGURE_ARGS +=	-DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
 			-DCMAKE_TOOLCHAIN_FILE="${LOCALBASE}/lib/cmake/Qt6/qt.toolchain.cmake"
 
-CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=ON \
-			-DQT_FEATURE_webengine_system_minizip=ON \
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_minizip=ON \
 			-DQT_FEATURE_webengine_system_sndio=ON \
 			-DQT_FEATURE_webengine_system_opus=ON \
 			-DQT_FEATURE_webengine_system_libwebp=ON \
 			-DQT_FEATURE_webengine_system_libvpx=ON \
-			-DQT_FEATURE_webengine_system_libevent=ON \
 			-DQT_FEATURE_webengine_system_libpng=ON
+			-DQT_FEATURE_webengine_system_zlib=ON
 
 # needs a modified ffmpeg to be usable (bug #831487), and even then
 # it is picky about codecs/version and system's can lead to unexpected
@@ -137,8 +127,7 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_zlib=ON \
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 			-DQT_FEATURE_webengine_system_ffmpeg=OFF
 
-#GN_SYSTEM_LIBS=	freetype harfbuzz-ng libdrm libpng libevent libxml libxslt openh264 opus
-GN_SYSTEM_LIBS=fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
+GN_SYSTEM_LIBS=		fontconfig freetype harfbuzz-ng libdrm libxml libevent libxslt openh264 opus
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
 LIB_DEPENDS +=		textproc/icu4c
