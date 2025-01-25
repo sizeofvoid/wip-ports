@@ -94,6 +94,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		security/libassuan \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
+		security/libgpg-error \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-search>=${MODKDE_GEAR_VERSION} \

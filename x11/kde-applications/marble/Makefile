@@ -39,7 +39,7 @@ WANTLIB += absl_stacktrace absl_str_format_internal absl_strerror
 WANTLIB += absl_string_view absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_utf8_for_code_point absl_vlog_config_internal
-WANTLIB += c gps m phonon4qt6 protobuf protoc shp z
+WANTLIB += c gps m protobuf protoc shp z
 
 BUILD_DEPENDS =	devel/kf6/kwallet
 

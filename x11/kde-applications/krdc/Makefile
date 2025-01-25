@@ -24,6 +24,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
+RUN_DEPENDS +=	misc/shared-mime-info
+
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
