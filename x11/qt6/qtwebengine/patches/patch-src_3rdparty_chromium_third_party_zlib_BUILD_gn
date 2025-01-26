@@ -1,15 +1,6 @@
 Index: src/3rdparty/chromium/third_party/zlib/BUILD.gn
 --- src/3rdparty/chromium/third_party/zlib/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/zlib/BUILD.gn
-@@ -9,7 +9,7 @@ import("//build/shim_headers.gni")
- 
- declare_args() {
-   use_system_zlib = false
--  use_system_minizip = false
-+  use_system_minizip = true
-   use_qt_zlib = false
-   qt_zlib_includes = []
-   qt_zlib = ""
 @@ -140,7 +140,7 @@ if (use_arm_neon_optimizations) {
      defines = [ "CRC32_ARMV8_CRC32" ]
      if (is_android) {

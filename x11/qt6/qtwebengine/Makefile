@@ -91,6 +91,7 @@ LIB_DEPENDS =	archivers/minizip \
 		x11/qt6/qthttpserver \
 		x11/xkbcommon
 
+MAKE_JOBS =	1
 # The build system reads the environment variable $NINJA_PATH to decide whether
 # to boostrap ninja or not (and also to invoke it afterwards). CC and CXX are
 # read by some Chromium code to determine which compiler to invoke when running
@@ -177,9 +178,5 @@ pre-configure:
 .endfor
 	cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-
-pre-build:
-	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1 -t WebEngineCore_sync_all_public_headers
 
 .include <bsd.port.mk>

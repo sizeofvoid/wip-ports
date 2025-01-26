@@ -1,3 +1,5 @@
+- https://github.com/qt/qtwebengine/commit/e372bb3dad121465d61cc15de18c06c85f938072
+- https://github.com/qt/qtwebengine/commit/8f7b00ee89f383cbf6eeda47560a4cecc897e9be
 Index: src/core/CMakeLists.txt
 --- src/core/CMakeLists.txt.orig
 +++ src/core/CMakeLists.txt
@@ -6,7 +8,7 @@ Index: src/core/CMakeLists.txt
  ##
  
 -if(LINUX)
-+if(LINUX OR OPENBSD)
++if(UNIX)
      setup_toolchains()
  endif()
  
@@ -15,7 +17,7 @@ Index: src/core/CMakeLists.txt
          )
  
 -        extend_gn_target(${buildGn} CONDITION LINUX OR WIN32
-+        extend_gn_target(${buildGn} CONDITION LINUX OR OPENBSD OR WIN32
++        extend_gn_target(${buildGn} CONDITION UNIX OR WIN32
              SOURCES
                  compositor/content_gpu_client_qt.cpp compositor/content_gpu_client_qt.h
                  ozone/gl_context_qt.cpp ozone/gl_context_qt.h
@@ -24,27 +26,44 @@ Index: src/core/CMakeLists.txt
          )
  
 -        extend_gn_target(${buildGn} CONDITION LINUX
-+        extend_gn_target(${buildGn} CONDITION LINUX OR OPENBSD
++        extend_gn_target(${buildGn} CONDITION UNIX
              SOURCES
                  ozone/gl_ozone_angle_qt.cpp ozone/gl_ozone_angle_qt.h
                  ozone/gl_ozone_egl_qt.cpp ozone/gl_ozone_egl_qt.h
-@@ -436,7 +436,7 @@ foreach(arch ${archs})
+@@ -325,6 +325,8 @@ foreach(arch ${archs})
+             qtwebengine_target="${buildDir}/${config}/${arch}:QtWebEngineCore"
+             build_dawn_tests=false
+             build_with_tflite_lib=false
++            is_qtwebengine=true
++            is_qtpdf=false
+             enable_background_contents=false
+             enable_background_mode=false
+             enable_ipc_fuzzer=false
+@@ -436,7 +438,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webenginedriver
          )
  
 -        if(LINUX)
-+        if(LINUX OR OPENBSD)
++        if(UNIX)
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -504,6 +504,10 @@ foreach(arch ${archs})
-             extend_gn_list(gnArgArg
-                 ARGS use_pulseaudio
+@@ -506,6 +508,10 @@ foreach(arch ${archs})
                  CONDITION QT_FEATURE_webengine_system_pulseaudio
-+            )
-+            extend_gn_list(gnArgArg
-+                ARGS use_sndio
-+                CONDITION QT_FEATURE_webengine_system_sndio
              )
              extend_gn_list(gnArgArg
++                ARGS use_sndio
++                CONDITION QT_FEATURE_webengine_system_sndio
++            )
++            extend_gn_list(gnArgArg
                  ARGS use_system_minigbm
+                 CONDITION QT_FEATURE_webengine_system_gbm
+             )
+@@ -597,6 +603,7 @@ add_gn_build_artifacts_to_target(
+     CMAKE_TARGET WebEngineCore
+     NINJA_TARGET QtWebEngineCore
+     MODULE core
++    DEPENDS WebEngineCore_sync_headers
+     BUILDDIR ${buildDir}
+     COMPLETE_STATIC FALSE
+     NINJA_STAMP QtWebEngineCore.stamp
