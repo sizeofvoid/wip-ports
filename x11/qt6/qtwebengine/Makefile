@@ -1,8 +1,3 @@
-# OLD
-# Based on Chromium version: 112.0.5615.213
-# Patched with security patches up to: 119.0.6045.123
-
-# NEW
 # Based on Chromium version: 122.0.6261.171
 # Patched with security patches up to Chromium version: 131.0.6778.70
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
@@ -30,20 +25,21 @@ SHARED_LIBS +=  Qt6WebEngineWidgets           1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Designer Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6WebChannel
-WANTLIB += Qt6WebChannelQuick Qt6Widgets Qt6Xml X11 Xau Xcomposite
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xrandr Xrender Xtst c
-WANTLIB += cbor crypto dbus-1 drm event execinfo expat fido2 fontconfig
-WANTLIB += freetype gbm glib-2.0 graphite2 harfbuzz harfbuzz-subset
-WANTLIB += icudata icui18n icuuc intl jpeg kvm lcms2 lzma m minizip
-WANTLIB += nspr4 nss3 nssutil3 openh264 openjp2 opus pcre2-8 plc4
-WANTLIB += plds4 png sharpyuv smime3 snappy sndio tiff usbhid
-WANTLIB += util vpx webp webpdemux webpmux xcb xkbcommon xkbfile
-WANTLIB += xml2 xshmfence xslt z
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6WebChannel Qt6WebChannelQuick Qt6Widgets
+WANTLIB += Qt6Xml X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xrandr Xrender Xtst c cbor crypto dbus-1 drm event
+WANTLIB += execinfo expat fido2 fontconfig freetype gbm glib-2.0
+WANTLIB += graphite2 harfbuzz harfbuzz-subset icudata icui18n
+WANTLIB += icuuc intl jpeg kvm lcms2 lzma m minizip nspr4 nss3
+WANTLIB += nssutil3 openh264 openjp2 opus pcre2-8 plc4 plds4 png
+WANTLIB += sharpyuv smime3 snappy sndio tiff usbhid util vpx webp
+WANTLIB += webpdemux webpmux xcb xkbcommon xkbfile xml2 xshmfence
+WANTLIB += xslt z
 
 MODULES =	lang/python
 
-MODPY_RUNDEP=		No
+MODPY_RUNDEP=	No
 
 RUN_DEPENDS =	fonts/noto/fonts \
 		graphics/libexif \
@@ -91,25 +87,31 @@ LIB_DEPENDS =	archivers/minizip \
 		x11/qt6/qthttpserver \
 		x11/xkbcommon
 
+# MAKE_JOBS is too invasive because it also affects the number of jobs
+# for ninja(1) and would slow everything down which we don't want.  We pass the
+# real number of make jobs via NINJA_JOBS to ninja(1) to CONFIGURE_ENV.
+NINJA_JOBS !!=	sysctl -n hw.ncpuonline
 MAKE_JOBS =	1
+
 # The build system reads the environment variable $NINJA_PATH to decide whether
 # to boostrap ninja or not (and also to invoke it afterwards). CC and CXX are
 # read by some Chromium code to determine which compiler to invoke when running
 # some configuration tests.
 CONFIGURE_ENV +=	LC_ALL=en_US.UTF-8 \
-			NINJAFLAGS="-j${MAKE_JOBS}" \
+			NINJAFLAGS="-j${NINJA_JOBS}" \
 			NINJA_PATH="${LOCALBASE}/bin/ninja" \
 			PATH=${WRKSRC}/bin:${LOCALBASE}/bin:${PATH}
 
-MAKE_ENV +=	CC="${CC}" CXX="${CXX}" \
-		C_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
-		CPLUS_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
-		LIBRARY_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
-		${CONFIGURE_ENV}
+MAKE_ENV +=		CC="${CC}" CXX="${CXX}" \
+			C_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
+			CPLUS_INCLUDE_PATH="${LOCALBASE}/include:${X11BASE}/include" \
+			LIBRARY_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
+			${CONFIGURE_ENV}
 
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DQT_FEATURE_webengine_full_debug_info=ON \
-			-DQT_FEATURE_pdf_v8=ON
+			-DQT_FEATURE_pdf_v8=ON \
+			-DQT_GENERATE_SBOM=OFF
 
 CONFIGURE_ARGS +=	-DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
 			-DCMAKE_TOOLCHAIN_FILE="${LOCALBASE}/lib/cmake/Qt6/qt.toolchain.cmake"
@@ -165,6 +167,7 @@ post-patch:
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${CHROMESRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
+	# FIXME if we update base libcxx
 	cp /usr/include/c++/v1/__config_site \
 		${CHROMESRC}/third_party/libc++/src/include/__config_site
 
