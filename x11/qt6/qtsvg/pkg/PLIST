@@ -84,4 +84,3 @@ lib/qt6/modules/SvgWidgets.json
 lib/qt6/plugins/iconengines/
 @so lib/qt6/plugins/iconengines/libqsvgicon.so
 @so lib/qt6/plugins/imageformats/libqsvg.so
-lib/qt6/sbom/qtsvg-${VERSION}.spdx

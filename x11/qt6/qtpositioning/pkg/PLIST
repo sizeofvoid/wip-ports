@@ -159,4 +159,3 @@ lib/qt6/qml/QtPositioning/
 @so lib/qt6/qml/QtPositioning/libpositioningquickplugin.so
 lib/qt6/qml/QtPositioning/plugins.qmltypes
 lib/qt6/qml/QtPositioning/qmldir
-lib/qt6/sbom/qtpositioning-${VERSION}.spdx

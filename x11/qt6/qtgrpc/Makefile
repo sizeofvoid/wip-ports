@@ -39,12 +39,12 @@ WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
 WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
-WANTLIB += absl_vlog_config_internal c m
+WANTLIB += absl_vlog_config_internal c m protobuf protoc
 
 BUILD_DEPENDS =	graphics/glslang
 
 LIB_DEPENDS =	devel/abseil-cpp \
-		x11/qt6/qtdeclarative \
-		
+		devel/protobuf \
+		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

@@ -317,4 +317,3 @@ lib/qt6/qml/QtQuick/VirtualKeyboard/Styles/qmldir
 @so lib/qt6/qml/QtQuick/VirtualKeyboard/libqtvkbplugin.so
 lib/qt6/qml/QtQuick/VirtualKeyboard/plugins.qmltypes
 lib/qt6/qml/QtQuick/VirtualKeyboard/qmldir
-lib/qt6/sbom/qtvirtualkeyboard-${VERSION}.spdx

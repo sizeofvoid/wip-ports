@@ -188,4 +188,3 @@ lib/qt6/qml/QtSensors/
 @so lib/qt6/qml/QtSensors/libsensorsquickplugin.so
 lib/qt6/qml/QtSensors/plugins.qmltypes
 lib/qt6/qml/QtSensors/qmldir
-lib/qt6/sbom/qtsensors-${VERSION}.spdx

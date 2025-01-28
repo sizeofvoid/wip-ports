@@ -221,4 +221,3 @@ lib/qt6/qml/QtLocation/MapView.qml
 @so lib/qt6/qml/QtLocation/libdeclarative_locationplugin.so
 lib/qt6/qml/QtLocation/plugins.qmltypes
 lib/qt6/qml/QtLocation/qmldir
-lib/qt6/sbom/qtlocation-${VERSION}.spdx

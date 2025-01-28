@@ -185,4 +185,3 @@ lib/qt6/qml/QtQuick3D/Physics/designer/physics.metainfo
 @so lib/qt6/qml/QtQuick3D/Physics/libqquick3dphysicsplugin.so
 lib/qt6/qml/QtQuick3D/Physics/plugins.qmltypes
 lib/qt6/qml/QtQuick3D/Physics/qmldir
-lib/qt6/sbom/qtquick3dphysics-${VERSION}.spdx

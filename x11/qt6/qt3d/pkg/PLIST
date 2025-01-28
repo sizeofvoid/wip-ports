@@ -1523,4 +1523,3 @@ lib/qt6/qml/QtQuick/Scene3D/
 @so lib/qt6/qml/QtQuick/Scene3D/libqtquickscene3dplugin.so
 lib/qt6/qml/QtQuick/Scene3D/plugins.qmltypes
 lib/qt6/qml/QtQuick/Scene3D/qmldir
-lib/qt6/sbom/qt3d-${VERSION}.spdx

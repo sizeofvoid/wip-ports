@@ -227,4 +227,3 @@ lib/qt6/qml/QtScxml/
 @so lib/qt6/qml/QtScxml/libdeclarative_scxmlplugin.so
 lib/qt6/qml/QtScxml/plugins.qmltypes
 lib/qt6/qml/QtScxml/qmldir
-lib/qt6/sbom/qtscxml-${VERSION}.spdx

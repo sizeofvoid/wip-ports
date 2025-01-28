@@ -82,4 +82,3 @@ lib/qt6/qml/QtQuick/Timeline/BlendTrees/qmldir
 @so lib/qt6/qml/QtQuick/Timeline/libqtquicktimelineplugin.so
 lib/qt6/qml/QtQuick/Timeline/plugins.qmltypes
 lib/qt6/qml/QtQuick/Timeline/qmldir
-lib/qt6/sbom/qtquicktimeline-${VERSION}.spdx

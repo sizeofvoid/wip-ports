@@ -489,7 +489,6 @@ lib/qt6/plugins/designer/
 @so lib/qt6/plugins/designer/libqquickwidget.so
 lib/qt6/plugins/help/
 @so lib/qt6/plugins/help/libhelpplugin.so
-lib/qt6/sbom/qttools-${VERSION}.spdx
 share/qt6/
 share/qt6/phrasebooks/
 share/qt6/phrasebooks/danish.qph

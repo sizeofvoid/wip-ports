@@ -4438,4 +4438,3 @@ lib/qt6/qml/QtTest/qmldir
 lib/qt6/qml/QtTest/testlogger.js
 lib/qt6/qml/builtins.qmltypes
 lib/qt6/qml/jsroot.qmltypes
-lib/qt6/sbom/qtdeclarative-${VERSION}.spdx

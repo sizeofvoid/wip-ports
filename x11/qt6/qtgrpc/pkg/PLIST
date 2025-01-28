@@ -343,4 +343,3 @@ lib/qt6/qml/QtProtobuf/
 @so lib/qt6/qml/QtProtobuf/libprotobufquickplugin.so
 lib/qt6/qml/QtProtobuf/plugins.qmltypes
 lib/qt6/qml/QtProtobuf/qmldir
-lib/qt6/sbom/qtgrpc-${VERSION}.spdx

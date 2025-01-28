@@ -282,4 +282,3 @@ lib/qt6/qml/QtGraphs/designer/qtgraphs.metainfo
 lib/qt6/qml/QtGraphs/designer/qtgraphs2d.metainfo
 @so lib/qt6/qml/QtGraphs/libgraphsplugin.so
 lib/qt6/qml/QtGraphs/qmldir
-lib/qt6/sbom/qtgraphs-${VERSION}.spdx

@@ -50,4 +50,3 @@ lib/cmake/Qt6Gui/Qt6QWebpPluginTargets.cmake
 @so lib/qt6/plugins/imageformats/libqtiff.so
 @so lib/qt6/plugins/imageformats/libqwbmp.so
 @so lib/qt6/plugins/imageformats/libqwebp.so
-lib/qt6/sbom/qtimageformats-${VERSION}.spdx

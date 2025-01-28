@@ -446,4 +446,3 @@ lib/qt6/qml/QtQuick3D/SpatialAudio/
 @so lib/qt6/qml/QtQuick3D/SpatialAudio/libquick3dspatialaudioplugin.so
 lib/qt6/qml/QtQuick3D/SpatialAudio/plugins.qmltypes
 lib/qt6/qml/QtQuick3D/SpatialAudio/qmldir
-lib/qt6/sbom/qtmultimedia-${VERSION}.spdx

@@ -1145,4 +1145,3 @@ lib/qt6/qml/QtQuick3D/designer/source/effect_template.qml
 lib/qt6/qml/QtQuick3D/designer/source/view3D_template.qml
 @so lib/qt6/qml/QtQuick3D/libqquick3dplugin.so
 lib/qt6/qml/QtQuick3D/qmldir
-lib/qt6/sbom/qtquick3d-${VERSION}.spdx

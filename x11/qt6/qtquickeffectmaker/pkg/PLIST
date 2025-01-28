@@ -112,4 +112,3 @@ lib/qt6/qml/QtQuickEffectMaker/defaultnodes/nature/seareflection.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/nature/snowing.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/nature/thunder.qen
 lib/qt6/qml/QtQuickEffectMaker/defaultnodes/nature/water.qen
-lib/qt6/sbom/qqeffectmaker-${VERSION}.spdx

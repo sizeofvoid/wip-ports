@@ -8,16 +8,16 @@ SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.7
 SHARED_LIBS +=  Qt6SpatialAudio           2.0 # 6.7
 SHARED_LIBS +=	Qt6Quick3DSpatialAudio    0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt6Core Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender Qt6Quick3DUtils
-WANTLIB += Qt6ShaderTools Qt6Widgets X11 X11-xcb Xext Xrandr avcodec
-WANTLIB += avformat avutil bz2 c crypto dav1d drm glib-2.0 gobject-2.0
-WANTLIB += gsm gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstgl-1.0 gstpbutils-1.0 gstphotography-1.0 gstplay-1.0
-WANTLIB += gstreamer-1.0 gstvideo-1.0 iconv intl lzma m mp3lame
-WANTLIB += opus pulse speex ssl swresample swscale theoradec theoraenc
-WANTLIB += va va-drm va-x11 vorbis vorbisenc vpx wayland-client
+WANTLIB += Qt6ShaderTools Qt6Widgets X11 X11-xcb Xext Xrandr aom
+WANTLIB += avcodec avformat avutil bz2 c crypto dav1d drm glib-2.0
+WANTLIB += gobject-2.0 gsm gstallocators-1.0 gstapp-1.0 gstaudio-1.0
+WANTLIB += gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstphotography-1.0
+WANTLIB += gstplay-1.0 gstreamer-1.0 gstvideo-1.0 iconv intl lzma
+WANTLIB += m mp3lame opus pulse speex ssl swresample swscale theoradec
+WANTLIB += theoraenc va va-drm va-x11 vorbis vorbisenc vpx wayland-client
 WANTLIB += wayland-egl x264 x265 xcb xkbcommon xml2 xvidcore z
 
 BUILD_DEPENDS =	graphics/vulkan-loader \

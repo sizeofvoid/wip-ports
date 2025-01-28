@@ -73,4 +73,3 @@ lib/qt6/qml/QtWebChannel/
 @so lib/qt6/qml/QtWebChannel/libwebchannelquickplugin.so
 lib/qt6/qml/QtWebChannel/plugins.qmltypes
 lib/qt6/qml/QtWebChannel/qmldir
-lib/qt6/sbom/qtwebchannel-${VERSION}.spdx

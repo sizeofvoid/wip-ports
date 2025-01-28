@@ -143,4 +143,3 @@ lib/qt6/qml/QtRemoteObjects/
 @so lib/qt6/qml/QtRemoteObjects/libdeclarative_remoteobjectsplugin.so
 lib/qt6/qml/QtRemoteObjects/plugins.qmltypes
 lib/qt6/qml/QtRemoteObjects/qmldir
-lib/qt6/sbom/qtremoteobjects-${VERSION}.spdx

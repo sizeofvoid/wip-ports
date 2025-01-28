@@ -391,4 +391,3 @@ lib/qt6/qml/QtCharts/designer/qtcharts.metainfo
 @so lib/qt6/qml/QtCharts/libqtchartsqml2plugin.so
 lib/qt6/qml/QtCharts/plugins.qmltypes
 lib/qt6/qml/QtCharts/qmldir
-lib/qt6/sbom/qtcharts-${VERSION}.spdx

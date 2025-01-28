@@ -13,6 +13,9 @@ WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml c m xkbcommon
 WANTLIB += zstd
 
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
+
 # avoid BDEP on ourselves
 MODQT6_DEPS =	No
 

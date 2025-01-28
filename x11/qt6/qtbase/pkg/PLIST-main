@@ -4076,5 +4076,3 @@ lib/qt6/plugins/tls/
 lib/qt6/plugins/xcbglintegrations/
 @so lib/qt6/plugins/xcbglintegrations/libqxcb-egl-integration.so
 @so lib/qt6/plugins/xcbglintegrations/libqxcb-glx-integration.so
-lib/qt6/sbom/
-lib/qt6/sbom/qtbase-${VERSION}.spdx

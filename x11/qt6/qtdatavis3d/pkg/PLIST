@@ -241,4 +241,3 @@ lib/qt6/qml/QtDataVisualization/designer/qtdatavisualization.metainfo
 @so lib/qt6/qml/QtDataVisualization/libdatavisualizationqmlplugin.so
 lib/qt6/qml/QtDataVisualization/plugins.qmltypes
 lib/qt6/qml/QtDataVisualization/qmldir
-lib/qt6/sbom/qtdatavisualization-${VERSION}.spdx

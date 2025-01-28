@@ -65,4 +65,3 @@ lib/qt6/qml/QtTextToSpeech/
 @so lib/qt6/qml/QtTextToSpeech/libtexttospeechqmlplugin.so
 lib/qt6/qml/QtTextToSpeech/plugins.qmltypes
 lib/qt6/qml/QtTextToSpeech/qmldir
-lib/qt6/sbom/qtspeech-${VERSION}.spdx

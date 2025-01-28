@@ -126,4 +126,3 @@ lib/qt6/plugins/canbus/
 @so lib/qt6/plugins/canbus/libqtpeakcanbus.so
 @so lib/qt6/plugins/canbus/libqttinycanbus.so
 @so lib/qt6/plugins/canbus/libqtvirtualcanbus.so
-lib/qt6/sbom/qtserialbus-${VERSION}.spdx

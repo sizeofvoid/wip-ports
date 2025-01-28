@@ -15,13 +15,13 @@ COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Pdf                        1.0 # 0.0
+SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
 SHARED_LIBS +=  Qt6PdfWidgets                 1.0 # 0.0
-SHARED_LIBS +=  Qt6WebEngineCore              1.0 # 0.0
-SHARED_LIBS +=  Qt6WebEngineQuick             1.0 # 0.0
+SHARED_LIBS +=  Qt6WebEngineCore              2.0 # 0.0
+SHARED_LIBS +=  Qt6WebEngineQuick             2.0 # 0.0
 SHARED_LIBS +=  Qt6WebEngineQuickDelegatesQml 1.0 # 0.0
-SHARED_LIBS +=  Qt6WebEngineWidgets           1.0 # 0.0
+SHARED_LIBS +=  Qt6WebEngineWidgets           1.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Designer Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
@@ -59,7 +59,8 @@ BUILD_DEPENDS =	audio/pulseaudio \
 		sysutils/pciutils \
 		x11/gtk+3 \
 		sysutils/libudev-openbsd \
-		x11/py-xcbgen
+		x11/py-xcbgen \
+		x11/qt6/qthttpserver
 
 LIB_DEPENDS =	archivers/minizip \
 		archivers/snappy \
@@ -84,7 +85,6 @@ LIB_DEPENDS =	archivers/minizip \
 		x11/qt6/qtpositioning \
 		x11/qt6/qttools \
 		x11/qt6/qtwebchannel \
-		x11/qt6/qthttpserver \
 		x11/xkbcommon
 
 # MAKE_JOBS is too invasive because it also affects the number of jobs
@@ -110,8 +110,7 @@ MAKE_ENV +=		CC="${CC}" CXX="${CXX}" \
 
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DQT_FEATURE_webengine_full_debug_info=ON \
-			-DQT_FEATURE_pdf_v8=ON \
-			-DQT_GENERATE_SBOM=OFF
+			-DQT_FEATURE_pdf_v8=ON
 
 CONFIGURE_ARGS +=	-DCMAKE_MESSAGE_LOG_LEVEL=STATUS \
 			-DCMAKE_TOOLCHAIN_FILE="${LOCALBASE}/lib/cmake/Qt6/qt.toolchain.cmake"

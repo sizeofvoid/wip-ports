@@ -60,4 +60,3 @@ lib/qt6/qml/Qt/labs/lottieqt/
 @so lib/qt6/qml/Qt/labs/lottieqt/liblottieqtplugin.so
 lib/qt6/qml/Qt/labs/lottieqt/plugins.qmltypes
 lib/qt6/qml/Qt/labs/lottieqt/qmldir
-lib/qt6/sbom/qtlottie-${VERSION}.spdx

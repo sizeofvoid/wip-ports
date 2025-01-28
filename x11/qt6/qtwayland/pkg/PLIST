@@ -809,4 +809,3 @@ lib/qt6/qml/QtWayland/Compositor/qmldir
 lib/qt6/qml/QtWayland/Compositor/qmlfiles/
 lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandCursorItem.qml
 lib/qt6/qml/QtWayland/Compositor/qmlfiles/WaylandOutputWindow.qml
-lib/qt6/sbom/qtwayland-${VERSION}.spdx

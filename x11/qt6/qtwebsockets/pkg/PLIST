@@ -58,4 +58,3 @@ lib/qt6/qml/QtWebSockets/
 @so lib/qt6/qml/QtWebSockets/libqmlwebsocketsplugin.so
 lib/qt6/qml/QtWebSockets/plugins.qmltypes
 lib/qt6/qml/QtWebSockets/qmldir
-lib/qt6/sbom/qtwebsockets-${VERSION}.spdx
