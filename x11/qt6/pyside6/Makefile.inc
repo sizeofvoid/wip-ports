@@ -1,7 +1,7 @@
 .include "../Makefile.inc"
 
 VERSION =		${PYSIDE_VERSION}
-DISTNAME =		pyside-setup-everywhere-src-${VERSION:R}
+DISTNAME =		pyside-setup-everywhere-src-${VERSION}
 
 HOMEPAGE =		https://wiki.qt.io/Qt_for_Python
 MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>

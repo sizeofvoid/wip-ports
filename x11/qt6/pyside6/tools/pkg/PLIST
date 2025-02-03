@@ -10,6 +10,7 @@ bin/pyside6/deploy_lib/android/
 bin/pyside6/deploy_lib/android/__init__.py
 bin/pyside6/deploy_lib/android/android_config.py
 bin/pyside6/deploy_lib/android/android_helper.py
+bin/pyside6/deploy_lib/android/android_utilities.py
 bin/pyside6/deploy_lib/android/buildozer.py
 bin/pyside6/deploy_lib/android/recipes/
 bin/pyside6/deploy_lib/android/recipes/PySide6/
@@ -21,7 +22,6 @@ bin/pyside6/deploy_lib/config.py
 bin/pyside6/deploy_lib/default.spec
 bin/pyside6/deploy_lib/dependency_util.py
 bin/pyside6/deploy_lib/deploy_util.py
-bin/pyside6/deploy_lib/design_studio.py
 bin/pyside6/deploy_lib/nuitka_helper.py
 bin/pyside6/deploy_lib/pyside_icon.icns
 bin/pyside6/deploy_lib/pyside_icon.ico
@@ -32,12 +32,13 @@ bin/pyside6/deploy_lib/python_helper.py
 @bin bin/pyside6/lrelease
 @bin bin/pyside6/lupdate
 bin/pyside6/metaobjectdump.py
-bin/pyside6/project/
 bin/pyside6/project.py
-bin/pyside6/project/__init__.py
-bin/pyside6/project/newproject.py
-bin/pyside6/project/project_data.py
-bin/pyside6/project/utils.py
+bin/pyside6/project_lib/
+bin/pyside6/project_lib/__init__.py
+bin/pyside6/project_lib/design_studio_project.py
+bin/pyside6/project_lib/newproject.py
+bin/pyside6/project_lib/project_data.py
+bin/pyside6/project_lib/utils.py
 bin/pyside6/pyside_tool.py
 bin/pyside6/qml.py
 @bin bin/pyside6/qmlcachegen

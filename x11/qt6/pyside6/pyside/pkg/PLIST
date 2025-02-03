@@ -332,6 +332,12 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/support/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/generate_pyi.py
 @so lib/qt6/plugins/designer/libPySidePlugin.so
 share/PySide6/
+share/PySide6/doc/
+share/PySide6/doc/qtcore.rst
+share/PySide6/doc/qtqml.rst
+share/PySide6/doc/qtquicktest.rst
+share/PySide6/doc/qtuitools.rst
+share/PySide6/doc/qtwebenginecore.rst
 share/PySide6/glue/
 share/PySide6/glue/qtcharts.cpp
 share/PySide6/glue/qtcore.cpp
@@ -347,6 +353,7 @@ share/PySide6/glue/qtpositioning.cpp
 share/PySide6/glue/qtprintsupport.cpp
 share/PySide6/glue/qtqml.cpp
 share/PySide6/glue/qtquick.cpp
+share/PySide6/glue/qtquick3d.cpp
 share/PySide6/glue/qtquicktest.cpp
 share/PySide6/glue/qtserialbus.cpp
 share/PySide6/glue/qtsql.cpp
