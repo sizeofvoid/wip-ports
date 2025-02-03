@@ -21,6 +21,7 @@ bin/pyside6/deploy_lib/config.py
 bin/pyside6/deploy_lib/default.spec
 bin/pyside6/deploy_lib/dependency_util.py
 bin/pyside6/deploy_lib/deploy_util.py
+bin/pyside6/deploy_lib/design_studio.py
 bin/pyside6/deploy_lib/nuitka_helper.py
 bin/pyside6/deploy_lib/pyside_icon.icns
 bin/pyside6/deploy_lib/pyside_icon.ico
@@ -61,4 +62,5 @@ bin/pyside6/qtpy2cpp_lib/tokenizer.py
 bin/pyside6/qtpy2cpp_lib/visitor.py
 @bin bin/pyside6/rcc
 bin/pyside6/requirements-android.txt
+@bin bin/pyside6/svgtoqml
 @bin bin/pyside6/uic
