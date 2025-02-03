@@ -91,7 +91,6 @@ LIB_DEPENDS =	archivers/minizip \
 # for ninja(1) and would slow everything down which we don't want.  We pass the
 # real number of make jobs via NINJA_JOBS to ninja(1) to CONFIGURE_ENV.
 NINJA_JOBS !!=	sysctl -n hw.ncpuonline
-MAKE_JOBS =	1
 
 # The build system reads the environment variable $NINJA_PATH to decide whether
 # to boostrap ninja or not (and also to invoke it afterwards). CC and CXX are
@@ -180,5 +179,9 @@ pre-configure:
 .endfor
 	cd ${CHROMESRC} && env -i ${MAKE_ENV} ${MODPY_BIN} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
+
+do-build:
+	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
+		cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j 1
 
 .include <bsd.port.mk>
