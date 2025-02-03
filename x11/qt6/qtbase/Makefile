@@ -32,7 +32,7 @@ SHARED_LIBS +=  Qt6OpenGLExtensions          0.1 # 6.7
 SHARED_LIBS +=  Qt6XcbQpa                    4.1 # 6.7
 SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.2 # 6.7
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.7
-WANTLIB += ${COMPILER_LIBCXX}
+
 WANTLIB-global =
 
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
@@ -161,7 +161,3 @@ MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CXXFLAGS +=	-I${X11BASE}/include -I${LOCALBASE}/include
 
 .include <bsd.port.mk>
-
-.if ${USE_CCACHE:L} == "yes"
-CONFIGURE_ARGS +=	-DQT_USE_CCACHE=ON
-.endif
