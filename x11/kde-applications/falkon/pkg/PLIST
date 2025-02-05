@@ -7,9 +7,42 @@ lib/qt6/plugins/falkon/
 @so lib/qt6/plugins/falkon/KDEFrameworksIntegration.so
 @so lib/qt6/plugins/falkon/MouseGestures.so
 @so lib/qt6/plugins/falkon/PIM.so
+@so lib/qt6/plugins/falkon/PyFalkon.so
 @so lib/qt6/plugins/falkon/StatusBarIcons.so
 @so lib/qt6/plugins/falkon/TabManager.so
 @so lib/qt6/plugins/falkon/VerticalTabs.so
+lib/qt6/plugins/falkon/middleclickloader/
+lib/qt6/plugins/falkon/middleclickloader/__init__.py
+lib/qt6/plugins/falkon/middleclickloader/i18n.py
+lib/qt6/plugins/falkon/middleclickloader/mcl_handler.py
+lib/qt6/plugins/falkon/middleclickloader/mcl_loadmode.py
+lib/qt6/plugins/falkon/middleclickloader/mcl_settings.py
+lib/qt6/plugins/falkon/middleclickloader/mcl_settings.ui
+lib/qt6/plugins/falkon/middleclickloader/metadata.desktop
+lib/qt6/plugins/falkon/runaction/
+lib/qt6/plugins/falkon/runaction/__init__.py
+lib/qt6/plugins/falkon/runaction/action.py
+lib/qt6/plugins/falkon/runaction/actionmanager.py
+lib/qt6/plugins/falkon/runaction/actions/
+lib/qt6/plugins/falkon/runaction/actions/dictionary.desktop
+lib/qt6/plugins/falkon/runaction/actions/google.png
+lib/qt6/plugins/falkon/runaction/actions/googleimagesearch.desktop
+lib/qt6/plugins/falkon/runaction/actions/mpv.desktop
+lib/qt6/plugins/falkon/runaction/actions/tineye.png
+lib/qt6/plugins/falkon/runaction/actions/tineyeimagesearch.desktop
+lib/qt6/plugins/falkon/runaction/actions/translate.desktop
+lib/qt6/plugins/falkon/runaction/actions/translate.png
+lib/qt6/plugins/falkon/runaction/actions/w3.desktop
+lib/qt6/plugins/falkon/runaction/actions/w3.png
+lib/qt6/plugins/falkon/runaction/actions/yandex.png
+lib/qt6/plugins/falkon/runaction/actions/yandeximagesearch.desktop
+lib/qt6/plugins/falkon/runaction/button.py
+lib/qt6/plugins/falkon/runaction/i18n.py
+lib/qt6/plugins/falkon/runaction/icon.svg
+lib/qt6/plugins/falkon/runaction/metadata.desktop
+lib/qt6/plugins/falkon/runaction/runaction.py
+lib/qt6/plugins/falkon/runaction/settings.ui
+lib/qt6/plugins/falkon/runaction/settingsdialog.py
 share/applications/org.kde.falkon.desktop
 share/bash-completion/completions/falkon
 share/falkon/
@@ -924,7 +957,6 @@ share/locale/zh_TW/LC_MESSAGES/falkon_statusbaricons_qt.qm
 share/locale/zh_TW/LC_MESSAGES/falkon_tabmanager_qt.qm
 share/locale/zh_TW/LC_MESSAGES/falkon_testplugin_qt.qm
 share/locale/zh_TW/LC_MESSAGES/falkon_verticaltabs_qt.qm
-share/metainfo/
 share/metainfo/org.kde.falkon.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
