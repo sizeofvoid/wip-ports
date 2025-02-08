@@ -13,8 +13,10 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
+BUILD_DEPENDS =	graphics/kirigami-addons
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/dbus,-suid
+		x11/dbus,-suid \
+		graphics/kirigami-addons
 
 LIB_DEPENDS =	devel/kf6/kauth \
 		devel/kf6/kcmutils \

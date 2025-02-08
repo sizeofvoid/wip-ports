@@ -15,7 +15,10 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
-BUILD_DEPENDS =	archivers/gtar
+BUILD_DEPENDS =	archivers/gtar \
+		graphics/kirigami-addons
+
+RUN_DEPENDS =	graphics/kirigami-addons
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kconfig \

@@ -41,7 +41,8 @@ WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_utf8_for_code_point absl_vlog_config_internal
 WANTLIB += c gps m protobuf protoc shp z
 
-BUILD_DEPENDS =	devel/kf6/kwallet
+BUILD_DEPENDS =	devel/kf6/kwallet \
+		x11/kde-plasma/libplasma
 
 RUN_DEPENDS =	misc/shared-mime-info \
 		devel/kf6/kwallet
