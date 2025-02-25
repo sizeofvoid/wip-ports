@@ -1,5 +1,3 @@
-@conflict kicad-library-*
-@pkgpath cad/kicad-library
 share/kicad/
 share/kicad/symbols/
 share/kicad/symbols/4xxx.kicad_sym
@@ -123,6 +121,7 @@ share/kicad/symbols/MCU_NXP_NTAG.kicad_sym
 share/kicad/symbols/MCU_NXP_S08.kicad_sym
 share/kicad/symbols/MCU_Nordic.kicad_sym
 share/kicad/symbols/MCU_Parallax.kicad_sym
+share/kicad/symbols/MCU_Puya.kicad_sym
 share/kicad/symbols/MCU_RaspberryPi.kicad_sym
 share/kicad/symbols/MCU_Renesas_Synergy_S1.kicad_sym
 share/kicad/symbols/MCU_STC.kicad_sym
@@ -142,9 +141,9 @@ share/kicad/symbols/MCU_ST_STM32L1.kicad_sym
 share/kicad/symbols/MCU_ST_STM32L4.kicad_sym
 share/kicad/symbols/MCU_ST_STM32L5.kicad_sym
 share/kicad/symbols/MCU_ST_STM32MP1.kicad_sym
+share/kicad/symbols/MCU_ST_STM32U0.kicad_sym
 share/kicad/symbols/MCU_ST_STM32U5.kicad_sym
 share/kicad/symbols/MCU_ST_STM32WB.kicad_sym
-share/kicad/symbols/MCU_ST_STM32WBA.kicad_sym
 share/kicad/symbols/MCU_ST_STM32WL.kicad_sym
 share/kicad/symbols/MCU_ST_STM8.kicad_sym
 share/kicad/symbols/MCU_SiFive.kicad_sym
@@ -155,6 +154,7 @@ share/kicad/symbols/MCU_Texas_SimpleLink.kicad_sym
 share/kicad/symbols/MCU_WCH_CH32V0.kicad_sym
 share/kicad/symbols/MCU_WCH_CH32V2.kicad_sym
 share/kicad/symbols/MCU_WCH_CH32V3.kicad_sym
+share/kicad/symbols/MCU_WCH_CH32X0.kicad_sym
 share/kicad/symbols/Mechanical.kicad_sym
 share/kicad/symbols/Memory_EEPROM.kicad_sym
 share/kicad/symbols/Memory_EPROM.kicad_sym

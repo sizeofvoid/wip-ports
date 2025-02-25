@@ -112,8 +112,11 @@ share/kicad/template/Edgeberry_Cartridge/Edgeberry_cartridge_template.kicad_pcb
 share/kicad/template/Edgeberry_Cartridge/Edgeberry_cartridge_template.kicad_pro
 share/kicad/template/Edgeberry_Cartridge/Edgeberry_cartridge_template.kicad_sch
 share/kicad/template/Edgeberry_Cartridge/Hardware_Cartridge_Design_Guide.pdf
+share/kicad/template/Edgeberry_Cartridge/faceplate/
+share/kicad/template/Edgeberry_Cartridge/faceplate/Edgeberry_Hardware_Cartridge_faceplate.FCStd
+share/kicad/template/Edgeberry_Cartridge/faceplate/Edgeberry_Hardware_Cartridge_faceplate.step
 share/kicad/template/Edgeberry_Cartridge/meta/
-share/kicad/template/Edgeberry_Cartridge/meta/Edgeberry.png
+share/kicad/template/Edgeberry_Cartridge/meta/Edgeberry_banner.png
 share/kicad/template/Edgeberry_Cartridge/meta/cartridge.png
 share/kicad/template/Edgeberry_Cartridge/meta/icon.png
 share/kicad/template/Edgeberry_Cartridge/meta/info.html

@@ -1,7 +1,7 @@
 Index: kicad/kicad_manager_frame.cpp
 --- kicad/kicad_manager_frame.cpp.orig
 +++ kicad/kicad_manager_frame.cpp
-@@ -957,6 +957,7 @@ void KICAD_MANAGER_FRAME::OnIdle( wxIdleEvent& aEvent 
+@@ -969,6 +969,7 @@ void KICAD_MANAGER_FRAME::OnIdle( wxIdleEvent& aEvent 
  
      // clear file states regardless if we opened windows or not due to setting
      Prj().GetLocalSettings().ClearFileState();
@@ -9,7 +9,7 @@ Index: kicad/kicad_manager_frame.cpp
  
      KICAD_SETTINGS* settings = kicadSettings();
  
-@@ -977,7 +978,6 @@ void KICAD_MANAGER_FRAME::OnIdle( wxIdleEvent& aEvent 
+@@ -989,7 +990,6 @@ void KICAD_MANAGER_FRAME::OnIdle( wxIdleEvent& aEvent 
          m_pcm->RunBackgroundUpdate();
      }
  

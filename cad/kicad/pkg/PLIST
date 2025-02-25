@@ -735,5 +735,5 @@ share/metainfo/org.kicad.kicad.metainfo.xml
 share/mime/packages/kicad-gerbers.xml
 share/mime/packages/kicad-kicad.xml
 @tag update-desktop-database
-@tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database

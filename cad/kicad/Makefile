@@ -1,12 +1,11 @@
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
-BROKEN-powerpc =	segfaults when trying to run the PCB editor
-BROKEN =		likely needing update to recent 8.x for Python 3.12
+BROKEN-powerpc =       segfaults when trying to run the PCB editor
 
 USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			8.0.6
+V =			8.0.9
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
@@ -32,7 +31,7 @@ WANTLIB += TKXmlTObj TKXmlXCAF TKernel atk-1.0 boost_locale-mt
 WANTLIB += c cairo cairo-gobject curl fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 git2 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += harfbuzz intl iodbc m ngspice pango-1.0 pangocairo-1.0
-WANTLIB += pixman-1 python3.11 secret-1 wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += pixman-1 python3.12 secret-1 wx_baseu-3.2 wx_baseu_net-3.2
 WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
 WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2
 WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 z
@@ -61,6 +60,7 @@ RUN_DEPENDS =		cad/kicad-share/footprints>=${V} \
 LIB_DEPENDS =		cad/ngspice/libngspice \
 			cad/opencascade \
 			databases/iodbc \
+			net/nng \
 			devel/boost \
 			devel/gettext,-runtime \
 			devel/glib2 \
@@ -86,6 +86,10 @@ CONFIGURE_ARGS +=	-DNANODBC_ENABLE_BOOST=ON \
 CONFIGURE_ARGS +=	-DKICAD_BUILD_I18N=ON \
 			-DKICAD_SCRIPTING_WXPYTHON=OFF \
 			-DKICAD_UPDATE_CHECK=OFF \
+			-DKICAD_SPICE_QA=ON \
+			-DKICAD_USE_SENTRY=OFF \
+			-DKICAD_SIGNAL_INTEGRITY=ON \
+			-DKICAD_BUILD_QA_TESTS=ON \
 			-DKICAD_USE_EGL=ON \
 			-DKICAD_WAYLAND=OFF
 
@@ -95,16 +99,8 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 CFLAGS +=		-I${X11BASE}/include
 CXXFLAGS +=		-I${X11BASE}/include
 
-<<<<<<< HEAD
 NO_TEST =		Yes
 
-# this version is old and doesn't support Python >3.11; remove and
-# allow it to use the newer one in /usr/local/share/cmake/Modules
-post-extract:
-	rm ${WRKSRC}/CMakeModules/FindPythonLibs.cmake
-
-=======
->>>>>>> 1215e538189 (Update kicad to 8.0.4)
 post-install:
 	${MODPY_COMPILEALL} \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ \
