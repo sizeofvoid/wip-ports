@@ -14,17 +14,17 @@ HOMEPAGE =	https://www.blender.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Iex-3_3 IlmThread-3_3 Imath-3_1
-WANTLIB += OpenColorIO OpenEXR-3_3 OpenEXRCore-3_3 OpenImageIO OpenImageIO_Util
-WANTLIB += SDL2 X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice
-WANTLIB += avfilter avformat avutil blosc boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c expat
-WANTLIB += fftw3 freetype gmp gmpxx jpeg m openal openjp2 openvdb
-WANTLIB += osdCPU osdGPU png potrace pugixml pystring sharpyuv sndfile
-WANTLIB += swresample swscale tbb tiff util webp webpdemux webpmux
-WANTLIB += yaml-cpp z zstd
+WANTLIB += ${COMPILER_LIBCXX} Alembic Iex-3_3 IlmThread-3_3 Imath-3_1
+WANTLIB += OpenColorIO OpenEXR-3_3 OpenEXRCore-3_3 OpenImageIO
+WANTLIB += OpenImageIO_Util X11 Xfixes Xi Xrender Xxf86vm atomic
+WANTLIB += avcodec avdevice avfilter avformat avutil b2 blas bz2
+WANTLIB += c cblas crypto curses epoxy execinfo expat ffi fftw3
+WANTLIB += fftw3f fftw3f_threads freetype gmp gmpxx intl jpeg
+WANTLIB += lapack lzma m minizip openal openjp2 openvdb osdCPU
+WANTLIB += osdGPU panel pipewire-0.3 png potrace pugixml pystring
+WANTLIB += ${MODPY_WANTLIB} readline shaderc_shared sharpyuv sndfile
+WANTLIB += sqlite3 ssl swresample swscale tbb util vulkan webp
+WANTLIB += webpdemux webpmux xkbcommon yaml-cpp z zstd
 
 SITES =		https://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/
@@ -78,8 +78,13 @@ LIB_DEPENDS =	audio/libsndfile \
 		graphics/openvdb \
 		graphics/png \
 		graphics/potrace \
+		graphics/shaderc \
 		graphics/tiff \
+		graphics/vulkan-loader \
 		math/fftw3 \
+		math/fftw3,float \
+		misc/llama.cpp \
+		multimedia/pipewire/pipewire \
 		${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -152,4 +157,5 @@ post-install:
 		-exec ${LOCALBASE}/bin/woff2_decompress {} \;
 	rm ${PREFIX}/share/blender/4.4/datafiles/fonts/*.woff2
 
+LIB_DEPENDS += graphics/shaderc graphics/vulkan-loader misc/llama.cpp multimedia/pipewire/pipewire
 .include <bsd.port.mk>
