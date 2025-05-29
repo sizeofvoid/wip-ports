@@ -55,6 +55,9 @@ CONFIGURE_ARGS+=	-DWITH_CPU_SIMD=OFF
 .endif
 
 BUILD_DEPENDS =	math/py-numpy \
+		devel/boost \
+		devel/sdl2 \
+		graphics/tiff \
 		www/py-requests
 
 # woff2_decompress in do-install
@@ -62,13 +65,10 @@ BUILD_DEPENDS += archivers/woff2>=1.0.2p1
 
 LIB_DEPENDS =	audio/libsndfile \
 		audio/openal \
-		devel/boost \
 		devel/gmp,-cxx \
-		devel/sdl2 \
 		devel/tbb \
 		graphics/alembic \
 		graphics/ffmpeg \
-		graphics/glew \
 		graphics/jpeg \
 		graphics/opencolorio \
 		graphics/openexr \
@@ -79,12 +79,10 @@ LIB_DEPENDS =	audio/libsndfile \
 		graphics/png \
 		graphics/potrace \
 		graphics/shaderc \
-		graphics/tiff \
 		graphics/vulkan-loader \
 		math/fftw3 \
 		math/fftw3,float \
-		misc/llama.cpp \
-		multimedia/pipewire/pipewire \
+		multimedia/pipewire/pipewire,-libs \
 		${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS =	devel/desktop-file-utils \
@@ -157,5 +155,4 @@ post-install:
 		-exec ${LOCALBASE}/bin/woff2_decompress {} \;
 	rm ${PREFIX}/share/blender/4.4/datafiles/fonts/*.woff2
 
-LIB_DEPENDS += graphics/shaderc graphics/vulkan-loader misc/llama.cpp multimedia/pipewire/pipewire
 .include <bsd.port.mk>
