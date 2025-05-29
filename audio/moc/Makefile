@@ -13,10 +13,11 @@ WANTLIB += ${COMPILER_LIBCXX} FLAC X11 X11-xcb Xext Xfixes aom
 WANTLIB += avcodec avformat avutil bz2 c crypto curl curses dav1d
 WANTLIB += drm faad gsm iconv id3tag intl ltdl lzma m mad magic
 WANTLIB += modplug mp3lame mpcdec mpg123 nghttp2 nghttp3 ngtcp2
-WANTLIB += ngtcp2_crypto_quictls ogg opus popt samplerate sndfile
-WANTLIB += sndio speex ssl swresample tag tag_c theoradec theoraenc
-WANTLIB += va va-drm va-x11 vorbis vorbisenc vorbisfile vpx wavpack
-WANTLIB += x264 x265 xcb xcb-dri3 xml2 xvidcore z
+WANTLIB += ngtcp2_crypto_quictls ogg opus popt samplerate sharpyuv
+WANTLIB += sndfile sndio speex ssl swresample tag tag_c theoradec
+WANTLIB += theoraenc va va-drm va-x11 vorbis vorbisenc vorbisfile
+WANTLIB += vpx wavpack webp webpmux x264 x265 xcb xcb-dri3 xml2
+WANTLIB += xvidcore z
 
 COMPILER =	base-clang ports-gcc
 
