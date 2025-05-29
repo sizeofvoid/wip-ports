@@ -1,7 +1,7 @@
 COMMENT =	audio player for GNUstep
 
 DISTNAME =	Cynthiune-1.0.0
-REVISION =	17
+REVISION =	18
 CATEGORIES +=	audio
 
 HOMEPAGE =	http://gap.nongnu.org/cynthiune/
@@ -10,9 +10,13 @@ SITES =		${SITE_SAVANNAH:=gap/}
 SHARED_LIBS +=	Cynthiune	0.0
 
 MODULES =	x11/gnustep
-WANTLIB += 	FLAC ao ogg sndio vorbis vorbisfile z musicbrainz5
-WANTLIB += 	audiofile mad modplug tag tag_c id3tag mpcdec
-WANTLIB += ${COMPILER_LIBCXX}
+
+COMPILER_LANGS =	c
+
+WANTLIB += FLAC ao audiofile c++abi id3tag mad modplug mpcdec
+WANTLIB += musicbrainz5 ogg sndio tag tag_c vorbis vorbisfile
+WANTLIB += z
+
 LIB_DEPENDS +=	audio/flac \
 		audio/libid3tag \
 		audio/libmad \

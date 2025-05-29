@@ -3,8 +3,6 @@ share/applications/mars.desktop
 share/doc/marsshooter/
 share/doc/marsshooter/credits.txt
 share/doc/marsshooter/license.txt
-share/icons/hicolor/512x512/
-share/icons/hicolor/512x512/apps/
 share/icons/hicolor/512x512/apps/mars.png
 share/icons/hicolor/scalable/apps/mars.svg
 share/marsshooter/
