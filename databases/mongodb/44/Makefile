@@ -15,6 +15,7 @@ MODSCONS_FLAGS += --use-system-zstd
 
 ALL_TARGET =	install-core
 LIB_DEPENDS =	archivers/zstd \
+		devel/pcre \
 		net/curl
 
 post-extract:
