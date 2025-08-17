@@ -11,10 +11,8 @@
 @mode
 @owner
 @group
-@bin bin/mongo
 @bin bin/mongod
 @bin bin/mongos
-@man man/man1/mongo.1
 @man man/man1/mongod.1
 @man man/man1/mongos.1
 @man man/man5/mongodb-parameters.5
