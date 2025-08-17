@@ -15,4 +15,7 @@ MODPY_PYBUILD =		setuptools
 
 NO_TEST=	Yes
 
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${PREFIX}/man/man1
+
 .include <bsd.port.mk>
