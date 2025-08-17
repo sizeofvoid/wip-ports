@@ -2118,3 +2118,6 @@ lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/entry_po
 lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/top_level.txt
+@man man/man1/scons-time.1
+@man man/man1/scons.1
+@man man/man1/sconsign.1
