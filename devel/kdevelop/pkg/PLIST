@@ -39,6 +39,7 @@ include/kdevplatform/documentation/documentationfindwidget.h
 include/kdevplatform/documentation/standarddocumentationview.h
 include/kdevplatform/execute/
 include/kdevplatform/execute/iexecuteplugin.h
+include/kdevplatform/execute/iexecutepluginhelpers.h
 include/kdevplatform/executescript/
 include/kdevplatform/executescript/iexecutescriptplugin.h
 include/kdevplatform/interfaces/
@@ -447,65 +448,65 @@ lib/cmake/KDevelop/KDevelopTargets.cmake
 @lib lib/libKDevPlatformVcs.so.${LIBKDevPlatformVcs_VERSION}
 @so lib/libKDevelopSessionsWatch.so
 lib/qt6/plugins/kdevplatform/
-lib/qt6/plugins/kdevplatform/${PLUGIN_V}/
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevCMakeBuilder.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevCMakeDocumentation.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevCMakeManager.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevCustomBuildSystem.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevCustomMakeManager.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevDefinesAndIncludesManager.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevGenericManager.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevMakeBuilder.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevManPage.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevMesonManager.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevNinjaBuilder.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevOutlineView.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevProjectFilter.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevProjectManagerView.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevStandardOutputView.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/KDevWelcomePage.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevandroid.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevappwizard.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevastyle.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevbazaar.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevclangsupport.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevclangtidy.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevclassbrowser.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevclazy.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevcodeutils.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevcontextbrowser.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevcppcheck.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevcraft.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevcustomscript.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevdocker.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevdocumentswitcher.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevdocumentview.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevexecute.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevexecuteplasmoid.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevexecutescript.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevexternalscript.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevfilemanager.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevfiletemplates.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevflatpak.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevgdb.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevghprovider.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevgit.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevgrepview.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevheaptrack.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevkonsoleview.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevlldb.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevopenwith.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevpatchreview.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevperforce.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevproblemreporter.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevqthelp.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevquickopen.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevsourceformatter.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevsubversion.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevswitchtobuddy.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevtestview.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/kdevvcschangesviewplugin.so
-@so lib/qt6/plugins/kdevplatform/${PLUGIN_V}/scratchpad.so
+lib/qt6/plugins/kdevplatform/63/
+@so lib/qt6/plugins/kdevplatform/63/KDevCMakeBuilder.so
+@so lib/qt6/plugins/kdevplatform/63/KDevCMakeDocumentation.so
+@so lib/qt6/plugins/kdevplatform/63/KDevCMakeManager.so
+@so lib/qt6/plugins/kdevplatform/63/KDevCustomBuildSystem.so
+@so lib/qt6/plugins/kdevplatform/63/KDevCustomMakeManager.so
+@so lib/qt6/plugins/kdevplatform/63/KDevDefinesAndIncludesManager.so
+@so lib/qt6/plugins/kdevplatform/63/KDevGenericManager.so
+@so lib/qt6/plugins/kdevplatform/63/KDevMakeBuilder.so
+@so lib/qt6/plugins/kdevplatform/63/KDevManPage.so
+@so lib/qt6/plugins/kdevplatform/63/KDevMesonManager.so
+@so lib/qt6/plugins/kdevplatform/63/KDevNinjaBuilder.so
+@so lib/qt6/plugins/kdevplatform/63/KDevOutlineView.so
+@so lib/qt6/plugins/kdevplatform/63/KDevProjectFilter.so
+@so lib/qt6/plugins/kdevplatform/63/KDevProjectManagerView.so
+@so lib/qt6/plugins/kdevplatform/63/KDevStandardOutputView.so
+@so lib/qt6/plugins/kdevplatform/63/KDevWelcomePage.so
+@so lib/qt6/plugins/kdevplatform/63/kdevandroid.so
+@so lib/qt6/plugins/kdevplatform/63/kdevappwizard.so
+@so lib/qt6/plugins/kdevplatform/63/kdevastyle.so
+@so lib/qt6/plugins/kdevplatform/63/kdevbazaar.so
+@so lib/qt6/plugins/kdevplatform/63/kdevclangsupport.so
+@so lib/qt6/plugins/kdevplatform/63/kdevclangtidy.so
+@so lib/qt6/plugins/kdevplatform/63/kdevclassbrowser.so
+@so lib/qt6/plugins/kdevplatform/63/kdevclazy.so
+@so lib/qt6/plugins/kdevplatform/63/kdevcodeutils.so
+@so lib/qt6/plugins/kdevplatform/63/kdevcontextbrowser.so
+@so lib/qt6/plugins/kdevplatform/63/kdevcppcheck.so
+@so lib/qt6/plugins/kdevplatform/63/kdevcraft.so
+@so lib/qt6/plugins/kdevplatform/63/kdevcustomscript.so
+@so lib/qt6/plugins/kdevplatform/63/kdevdocker.so
+@so lib/qt6/plugins/kdevplatform/63/kdevdocumentswitcher.so
+@so lib/qt6/plugins/kdevplatform/63/kdevdocumentview.so
+@so lib/qt6/plugins/kdevplatform/63/kdevexecute.so
+@so lib/qt6/plugins/kdevplatform/63/kdevexecuteplasmoid.so
+@so lib/qt6/plugins/kdevplatform/63/kdevexecutescript.so
+@so lib/qt6/plugins/kdevplatform/63/kdevexternalscript.so
+@so lib/qt6/plugins/kdevplatform/63/kdevfilemanager.so
+@so lib/qt6/plugins/kdevplatform/63/kdevfiletemplates.so
+@so lib/qt6/plugins/kdevplatform/63/kdevflatpak.so
+@so lib/qt6/plugins/kdevplatform/63/kdevgdb.so
+@so lib/qt6/plugins/kdevplatform/63/kdevghprovider.so
+@so lib/qt6/plugins/kdevplatform/63/kdevgit.so
+@so lib/qt6/plugins/kdevplatform/63/kdevgrepview.so
+@so lib/qt6/plugins/kdevplatform/63/kdevheaptrack.so
+@so lib/qt6/plugins/kdevplatform/63/kdevkonsoleview.so
+@so lib/qt6/plugins/kdevplatform/63/kdevlldb.so
+@so lib/qt6/plugins/kdevplatform/63/kdevopenwith.so
+@so lib/qt6/plugins/kdevplatform/63/kdevpatchreview.so
+@so lib/qt6/plugins/kdevplatform/63/kdevperforce.so
+@so lib/qt6/plugins/kdevplatform/63/kdevproblemreporter.so
+@so lib/qt6/plugins/kdevplatform/63/kdevqthelp.so
+@so lib/qt6/plugins/kdevplatform/63/kdevquickopen.so
+@so lib/qt6/plugins/kdevplatform/63/kdevsourceformatter.so
+@so lib/qt6/plugins/kdevplatform/63/kdevsubversion.so
+@so lib/qt6/plugins/kdevplatform/63/kdevswitchtobuddy.so
+@so lib/qt6/plugins/kdevplatform/63/kdevtestview.so
+@so lib/qt6/plugins/kdevplatform/63/kdevvcschangesviewplugin.so
+@so lib/qt6/plugins/kdevplatform/63/scratchpad.so
 lib/qt6/plugins/kf6/krunner/
 @so lib/qt6/plugins/kf6/krunner/kdevelopsessions.so
 @so lib/qt6/plugins/kf6/ktexttemplate/kdev_filters.so
@@ -1855,10 +1856,25 @@ share/locale/gl/LC_MESSAGES/kdevvcsprojectintegration.mo
 share/locale/gl/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 share/locale/gl/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
+share/locale/he/LC_MESSAGES/kdevandroid.mo
 share/locale/he/LC_MESSAGES/kdevbazaar.mo
+share/locale/he/LC_MESSAGES/kdevclassbrowser.mo
+share/locale/he/LC_MESSAGES/kdevcodeutils.mo
+share/locale/he/LC_MESSAGES/kdevdocker.mo
+share/locale/he/LC_MESSAGES/kdevdocumentswitcher.mo
+share/locale/he/LC_MESSAGES/kdevdocumentview.mo
+share/locale/he/LC_MESSAGES/kdevfilemanager.mo
 share/locale/he/LC_MESSAGES/kdevkonsole.mo
+share/locale/he/LC_MESSAGES/kdevmanpage.mo
+share/locale/he/LC_MESSAGES/kdevokteta.mo
+share/locale/he/LC_MESSAGES/kdevoutlineview.mo
+share/locale/he/LC_MESSAGES/kdevqmakebuilder.mo
 share/locale/he/LC_MESSAGES/kdevswitchtobuddy.mo
+share/locale/he/LC_MESSAGES/kdevtestview.mo
+share/locale/he/LC_MESSAGES/kdevvcsprojectintegration.mo
+share/locale/he/LC_MESSAGES/kdevwelcomepage.mo
 share/locale/he/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
+share/locale/he/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 share/locale/hi/LC_MESSAGES/kdevandroid.mo
 share/locale/hi/LC_MESSAGES/kdevappwizard.mo
 share/locale/hi/LC_MESSAGES/kdevastyle.mo

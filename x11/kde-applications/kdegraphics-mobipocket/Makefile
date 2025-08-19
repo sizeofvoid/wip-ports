@@ -5,11 +5,9 @@ PKGNAME =	kdegraphics-mobipocket-kf5-${VERSION}
 
 CATEGORIES =	devel
 
-SHARED_LIBS +=  qmobipocket               1.0 # 2.0
+SHARED_LIBS +=	QMobipocket6              0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui m
-
-MODKDE_KF5 =	Yes
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui m
 
 NO_TEST =	Yes
 

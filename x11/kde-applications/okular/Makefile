@@ -11,7 +11,7 @@ WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Parts KF6Pty
-WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6Solid KF6SonnetUi
+WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6SonnetUi
 WANTLIB += KF6TextWidgets KF6ThreadWeaver KF6Wallet KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui PlasmaActivities QMobipocket6
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport
@@ -79,4 +79,5 @@ CONFIGURE_ARGS +=	-DBUILD_OKULARKIRIGAMI=OFF
 
 TEST_IS_INTERACTIVE =	X11
 
+LIB_DEPENDS += print/poppler
 .include <bsd.port.mk>

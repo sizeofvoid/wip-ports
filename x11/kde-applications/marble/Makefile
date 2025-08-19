@@ -40,7 +40,7 @@ WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
 WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
-WANTLIB += c gps m phonon4qt6 protobuf protoc shp z
+WANTLIB += c gps m phonon4qt6 shp z
 
 BUILD_DEPENDS =	devel/kf6/kwallet \
 		x11/kde-plasma/libplasma

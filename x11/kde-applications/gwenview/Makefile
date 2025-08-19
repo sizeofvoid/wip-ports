@@ -14,11 +14,11 @@ WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Parts KF6Purpose
 WANTLIB += KF6PurposeWidgets KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui PlasmaActivities Qt6Concurrent
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
-WANTLIB += Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6WaylandClient
-WANTLIB += Qt6Widgets Qt6Xml X11 c cfitsio exiv2 jpeg kImageAnnotator
-WANTLIB += lcms2 m phonon4qt6 png tiff wayland-client wayland-cursor
-WANTLIB += xkbcommon z
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6MultimediaWidgets
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6PrintSupport
+WANTLIB += Qt6Svg Qt6SvgWidgets Qt6WaylandClient Qt6Widgets Qt6Xml
+WANTLIB += X11 c cfitsio exiv2 jpeg kImageAnnotator lcms2 m png
+WANTLIB += tiff wayland-client wayland-cursor xkbcommon z
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
