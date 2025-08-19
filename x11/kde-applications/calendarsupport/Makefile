@@ -11,10 +11,11 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6GuiAddons KF6Holidays KF6I18n KF6ItemModels
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6TextCustomEditor KF6WidgetsAddons KPim6AkonadiCalendar
-WANTLIB += KPim6AkonadiCore KPim6AkonadiWidgets KPim6CalendarUtils
-WANTLIB += KPim6IdentityManagementCore KPim6Mime Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets m
+WANTLIB += KF6TextCustomEditor KF6WidgetsAddons KPim6AkonadiCalendar
+WANTLIB += KPim6AkonadiCalendarCore KPim6AkonadiCore KPim6AkonadiPrivate
+WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6IdentityManagementCore
+WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Widgets m
 
 BUILD_DEPENDS =	devel/boost
 

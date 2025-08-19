@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
-REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
@@ -22,10 +21,11 @@ WANTLIB += KF6StatusNotifierItem KF6SyntaxHighlighting KF6TextAutoCorrectionCore
 WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextEditTextToSpeech
 WANTLIB += KF6TextTemplate KF6TextUtils KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase
-WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiSearchDebug
-WANTLIB += KPim6AkonadiSearchPIM KPim6AkonadiWidgets KPim6CalendarUtils
-WANTLIB += KPim6GrantleeTheme KPim6Gravatar KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6AkonadiAgentWidgetBase KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AkonadiPrivate KPim6AkonadiSearchDebug KPim6AkonadiSearchPIM
+WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
+WANTLIB += KPim6Gravatar KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6KManageSieve KPim6KSieve
 WANTLIB += KPim6KSieveCore KPim6KSieveUi KPim6KontactInterface
 WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Libkleo

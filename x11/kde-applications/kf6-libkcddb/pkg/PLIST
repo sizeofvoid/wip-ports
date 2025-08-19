@@ -26,6 +26,7 @@ lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cddb.so
+share/applications/kcm_cddb.desktop
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_KCddb.pri
 share/qlogging-categories6/libkcddb.categories

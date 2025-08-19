@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -30,18 +29,17 @@ WANTLIB += absl_base absl_city absl_civil_time absl_debugging_internal
 WANTLIB += absl_decode_rust_punycode absl_demangle_internal absl_demangle_rust
 WANTLIB += absl_examine_stack absl_graphcycles_internal absl_hash
 WANTLIB += absl_int128 absl_kernel_timeout_internal absl_leak_check
-WANTLIB += absl_log_entry absl_log_globals absl_log_internal_check_op
-WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
-WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
-WANTLIB += absl_log_internal_message absl_log_internal_nullguard
-WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
-WANTLIB += absl_log_severity absl_log_sink absl_malloc_internal
-WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_strerror absl_string_view
-WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
-WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
-WANTLIB += c gps m phonon4qt6 protobuf protoc shp z
+WANTLIB += absl_log_globals absl_log_internal_check_op absl_log_internal_fnmatch
+WANTLIB += absl_log_internal_format absl_log_internal_globals
+WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB += absl_log_internal_structured_proto absl_log_severity
+WANTLIB += absl_log_sink absl_malloc_internal absl_raw_logging_internal
+WANTLIB += absl_spinlock_wait absl_stacktrace absl_str_format_internal
+WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
+WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
+WANTLIB += absl_vlog_config_internal c gps m phonon4qt6 shp z
 
 BUILD_DEPENDS =	devel/kf6/kwallet \
 		x11/kde-plasma/libplasma
@@ -55,18 +53,18 @@ LIB_DEPENDS =	devel/abseil-cpp \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
+		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		devel/kf6/kparts \
 		devel/kf6/krunner \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
-		devel/kf6/kguiaddons \
 		devel/kf6/kxmlgui \
 		devel/protobuf \
 		devel/shapelib \
-		multimedia/phonon,qt6 \
 		misc/gpsd \
+		multimedia/phonon,qt6 \
 		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \

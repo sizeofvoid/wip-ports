@@ -24,7 +24,6 @@ WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
 WANTLIB += c intl luajit-5.1 m poppler poppler-qt6 python3.12
 WANTLIB += qalculate spectre util xml2 xslt
 
-WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
 MODULES +=	fortran \
 		lang/lua \

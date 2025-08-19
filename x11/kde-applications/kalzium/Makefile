@@ -10,10 +10,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Plotting KF6Service
-WANTLIB += KF6Solid KF6SonnetUi KF6TextWidgets KF6UnitConversion
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6StateMachine Qt6Svg Qt6Widgets
-WANTLIB += Qt6Xml c m
+WANTLIB += KF6SonnetUi KF6TextWidgets KF6UnitConversion KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6StateMachine Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

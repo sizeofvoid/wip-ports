@@ -47,7 +47,6 @@ WANTLIB += Qt6Widgets Qt6Xml X11 apr-1 aprutil-1 c komparediff2
 WANTLIB += m svn_client-1 svn_fs-1 svn_ra-1 svn_repos-1 svn_subr-1
 WANTLIB += svn_wc-1
 
-WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
 SITES =	${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX = .tar.xz

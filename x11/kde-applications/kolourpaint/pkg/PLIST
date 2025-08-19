@@ -263,6 +263,14 @@ share/doc/HTML/uk/kolourpaint/image_soften_sharpen.png
 share/doc/HTML/uk/kolourpaint/index.cache.bz2
 share/doc/HTML/uk/kolourpaint/index.docbook
 share/doc/HTML/uk/kolourpaint/screenshot_acquiring.png
+share/examples/kolourpaint/
+share/examples/kolourpaint/xdg/
+share/examples/kolourpaint/xdg/colors/
+share/examples/kolourpaint/xdg/colors/40.colors
+share/examples/kolourpaint/xdg/colors/Oxygen.colors
+share/examples/kolourpaint/xdg/colors/Rainbow.colors
+share/examples/kolourpaint/xdg/colors/Royal.colors
+share/examples/kolourpaint/xdg/colors/Web.colors
 share/icons/hicolor/128x128/apps/kolourpaint.png
 share/icons/hicolor/16x16/apps/kolourpaint.png
 share/icons/hicolor/22x22/apps/kolourpaint.png

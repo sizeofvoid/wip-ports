@@ -1,6 +1,7 @@
 @bin bin/tokodon
 @so lib/qt6/plugins/kf6/purpose/tokodonplugin.so
 share/applications/org.kde.tokodon.desktop
+share/dbus-1/services/org.kde.tokodon.service
 share/icons/hicolor/scalable/apps/org.kde.tokodon.svg
 share/knotifications6/tokodon.notifyrc
 share/locale/ar/LC_MESSAGES/tokodon.mo
