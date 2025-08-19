@@ -280,7 +280,6 @@
 
      SUBDIR += kf6-libkcddb
 
-     SUBDIR += kdegraphics-mobipocket
      SUBDIR += kf6-kdegraphics-mobipocket
 
      # XXX keep in sync
