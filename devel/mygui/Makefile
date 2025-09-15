@@ -42,4 +42,7 @@ NO_TEST =		Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Common/Base/Ogre/BaseManager.cpp
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

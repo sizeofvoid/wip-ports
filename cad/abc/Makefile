@@ -29,4 +29,7 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/abc ${PREFIX}/bin
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

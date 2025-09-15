@@ -28,11 +28,8 @@ CONFIGURE_ARGS =	-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
 			-DCMAKE_INSTALL_DOCDIR=${LOCALBASE}/share/doc/freesynd
 
-NO_TEST =	Yes
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/freesynd/
-	mv ${WRKINST}${LOCALBASE}${SYSCONFDIR}/freesynd/freesynd.ini \
-		${PREFIX}/share/examples/freesynd/
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

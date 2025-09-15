@@ -20,4 +20,7 @@ CONFIGURE_ARGS +=	-DOPTIPNG_USE_SYSTEM_LIBS=on
 post-install:
 	chmod +x ${PREFIX}/bin/optipng # ...
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

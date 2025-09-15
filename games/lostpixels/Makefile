@@ -48,4 +48,7 @@ post-install:
 	mv ${PREFIX}/bin/LostPixels ${PREFIX}/bin/lostpixels
 	cd ${WRKDIST}/../addons && ${MAKE_PROGRAM} install
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

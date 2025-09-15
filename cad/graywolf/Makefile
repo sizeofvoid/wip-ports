@@ -29,4 +29,7 @@ post-install:
 	@cd ${PREFIX}/lib/graywolf/bin/flow && \
 	    ln -sf flow.noroute flow
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

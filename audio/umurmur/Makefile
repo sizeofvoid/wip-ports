@@ -33,4 +33,7 @@ post-install:
 	${SUBST_MAN} ${FILESDIR}/umurmur.conf.5 \
 		${PREFIX}/man/man5/umurmur.conf.5
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

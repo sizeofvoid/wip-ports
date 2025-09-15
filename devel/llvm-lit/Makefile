@@ -67,4 +67,7 @@ do-install:
 do-test:
 	@${MODCMAKE_BUILD_TARGET} --target ${TEST_TARGET}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

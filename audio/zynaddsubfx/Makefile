@@ -43,4 +43,7 @@ post-patch:
 	sed -i s,/usr/local,${TRUEPREFIX}, ${WRKSRC}/src/main.cpp \
 	    ${WRKSRC}/src/Plugin/ZynAddSubFX/ZynAddSubFX-UI-Zest.cpp
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

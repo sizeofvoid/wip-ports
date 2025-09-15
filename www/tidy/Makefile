@@ -22,5 +22,6 @@ NO_TEST =	Yes
 BUILD_DEPENDS =	textproc/libxslt
 
 CONFIGURE_ARGS +=	-DMAN_INSTALL_DIR=${PREFIX}/man/man1
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

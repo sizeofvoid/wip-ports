@@ -166,4 +166,7 @@ do-test:
 	(${MODCMAKE_TEST_TARGET}) || true # Keep on going even if regress tests fail
 	@cd ${WRKBUILD}/mysql-test && ./mysql-test-run.pl --force --verbose --max-test-fail=0
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

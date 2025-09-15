@@ -18,4 +18,7 @@ CONFIGURE_ARGS =	-DNN_ENABLE_DOC=false
 
 WANTLIB +=		c pthread
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

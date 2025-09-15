@@ -28,4 +28,7 @@ TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/tool/tests/basic.sh
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>
