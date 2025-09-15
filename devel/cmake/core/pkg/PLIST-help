@@ -1,17 +1,6 @@
 @conflict cmake-<3.31.2p0v1
 share/cmake/Help/
 share/cmake/Help/command/
-share/cmake/Help/command/DEPRECATED_POLICY_VERSIONS.txt
-share/cmake/Help/command/DEVICE_LINK_OPTIONS.txt
-share/cmake/Help/command/FIND_XXX.txt
-share/cmake/Help/command/FIND_XXX_ORDER.txt
-share/cmake/Help/command/FIND_XXX_REGISTRY_VIEW.txt
-share/cmake/Help/command/FIND_XXX_ROOT.txt
-share/cmake/Help/command/GENEX_NOTE.txt
-share/cmake/Help/command/LINK_OPTIONS_LINKER.txt
-share/cmake/Help/command/OPTIONS_SHELL.txt
-share/cmake/Help/command/SUPPORTED_LANGUAGES.txt
-share/cmake/Help/command/UNSET_NOTE.txt
 share/cmake/Help/command/add_compile_definitions.rst
 share/cmake/Help/command/add_compile_options.rst
 share/cmake/Help/command/add_custom_command.rst
@@ -213,7 +202,6 @@ share/cmake/Help/envvar/CXX.rst
 share/cmake/Help/envvar/CXXFLAGS.rst
 share/cmake/Help/envvar/DASHBOARD_TEST_FROM_CTEST.rst
 share/cmake/Help/envvar/DESTDIR.rst
-share/cmake/Help/envvar/ENV_VAR.txt
 share/cmake/Help/envvar/FC.rst
 share/cmake/Help/envvar/FFLAGS.rst
 share/cmake/Help/envvar/HIPCXX.rst
@@ -221,7 +209,6 @@ share/cmake/Help/envvar/HIPFLAGS.rst
 share/cmake/Help/envvar/HIPHOSTCXX.rst
 share/cmake/Help/envvar/ISPC.rst
 share/cmake/Help/envvar/ISPCFLAGS.rst
-share/cmake/Help/envvar/LANG_FLAGS.txt
 share/cmake/Help/envvar/LDFLAGS.rst
 share/cmake/Help/envvar/MACOSX_DEPLOYMENT_TARGET.rst
 share/cmake/Help/envvar/OBJC.rst
@@ -250,8 +237,6 @@ share/cmake/Help/generator/Ninja Multi-Config.rst
 share/cmake/Help/generator/Ninja.rst
 share/cmake/Help/generator/Sublime Text 2.rst
 share/cmake/Help/generator/Unix Makefiles.rst
-share/cmake/Help/generator/VS_TOOLSET_HOST_ARCH.txt
-share/cmake/Help/generator/VS_TOOLSET_HOST_ARCH_LEGACY.txt
 share/cmake/Help/generator/Visual Studio 10 2010.rst
 share/cmake/Help/generator/Visual Studio 11 2012.rst
 share/cmake/Help/generator/Visual Studio 12 2013.rst
@@ -267,16 +252,9 @@ share/cmake/Help/generator/Visual Studio 9 2008.rst
 share/cmake/Help/generator/Watcom WMake.rst
 share/cmake/Help/generator/Xcode.rst
 share/cmake/Help/include/
-share/cmake/Help/include/COMPILE_DEFINITIONS_DISCLAIMER.txt
-share/cmake/Help/include/INTERFACE_INCLUDE_DIRECTORIES_WARNING.txt
-share/cmake/Help/include/INTERFACE_LINK_LIBRARIES_WARNING.txt
 share/cmake/Help/index.rst
 share/cmake/Help/manual/
 share/cmake/Help/manual/CTEST_EXAMPLE_MAKEFILE_JOB_SERVER.make
-share/cmake/Help/manual/ID_RESERVE.txt
-share/cmake/Help/manual/LINKS.txt
-share/cmake/Help/manual/OPTIONS_BUILD.txt
-share/cmake/Help/manual/OPTIONS_HELP.txt
 share/cmake/Help/manual/ccmake.1.rst
 share/cmake/Help/manual/cmake-buildsystem.7.rst
 share/cmake/Help/manual/cmake-commands.7.rst
@@ -310,13 +288,6 @@ share/cmake/Help/module/
 share/cmake/Help/module/AddFileDependencies.rst
 share/cmake/Help/module/AndroidTestUtilities.rst
 share/cmake/Help/module/BundleUtilities.rst
-share/cmake/Help/module/CMAKE_REQUIRED_DEFINITIONS.txt
-share/cmake/Help/module/CMAKE_REQUIRED_FLAGS.txt
-share/cmake/Help/module/CMAKE_REQUIRED_INCLUDES.txt
-share/cmake/Help/module/CMAKE_REQUIRED_LIBRARIES.txt
-share/cmake/Help/module/CMAKE_REQUIRED_LINK_DIRECTORIES.txt
-share/cmake/Help/module/CMAKE_REQUIRED_LINK_OPTIONS.txt
-share/cmake/Help/module/CMAKE_REQUIRED_QUIET.txt
 share/cmake/Help/module/CMakeAddFortranSubdirectory.rst
 share/cmake/Help/module/CMakeBackwardCompatibilityCXX.rst
 share/cmake/Help/module/CMakeDependentOption.rst
@@ -765,9 +736,6 @@ share/cmake/Help/policy/CMP0177.rst
 share/cmake/Help/policy/CMP0178.rst
 share/cmake/Help/policy/CMP0179.rst
 share/cmake/Help/policy/CMP0180.rst
-share/cmake/Help/policy/DEPRECATED.txt
-share/cmake/Help/policy/DISALLOWED_COMMAND.txt
-share/cmake/Help/policy/STANDARD_ADVICE.txt
 share/cmake/Help/prop_cache/
 share/cmake/Help/prop_cache/ADVANCED.rst
 share/cmake/Help/prop_cache/HELPSTRING.rst
@@ -825,7 +793,6 @@ share/cmake/Help/prop_gbl/CMAKE_CUDA_KNOWN_FEATURES.rst
 share/cmake/Help/prop_gbl/CMAKE_CXX_KNOWN_FEATURES.rst
 share/cmake/Help/prop_gbl/CMAKE_C_KNOWN_FEATURES.rst
 share/cmake/Help/prop_gbl/CMAKE_HIP_KNOWN_FEATURES.rst
-share/cmake/Help/prop_gbl/CMAKE_LANG_STD_FLAGS.txt
 share/cmake/Help/prop_gbl/CMAKE_ROLE.rst
 share/cmake/Help/prop_gbl/DEBUG_CONFIGURATIONS.rst
 share/cmake/Help/prop_gbl/DISABLED_FEATURES.rst
@@ -1016,7 +983,6 @@ share/cmake/Help/prop_tgt/COMPILE_FLAGS.rst
 share/cmake/Help/prop_tgt/COMPILE_OPTIONS.rst
 share/cmake/Help/prop_tgt/COMPILE_PDB_NAME.rst
 share/cmake/Help/prop_tgt/COMPILE_PDB_NAME_CONFIG.rst
-share/cmake/Help/prop_tgt/COMPILE_PDB_NOTE.txt
 share/cmake/Help/prop_tgt/COMPILE_PDB_OUTPUT_DIRECTORY.rst
 share/cmake/Help/prop_tgt/COMPILE_PDB_OUTPUT_DIRECTORY_CONFIG.rst
 share/cmake/Help/prop_tgt/COMPILE_WARNING_AS_ERROR.rst
@@ -1030,7 +996,6 @@ share/cmake/Help/prop_tgt/CUDA_FATBIN_COMPILATION.rst
 share/cmake/Help/prop_tgt/CUDA_OPTIX_COMPILATION.rst
 share/cmake/Help/prop_tgt/CUDA_PTX_COMPILATION.rst
 share/cmake/Help/prop_tgt/CUDA_RESOLVE_DEVICE_SYMBOLS.rst
-share/cmake/Help/prop_tgt/CUDA_RUNTIME_LIBRARY-VALUES.txt
 share/cmake/Help/prop_tgt/CUDA_RUNTIME_LIBRARY.rst
 share/cmake/Help/prop_tgt/CUDA_SEPARABLE_COMPILATION.rst
 share/cmake/Help/prop_tgt/CUDA_STANDARD.rst
@@ -1131,7 +1096,6 @@ share/cmake/Help/prop_tgt/INSTALL_RPATH.rst
 share/cmake/Help/prop_tgt/INSTALL_RPATH_USE_LINK_PATH.rst
 share/cmake/Help/prop_tgt/INTERFACE_AUTOMOC_MACRO_NAMES.rst
 share/cmake/Help/prop_tgt/INTERFACE_AUTOUIC_OPTIONS.rst
-share/cmake/Help/prop_tgt/INTERFACE_BUILD_PROPERTY.txt
 share/cmake/Help/prop_tgt/INTERFACE_COMPILE_DEFINITIONS.rst
 share/cmake/Help/prop_tgt/INTERFACE_COMPILE_FEATURES.rst
 share/cmake/Help/prop_tgt/INTERFACE_COMPILE_OPTIONS.rst
@@ -1143,7 +1107,6 @@ share/cmake/Help/prop_tgt/INTERFACE_LINK_DEPENDS.rst
 share/cmake/Help/prop_tgt/INTERFACE_LINK_DIRECTORIES.rst
 share/cmake/Help/prop_tgt/INTERFACE_LINK_LIBRARIES.rst
 share/cmake/Help/prop_tgt/INTERFACE_LINK_LIBRARIES_DIRECT.rst
-share/cmake/Help/prop_tgt/INTERFACE_LINK_LIBRARIES_DIRECT.txt
 share/cmake/Help/prop_tgt/INTERFACE_LINK_LIBRARIES_DIRECT_EXCLUDE.rst
 share/cmake/Help/prop_tgt/INTERFACE_LINK_OPTIONS.rst
 share/cmake/Help/prop_tgt/INTERFACE_POSITION_INDEPENDENT_CODE.rst
@@ -1187,7 +1150,6 @@ share/cmake/Help/prop_tgt/LINK_INTERFACE_LIBRARIES_CONFIG.rst
 share/cmake/Help/prop_tgt/LINK_INTERFACE_MULTIPLICITY.rst
 share/cmake/Help/prop_tgt/LINK_INTERFACE_MULTIPLICITY_CONFIG.rst
 share/cmake/Help/prop_tgt/LINK_LIBRARIES.rst
-share/cmake/Help/prop_tgt/LINK_LIBRARIES_INDIRECTION.txt
 share/cmake/Help/prop_tgt/LINK_LIBRARIES_ONLY_TARGETS.rst
 share/cmake/Help/prop_tgt/LINK_LIBRARIES_STRATEGY.rst
 share/cmake/Help/prop_tgt/LINK_LIBRARY_OVERRIDE.rst
@@ -1204,12 +1166,9 @@ share/cmake/Help/prop_tgt/MACOSX_BUNDLE.rst
 share/cmake/Help/prop_tgt/MACOSX_BUNDLE_INFO_PLIST.rst
 share/cmake/Help/prop_tgt/MACOSX_FRAMEWORK_INFO_PLIST.rst
 share/cmake/Help/prop_tgt/MACOSX_RPATH.rst
-share/cmake/Help/prop_tgt/MACOS_IMPORT_FILES.txt
 share/cmake/Help/prop_tgt/MANUALLY_ADDED_DEPENDENCIES.rst
 share/cmake/Help/prop_tgt/MAP_IMPORTED_CONFIG_CONFIG.rst
-share/cmake/Help/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT-VALUES.txt
 share/cmake/Help/prop_tgt/MSVC_DEBUG_INFORMATION_FORMAT.rst
-share/cmake/Help/prop_tgt/MSVC_RUNTIME_LIBRARY-VALUES.txt
 share/cmake/Help/prop_tgt/MSVC_RUNTIME_LIBRARY.rst
 share/cmake/Help/prop_tgt/NAME.rst
 share/cmake/Help/prop_tgt/NO_SONAME.rst
@@ -1229,7 +1188,6 @@ share/cmake/Help/prop_tgt/PCH_INSTANTIATE_TEMPLATES.rst
 share/cmake/Help/prop_tgt/PCH_WARN_INVALID.rst
 share/cmake/Help/prop_tgt/PDB_NAME.rst
 share/cmake/Help/prop_tgt/PDB_NAME_CONFIG.rst
-share/cmake/Help/prop_tgt/PDB_NOTE.txt
 share/cmake/Help/prop_tgt/PDB_OUTPUT_DIRECTORY.rst
 share/cmake/Help/prop_tgt/PDB_OUTPUT_DIRECTORY_CONFIG.rst
 share/cmake/Help/prop_tgt/POSITION_INDEPENDENT_CODE.rst
@@ -1258,7 +1216,6 @@ share/cmake/Help/prop_tgt/STATIC_LIBRARY_FLAGS_CONFIG.rst
 share/cmake/Help/prop_tgt/STATIC_LIBRARY_OPTIONS.rst
 share/cmake/Help/prop_tgt/SUFFIX.rst
 share/cmake/Help/prop_tgt/SYSTEM.rst
-share/cmake/Help/prop_tgt/Swift_COMPILATION_MODE-VALUES.txt
 share/cmake/Help/prop_tgt/Swift_COMPILATION_MODE.rst
 share/cmake/Help/prop_tgt/Swift_DEPENDENCIES_FILE.rst
 share/cmake/Help/prop_tgt/Swift_LANGUAGE_VERSION.rst
@@ -1276,7 +1233,6 @@ share/cmake/Help/prop_tgt/UNITY_BUILD_MODE.rst
 share/cmake/Help/prop_tgt/UNITY_BUILD_UNIQUE_ID.rst
 share/cmake/Help/prop_tgt/VERIFY_INTERFACE_HEADER_SETS.rst
 share/cmake/Help/prop_tgt/VERSION.rst
-share/cmake/Help/prop_tgt/VERSION_SOVERSION_EXAMPLE.txt
 share/cmake/Help/prop_tgt/VISIBILITY_INLINES_HIDDEN.rst
 share/cmake/Help/prop_tgt/VS_CONFIGURATION_TYPE.rst
 share/cmake/Help/prop_tgt/VS_DEBUGGER_COMMAND.rst
@@ -1316,13 +1272,11 @@ share/cmake/Help/prop_tgt/VS_SDK_REFERENCES.rst
 share/cmake/Help/prop_tgt/VS_SOLUTION_DEPLOY.rst
 share/cmake/Help/prop_tgt/VS_SOURCE_SETTINGS_tool.rst
 share/cmake/Help/prop_tgt/VS_USER_PROPS.rst
-share/cmake/Help/prop_tgt/VS_USE_DEBUG_LIBRARIES-PURPOSE.txt
 share/cmake/Help/prop_tgt/VS_USE_DEBUG_LIBRARIES.rst
 share/cmake/Help/prop_tgt/VS_WINDOWS_TARGET_PLATFORM_MIN_VERSION.rst
 share/cmake/Help/prop_tgt/VS_WINRT_COMPONENT.rst
 share/cmake/Help/prop_tgt/VS_WINRT_EXTENSIONS.rst
 share/cmake/Help/prop_tgt/VS_WINRT_REFERENCES.rst
-share/cmake/Help/prop_tgt/WATCOM_RUNTIME_LIBRARY-VALUES.txt
 share/cmake/Help/prop_tgt/WATCOM_RUNTIME_LIBRARY.rst
 share/cmake/Help/prop_tgt/WIN32_EXECUTABLE.rst
 share/cmake/Help/prop_tgt/WINDOWS_EXPORT_ALL_SYMBOLS.rst
@@ -1365,8 +1319,6 @@ share/cmake/Help/prop_tgt/XCODE_SCHEME_WORKING_DIRECTORY.rst
 share/cmake/Help/prop_tgt/XCODE_SCHEME_ZOMBIE_OBJECTS.rst
 share/cmake/Help/prop_tgt/XCODE_XCCONFIG.rst
 share/cmake/Help/prop_tgt/XCTEST.rst
-share/cmake/Help/prop_tgt/XXX_OUTPUT_DIRECTORY.txt
-share/cmake/Help/prop_tgt/XXX_OUTPUT_NAME.txt
 share/cmake/Help/release/
 share/cmake/Help/release/3.0.rst
 share/cmake/Help/release/3.1.rst
@@ -1596,7 +1548,6 @@ share/cmake/Help/variable/CMAKE_FIND_ROOT_PATH_MODE_INCLUDE.rst
 share/cmake/Help/variable/CMAKE_FIND_ROOT_PATH_MODE_LIBRARY.rst
 share/cmake/Help/variable/CMAKE_FIND_ROOT_PATH_MODE_PACKAGE.rst
 share/cmake/Help/variable/CMAKE_FIND_ROOT_PATH_MODE_PROGRAM.rst
-share/cmake/Help/variable/CMAKE_FIND_ROOT_PATH_MODE_XXX.txt
 share/cmake/Help/variable/CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH.rst
 share/cmake/Help/variable/CMAKE_FIND_USE_CMAKE_PATH.rst
 share/cmake/Help/variable/CMAKE_FIND_USE_CMAKE_SYSTEM_PATH.rst
@@ -1775,7 +1726,6 @@ share/cmake/Help/variable/CMAKE_LINK_DEPENDS_NO_SHARED.rst
 share/cmake/Help/variable/CMAKE_LINK_DEPENDS_USE_LINKER.rst
 share/cmake/Help/variable/CMAKE_LINK_DIRECTORIES_BEFORE.rst
 share/cmake/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE.rst
-share/cmake/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE.txt
 share/cmake/Help/variable/CMAKE_LINK_GROUP_USING_FEATURE_SUPPORTED.rst
 share/cmake/Help/variable/CMAKE_LINK_INTERFACE_LIBRARIES.rst
 share/cmake/Help/variable/CMAKE_LINK_LIBRARIES_ONLY_TARGETS.rst
@@ -1785,7 +1735,6 @@ share/cmake/Help/variable/CMAKE_LINK_LIBRARY_FILE_FLAG.rst
 share/cmake/Help/variable/CMAKE_LINK_LIBRARY_FLAG.rst
 share/cmake/Help/variable/CMAKE_LINK_LIBRARY_SUFFIX.rst
 share/cmake/Help/variable/CMAKE_LINK_LIBRARY_USING_FEATURE.rst
-share/cmake/Help/variable/CMAKE_LINK_LIBRARY_USING_FEATURE.txt
 share/cmake/Help/variable/CMAKE_LINK_LIBRARY_USING_FEATURE_SUPPORTED.rst
 share/cmake/Help/variable/CMAKE_LINK_SEARCH_END_STATIC.rst
 share/cmake/Help/variable/CMAKE_LINK_SEARCH_START_STATIC.rst
@@ -1831,7 +1780,6 @@ share/cmake/Help/variable/CMAKE_OPTIMIZE_DEPENDENCIES.rst
 share/cmake/Help/variable/CMAKE_OSX_ARCHITECTURES.rst
 share/cmake/Help/variable/CMAKE_OSX_DEPLOYMENT_TARGET.rst
 share/cmake/Help/variable/CMAKE_OSX_SYSROOT.rst
-share/cmake/Help/variable/CMAKE_OSX_VARIABLE.txt
 share/cmake/Help/variable/CMAKE_PARENT_LIST_FILE.rst
 share/cmake/Help/variable/CMAKE_PATCH_VERSION.rst
 share/cmake/Help/variable/CMAKE_PCH_INSTANTIATE_TEMPLATES.rst
@@ -1915,7 +1863,6 @@ share/cmake/Help/variable/CMAKE_TASKING_TOOLSET.rst
 share/cmake/Help/variable/CMAKE_TEST_LAUNCHER.rst
 share/cmake/Help/variable/CMAKE_TLS_CAINFO.rst
 share/cmake/Help/variable/CMAKE_TLS_VERIFY.rst
-share/cmake/Help/variable/CMAKE_TLS_VERSION-VALUES.txt
 share/cmake/Help/variable/CMAKE_TLS_VERSION.rst
 share/cmake/Help/variable/CMAKE_TOOLCHAIN_FILE.rst
 share/cmake/Help/variable/CMAKE_TRY_COMPILE_CONFIGURATION.rst
@@ -1967,7 +1914,6 @@ share/cmake/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_TARGETS_VERSION.rst
 share/cmake/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_VERSION.rst
 share/cmake/Help/variable/CMAKE_VS_USE_DEBUG_LIBRARIES.rst
 share/cmake/Help/variable/CMAKE_VS_VERSION_BUILD_NUMBER.rst
-share/cmake/Help/variable/CMAKE_VS_VERSION_BUILD_NUMBER_COMPONENTS.txt
 share/cmake/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_MIN_VERSION.rst
 share/cmake/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION.rst
 share/cmake/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM.rst
@@ -2047,7 +1993,6 @@ share/cmake/Help/variable/CTEST_CUSTOM_TESTS_IGNORE.rst
 share/cmake/Help/variable/CTEST_CUSTOM_TEST_OUTPUT_TRUNCATION.rst
 share/cmake/Help/variable/CTEST_CUSTOM_WARNING_EXCEPTION.rst
 share/cmake/Help/variable/CTEST_CUSTOM_WARNING_MATCH.rst
-share/cmake/Help/variable/CTEST_CUSTOM_XXX.txt
 share/cmake/Help/variable/CTEST_CVS_CHECKOUT.rst
 share/cmake/Help/variable/CTEST_CVS_COMMAND.rst
 share/cmake/Help/variable/CTEST_CVS_UPDATE_OPTIONS.rst
@@ -2100,16 +2045,8 @@ share/cmake/Help/variable/CYGWIN.rst
 share/cmake/Help/variable/ENV.rst
 share/cmake/Help/variable/EXECUTABLE_OUTPUT_PATH.rst
 share/cmake/Help/variable/GHSMULTI.rst
-share/cmake/Help/variable/IGNORE_SEARCH_LOCATIONS.txt
-share/cmake/Help/variable/IGNORE_SEARCH_NONSYSTEM.txt
-share/cmake/Help/variable/IGNORE_SEARCH_PATH.txt
-share/cmake/Help/variable/IGNORE_SEARCH_PREFIX.txt
-share/cmake/Help/variable/IGNORE_SEARCH_SYSTEM.txt
 share/cmake/Help/variable/IOS.rst
 share/cmake/Help/variable/LIBRARY_OUTPUT_PATH.rst
-share/cmake/Help/variable/LINKER_PREDEFINED_TYPES.txt
-share/cmake/Help/variable/LINK_GROUP_PREDEFINED_FEATURES.txt
-share/cmake/Help/variable/LINK_LIBRARY_PREDEFINED_FEATURES.txt
 share/cmake/Help/variable/LINUX.rst
 share/cmake/Help/variable/MINGW.rst
 share/cmake/Help/variable/MSVC.rst
