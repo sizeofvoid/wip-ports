@@ -13,29 +13,38 @@ CONFIGURE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 .endif
 
-# Limit the number of moc/uic processes started by cmake_autogen
-# (default: number of CPUs on the system)
-CONFIGURE_ARGS += -DCMAKE_AUTOGEN_PARALLEL=${MAKE_JOBS}
-
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
+_MODCMAKE_GEN = "Ninja Multi-Config"
 BUILD_DEPENDS += devel/ninja
-.elif ${USE_NINJA:L} == "samurai"
-BUILD_DEPENDS += devel/samurai
-CONFIGURE_ARGS += -DCMAKE_MAKE_PROGRAM=samu
+.else
+_MODCMAKE_GEN = "Unix Makefiles"
+# XXX cmake include parser is bogus
+DPB_PROPERTIES += nojunk
 .endif
 
-.if ${USE_NINJA:L} == "yes" || ${USE_NINJA:L} == "samurai"
-_MODCMAKE_GEN = Ninja
-MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	cmake --build ${WRKBUILD} ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
+.if ${USE_NINJA:L} == "yes"
+MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && \
+	exec ${SETENV} ${MAKE_ENV} \
+	${LOCALBASE}/bin/cmake \
+		--build ${WRKBUILD} \
+		--config ${_MODCMAKE_BUILD_TYPE} \
+		--parallel ${MAKE_JOBS} \
+		${_MAKE_VERBOSE}
 
-MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-	${FAKE_SETUP} cmake --install ${WRKBUILD}
+MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && \
+	exec ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
+	${LOCALBASE}/bin/cmake \
+		--install ${WRKBUILD} \
+		--config ${_MODCMAKE_BUILD_TYPE} \
+		${_MAKE_VERBOSE}
 
-MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && exec ${SETENV} ${ALL_TEST_ENV} \
-	ctest ${_MAKE_VERBOSE} -j ${MAKE_JOBS}
+MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && \
+	exec ${SETENV} ${ALL_TEST_ENV} \
+	${LOCALBASE}/bin/ctest \
+		--parallel ${MAKE_JOBS} \
+		${_MAKE_VERBOSE}
 
 # Default targets are only known after configure, see cmake-buildsystem(7) and
 # cmake-properties(7) BUILDSYSTEM_TARGETS.
@@ -62,12 +71,7 @@ do-install:
 do-test:
 	@${MODCMAKE_TEST_TARGET}
 .endif
-
-.else
-_MODCMAKE_GEN = "Unix Makefiles"
-# XXX cmake include parser is bogus
-DPB_PROPERTIES += nojunk
-.endif
+.endif # USE_NINJA
 
 # JAVA
 .if ${MODULES:Mjava}
@@ -75,18 +79,10 @@ CONFIGURE_ENV +=	JAVA_HOME=${JAVA_HOME}
 MAKE_ENV +=		JAVA_HOME=${JAVA_HOME}
 .endif
 
-# Python
+# Python detection (CMake 3.18+)
 .if ${MODULES:Mlang/python}
-# https://cmake.org/cmake/help/latest/module/FindPython3.html#artifacts-specification
-CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN}
-CONFIGURE_ARGS +=	-DPYTHON_LIBRARY_DIRS=${MODPY_LIBDIR}
-CONFIGURE_ARGS +=	-DPYTHON_INCLUDE_DIR=${MODPY_INCDIR}
+CONFIGURE_ARGS +=	-DPython_ROOT_DIR=${LOCALBASE}
 CONFIGURE_ARGS +=	-DPython_EXECUTABLE=${MODPY_BIN}
-CONFIGURE_ARGS +=	-DPython_LIBRARY_DIRS=${MODPY_LIBDIR}
-CONFIGURE_ARGS +=	-DPython_INCLUDE_DIR=${MODPY_INCDIR}
-CONFIGURE_ARGS +=	-DPython${MODPY_MAJOR_VERSION}_EXECUTABLE=${MODPY_BIN}
-CONFIGURE_ARGS +=	-DPython${MODPY_MAJOR_VERSION}_LIBRARY_DIRS=${MODPY_LIBDIR}
-CONFIGURE_ARGS +=	-DPython${MODPY_MAJOR_VERSION}_INCLUDE_DIR=${MODPY_INCDIR}
 .endif
 
 # Lua
@@ -100,6 +96,10 @@ CONFIGURE_ARGS +=	-DLUA_LIBRARY=${LOCALBASE}/lib/liblua${MODLUA_VERSION}.so.${MO
 # https://cmake.org/cmake/help/latest/module/FindRuby.html
 CONFIGURE_ARGS +=	-DRUBY_EXECUTABLE=${RUBY}
 .endif
+
+# Limit the number of moc/uic processes started by cmake_autogen
+# (default: number of CPUs on the system)
+CONFIGURE_ARGS += -DCMAKE_AUTOGEN_PARALLEL=${MAKE_JOBS}
 
 # TCL
 .if ${MODULES:Mlang/tcl}
@@ -128,31 +128,35 @@ CONFIGURE_ENV +=	MODTK_VERSION=${MODTK_VERSION} \
 CONFIGURE_ENV +=	LDFLAGS="${MODCMAKE_LDFLAGS}"
 .endif
 
-MODCMAKE_DEBUG ?=		No
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	cmake
 .endif
-MODCMAKE_configure =	cd ${WRKBUILD} && ${SETENV} \
+
+MODCMAKE_configure = \
+	cd ${WRKBUILD} && ${SETENV} \
 	CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
-		-B ${WRKBUILD} \
 		-S ${WRKSRC} \
+		-B ${WRKBUILD} \
 		-G ${_MODCMAKE_GEN} \
-		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=ON \
-		-DCMAKE_SUPPRESS_REGENERATION=ON \
+		--warn-uninitialized \
+		--warn-unused-vars \
 		${CONFIGURE_ARGS}
+
+MODCMAKE_DEBUG ?=		No
 
 .if !defined(CONFIGURE_ARGS) || ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
 .  if ${MODCMAKE_DEBUG:L} == "yes"
-CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Debug
+_MODCMAKE_BUILD_TYPE = Debug
 MODCMAKE_BUILD_SUFFIX =	-debug.cmake
 .  else
-CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Release
+_MODCMAKE_BUILD_TYPE = Release
 MODCMAKE_BUILD_SUFFIX =	-release.cmake
 .  endif
 .endif
+
 SUBST_VARS +=	MODCMAKE_BUILD_SUFFIX
 
 SEPARATE_BUILD ?=	Yes
@@ -189,3 +193,11 @@ MODCMAKE_VERBOSE ?= Yes
 .if ${MODCMAKE_VERBOSE:L} == "yes"
 _MAKE_VERBOSE = --verbose
 .endif
+
+.PHONY: cmake-show-targets
+MODCMAKE_configure: cmake-show-targets
+cmake-show-targets:
+	cd ${WRKBUILD} && \
+	exec ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/cmake \
+	--build ${WRKBUILD} \
+	-t help
