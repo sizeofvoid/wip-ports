@@ -56,4 +56,7 @@ post-install:
 		${PREFIX}/share/vim/vimfiles/syntax/
 	rm -r ${PREFIX}/share/doc/taskwarrior/scripts/{vim,bash,fish}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -46,4 +46,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/carton.png \
 		${PREFIX}/share/icons/hicolor/128x128/apps/milkytracker.png
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

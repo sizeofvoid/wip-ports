@@ -28,4 +28,7 @@ post-extract:
 	mv ${WRKSRC}/src/uthash.h ${WRKSRC}/src/uthash_local.h
 	mv ${WRKSRC}/src/utlist.h ${WRKSRC}/src/utlist_local.h
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>
