@@ -92,4 +92,7 @@ post-extract:
 	unzip -q ${FULLDISTDIR}/replays-${REPLAYS_V}.zip -d \
 		${WRKSRC}/testdata/replays
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

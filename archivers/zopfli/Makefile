@@ -20,4 +20,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=yes
 NO_TEST =		Yes
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

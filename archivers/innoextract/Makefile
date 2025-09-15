@@ -50,4 +50,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/innoextract ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/innoextract.1 ${PREFIX}/man/man1
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

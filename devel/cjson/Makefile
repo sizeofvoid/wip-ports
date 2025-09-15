@@ -26,4 +26,7 @@ ALL_TARGET =	cjson
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

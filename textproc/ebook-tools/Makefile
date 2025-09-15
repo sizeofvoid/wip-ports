@@ -22,4 +22,7 @@ LIB_DEPENDS =		textproc/libxml \
 
 NO_TEST =		Yes
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

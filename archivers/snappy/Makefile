@@ -30,6 +30,8 @@ CONFIGURE_ARGS +=	-DSNAPPY_HAVE_NEON=OFF \
 			-DSNAPPY_HAVE_NEON_CRC32=OFF
 .endif
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # used in tests
 BUILD_DEPENDS =		archivers/lz4 \
 			archivers/lzo2

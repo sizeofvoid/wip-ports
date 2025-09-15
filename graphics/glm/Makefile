@@ -20,6 +20,14 @@ COMPILER=	base-clang ports-gcc
 # run the tests.
 CONFIGURE_ARGS +=      -DGLM_BUILD_TESTS=ON
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 PKG_ARCH=	*
+
+do-install:
+	cp -Rp ${WRKSRC}/glm ${PREFIX}/include
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/cmake
+	cp -Rp ${WRKSRC}/cmake/glm/ ${PREFIX}/lib/cmake
+
 
 .include <bsd.port.mk>

@@ -29,4 +29,7 @@ USE_GMAKE =		Yes
 
 MAKE_ENV +=		V=1
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -18,6 +18,8 @@ MODULES=		devel/cmake
 
 CONFIGURE_ARGS=		-DDISABLE_WERROR=ON
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # evertyhing except tests
 ALL_TARGET =		json-c json-c-static
 

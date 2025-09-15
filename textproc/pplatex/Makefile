@@ -29,4 +29,7 @@ LIB_DEPENDS =	devel/pcre
 do-install:
 	${INSTALL} ${WRKBUILD}/src/pplatex ${PREFIX}/bin
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -28,4 +28,7 @@ post-extract:
 	mkdir ${WRKSRC}
 	mv ${WRKDIR}/!(mac-${VERSION}|bin) ${WRKSRC}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>
