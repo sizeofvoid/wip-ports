@@ -46,4 +46,7 @@ LIB_DEPENDS =		archivers/libarchive \
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

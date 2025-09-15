@@ -70,4 +70,7 @@ NO_TEST =	Yes
 MAJ_MIN =	${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS +=	MAJ_MIN
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

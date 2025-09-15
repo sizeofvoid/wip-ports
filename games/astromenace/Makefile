@@ -42,4 +42,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/astromenace/
 	${INSTALL_DATA} ${WRKSRC}/gamedata.vfs ${PREFIX}/share/astromenace/
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

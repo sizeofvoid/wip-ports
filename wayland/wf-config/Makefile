@@ -33,4 +33,7 @@ LIB_DEPENDS =	textproc/libxml \
 
 WANTLIB +=	${COMPILER_LIBCXX} evdev m xml2
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

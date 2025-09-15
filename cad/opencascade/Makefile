@@ -100,4 +100,7 @@ pre-configure:
 		mv $$i ${WRKSRC}/adm/templates/occt_$${i##*/}; \
 	done
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

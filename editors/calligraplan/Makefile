@@ -89,6 +89,8 @@ LIB_DEPENDS =	devel/kf5/kactivities \
 		security/qca-qt5 \
 		x11/qt5/qtx11extras
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11
 

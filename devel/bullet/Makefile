@@ -67,4 +67,7 @@ pre-test:
 post-install:
 	rm -rf ${PREFIX}/include/bullet/pybullet
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

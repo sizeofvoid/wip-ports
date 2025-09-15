@@ -46,4 +46,7 @@ CONFIGURE_ENV +=	CFLAGS=-I${PREFIX}/include \
 # patches/patch-app_i18n_fi_po
 FIX_CRLF_FILES=	${WRKSRC}/app/i18n/fi.po
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

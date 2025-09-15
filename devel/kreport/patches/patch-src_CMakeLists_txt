@@ -1,0 +1,48 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -29,7 +29,6 @@ set(kreport_LIB_SRCS
+     common/KReportDesign_p.cpp
+     common/KReportLineStyle.cpp
+     common/KReportElement.cpp
+-    ${PROJECT_BINARY_DIR}/src/KReportElement_sdc.cpp
+     common/KReportSection.cpp
+ 
+     renderer/KReportPrintRenderer_p.cpp
+@@ -304,13 +303,29 @@ ecm_generate_headers(kreport_FORWARDING_HEADERS
+         KReportDesigner
+ )
+ 
+-ecm_generate_headers(kreport_FORWARDING_HEADERS_FROM_BUILDDIR
+-    REQUIRED_HEADERS kreport_HEADERS_FROM_BUILDDIR
+-    ORIGINAL CAMELCASE
+-    SOURCE_DIR ${PROJECT_BINARY_DIR}/src
+-    HEADER_NAMES
+-        ${kreport_GENERATED_SHARED_DATA_CLASS_BASENAMES}
+-)
++set(kreport_EXISTING_GENERATED_BASENAMES)
++foreach(basename ${kreport_GENERATED_SHARED_DATA_CLASS_BASENAMES})
++    string(TOLOWER "${basename}" lowercase_name)
++    if(EXISTS "${PROJECT_BINARY_DIR}/src/${lowercase_name}.h")
++        list(APPEND kreport_EXISTING_GENERATED_BASENAMES ${basename})
++    else()
++        message(STATUS "Skipping non-existent generated header: ${basename}")
++    endif()
++endforeach()
++
++if(kreport_EXISTING_GENERATED_BASENAMES)
++    ecm_generate_headers(kreport_FORWARDING_HEADERS_FROM_BUILDDIR
++        REQUIRED_HEADERS kreport_HEADERS_FROM_BUILDDIR
++        ORIGINAL CAMELCASE
++        SOURCE_DIR ${PROJECT_BINARY_DIR}/src
++        HEADER_NAMES
++            ${kreport_EXISTING_GENERATED_BASENAMES}
++    )
++else()
++    message(STATUS "No generated headers found yet, skipping forwarding header generation")
++    set(kreport_FORWARDING_HEADERS_FROM_BUILDDIR "")
++    set(kreport_HEADERS_FROM_BUILDDIR "")
++endif()
+ 
+ list(APPEND kreport_HEADERS ${CMAKE_CURRENT_BINARY_DIR}/kreport_version.h)
+ 

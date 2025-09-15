@@ -35,4 +35,7 @@ do-test:
 	cd ${WRKBUILD} && ./src/test/lucene++-tester \
 		--test_dir="${WRKSRC}/src/test/testfiles/"
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

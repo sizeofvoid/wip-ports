@@ -97,4 +97,7 @@ post-build:
 		cp ${WRKSRC}/Documentation/$$f.html.git \
 		${WRKBUILD}/Documentation/$$f.html; done
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

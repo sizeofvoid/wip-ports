@@ -25,6 +25,8 @@ CONFIGURE_ARGS +=	-DTASKD_DOCDIR=share/taskd \
 			-DTASKD_MAN1DIR=man/man1 \
 			-DTASKD_MAN5DIR=man/man5
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =		Yes
 
 post-install:

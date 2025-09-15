@@ -53,4 +53,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bonzomatic/
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/bonzomatic/
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

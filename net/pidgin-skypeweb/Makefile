@@ -29,4 +29,7 @@ NO_TEST =	Yes
 
 WRKSRC =	${WRKDIST}/skypeweb
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

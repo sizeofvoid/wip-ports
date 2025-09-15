@@ -28,4 +28,7 @@ LIB_DEPENDS =		x11/gtk+3
 
 NO_TEST =		Yes
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

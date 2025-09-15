@@ -63,4 +63,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/libretro
 	mv ${PREFIX}/lib/mgba_libretro.so ${PREFIX}/lib/libretro
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

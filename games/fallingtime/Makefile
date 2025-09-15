@@ -26,4 +26,7 @@ post-install:
 		${WRKSRC}/fallingtime
 	${SUBST_CMD} -c -m 555 ${WRKSRC}/fallingtime ${PREFIX}/bin/fallingtime
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

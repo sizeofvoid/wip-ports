@@ -91,4 +91,7 @@ PKG_ARGS +=	-Dx86=1
 PKG_ARGS +=	-Dx86=0
 .endif
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

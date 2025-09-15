@@ -144,4 +144,7 @@ post-configure:
 	@mv ${WRKSRC}/Externals/soundtouch/SoundTouch.h \
 		${WRKSRC}/Externals/soundtouch/ExtSoundTouch.h
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

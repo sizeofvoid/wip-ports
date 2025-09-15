@@ -61,4 +61,7 @@ RUN_DEPENDS +=		databases/libdbi-drivers,-pgsql
 WANTLIB += 		pq
 .endif
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

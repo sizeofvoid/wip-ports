@@ -63,4 +63,7 @@ post-install:
 do-test:
 	cd ${WRKSRC} && ${WRKBUILD}/src/tests/tests
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -31,8 +31,6 @@ MODCARGO_FEATURES =	cursive/termion-backend \
 			mpris \
 			portaudio_backend
 
-DOCDIR =	${PREFIX}/share/doc/ncspot/
-
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCDIR}

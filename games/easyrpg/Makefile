@@ -40,4 +40,7 @@ NO_TEST =	Yes
 
 WRKDIST =	${WRKDIR}/Player-${GH_TAGNAME}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

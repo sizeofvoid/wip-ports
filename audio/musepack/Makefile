@@ -26,6 +26,8 @@ NO_TEST =		Yes
 
 FIX_CRLF_FILES =	mpcgain/gain_analysis.c
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 post-extract:
 	cp ${WRKDIR}/libreplaygain_r${V}/include/replaygain/gain_analysis.h \
 		${WRKSRC}/mpcgain/
