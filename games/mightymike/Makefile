@@ -47,4 +47,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/packaging/mightymike.desktop \
 		${PREFIX}/share/applications/
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

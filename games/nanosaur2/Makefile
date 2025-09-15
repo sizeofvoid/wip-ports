@@ -40,4 +40,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/packaging/nanosaur2-desktopicon.png \
 		${PREFIX}/share/icons/hicolor/256x256/apps
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

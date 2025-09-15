@@ -59,4 +59,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIST}/DOCUMENTS/* ${PREFIX}/share/doc/arpack
 	${INSTALL_DATA} ${WRKDIST}/COPYING ${PREFIX}/share/doc/arpack
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

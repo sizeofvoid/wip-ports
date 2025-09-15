@@ -22,6 +22,8 @@ MODULES=		devel/cmake
 
 LIB_DEPENDS=		archivers/brotli
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST=		Yes
 
 .include <bsd.port.mk>

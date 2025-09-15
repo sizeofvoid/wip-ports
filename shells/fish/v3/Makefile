@@ -71,4 +71,7 @@ RUST_COMMENT =		"@comment "
 RUST_COMMENT =
 .endif
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -31,4 +31,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/cmake
 	cp -Rp ${WRKSRC}/cmake/glm/ ${PREFIX}/lib/cmake
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

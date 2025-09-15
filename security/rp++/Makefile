@@ -26,4 +26,7 @@ WRKSRC =	${WRKDIST}/src
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rp-lin ${PREFIX}/bin/rp++
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

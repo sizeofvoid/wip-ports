@@ -38,4 +38,7 @@ post-install:
 	${SUBST_DATA} ${FILESDIR}/config \
 		${PREFIX}/share/examples/taskd/config
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

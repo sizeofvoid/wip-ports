@@ -39,4 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Quake/QW/progs/qwprogs.dat \
 		${SAMPLES_DIR}/qwprogs.dat
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

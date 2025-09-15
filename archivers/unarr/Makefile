@@ -28,4 +28,7 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

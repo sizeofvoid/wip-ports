@@ -16,7 +16,7 @@ MAKE_ENV += MODCMAKE_USE_SHARED_LIBS=yes
 USE_NINJA ?= Yes
 
 .if ${USE_NINJA:L} == "yes"
-_MODCMAKE_GEN = "Ninja Multi-Config"
+_MODCMAKE_GEN = Ninja
 BUILD_DEPENDS += devel/ninja
 .else
 _MODCMAKE_GEN = "Unix Makefiles"
@@ -29,7 +29,6 @@ MODCMAKE_BUILD_TARGET = cd ${WRKBUILD} && \
 	exec ${SETENV} ${MAKE_ENV} \
 	${LOCALBASE}/bin/cmake \
 		--build ${WRKBUILD} \
-		--config ${_MODCMAKE_BUILD_TYPE} \
 		--parallel ${MAKE_JOBS} \
 		${_MAKE_VERBOSE}
 
@@ -37,7 +36,6 @@ MODCMAKE_INSTALL_TARGET = cd ${WRKBUILD} && \
 	exec ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 	${LOCALBASE}/bin/cmake \
 		--install ${WRKBUILD} \
-		--config ${_MODCMAKE_BUILD_TYPE} \
 		${_MAKE_VERBOSE}
 
 MODCMAKE_TEST_TARGET = cd ${WRKBUILD} && \
@@ -138,8 +136,8 @@ MODCMAKE_configure = \
 	CC="${CC}" CFLAGS="${CFLAGS}" \
 	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
-		-S ${WRKSRC} \
 		-B ${WRKBUILD} \
+		-S ${WRKSRC} \
 		-G ${_MODCMAKE_GEN} \
 		--warn-uninitialized \
 		--warn-unused-vars \
@@ -149,10 +147,10 @@ MODCMAKE_DEBUG ?=		No
 
 .if !defined(CONFIGURE_ARGS) || ! ${CONFIGURE_ARGS:M*CMAKE_BUILD_TYPE*}
 .  if ${MODCMAKE_DEBUG:L} == "yes"
-_MODCMAKE_BUILD_TYPE = Debug
+CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Debug
 MODCMAKE_BUILD_SUFFIX =	-debug.cmake
 .  else
-_MODCMAKE_BUILD_TYPE = Release
+CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE=Release
 MODCMAKE_BUILD_SUFFIX =	-release.cmake
 .  endif
 .endif
