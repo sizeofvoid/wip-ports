@@ -38,4 +38,6 @@ RUN_DEPENDS=		devel/py-appdirs \
 			textproc/py-lxml \
 			textproc/py-yaml
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

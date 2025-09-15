@@ -26,4 +26,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/Readme.md ${WRKSRC}/LICENSE.txt \
 		${PREFIX}/share/doc/armips
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

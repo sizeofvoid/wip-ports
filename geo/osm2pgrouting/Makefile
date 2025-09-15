@@ -20,4 +20,7 @@ LIB_DEPENDS =		devel/boost \
 			databases/libpqxx
 RUN_DEPENDS =		geo/pgrouting
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>
