@@ -25,4 +25,7 @@ RUN_DEPENDS=	math/py-numpy	\
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

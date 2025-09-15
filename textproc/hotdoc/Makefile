@@ -47,4 +47,7 @@ post-install:
 	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}/backports/
 
 # LGPLv2.1+
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

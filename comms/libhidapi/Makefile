@@ -37,4 +37,7 @@ post-install:
 	ln -sf libhidapi-libusb.so.${LIBhidapi-libusb_VERSION} \
 		${PREFIX}/lib/libhidapi.so.${LIBhidapi-libusb_VERSION}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -25,4 +25,7 @@ do-test:
 	cd ${WRKSRC}/examples; ${MAKE_PROGRAM} runtest GCC="${CC}" \
 	    CFLAGS="${CFLAGS} -I${TRUEPREFIX}/include -L${TRUEPREFIX}/lib"
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

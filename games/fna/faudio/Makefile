@@ -24,4 +24,7 @@ WRKDIST =	${WRKDIR}/FNA/lib/FAudio
 do-test:
 	cd ${WRKBUILD} && ./faudio_tests
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

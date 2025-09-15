@@ -38,4 +38,7 @@ NO_TEST =		Yes
 
 .if ${CHOSEN_COMPILER} == "ports-gcc"
 WANTLIB += atomic
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .endif
