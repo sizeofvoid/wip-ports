@@ -97,12 +97,11 @@ CONFIGURE_ARGS +=	-DBUNDLE_PROJECTM_PRESETS=ON
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 #CXXFLAGS+=" -Wno-error=cpp"
 
 post-extract:
 	cp ${FILESDIR}/config.h.in ${WRKSRC}/ext/libclementine-common/
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

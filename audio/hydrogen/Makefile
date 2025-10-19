@@ -57,13 +57,15 @@ post-extract:
 	cp ${FILESDIR}/sndio_{audio,midi}_driver.cpp \
 		${WRKSRC}/src/core/src/IO
 
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/CMAKE_MINIMUM_REQUIRED\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
+
 post-install:
 	cp -rp ${WRKSRC}/data/doc ${PREFIX}/share/doc/hydrogen
 
 do-test:
 	cd ${WRKSRC} && ${WRKBUILD}/src/tests/tests
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>
