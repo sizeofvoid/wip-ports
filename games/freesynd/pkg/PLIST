@@ -1,9 +1,9 @@
 @bin bin/freesynd
 etc/
 etc/freesynd/
-share/doc/Freesynd/
-share/doc/Freesynd/changelog.gz
-share/doc/Freesynd/copyright
+share/doc/freesynd/
+share/doc/freesynd/changelog.gz
+share/doc/freesynd/copyright
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/freesynd/
 share/examples/freesynd/freesynd.ini
