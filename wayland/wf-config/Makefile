@@ -22,12 +22,12 @@ MODULES =	devel/meson
 CONFIGURE_ARGS =-Dtests=disabled
 
 # include/wayfire/config/types.hpp needs glm/vec4.hpp
-RUN_DEPENDS +=	graphics/glm>=1.0.2
+RUN_DEPENDS +=	graphics/glm
 BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland \
 		wayland/wayland-protocols \
 		devel/cmake/core \
-		graphics/glm>=1.0.2
+		graphics/glm
 LIB_DEPENDS =	textproc/libxml \
 		wayland/libevdev-openbsd>=20231111
 
