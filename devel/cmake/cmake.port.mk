@@ -139,8 +139,6 @@ MODCMAKE_configure = \
 		-B ${WRKBUILD} \
 		-S ${WRKSRC} \
 		-G ${_MODCMAKE_GEN} \
-		--warn-uninitialized \
-		--warn-unused-vars \
 		${CONFIGURE_ARGS}
 
 MODCMAKE_DEBUG ?=		No
