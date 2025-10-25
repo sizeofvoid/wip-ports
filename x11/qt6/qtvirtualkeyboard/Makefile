@@ -1,3 +1,4 @@
+SHARED_LIBS +=	Qt6VirtualKeyboardQml     0.0 # 0.0
 QT6NAME =	QtVirtualKeyboard
 COMMENT =	Qt6 virtual keyboard plugin
 PKGSPEC =	qt6-qtvirtualkeyboard-${QT6_PKGSPEC}
