@@ -1,15 +1,14 @@
 QT6NAME =	QtgRPC
 COMMENT =	gRPC support for Qt6
 PKGSPEC =	qt6-qtgrpc-${QT6_PKGSPEC}
-REVISION =	1
 
-SHARED_LIBS +=  Qt6Grpc                   3.0 # 0.0
-SHARED_LIBS +=  Qt6Protobuf               2.0 # 0.0
-SHARED_LIBS +=  Qt6ProtobufQtCoreTypes    2.0 # 0.0
-SHARED_LIBS +=  Qt6ProtobufQtGuiTypes     2.0 # 0.0
-SHARED_LIBS +=  Qt6ProtobufWellKnownTypes 2.0 # 0.0
-SHARED_LIBS +=	Qt6GrpcQuick              1.0 # 0.0
-SHARED_LIBS +=	Qt6ProtobufQuick          1.0 # 0.0
+SHARED_LIBS +=  Qt6Grpc                   4.0 # 0.0
+SHARED_LIBS +=  Qt6Protobuf               3.0 # 0.0
+SHARED_LIBS +=  Qt6ProtobufQtCoreTypes    3.0 # 0.0
+SHARED_LIBS +=  Qt6ProtobufQtGuiTypes     3.0 # 0.0
+SHARED_LIBS +=  Qt6ProtobufWellKnownTypes 3.0 # 0.0
+SHARED_LIBS +=	Qt6GrpcQuick              2.0 # 0.0
+SHARED_LIBS +=	Qt6ProtobufQuick          2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlNetwork Qt6QmlWorkerScript
@@ -41,6 +40,7 @@ WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c m protobuf protoc utf8_range
+WANTLIB += utf8_validity
 
 BUILD_DEPENDS =	graphics/glslang
 

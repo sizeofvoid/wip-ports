@@ -1,0 +1,12 @@
+Index: cmake/FindFFmpeg.cmake
+--- cmake/FindFFmpeg.cmake.orig
++++ cmake/FindFFmpeg.cmake
+@@ -255,7 +255,7 @@ function(qt_internal_multimedia_try_add_dynamic_resolv
+          return()
+     endif()
+ 
+-    if (NOT ANDROID AND NOT LINUX)
++    if (NOT ANDROID AND NOT UNIX)
+         return()
+     endif()
+ 
