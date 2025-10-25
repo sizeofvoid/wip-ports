@@ -1,3 +1,4 @@
+SHARED_LIBS +=	Qt63DQuickLogic           0.0 # 0.0
 QT6NAME =	Qt3D
 COMMENT =	Qt6 components for 3D graphics
 PKGSPEC =	qt6-qt3d-${QT6_PKGSPEC}
