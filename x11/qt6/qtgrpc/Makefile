@@ -1,7 +1,6 @@
 QT6NAME =	QtgRPC
 COMMENT =	gRPC support for Qt6
 PKGSPEC =	qt6-qtgrpc-${QT6_PKGSPEC}
-REVISION =	1
 
 SHARED_LIBS +=  Qt6Grpc                   3.0 # 0.0
 SHARED_LIBS +=  Qt6Protobuf               2.0 # 0.0

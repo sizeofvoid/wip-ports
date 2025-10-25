@@ -1,5 +1,5 @@
-# Based on Chromium version: 122.0.6261.171
-# Patched with security patches up to Chromium version: 131.0.6778.70
+# Based on Chromium version: 134.0.6998.208
+# Patched with security patches up to Chromium version: 140.0.7339.207
 ONLY_FOR_ARCHS =	amd64 aarch64
 
 USE_WXNEEDED =		Yes
@@ -11,7 +11,6 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	3
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
