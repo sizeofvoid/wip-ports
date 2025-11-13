@@ -1,31 +1,12 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -425,12 +425,14 @@ kde_enable_exceptions()
+@@ -183,7 +183,7 @@ if (PkgConfig_FOUND)
+ endif()
  
- # There is no way to detect linker in cmake (see https://gitlab.kitware.com/cmake/cmake/issues/17596)
- # and linkers aren't compatible with each other, so we need to assume something
--if(CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
-+if(CMAKE_CXX_COMPILER_ID MATCHES "AppleClang"
-+   AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-   set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error")
-   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,-dead_strip -Wl,-undefined,error -Wl,-mark_dead_strippable_dylib")
-   set(CMAKE_EXE_LINKER_FLAGS    "${CMAKE_EXE_LINKER_FLAGS}    -Wl,-dead_strip -Wl,-undefined,error")
+ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Core DBus Widgets Svg Xml Test PrintSupport)
+-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Sql Concurrent QuickWidgets)
++find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} OPTIONAL_COMPONENTS Sql SqlPrivate Concurrent QuickWidgets)
  
--elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-+elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang"
-+       AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-   set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -Wl,--as-needed")
-   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--as-needed")
-   # TODO: remove multiple definitions of payeeIdentifierLoader::createPayeeIdentifierFromSqlDatabase
-@@ -481,7 +483,9 @@ endif()
- # IDEA: Set on a per target base
- set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+ find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Archive CoreAddons Config ConfigWidgets Crash I18n Completion KCMUtils ItemModels ItemViews Service XmlGui TextWidgets Notifications KIO)
  
--if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang")
-+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang" 
-+   OR CMAKE_CXX_COMPILER_ID MATCHES "AppleClang"
-+   AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
-   # DebugKMM, Debugfull, Profile
-   set(CMAKE_CXX_FLAGS_DEBUGKMM
-       "-g -O2 -fno-reorder-blocks -fno-schedule-insns -fno-inline")
