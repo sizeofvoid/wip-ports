@@ -34,6 +34,7 @@ SHARED_LIBS +=  Qt6EglFsKmsGbmSupport        0.2 # 6.7
 SHARED_LIBS +=  Qt6OpenGLWidgets             1.0 # 6.7
 SHARED_LIBS +=  Qt6WaylandClient             0.0 # 0.0
 SHARED_LIBS +=  Qt6WlShellIntegration        0.0 # 0.0
+
 WANTLIB-main += ${COMPILER_LIBCXX} EGL GL ICE SM X11 X11-xcb atk-1.0
 WANTLIB-main += b2 brotlidec c cairo cairo-gobject crypto cups dbus-1
 WANTLIB-main += double-conversion drm execinfo fontconfig freetype
@@ -45,12 +46,13 @@ WANTLIB-main += xcb xcb-cursor xcb-glx xcb-icccm xcb-image xcb-keysyms
 WANTLIB-main += xcb-randr xcb-render xcb-render-util xcb-shape xcb-shm
 WANTLIB-main += xcb-sync xcb-util xcb-xfixes xcb-xinput xcb-xkb xkbcommon
 WANTLIB-main += xkbcommon-x11 z zstd
+
 WANTLIB-mysql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql execinfo m mariadb
+
 WANTLIB-psql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql execinfo m pq
 
-
 # those come from gthread-2.0, not used by Qt itself
-
+WANTLIB-main +=		intl
 
 
 MULTI_PACKAGES =	-main -global -mysql -psql
