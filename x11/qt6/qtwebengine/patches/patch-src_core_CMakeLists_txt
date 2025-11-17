@@ -49,14 +49,27 @@ Index: src/core/CMakeLists.txt
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -533,6 +533,10 @@ foreach(arch ${archs})
-             extend_gn_list(gnArgArg
-                 ARGS use_system_minigbm
+@@ -535,6 +535,10 @@ foreach(arch ${archs})
                  CONDITION QT_FEATURE_webengine_system_gbm
-+            )
-+            extend_gn_list(gnArgArg
-+                ARGS use_system_sndio
-+                CONDITION QT_FEATURE_webengine_system_sndio
              )
              extend_gn_list(gnArgArg
++                ARGS use_system_sndio
++                CONDITION QT_FEATURE_webengine_system_sndio
++            )
++            extend_gn_list(gnArgArg
                  ARGS rtc_system_openh264
+                 CONDITION QT_FEATURE_webengine_webrtc_system_openh264
+             )
+@@ -658,9 +662,9 @@ add_gn_build_artifacts_to_target(
+     ${dataStampOption}
+ )
+ add_dependencies(WebEngineCore run_core_NinjaDone)
+-if(COIN_BUG_699)
+-   set_property(TARGET WebEngineCore PROPERTY CXX_LINKER_LAUNCHER ${PROJECT_BINARY_DIR}/linker_ulimit.sh)
+-endif()
++#if(COIN_BUG_699)
++#   set_property(TARGET WebEngineCore PROPERTY CXX_LINKER_LAUNCHER ${PROJECT_BINARY_DIR}/linker_ulimit.sh)
++#endif()
+ 
+ ##
+ #  SANDBOX

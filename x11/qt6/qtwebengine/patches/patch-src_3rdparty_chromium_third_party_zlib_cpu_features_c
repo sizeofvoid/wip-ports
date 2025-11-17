@@ -6,7 +6,7 @@ Index: src/3rdparty/chromium/third_party/zlib/cpu_features.c
  
  #if defined(ARMV8_OS_ANDROID) || defined(ARMV8_OS_LINUX) || \
 -    defined(ARMV8_OS_FUCHSIA) || defined(ARMV8_OS_IOS)
-+    defined(ARMV8_OS_FUCHSIA) || defined(ARMV8_OS_IOS) || \\
++    defined(ARMV8_OS_FUCHSIA) || defined(ARMV8_OS_IOS) || \
 +    defined(ARMV8_OS_OPENBSD) || defined(ARMV8_OS_FREEBSD)
  #include <pthread.h>
  #endif
