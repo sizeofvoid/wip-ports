@@ -10,3 +10,11 @@ Index: cmake/Functions.cmake
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
+@@ -468,6 +468,7 @@ function(addSyncTargets module)
+     add_custom_target(run_${module}_GnReady)
+     add_custom_target(run_${module}_GnDone)
+     add_custom_target(run_${module}_NinjaReady)
++    add_dependencies(run_${module}_NinjaReady sync_all_public_headers)
+     add_custom_target(run_${module}_NinjaDone)
+     # make nicer log so all gn has to finish before any ninja build starts
+     add_dependencies(run_${module}_NinjaReady run_${module}_GnDone)
