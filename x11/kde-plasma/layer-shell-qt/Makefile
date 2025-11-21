@@ -12,6 +12,7 @@ BUILD_DEPENDS =	wayland/wayland-protocols>=1.40 \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	x11/qt6/qtwayland \
+		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
