@@ -2,7 +2,7 @@ QT5NAME =		QtRemoteObjects
 COMMENT-main =		inter-process communication using Qt5 objects
 
 KDE_COMMIT =		b2740a7c7f5b6ac810240404a947ca5cff9de5f7
-KDE_VERSION =		2
+KDE_VERSION =		1
 
 MULTI_PACKAGES =	-main -examples
 

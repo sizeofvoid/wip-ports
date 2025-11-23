@@ -7,7 +7,7 @@ KDE_VERSION =		7
 SHARED_LIBS +=  Qt5Location               3.1 # 5.15
 SHARED_LIBS +=  Qt5Positioning            3.0 # 5.9
 SHARED_LIBS +=  Qt5PositioningQuick       0.0 # 5.13
-
+WANTLIB += ${COMPILER_LIBCXX}
 MULTI_PACKAGES =	-main -examples
 
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5DBus
