@@ -78,9 +78,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			x11/gtk+3 \
 			x11/xkbcommon>=1.0.1
 
-# those come from gthread-2.0, not used by Qt itself
-WANTLIB-main +=		intl
-
 LIB_DEPENDS-main +=	devel/gettext,-runtime
 
 LIB_DEPENDS-global =
