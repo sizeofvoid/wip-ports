@@ -12,9 +12,11 @@ MULTI_PACKAGES =	-main -examples
 SHARED_LIBS +=  Qt5Designer             3.1 # 5.9
 SHARED_LIBS +=  Qt5DesignerComponents   3.0 # 5.9
 SHARED_LIBS +=  Qt5Help                 3.0 # 5.9
+
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB-main += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets
 WANTLIB-main += Qt5Sql Qt5Widgets Qt5Xml c m
+WANTLIB-main += llvm${MODCLANG_VERSION}/lib/clang
 
 # avoid BDEP on ourselves
 MODQT5_DEPS =	No
