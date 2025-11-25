@@ -1,7 +1,7 @@
 Index: cmake/QtConfigureHelpers.cmake
 --- cmake/QtConfigureHelpers.cmake.orig
 +++ cmake/QtConfigureHelpers.cmake
-@@ -191,23 +191,13 @@ endfunction()
+@@ -209,23 +209,13 @@ endmacro()
  
  function(qt_webengine_configure_check_for_ulimit)
      message(STATUS "Checking 'ulimit -n'")

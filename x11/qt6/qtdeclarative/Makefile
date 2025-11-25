@@ -78,6 +78,4 @@ pre-configure:
 # Python is used for building, this path does not get into final packages.
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
-LIB_DEPENDS += 
-LIB_DEPENDS += 
 .include <bsd.port.mk>

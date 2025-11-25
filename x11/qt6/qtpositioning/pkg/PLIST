@@ -90,7 +90,6 @@ include/X11/qt6/QtPositioningQuick/qtpositioningquickversion.h
 lib/cmake/Qt6/FindGconf.cmake
 lib/cmake/Qt6/FindGypsy.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtPositioningTestsConfig.cmake
-lib/cmake/Qt6Bundled_Clip2Tri/
 lib/cmake/Qt6Positioning/
 lib/cmake/Qt6Positioning/Qt6PositioningAdditionalTargetInfo.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningConfig.cmake

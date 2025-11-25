@@ -121,7 +121,6 @@ lib/qt6/qml/Qt5Compat/GraphicalEffects/RecursiveBlur.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/ThresholdMask.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/ZoomBlur.qml
 @so lib/qt6/qml/Qt5Compat/GraphicalEffects/libqtgraphicaleffectsplugin.so
-lib/qt6/qml/Qt5Compat/GraphicalEffects/plugins.qmltypes
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/DropShadowBase.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/FastGlow.qml
@@ -134,3 +133,4 @@ lib/qt6/qml/Qt5Compat/GraphicalEffects/private/GaussianMaskedBlur.qml
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/plugins.qmltypes
 lib/qt6/qml/Qt5Compat/GraphicalEffects/private/qmldir
 lib/qt6/qml/Qt5Compat/GraphicalEffects/qmldir
+lib/qt6/qml/Qt5Compat/GraphicalEffects/qtgraphicaleffectsplugin.qmltypes

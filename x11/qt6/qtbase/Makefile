@@ -51,10 +51,6 @@ WANTLIB-mysql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql execinfo m mariadb
 
 WANTLIB-psql += ${COMPILER_LIBCXX} Qt6Core Qt6Sql execinfo m pq
 
-# those come from gthread-2.0, not used by Qt itself
-WANTLIB-main +=		intl
-
-
 MULTI_PACKAGES =	-main -global -mysql -psql
 
 MODULES =		lang/python
