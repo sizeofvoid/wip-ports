@@ -2,6 +2,7 @@ QT6NAME =	QtMultimedia
 COMMENT =	Qt6 multimedia components
 PKGSPEC =	qt6-qtmultimedia-${QT6_PKGSPEC}
 
+SHARED_LIBS +=  Qt6Multimedia             9.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaQuick        6.0 # 6.7
 SHARED_LIBS +=  Qt6MultimediaWidgets      1.0 # 6.7
 SHARED_LIBS +=  Qt6SpatialAudio           2.0 # 6.7
@@ -34,7 +35,6 @@ LIB_DEPENDS =	audio/pulseaudio \
 		x11/xkbcommon
 
 CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON \
-			-DQT_FEATURE_gstreamer_1_0=ON \
 			-DQT_FEATURE_vaapi=OFF
 
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
