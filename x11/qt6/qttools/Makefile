@@ -20,7 +20,7 @@ WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
 MODQT6_DEPS =	No
 
 MODULES +=			lang/clang
-MODCLANG_VERSION =		19
+MODCLANG_VERSION =		21
 MODCLANG_COMPILER_LINKS =	Yes
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
@@ -40,7 +40,9 @@ PROGRAMS6 =	assistant designer lconvert linguist lrelease lupdate \
 		pixeltool qdbus qdbusviewer qdistancefieldgenerator qdoc \
 		qtdiag qtdiag6 qtplugininfo
 
-CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
+CONFIGURE_ARGS=	-DFEATURE_clang=ON -DTEST_libclang=ON
+
+CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION} LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 .include <bsd.port.mk>
