@@ -29,6 +29,12 @@ lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6TextToSpeechQmlTargets.cmake
 lib/cmake/Qt6TextToSpeech/
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginConfig.cmake
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginConfigVersion.cmake
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginConfigVersionImpl.cmake
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechFlitePluginTargets.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginConfig.cmake
 lib/cmake/Qt6TextToSpeech/Qt6QTextToSpeechMockPluginConfigVersion.cmake
@@ -68,6 +74,7 @@ lib/qt6/mkspecs/modules/qt_lib_texttospeech.pri
 lib/qt6/mkspecs/modules/qt_lib_texttospeech_private.pri
 lib/qt6/modules/TextToSpeech.json
 lib/qt6/plugins/texttospeech/
+@so lib/qt6/plugins/texttospeech/libqtexttospeech_flite.so
 @so lib/qt6/plugins/texttospeech/libqtexttospeech_mock.so
 @so lib/qt6/plugins/texttospeech/libqtexttospeech_speechd.so
 lib/qt6/qml/QtTextToSpeech/

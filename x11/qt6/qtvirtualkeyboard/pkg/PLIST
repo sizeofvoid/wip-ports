@@ -27,6 +27,7 @@ include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/fallbacki
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/gesturerecognizer_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/handwritinggesturerecognizer_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputmethod_p.h
+include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputmethod_p_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputselectionhandle_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/inputview_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/plaininputmethod_p.h
@@ -37,6 +38,7 @@ include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualk
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardfeatures_namespace_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardinputcontext_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/qvirtualkeyboardnamespace_p.h
+include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/recursivemethodguard_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/settings_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shadowinputcontext_p.h
 include/X11/qt6/QtVirtualKeyboard/${VERSION}/QtVirtualKeyboard/private/shifthandler_p.h
@@ -93,9 +95,6 @@ lib/cmake/Qt6/FindCerenceXt9.cmake
 lib/cmake/Qt6/FindHunspell.cmake
 lib/cmake/Qt6/FindMyScript.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtVirtualKeyboardTestsConfig.cmake
-lib/cmake/Qt6BundledOpenwnn/
-lib/cmake/Qt6BundledPinyin/
-lib/cmake/Qt6BundledTcime/
 lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfig.cmake
 lib/cmake/Qt6Gui/Qt6QVirtualKeyboardPluginConfigVersion.cmake

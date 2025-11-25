@@ -490,6 +490,7 @@ include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qcoloroutput_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qdeferredpointer_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsannotation_p.h
+include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsaotirbuilder_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljsbasicblocks_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscodegenerator_p.h
 include/X11/qt6/QtQmlCompiler/${VERSION}/QtQmlCompiler/private/qqmljscompilepass_p.h
@@ -733,6 +734,7 @@ include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlrolesorter_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlsorterbase_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlsortercompositor_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlsortfilterproxymodel_p.h
+include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlsortfilterproxymodel_p_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmlstringsorter_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmltableinstancemodel_p.h
 include/X11/qt6/QtQmlModels/${VERSION}/QtQmlModels/private/qqmltreemodeltotablemodel_p_p.h
@@ -817,6 +819,7 @@ include/X11/qt6/QtQuick/${VERSION}/
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickitem_p.h
+include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequicktextedit_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qaccessiblequickview_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qqmldesignermetaobject_p.h
 include/X11/qt6/QtQuick/${VERSION}/QtQuick/private/qquadpath_p.h
@@ -1633,6 +1636,7 @@ include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickwee
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qquickweeknumbermodel_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qtquicktemplates2-config_p.h
 include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qtquicktemplates2global_p.h
+include/X11/qt6/QtQuickTemplates2/${VERSION}/QtQuickTemplates2/private/qtquicktemplates2math_p.h
 include/X11/qt6/QtQuickTemplates2/QtQuickTemplates2
 include/X11/qt6/QtQuickTemplates2/QtQuickTemplates2Depends
 include/X11/qt6/QtQuickTemplates2/QtQuickTemplates2Version
@@ -2242,6 +2246,7 @@ lib/cmake/Qt6Qml/Qt6QmlMacros.cmake
 lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in
 lib/cmake/Qt6Qml/Qt6QmlPluginTemplate.cpp.in
 lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake
+lib/cmake/Qt6Qml/Qt6QmlProperties.cmake
 lib/cmake/Qt6Qml/Qt6QmlPublicCMakeHelpers.cmake
 lib/cmake/Qt6Qml/Qt6QmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/Qt6QmlTargets.cmake
@@ -2999,7 +3004,6 @@ lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivat
 lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivateConfigVersion.cmake
 lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivateDependencies.cmake
-lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivatePlugins.cmake
 lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivateTargets.cmake
 lib/cmake/Qt6QuickVectorImageGeneratorPrivate/Qt6QuickVectorImageGeneratorPrivateVersionlessAliasTargets.cmake
@@ -4534,6 +4538,7 @@ lib/qt6/qml/QtQuick/Controls/Fusion/impl/RadioIndicator.qml
 lib/qt6/qml/QtQuick/Controls/Fusion/impl/SliderGroove.qml
 lib/qt6/qml/QtQuick/Controls/Fusion/impl/SliderHandle.qml
 lib/qt6/qml/QtQuick/Controls/Fusion/impl/SwitchIndicator.qml
+lib/qt6/qml/QtQuick/Controls/Fusion/impl/TextFieldBackground.qml
 @so lib/qt6/qml/QtQuick/Controls/Fusion/impl/libqtquickcontrols2fusionstyleimplplugin.so
 lib/qt6/qml/QtQuick/Controls/Fusion/impl/plugins.qmltypes
 lib/qt6/qml/QtQuick/Controls/Fusion/impl/qmldir
@@ -4709,6 +4714,7 @@ lib/qt6/qml/QtQuick/Controls/Universal/RoundButton.qml
 lib/qt6/qml/QtQuick/Controls/Universal/ScrollBar.qml
 lib/qt6/qml/QtQuick/Controls/Universal/ScrollIndicator.qml
 lib/qt6/qml/QtQuick/Controls/Universal/ScrollView.qml
+lib/qt6/qml/QtQuick/Controls/Universal/SearchField.qml
 lib/qt6/qml/QtQuick/Controls/Universal/SelectionRectangle.qml
 lib/qt6/qml/QtQuick/Controls/Universal/Slider.qml
 lib/qt6/qml/QtQuick/Controls/Universal/SpinBox.qml

@@ -10,7 +10,7 @@ Index: src/multimedia/CMakeLists.txt
      SOURCES qsymbolsresolveutils.cpp qsymbolsresolveutils_p.h)
  
  qt_internal_add_simd_part(Multimedia SIMD sse2
-@@ -280,7 +280,7 @@ if(ANDROID)
+@@ -282,7 +282,7 @@ if(ANDROID)
      )
  endif()
  

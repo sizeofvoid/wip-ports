@@ -16,6 +16,7 @@ include/X11/qt6/QtConcurrent/QtConcurrentDepends
 include/X11/qt6/QtConcurrent/QtConcurrentFilter
 include/X11/qt6/QtConcurrent/QtConcurrentMap
 include/X11/qt6/QtConcurrent/QtConcurrentRun
+include/X11/qt6/QtConcurrent/QtConcurrentTask
 include/X11/qt6/QtConcurrent/QtConcurrentVersion
 include/X11/qt6/QtConcurrent/qtaskbuilder.h
 include/X11/qt6/QtConcurrent/qtconcurrent_global.h
@@ -45,7 +46,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractfileengine_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractitemmodel_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractproxymodel_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qanimationgroup_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qbytedata_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcalendarbackend_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcalendarmath_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcborcommon_p.h
@@ -99,7 +99,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qiodevice_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qipaddress_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qislamiccivilcalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qitemselectionmodel_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qiterable_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjalalicalendar_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjson_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qjsonparser_p.h
@@ -730,6 +729,7 @@ include/X11/qt6/QtCore/qiodevice.h
 include/X11/qt6/QtCore/qiodevicebase.h
 include/X11/qt6/QtCore/qitemselectionmodel.h
 include/X11/qt6/QtCore/qiterable.h
+include/X11/qt6/QtCore/qiterable_impl.h
 include/X11/qt6/QtCore/qiterator.h
 include/X11/qt6/QtCore/qjsonarray.h
 include/X11/qt6/QtCore/qjsondocument.h
@@ -1686,6 +1686,7 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qabstractprotocolhandler_
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qabstractsocket_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qabstractsocketengine_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qauthenticator_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qbytedatabuffer_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qdecompresshelper_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qdnslookup_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhostaddress_p.h
@@ -1748,6 +1749,7 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslkey_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslpresharedkeyauthenticator_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslserver_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslsocket_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtcontenttypeparser_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtcpserver_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtcpsocket_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qtldurl_p.h

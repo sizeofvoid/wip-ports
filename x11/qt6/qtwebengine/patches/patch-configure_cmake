@@ -1,20 +1,24 @@
 Index: configure.cmake
 --- configure.cmake.orig
 +++ configure.cmake
-@@ -106,9 +106,9 @@ endif()
- 
- #### Tests
+@@ -17,7 +17,6 @@ qt_webengine_set_version(gcc 10.0)
+ qt_webengine_set_version(clang 17.0)
+ qt_webengine_set_version(gcc_for_pdf 9.0)
+ qt_webengine_set_version(glib 2.32.0)
+-qt_webengine_set_version(glibc 2.16)
+ qt_webengine_set_version(harfbuzz 4.3.0)
+ qt_webengine_set_version(libpng 1.6.0)
+ qt_webengine_set_version(libtiff 4.5.0)
+@@ -116,7 +115,7 @@ if(Python3_EXECUTABLE)
+     )
+ endif()
  
 -if(LINUX)
--   qt_webengine_configure_check_for_ulimit()
--endif()
-+#if(UNIX)
-+#   qt_webengine_configure_check_for_ulimit()
-+#endif()
++if(UNIX)
+    qt_webengine_configure_check_for_ulimit()
+ endif()
  
- qt_config_compile_test(cxx20
-     LABEL "C++20 support"
-@@ -217,29 +217,6 @@ int main() {
+@@ -227,29 +226,7 @@ int main() {
  }"
  )
  
@@ -30,7 +34,7 @@ Index: configure.cmake
 -    return 0;
 -}"
 -)
--
+ 
 -qt_config_compile_test(khr
 -    LABEL "khr"
 -    CODE
@@ -44,7 +48,7 @@ Index: configure.cmake
  # "Unmodified ffmpeg >= 5.0 is not supported."
  qt_config_compile_test(libavformat
      LABEL "libavformat"
-@@ -292,16 +269,16 @@ unset(targets_to_check)
+@@ -302,16 +279,16 @@ unset(targets_to_check)
  
  qt_webengine_configure_check("supported-platform"
      MODULES QtWebEngine
@@ -64,41 +68,24 @@ Index: configure.cmake
      set(supported_targets "arm" "arm64" "armv7-a" "x86_64")
      qt_webengine_configure_check("supported-arch"
          MODULES QtWebEngine QtPdf
-@@ -365,24 +342,17 @@ qt_webengine_configure_check("flex"
+@@ -381,51 +358,37 @@ qt_webengine_configure_check("flex"
  )
  qt_webengine_configure_check("pkg-config"
      MODULES QtWebEngine QtPdf
 -    CONDITION NOT LINUX OR PkgConfig_FOUND
 +    CONDITION NOT UNIX OR PkgConfig_FOUND
      MESSAGE "A pkg-config support is required."
-     DOCUMENTATION "A pkg-config binary on Linux."
-     TAGS LINUX_PLATFORM
+     DOCUMENTATION "A pkg-config binary."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
  )
 -qt_webengine_configure_check("glibc"
 -    MODULES QtWebEngine
 -    CONDITION NOT LINUX OR TEST_glibc
 -    MESSAGE "A suitable version >= ${QT_CONFIGURE_CHECK_glibc_version} of glibc is required."
--    DOCUMENTATION "glibc library at least ${QT_CONFIGURE_CHECK_glibc_version} version or later."
+-    DOCUMENTATION "Glibc library at least ${QT_CONFIGURE_CHECK_glibc_version} version or later."
 -    TAGS LINUX_PLATFORM
 -)
- qt_webengine_configure_check("glib"
-     MODULES QtWebEngine
-     CONDITION NOT UNIX OR GLIB_FOUND
-     MESSAGE "No glib library at least ${QT_CONFIGURE_CHECK_glib_version} version or later. Using build-in one"
-     DOCUMENTATION "glib library at least ${QT_CONFIGURE_CHECK_glib_version} version or later."
--    TAGS PLATFROM_MACOS PLATFORM_LINUX
-+    TAGS PLATFROM_MACOS PLATFORM_UNIX
-     OPTIONAL
- )
- qt_webengine_configure_check("harfbuzz"
-@@ -390,33 +360,26 @@ qt_webengine_configure_check("harfbuzz"
-     CONDITION NOT UNIX OR HARFBUZZ_FOUND
-     MESSAGE "No harfbuzz library at least ${QT_CONFIGURE_CHECK_harfbuzz_version} version or later. Using build-in one"
-     DOCUMENTATION "harfbuzz library at least ${QT_CONFIGURE_CHECK_harfbuzz_version} version or later."
--    TAGS PLATFORM_MACOS PLATFORM_LINUX
-+    TAGS PLATFORM_MACOS PLATFORM_UNIX
-     OPTIONAL
- )
 -qt_webengine_configure_check("mesa-headers"
 -    MODULES QtWebEngine
 -    CONDITION NOT LINUX OR TEST_khr
@@ -112,15 +99,17 @@ Index: configure.cmake
 +    CONDITION NOT UNIX OR FONTCONFIG_FOUND
      MESSAGE "Build requires fontconfig."
      DOCUMENTATION "Fontconfig"
-     TAGS LINUX_PKG_CONFIG
+-    TAGS LINUX_PKG_CONFIG
++    TAGS UNIX_PKG_CONFIG
  )
  qt_webengine_configure_check("nss"
      MODULES QtWebEngine
 -    CONDITION NOT LINUX OR NSS_FOUND
 +    CONDITION NOT UNIX OR NSS_FOUND
      MESSAGE "Build requires nss >= ${QT_CONFIGURE_CHECK_nss_version}."
-     DOCUMENTATION "Nss library are least ${QT_CONFIGURE_CHECK_nss_version} version."
-     TAGS LINUX_PLATFORM
+     DOCUMENTATION "Nss library is at least ${QT_CONFIGURE_CHECK_nss_version} version."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
  )
  qt_webengine_configure_check("dbus"
      MODULES QtWebEngine
@@ -128,30 +117,9 @@ Index: configure.cmake
 +    CONDITION NOT UNIX OR DBUS_FOUND
      MESSAGE "Build requires dbus."
      DOCUMENTATION "Dbus"
-     TAGS LINUX_PKG_CONFIG
-@@ -426,7 +389,7 @@ qt_webengine_configure_check("libudev"
-     CONDITION NOT UNIX OR LIBUDEV_FOUND
-     MESSAGE "No libudev found."
-     DOCUMENTATION "libudev library."
--    TAGS PLATFROM_MACOS PLATFORM_LINUX
-+    TAGS PLATFROM_MACOS PLATFORM_UNIX
-     OPTIONAL
+-    TAGS LINUX_PKG_CONFIG
++    TAGS UNIX_PKG_CONFIG
  )
- 
-@@ -438,10 +401,10 @@ foreach(x_lib ${x_libs})
-     string(TOLOWER ${x_lib} x)
-     qt_webengine_configure_check("${x}"
-         MODULES QtWebEngine
--        CONDITION NOT TARGET Qt6::Gui OR NOT LINUX OR NOT QT_FEATURE_xcb OR ${x_lib}_FOUND
-+        CONDITION NOT TARGET Qt6::Gui OR NOT UNIX OR NOT QT_FEATURE_xcb OR ${x_lib}_FOUND
-         MESSAGE "Could not find ${x} library for qpa-xcb support."
-         DOCUMENTATION "${x}"
--        TAGS LINUX_XCB
-+        TAGS UNIX_XCB
-         OPTIONAL
-     )
-     if(qpa_xcb_support_check AND NOT QT_CONFIGURE_CHECK_${x})
-@@ -454,8 +417,8 @@ unset(x_libs)
  qt_webengine_configure_check("compiler"
      MODULES QtWebEngine
      CONDITION MSVC OR
@@ -162,7 +130,7 @@ Index: configure.cmake
          (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
      MESSAGE
          "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
-@@ -463,8 +426,8 @@ qt_webengine_configure_check("compiler"
+@@ -433,8 +396,8 @@ qt_webengine_configure_check("compiler"
  qt_webengine_configure_check("compiler"
      MODULES QtPdf
      CONDITION MSVC OR
@@ -173,25 +141,56 @@ Index: configure.cmake
          (APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang") OR
          (ANDROID AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
          (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
-@@ -496,7 +459,7 @@ qt_webengine_configure_check("msvc-2022"
+@@ -466,29 +429,29 @@ qt_webengine_configure_check("msvc-2022"
  
  qt_webengine_configure_check("gcc"
      MODULES QtWebEngine
 -    CONDITION NOT (LINUX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
 +    CONDITION NOT (UNIX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
                NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_gcc_version}
-     MESSAGE "GCC version must be at least ${QT_CONFIGURE_CHECK_gcc_version}"
-     DOCUMENTATION "GCC version must be at least ${QT_CONFIGURE_CHECK_gcc_version}"
-@@ -505,7 +468,7 @@ qt_webengine_configure_check("gcc"
+     MESSAGE "Gcc version must be at least ${QT_CONFIGURE_CHECK_gcc_version}"
+     DOCUMENTATION "Gcc version must be at least ${QT_CONFIGURE_CHECK_gcc_version} to compile QtWebEngine."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
  
- qt_webengine_configure_check("gcc-pdf"
+ qt_webengine_configure_check("clang"
+     MODULES QtWebEngine
+-    CONDITION NOT (LINUX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "CLANG" OR
++    CONDITION NOT (UNIX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "CLANG" OR
+               NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_calng_version}
+     MESSAGE "Clang version must be at least ${QT_CONFIGURE_CHECK_clang_version}"
+     DOCUMENTATION "Clang version must be at least ${QT_CONFIGURE_CHECK_clang_version} to compile QtWebEngine."
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+ 
+ qt_webengine_configure_check("gcc_for_pdf"
      MODULES QtPdf
 -    CONDITION NOT (LINUX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
 +    CONDITION NOT (UNIX OR MINGW) OR NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
-               NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_gcc-pdf_version}
-     MESSAGE "GCC version must be at least ${QT_CONFIGURE_CHECK_gcc-pdf_version}"
-     DOCUMENTATION "GCC version must be at least ${QT_CONFIGURE_CHECK_gcc-pdf_version}"
-@@ -727,7 +690,7 @@ qt_feature("webengine-system-openh264" PRIVATE
+               NOT CMAKE_CXX_COMPILER_VERSION VERSION_LESS ${QT_CONFIGURE_CHECK_gcc_for_pdf_version}
+     MESSAGE "GCC version must be at least ${QT_CONFIGURE_CHECK_gcc_for_pdf_version}"
+     DOCUMENTATION "Gcc version must be at least ${QT_CONFIGURE_CHECK_gcc_for_pdf_version}"
+-    TAGS LINUX_PLATFORM
++    TAGS UNIX_PLATFORM
+ )
+ 
+ if(WIN32)
+@@ -516,10 +479,10 @@ foreach(x_lib ${x_libs})
+     string(TOLOWER ${x_lib} lib)
+     qt_webengine_configure_check("${lib}"
+         MODULES QtWebEngine
+-        CONDITION NOT TARGET Qt6::Gui OR NOT LINUX OR NOT QT_FEATURE_xcb OR ${x_lib}_FOUND
++        CONDITION NOT TARGET Qt6::Gui OR NOT UNIX OR NOT QT_FEATURE_xcb OR ${x_lib}_FOUND
+         MESSAGE "Could not find ${lib} library for qpa-xcb support."
+         DOCUMENTATION "${lib}"
+-        TAGS LINUX_XCB
++        TAGS UNIX_XCB
+         OPTIONAL
+     )
+     if(qpa_xcb_support_check AND NOT QT_CONFIGURE_CHECK_${lib})
+@@ -743,7 +706,7 @@ qt_feature("webengine-system-openh264" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
      LABEL "Support X11 on qpa-xcb"

@@ -13,6 +13,8 @@ WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6QuickLayouts Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml
 WANTLIB += c m xkbcommon zstd
 
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
 
 # avoid BDEP on ourselves
 MODQT6_DEPS =	No
@@ -41,5 +43,4 @@ PROGRAMS6 =	assistant designer lconvert linguist lrelease lupdate \
 CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
 MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
-LIB_DEPENDS +=   
 .include <bsd.port.mk>

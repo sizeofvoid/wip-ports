@@ -46,6 +46,7 @@ share/doc/qt6/global/app-examples-template/app-examples-template.qdoc
 share/doc/qt6/global/compat.qdocconf
 share/doc/qt6/global/config.qdocconf
 share/doc/qt6/global/cpp-doc-macros.qdocconf
+share/doc/qt6/global/disabledwarnings.qdocconf
 share/doc/qt6/global/externalsites/
 share/doc/qt6/global/externalsites.qdocconf
 share/doc/qt6/global/externalsites/external-resources.qdoc
