@@ -66,7 +66,8 @@ TEST_IS_INTERACTIVE =	X11
 TEST_DEPENDS =		${BUILD_PKGPATH}
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/cmake/Macros/PySideModules.cmake
+	${SUBST_CMD} ${WRKSRC}/cmake/Macros/PySideModules.cmake \
+		${WRKSRC}/libpyside/PySide6Config-spec.cmake.in
 
 post-install:
 	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}/PySide6{,/support}/

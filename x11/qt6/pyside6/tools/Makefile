@@ -10,12 +10,7 @@ WANTLIB += Qt6Quick3DUtils Qt6QuickLayouts Qt6QuickVectorImageGenerator
 WANTLIB += Qt6QuickWidgets Qt6ShaderTools Qt6Sql Qt6UiTools Qt6Widgets
 WANTLIB += Qt6Xml c execinfo m xkbcommon zstd
 
-WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
-WANTLIB += llvm${MODCLANG_VERSION}/lib/LLVM
-
-MODULES +=		lang/clang \
-			lang/python
-MODCLANG_VERSION =	19
+MODULES +=		lang/python
 
 LIB_DEPENDS =		archivers/zstd \
 			x11/qt6/qtquick3d \
@@ -28,9 +23,5 @@ LIB_DEPENDS +=		${MODCLANG_LIB_DEPENDS}
 
 WRKSRC =		${WRKDIST}/sources/pyside-tools
 NO_BUILD =		yes
-
-CONFIGURE_ARGS +=	-DNUMPY_INCLUDE_DIR:PATH="${MODPY_SITEPKG}/numpy/core/include/"
-
-CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
 
 .include <bsd.port.mk>

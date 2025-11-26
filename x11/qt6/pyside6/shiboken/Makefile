@@ -8,7 +8,7 @@ WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
 MODULES +=		lang/clang \
 			lang/python
-MODCLANG_VERSION =	19
+MODCLANG_VERSION =	21
 
 BUILD_DEPENDS =		x11/qt6/qttools \
 			math/py-numpy
