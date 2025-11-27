@@ -18,7 +18,7 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql
 WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml c intl luajit-5.1 m poppler poppler-qt6
-WANTLIB += python3.13 qalculate spectre util xml2 xslt
+WANTLIB += ${MODPY_WANTLIB} qalculate spectre util xml2 xslt
 
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
