@@ -7,5 +7,5 @@ Index: sources/pyside6/libpyside/PySide6Config-spec.cmake.in
  set_and_check(PYSIDE_PYTHONPATH "@PACKAGE_PYSIDE_PYTHONPATH@")
 -set_and_check(PYSIDE_TYPESYSTEMS "@PACKAGE_PYSIDE_TYPESYSTEMS@")
 -set_and_check(PYSIDE_GLUE "@PACKAGE_PYSIDE_GLUE@")
-+set_and_check(PYSIDE_TYPESYSTEMS "${LOCALBASE}/share/PySide6/typesystems")
-+set_and_check(PYSIDE_GLUE "${LOCALBASE}/share/PySide6/glue")
++set_and_check(PYSIDE_TYPESYSTEMS "${TRUEPREFIX}/share/PySide6/typesystems")
++set_and_check(PYSIDE_GLUE "${TRUEPREFIX}/share/PySide6/glue")
