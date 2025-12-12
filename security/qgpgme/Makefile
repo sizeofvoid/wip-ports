@@ -1,27 +1,24 @@
 COMMENT=	GnuPG Made Easy
 
-VERSION =	2.0.1
-DISTNAME =	gpgme-${VERSION}
+VERSION =	2.0.0
+DISTNAME =	qgpgme-${VERSION}
 
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  gpgme                25.0     # 44.1
-
 HOMEPAGE =	https://www.gnupg.org/software/gpgme/
 
-SITES =		${SITE_GNUPG:=gpgme/}
-EXTRACT_SUFX =	.tar.bz2
+SHARED_LIBS +=  qgpgmeqt6            1.0      # 21.1
+
+SITES =		${SITE_GNUPG:=qgpgme/}
+EXTRACT_SUFX =	.tar.xz
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += assuan c gpg-error iconv intl m pthread
+MODULES =		devel/cmake \
+			x11/qt6
 
 COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-
-CONFIGURE_STYLE =	gnu
-
 BUILD_DEPENDS =		security/gnupg
 RUN_DEPENDS =		security/gnupg
 
@@ -29,7 +26,6 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			security/libgpg-error \
 			security/libassuan
 
-# needed for the regression tests
-USE_GMAKE =		Yes
+CONFIGURE_ARGS =	-DBUILD_WITH_QT5=OFF
 
 .include <bsd.port.mk>

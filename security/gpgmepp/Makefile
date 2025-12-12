@@ -1,35 +1,32 @@
 COMMENT=	GnuPG Made Easy
 
-VERSION =	2.0.1
-DISTNAME =	gpgme-${VERSION}
+VERSION =	2.0.0
+DISTNAME =	gpgmepp-${VERSION}
 
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  gpgme                25.0     # 44.1
+SHARED_LIBS +=  gpgmepp              4.0      # 27.1
 
 HOMEPAGE =	https://www.gnupg.org/software/gpgme/
 
-SITES =		${SITE_GNUPG:=gpgme/}
-EXTRACT_SUFX =	.tar.bz2
+SITES =		${SITE_GNUPG:=gpgmepp/}
+EXTRACT_SUFX =	.tar.xz
 
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += assuan c gpg-error iconv intl m pthread
+MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
-
-CONFIGURE_STYLE =	gnu
-
 BUILD_DEPENDS =		security/gnupg
 RUN_DEPENDS =		security/gnupg
 
 LIB_DEPENDS =		devel/gettext,-runtime \
-			security/libgpg-error \
+			security/libgpg-error>=1.47 \
+			security/gpgme>=2.0 \
 			security/libassuan
 
-# needed for the regression tests
-USE_GMAKE =		Yes
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
