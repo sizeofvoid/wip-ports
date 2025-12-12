@@ -18,9 +18,8 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6Quick Qt6Sql
 WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml c intl luajit-5.1 m poppler poppler-qt6
-WANTLIB += ${MODPY_WANTLIB} qalculate spectre util xml2 xslt
+WANTLIB += python3.13 qalculate spectre util xml2 xslt
 
-WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
 MODULES +=	fortran \
 		lang/lua \
@@ -79,10 +78,13 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-LIB_DEPENDS +=	math/R
+LIB_DEPENDS +=	
 
 TEST_IS_INTERACTIVE =	X11
 
 PORTHOME =		${WRKDIR}
 
+LIB_DEPENDS +=      
+LIB_DEPENDS +=      
 .include <bsd.port.mk>
+LIB_DEPENDS += lang/python/3 

@@ -76,3 +76,4 @@ LIB_DEPENDS =	devel/kf6/baloo \
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
+LIB_DEPENDS += x11/qt6/qtwayland 
