@@ -1,6 +1,10 @@
 COMMENT-main =	multimedia transformations framework
 COMMENT-gpl2 =	GPLv2-licensed modules for mlt
+<<<<<<< HEAD
 V =		7.34.1
+=======
+V =		7.34.0
+>>>>>>> 5927df08509 (Add init KDE Gear 25.12 upgrade)
 DISTNAME =	mlt-${V}
 PKGNAME-main =	mlt7-${V}
 PKGNAME-gpl2 =	mlt7-gpl2-${V}

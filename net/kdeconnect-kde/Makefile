@@ -93,3 +93,4 @@ post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/nautilus-python/extensions
 
 .include <bsd.port.mk>
+LIB_DEPENDS += x11/qt6/qtwayland 
