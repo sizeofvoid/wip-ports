@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @conflict gpgme-qt-<=1.24.3
 include/gpgme++/
 include/gpgme++/configuration.h
@@ -54,23 +53,3 @@ lib/cmake/Gpgmepp/GpgmeppTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Gpgmepp/GpgmeppTargets.cmake
 @lib lib/libgpgmepp.so.${LIBgpgmepp_VERSION}
 lib/pkgconfig/gpgmepp.pc
-=======
-@bin bin/gnupg-key-manage
-bin/gpgme-config
-@bin bin/gpgme-json
-@bin bin/gpgme-tool
-include/gpgme.h
-@info info/gpgme.info
-@static-lib lib/libgpgme.a
-lib/libgpgme.la
-@lib lib/libgpgme.so.${LIBgpgme_VERSION}
-lib/pkgconfig/gpgme-glib.pc
-lib/pkgconfig/gpgme.pc
-@man man/man1/gpgme-json.1
-share/aclocal/gpgme.m4
-share/common-lisp/source/gpgme/
-share/common-lisp/source/gpgme/gpgme-grovel.lisp
-share/common-lisp/source/gpgme/gpgme-package.lisp
-share/common-lisp/source/gpgme/gpgme.asd
-share/common-lisp/source/gpgme/gpgme.lisp
->>>>>>> b6647161997 (Add init gpgme update)

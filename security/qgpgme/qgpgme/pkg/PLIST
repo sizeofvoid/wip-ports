@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @conflict gpgme-qt-*
 @pkgpath security/gpgme,-qt
 include/qgpgme-qt6/
@@ -113,23 +112,3 @@ lib/cmake/QGpgmeQt6/QGpgmeQt6ConfigVersion.cmake
 lib/cmake/QGpgmeQt6/QGpgmeQt6Targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QGpgmeQt6/QGpgmeQt6Targets.cmake
 @lib lib/libqgpgmeqt6.so.${LIBqgpgmeqt6_VERSION}
-=======
-@bin bin/gnupg-key-manage
-bin/gpgme-config
-@bin bin/gpgme-json
-@bin bin/gpgme-tool
-include/gpgme.h
-@info info/gpgme.info
-@static-lib lib/libgpgme.a
-lib/libgpgme.la
-@lib lib/libgpgme.so.${LIBgpgme_VERSION}
-lib/pkgconfig/gpgme-glib.pc
-lib/pkgconfig/gpgme.pc
-@man man/man1/gpgme-json.1
-share/aclocal/gpgme.m4
-share/common-lisp/source/gpgme/
-share/common-lisp/source/gpgme/gpgme-grovel.lisp
-share/common-lisp/source/gpgme/gpgme-package.lisp
-share/common-lisp/source/gpgme/gpgme.asd
-share/common-lisp/source/gpgme/gpgme.lisp
->>>>>>> b6647161997 (Add init gpgme update)

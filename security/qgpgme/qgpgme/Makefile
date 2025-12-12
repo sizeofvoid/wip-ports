@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 COMMENT=	GnuPG Made Easy Qt bindings
-=======
-COMMENT=	GnuPG Made Easy
->>>>>>> b6647161997 (Add init gpgme update)
 
 VERSION =	2.0.0
 DISTNAME =	qgpgme-${VERSION}
@@ -19,28 +15,16 @@ EXTRACT_SUFX =	.tar.xz
 # GPLv2 - LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-<<<<<<< HEAD
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core gpg-error gpgme gpgmepp
 WANTLIB += m
 
-=======
->>>>>>> b6647161997 (Add init gpgme update)
 MODULES =		devel/cmake \
 			x11/qt6
 
 COMPILER =		base-clang ports-gcc
-<<<<<<< HEAD
 
 LIB_DEPENDS =		security/gpgme>=2.0 \
 			security/gpgmepp>=2.0 \
-=======
-BUILD_DEPENDS =		security/gnupg
-RUN_DEPENDS =		security/gnupg
-
-LIB_DEPENDS =		devel/gettext,-runtime \
-			security/libgpg-error \
-			security/libassuan
->>>>>>> b6647161997 (Add init gpgme update)
 
 CONFIGURE_ARGS =	-DBUILD_WITH_QT5=OFF
 
