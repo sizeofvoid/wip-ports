@@ -1,4 +1,4 @@
-COMMENT=	GnuPG Made Easy D++ bindings
+COMMENT=	GnuPG Made Easy C++ bindings
 
 VERSION =	2.0.0
 DISTNAME =	gpgmepp-${VERSION}
