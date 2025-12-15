@@ -1,4 +1,4 @@
-@conflict gpgme-<=2.0.1
+@conflict gpgme-qt-<=1.24.3
 include/qgpgme-qt6/
 include/qgpgme-qt6/QGpgME/
 include/qgpgme-qt6/QGpgME/AbstractImportJob

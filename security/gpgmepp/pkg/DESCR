@@ -1,2 +1,1 @@
-GnuPG Made Easy (GPGME) is a library designed to make access to
-GnuPG easier for applications.
+C++ bindings for GnuPG Made Easy (GPGME).
