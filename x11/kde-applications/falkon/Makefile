@@ -49,3 +49,4 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
+LIB_DEPENDS += lang/python/3 
