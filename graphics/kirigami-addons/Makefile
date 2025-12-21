@@ -36,7 +36,7 @@ LIB_DEPENDS =		devel/kf6/ki18n \
 			devel/kf6/kcolorscheme \
 			devel/kf6/kconfig \
 			devel/kf6/kcoreaddons \
-			devel/kf6/kcrash
+			devel/kf6/kcrash \
 			devel/kf6/kglobalaccel \
 			devel/kf6/kguiaddons \
 			devel/kf6/kiconthemes \

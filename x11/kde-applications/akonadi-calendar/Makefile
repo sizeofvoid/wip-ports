@@ -18,7 +18,7 @@ WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementWidgets
 WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi
 WANTLIB += KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Xml c gpg-error gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 
@@ -44,7 +44,6 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
