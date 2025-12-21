@@ -21,7 +21,6 @@ lib/cmake/KPim6PkPass/KPim6PkPassConfigVersion.cmake
 lib/cmake/KPim6PkPass/KPim6PkPassTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6PkPass/KPim6PkPassTargets.cmake
 @lib lib/libKPim6PkPass.so.${LIBKPim6PkPass_VERSION}
-lib/qt6/qml/
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/pkpass/

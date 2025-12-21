@@ -1,6 +1,5 @@
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel
 

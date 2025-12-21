@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-addons-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  adblocklibprivate                        2.0 # 5.13.2
 SHARED_LIBS +=  coisceim_widget                          2.0 # 5.13.2

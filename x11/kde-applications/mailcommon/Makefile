@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
 
 SHARED_LIBS +=	KPim6MailCommon           0.1 # 0.0
 

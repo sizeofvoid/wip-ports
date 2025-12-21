@@ -78,13 +78,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-LIB_DEPENDS +=	
-
 TEST_IS_INTERACTIVE =	X11
 
 PORTHOME =		${WRKDIR}
 
-LIB_DEPENDS +=      
-LIB_DEPENDS +=      
 .include <bsd.port.mk>
-LIB_DEPENDS += lang/python/3 

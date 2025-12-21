@@ -4,9 +4,9 @@ CATEGORIES =	games education
 
 MODKDE_KF5 =	Yes
 
-HOMEPAGE =	https://www.kde.org/applications/education/rocs/
+HOMEPAGE =	https://apps.kde.org/rocs/
 
-SHARED_LIBS +=  rocsgraphtheory        6.0 # 0.0
+SHARED_LIBS +=  rocsgraphtheory        7.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
@@ -46,4 +46,5 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		x11/qt6/qtdeclarative
+
 .include <bsd.port.mk>
