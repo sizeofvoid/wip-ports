@@ -8,7 +8,7 @@ SHARED_LIBS +=	KPim6MimeTreeParserWidgets 0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6I18n KF6WidgetsAddons KPim6Libkleo
 WANTLIB += KPim6Mbox KPim6Mime Qt6Core Qt6Gui Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6Widgets assuan gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Qml Qt6Widgets gpg-error gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 
@@ -23,7 +23,6 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kconfig \
 		devel/kf6/kwidgetsaddons \
 		security/qgpgme \
-		security/libassuan \
 		x11/kde-applications/kmbox>=${VERSION} \
 		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/libkleo>=${VERSION} \

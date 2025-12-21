@@ -29,7 +29,8 @@ WANTLIB += KPim6MailTransport KPim6Mbox KPim6Mime KPim6PimCommon
 WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml assuan crypto gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6Widgets Qt6Xml crypto gpg-error gpgme gpgmepp m
+WANTLIB += qgpgmeqt6
 
 WANTLIB += lib/inotify/inotify
 
@@ -68,7 +69,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \

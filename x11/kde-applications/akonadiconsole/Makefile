@@ -18,8 +18,8 @@ WANTLIB += KPim6AkonadiXml KPim6CalendarSupport KPim6GrantleeTheme
 WANTLIB += KPim6IdentityManagementCore KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6Mime KPim6MimeTreeParser
 WANTLIB += KPim6PimCommon Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Sql Qt6Widgets Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
-WANTLIB += xapian
+WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c gpg-error gpgme gpgmepp
+WANTLIB += m qgpgmeqt6 xapian
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -50,7 +50,6 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf6/kxmlgui \
 		devel/kf6/sonnet \
 		security/qgpgme \
-		security/libassuan \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
