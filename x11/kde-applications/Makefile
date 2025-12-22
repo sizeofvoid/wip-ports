@@ -265,7 +265,7 @@
 
      SUBDIR += kf6-ksanecore
 
-     SUBDIR += libkdcraw
+     #SUBDIR += libkdcraw
      SUBDIR += kf6-libkdcraw
 
      SUBDIR += kf6-kaccounts-integration
@@ -278,7 +278,7 @@
 
      SUBDIR += kf6-libkcddb
 
-     SUBDIR += kdegraphics-mobipocket
+     #SUBDIR += kdegraphics-mobipocket
      SUBDIR += kf6-kdegraphics-mobipocket
 
      # XXX keep in sync
