@@ -1,12 +1,2 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 SHA256 (mlt-7.34.1.tar.gz) = QQS4fbPhQ4n4FmaTjBMfcjVkdz/smqGLa/8Ah2HMg4s=
 SIZE (mlt-7.34.1.tar.gz) = 1817867
-=======
-SHA256 (mlt-7.34.0.tar.gz) = FyeMZQ6iIxJ8Mgfem78DZOB3FpmTBxaQEHFQjYCyVrE=
-SIZE (mlt-7.34.0.tar.gz) = 1818219
->>>>>>> 5927df08509 (Add init KDE Gear 25.12 upgrade)
-=======
-SHA256 (mlt-7.34.1.tar.gz) = QQS4fbPhQ4n4FmaTjBMfcjVkdz/smqGLa/8Ah2HMg4s=
-SIZE (mlt-7.34.1.tar.gz) = 1817867
->>>>>>> ec1bc0208d9 (Update mlt7)
