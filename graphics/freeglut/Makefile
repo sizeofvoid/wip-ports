@@ -17,6 +17,8 @@ WANTLIB += GL X11 Xi Xrandr Xxf86vm m
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
