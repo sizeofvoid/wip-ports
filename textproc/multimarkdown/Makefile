@@ -21,7 +21,4 @@ post-install:
 	rm ${PREFIX}/{LICENSE.txt,README.txt}
 	mv ${PREFIX}/bin/{mmd,mmd2xhtml} # avoid conflict with mtools
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

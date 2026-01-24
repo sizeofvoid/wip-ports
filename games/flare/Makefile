@@ -57,4 +57,7 @@ post-install:
 	cd ${WRKDIR}/flare-game-v${V}/mods \
 		&& pax -rw . ${PREFIX}/share/flare/mods/
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

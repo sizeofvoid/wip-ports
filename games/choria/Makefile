@@ -45,4 +45,7 @@ pre-configure:
 	perl -pi -e "s,games/,,g" ${WRKSRC}/CMakeLists.txt \
 				  ${WRKSRC}/deployment/choria
 	
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -18,7 +18,8 @@ COMPILER=	base-clang ports-gcc
 
 # it's kind-of a NO_BUILD port, but doing so means you can't
 # run the tests.
-CONFIGURE_ARGS +=      -DGLM_BUILD_TESTS=ON
+CONFIGURE_ARGS +=	-DGLM_BUILD_TESTS=ON
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 

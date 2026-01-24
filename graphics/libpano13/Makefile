@@ -21,7 +21,4 @@ LIB_DEPENDS =		graphics/jpeg \
 
 FIX_CRLF_FILES =	CMakeLists.txt
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

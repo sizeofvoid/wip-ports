@@ -52,4 +52,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/fonts/{GPL,OFL-1.1}.txt ${PREFIX}/share/doc/valyriatear
 	${INSTALL_MAN} ${WRKSRC}/doc/valyriatear.6 ${PREFIX}/man/man6
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -49,10 +49,17 @@ CONFIGURE_ENV +=	C_OPT_FLAG_DEBUG="${CFLAGS}" \
 			CXX_OPT_FLAG_DEBUG="${CXXFLAGS}" \
 			CXX_OPT_FLAG_RELEASE="${CXXFLAGS}"
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # currently not building; would be ${WRKBUILD}/bin/unittests
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/fs2open.github.com-release_${V:S/./_/g}
+
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

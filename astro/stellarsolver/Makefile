@@ -28,5 +28,6 @@ LIB_DEPENDS =	astro/wcslib \
 		math/cfitsio
 
 CONFIGURE_ARGS =	-DUSE_QT5=OFF
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

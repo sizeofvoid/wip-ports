@@ -46,4 +46,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/barriers.1 \
 		${PREFIX}/man/man1/barriers.1
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

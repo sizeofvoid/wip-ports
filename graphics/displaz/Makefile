@@ -35,4 +35,7 @@ post-install:
 	# glsl 1.4 works..
 	 sed -i -e 's/^#version 150/#version 140/' ${PREFIX}/share/displaz/shaders/*.glsl
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

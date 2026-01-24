@@ -26,4 +26,7 @@ post-install:
 	cd ${WRKSRC}/example; pax -vrw -s '@.*/\..*@@' . \
 		${PREFIX}/share/examples/mygpo-qt
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

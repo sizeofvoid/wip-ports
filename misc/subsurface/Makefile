@@ -97,6 +97,9 @@ pre-build:
 	${MAKE_ENV} ${MAKE_PROGRAM} -j ${MAKE_JOBS} -C ${WRKSRC}/gmaps/build
 	${MAKE_ENV} INSTALL_ROOT=${WRKINST} ${MAKE_PROGRAM} -C ${WRKSRC}/gmaps/build install
 	${MAKE_ENV} ${MAKE_PROGRAM} -j ${MAKE_JOBS} -C ${WRKSRC}/libdivecomputer/build
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKSRC}/libdivecomputer/build install
 
 .include <bsd.port.mk>

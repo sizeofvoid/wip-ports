@@ -39,7 +39,4 @@ do-install:
 	${SUBST_CMD} -c -m 755 ${FILESDIR}/systemshock.sh \
 		${PREFIX}/bin/systemshock
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

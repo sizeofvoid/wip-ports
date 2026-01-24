@@ -18,11 +18,10 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/mustache.hpp ${PREFIX}/include
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

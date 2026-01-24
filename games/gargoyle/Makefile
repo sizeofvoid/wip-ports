@@ -35,4 +35,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/garglk/garglk.ini \
 	    ${PREFIX}/share/examples/gargoyle
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

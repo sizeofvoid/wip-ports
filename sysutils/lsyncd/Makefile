@@ -45,7 +45,4 @@ do-test:
 	cd ${WRKSRC} && ${MODLUA_BIN} tests/${f}.lua || echo ${f} failed
 .endfor
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

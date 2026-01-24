@@ -31,7 +31,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKBUILD}/libFNA3D.so.${LIBFNA3D_VERSION} ${PREFIX}/lib/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

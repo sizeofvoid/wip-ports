@@ -37,6 +37,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 
+CONFIGURE_ARGS =	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

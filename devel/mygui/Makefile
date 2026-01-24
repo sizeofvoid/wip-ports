@@ -37,12 +37,11 @@ CONFIGURE_ARGS += 	-DMYGUI_BUILD_DEMOS=false \
 			-DCMAKE_CXX_FLAGS="-I${X11BASE}/include" \
 			-Wno-dev
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Common/Base/Ogre/BaseManager.cpp
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

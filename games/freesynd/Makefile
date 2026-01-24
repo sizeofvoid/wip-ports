@@ -1,9 +1,7 @@
 COMMENT =	open source reimplementation of Syndicate game
-
-VERSION =	0.8
-PKGNAME =	freesynd-${VERSION}
-DISTNAME =	Freesynd-${VERSION}-Source
+DISTNAME =	freesynd-0.7.5
 CATEGORIES = 	games x11
+REVISION =	0
 
 HOMEPAGE =	https://freesynd.sourceforge.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

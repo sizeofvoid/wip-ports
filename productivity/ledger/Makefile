@@ -52,4 +52,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/$d ${PREFIX}/share/doc/ledger/
 .endfor
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -34,4 +34,7 @@ CONFIGURE_ARGS =	-DMultiMC_LAYOUT="lin-system"
 
 WRKDIST =		${WRKDIR}/MultiMC5
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>
