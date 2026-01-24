@@ -27,6 +27,8 @@ COMPILER=	base-clang ports-gcc
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # XXX needs py-fontTools (not ported)
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}
 

@@ -16,6 +16,8 @@ MODULES =	devel/cmake
 
 NO_TEST =	Yes
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/brainfuck
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/brainfuck/
