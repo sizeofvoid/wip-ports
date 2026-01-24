@@ -61,6 +61,8 @@ CONFIGURE_ARGS +=	-DBTSUPPORT=OFF \
 CONFIGURE_ARGS +=	-DLIBGIT2_FROM_PKGCONFIG=ON
 CONFIGURE_ARGS +=	-DWRKINST=${WRKINST}
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # It's possible to run the tests, but they fail.
 # First, add the subsurface/large-anonymous-sample-data repo to DISTFILES.
 # Add archive/xz to the TEST_DEPENDS.
@@ -97,9 +99,6 @@ pre-build:
 	${MAKE_ENV} ${MAKE_PROGRAM} -j ${MAKE_JOBS} -C ${WRKSRC}/gmaps/build
 	${MAKE_ENV} INSTALL_ROOT=${WRKINST} ${MAKE_PROGRAM} -C ${WRKSRC}/gmaps/build install
 	${MAKE_ENV} ${MAKE_PROGRAM} -j ${MAKE_JOBS} -C ${WRKSRC}/libdivecomputer/build
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 	${MAKE_ENV} ${MAKE_PROGRAM} -C ${WRKSRC}/libdivecomputer/build install
 
 .include <bsd.port.mk>
