@@ -31,6 +31,4 @@ BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		databases/sqlite3 \
 			textproc/icu4c
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

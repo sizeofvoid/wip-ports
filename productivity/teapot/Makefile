@@ -37,7 +37,4 @@ post-install:
 	@cd ${WRKDIR}/Teapot-${V}-Linux/share/doc/teapot/; tar cf - . | \
 		tar xf - -C ${PREFIX}/share/doc/teapot/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

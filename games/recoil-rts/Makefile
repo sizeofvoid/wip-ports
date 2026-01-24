@@ -108,6 +108,8 @@ CXXFLAGS +=		-ffp-exception-behavior=strict
 LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 SUBST_VARS +=		V
 
 pre-configure:

@@ -46,6 +46,9 @@ RUN_DEPENDS +=	graphics/inkscape
 post-extract:
 	rm -f ${WRKSRC}/app/tools/lib/linux/libzip.a
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 CONFIGURE_ARGS +=	-DXTRKCAD_USE_GETTEXT=on
 CONFIGURE_ENV +=	CFLAGS=-I${PREFIX}/include \
 		LDFLAGS="-pthread -L/usr/X11R6/lib -L${PREFIX}/lib -liconv -lintl"

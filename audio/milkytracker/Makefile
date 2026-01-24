@@ -34,6 +34,8 @@ LIB_DEPENDS =	archivers/lhasa \
 
 CONFIGURE_ARGS = -DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/milkytracker
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 CXXFLAGS +=	-Wno-narrowing
 
 NO_TEST =	Yes

@@ -31,11 +31,10 @@ LIB_DEPENDS=		net/neon \
 
 CXXFLAGS +=	-I${LOCALBASE}/include
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/cmake/modules/FindNeon.cmake
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

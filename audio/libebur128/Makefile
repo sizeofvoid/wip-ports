@@ -16,12 +16,12 @@ WANTLIB += m
 MODULES = devel/cmake
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # enabling tests is somewhat useless: extra build dependency on
 # libsndfile, plus the test requires a wav file to be useful,
 # and it's definitely interactive
 # CONFIGURE_ARGS += -DENABLE_TESTS=ON
 NO_TEST = Yes
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

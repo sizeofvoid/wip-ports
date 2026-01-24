@@ -24,4 +24,7 @@ NO_TEST =		Yes
 post-configure:
 	cd ${WRKSRC}/i18n/ && ${MODQT_LRELEASE} *.ts
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -15,7 +15,6 @@ MODULES =	devel/cmake
 LIB_DEPENDS =	audio/libmpdclient
 WANTLIB +=	c crypto mpdclient pthread ssl
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

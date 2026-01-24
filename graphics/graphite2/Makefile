@@ -30,8 +30,6 @@ MODPY_RUNDEP=	No
 # XXX needs py-fontTools (not ported)
 TEST_DEPENDS=	${MODPY_RUN_DEPENDS}
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 # XXX push upstream: collides with swap32(3)
 pre-configure:
 	sed -i 's,swap32,gr_swap32,g' ${WRKSRC}/tests/comparerenderer/FeatureParser.h

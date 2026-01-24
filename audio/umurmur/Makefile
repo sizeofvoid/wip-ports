@@ -20,6 +20,7 @@ LIB_DEPENDS =		devel/libconfig \
 			devel/protobuf-c>=1.0.1
 
 CONFIGURE_ARGS =	-DSSL=openssl
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 NO_TEST =		Yes
 
@@ -32,8 +33,5 @@ post-install:
 		${PREFIX}/man/man8/
 	${SUBST_MAN} ${FILESDIR}/umurmur.conf.5 \
 		${PREFIX}/man/man5/umurmur.conf.5
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

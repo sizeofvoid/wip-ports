@@ -48,7 +48,4 @@ do-install:
 	${INSTALL_DATA_DIR}	${PREFIX}/share/vvvvvv
 	${INSTALL_DATA}		${WRKDIST}/LICENSE.md ${PREFIX}/share/vvvvvv/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

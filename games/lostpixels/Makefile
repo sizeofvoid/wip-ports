@@ -30,6 +30,8 @@ MODULES +=		devel/cmake \
 MODLUA_BUILDDEP =	No
 WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 SEPARATE_BUILD =	No
 
 NO_TEST =		Yes

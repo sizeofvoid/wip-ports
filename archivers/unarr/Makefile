@@ -25,10 +25,9 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

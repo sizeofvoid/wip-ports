@@ -48,4 +48,6 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

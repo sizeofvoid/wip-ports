@@ -46,4 +46,7 @@ FIX_CRLF_FILES =	`find . -type f \( -name '*.txt' -o -name '*.[ch]' \)`
 post-install:
 	${INSTALL_MAN} ${WRKDIR}/debian/k2pdfopt.1 ${PREFIX}/man/man1
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

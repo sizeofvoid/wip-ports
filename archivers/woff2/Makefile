@@ -20,9 +20,9 @@ WANTLIB += ${COMPILER_LIBCXX} brotlidec brotlienc c m
 COMPILER=		base-clang ports-gcc base-gcc
 MODULES=		devel/cmake
 
-LIB_DEPENDS=		archivers/brotli
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+LIB_DEPENDS=		archivers/brotli
 
 NO_TEST=		Yes
 

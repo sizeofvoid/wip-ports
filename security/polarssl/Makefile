@@ -39,7 +39,4 @@ post-install:
 	echo "should not be relied upon by the normal end-user.") \
 	> ${PREFIX}/share/examples/mbedtls/README
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

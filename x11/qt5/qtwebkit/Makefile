@@ -129,6 +129,8 @@ DWZ = :
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 post-install:
 	find ${WRKINST} -type f -exec perl -pi -e 's,${WRKINST},,g;' {} +
 

@@ -46,7 +46,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/maps/* ${WRKDIST}/datasrc/maps/
 	${INSTALL_DATA} ${WRKDIR}/languages/* ${WRKDIST}/datasrc/languages/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

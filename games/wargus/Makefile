@@ -28,13 +28,19 @@ RUN_DEPENDS=		archivers/innoextract \
 			graphics/ffmpeg \
 			sysutils/cdrtools
 
-CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/
+CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/ \
+			-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKDIST=		${WRKDIR}/wargus-${V}
 
 FIX_CRLF_FILES=		StormLib/src/FileStream.cpp
+
+pre-configure:
+	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+	{} \;
 
 # XXX Depends on StormLib, use bundled version
 pre-build:

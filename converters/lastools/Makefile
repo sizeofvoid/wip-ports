@@ -25,7 +25,4 @@ post-install:
 do-test:
 	${WRKBUILD}/src/lasinfo ${WRKSRC}/data/test.laz
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

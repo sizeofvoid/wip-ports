@@ -44,7 +44,4 @@ do-install:
 	${INSTALL_DATA_DIR} ${GAMEDIR}
 	@cp ${WRKSRC}/misc/sb/*.txt ${GAMEDIR}/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

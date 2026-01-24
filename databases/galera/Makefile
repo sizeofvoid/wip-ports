@@ -46,7 +46,4 @@ pre-configure:
 post-install:
 	cd ${PREFIX}/lib && ln -sf libgalera_smm.so libgalera.so
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

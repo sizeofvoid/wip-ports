@@ -26,7 +26,4 @@ LIB_DEPENDS+=	converters/libiconv \
 
 CONFIGURE_ARGS +=-DLIBwv2_VERSION=${LIBwv2_VERSION}
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

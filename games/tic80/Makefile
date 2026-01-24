@@ -58,7 +58,4 @@ post-install:
 		${WRKBUILD}/bin/{bin2txt,cart2prj,player-sdl,prj2cart,xplode} \
 			${PREFIX}/bin
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

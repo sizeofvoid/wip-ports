@@ -29,7 +29,4 @@ post-install:
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/slurm.1 ${PREFIX}/man/man1/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>
