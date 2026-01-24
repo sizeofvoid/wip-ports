@@ -59,6 +59,8 @@ CONFIGURE_ARGS +=	-DINSTALL_DIR_RESOURCE:STRING="share/opencascade/src" \
 			-DBUILD_SAMPLES_QT=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 CXXFLAGS +=             -I${X11BASE}/include
 
 .include <bsd.port.arch.mk>
