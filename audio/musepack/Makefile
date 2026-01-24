@@ -20,6 +20,8 @@ WANTLIB += c cue m
 
 MODULES =		devel/cmake
 
+CONFIGURE_ARGS =	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 LIB_DEPENDS =		audio/libcue
 
 NO_TEST =		Yes
