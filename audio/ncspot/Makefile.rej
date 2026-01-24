@@ -1,0 +1,13 @@
+@@ -47,6 +47,12 @@
+ 
+ .include "crates.inc"
+ 
++pre-configure:
++	find ${WRKSRC} -name "CMakeLists.txt" -type f -exec sed -i \
++	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
++	{} \;
++	sed -i 's/"files":{[^}]*}/"files":{}/' ${WRKSRC}/modcargo-crates/aws-lc-sys-0.22.0/.cargo-checksum.json
++
+ post-patch:
+ 	cp ${FILESDIR}/cpu_aarch64_openbsd.c ${MODCARGO_VENDOR_DIR}/aws-lc-sys-0.22.0/aws-lc/crypto/fipsmodule/cpucap/
+ 
