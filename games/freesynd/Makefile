@@ -12,7 +12,6 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_mixer c m png
 WANTLIB += z
 
 SITES =		${SITE_SOURCEFORGE:=freesynd/}
-EXTRACT_SUFX =	.zip
 
 MODULES =	devel/cmake
 
