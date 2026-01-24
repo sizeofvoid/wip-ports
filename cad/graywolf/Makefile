@@ -18,6 +18,8 @@ WANTLIB +=	ICE SM X11 Xext c gsl gslcblas m
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 LIB_DEPENDS =	devel/gsl
 
 # Really really not C99
@@ -28,8 +30,5 @@ NO_TEST =	Yes
 post-install:
 	@cd ${PREFIX}/lib/graywolf/bin/flow && \
 	    ln -sf flow.noroute flow
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

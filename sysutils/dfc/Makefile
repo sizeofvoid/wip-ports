@@ -21,7 +21,4 @@ NO_TEST =	Yes
 CONFIGURE_ARGS =-DXDG_CONFIG_DIR=${PREFIX}/share/examples \
 		-DMAN_PATH=${PREFIX}/man
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

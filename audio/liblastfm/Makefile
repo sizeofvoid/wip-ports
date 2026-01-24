@@ -31,4 +31,6 @@ LIB_DEPENDS =	audio/libsamplerate \
 # network access
 TEST_IS_INTERACTIVE =	Yes
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

@@ -48,4 +48,7 @@ post-install:
 	# include directory
 	mv ${PREFIX}/include/flatbuffers ${PREFIX}/include/osrm
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

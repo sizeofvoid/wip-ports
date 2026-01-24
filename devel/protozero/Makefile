@@ -20,10 +20,9 @@ BUILD_DEPENDS =	devel/protobuf
 # only tests are built, defer compilation to running tests
 NO_BUILD=	Yes
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

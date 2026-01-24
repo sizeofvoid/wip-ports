@@ -50,4 +50,7 @@ post-install:
 # rename binary to avoid name conflict with other amnesia ports
 	@mv ${PREFIX}/bin/Amnesia{,-tdd}
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

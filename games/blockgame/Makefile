@@ -30,4 +30,7 @@ CONFIGURE_ARGS =	-DBGL_MSA_CLIENT_ID="4337e89c-ef12-4ff0-8aff-39adfc5a8e77" \
 
 WRKDIST =		${WRKDIR}/Launcher
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

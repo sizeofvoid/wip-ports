@@ -29,7 +29,4 @@ CONFIGURE_ARGS=	-DBUILD_TESTING=ON
 do-test:
 	${WRKBUILD}/testrunner
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

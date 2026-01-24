@@ -38,7 +38,4 @@ post-install:
 	${SUBST_CMD} ${WRKBUILD}/nzbget.conf
 	${INSTALL_DATA} ${WRKBUILD}/nzbget.conf ${PREFIX}/share/nzbget/
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

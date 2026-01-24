@@ -25,6 +25,8 @@ COMPILER =		base-clang ports-gcc
 
 CXXFLAGS +=	-std=c++11 -Wno-inconsistent-missing-override
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 BUILD_DEPENDS =		math/eigen3
 LIB_DEPENDS =		devel/boost \
 			devel/sdl2 \
@@ -32,8 +34,5 @@ LIB_DEPENDS =		devel/boost \
 			net/curl
 
 NO_TEST =		Yes
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

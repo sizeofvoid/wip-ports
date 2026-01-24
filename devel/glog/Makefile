@@ -20,6 +20,7 @@ MODULES =		devel/cmake
 LIB_DEPENDS =		devel/gflags
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 MODCMAKE_LDFLAGS =	-lexecinfo
 
@@ -29,8 +30,5 @@ ALL_TARGET =		glog
 # build whatever is left (ca. 10 C++ test files)
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

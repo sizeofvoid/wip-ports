@@ -44,6 +44,8 @@ CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=Release \
 			-DSPHINX_OUTPUT_MAN=ON \
 			-DSPHINX_WARNINGS_AS_ERRORS=OFF
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 WRKSRC =		${WRKDIST}/llvm
 
 ALL_TARGET =		FileCheck not prepare-check-lit docs-llvm-man
@@ -66,8 +68,5 @@ do-install:
 
 do-test:
 	@${MODCMAKE_BUILD_TARGET} --target ${TEST_TARGET}
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

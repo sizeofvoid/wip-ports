@@ -37,7 +37,4 @@ TEST_DEPENDS =		${MODPY_RUN_DEPENDS} \
 			shells/bash \
 			textproc/gdiff
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

@@ -91,6 +91,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		graphics/kdiagram \
 		security/qca-qt6
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 # Running D-Bus daemon is required
 TEST_IS_INTERACTIVE =	X11
 

@@ -19,12 +19,11 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 pre-test:
 	sed -i "s|#!/bin/bash|#!\${LOCALBASE}/bin/bash|" ${WRKSRC}/pycdc_test.sh
 
 TEST_DEPENDS =		shells/bash
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

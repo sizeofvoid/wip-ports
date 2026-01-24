@@ -19,7 +19,4 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS=	print/cups,-libs
 
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>

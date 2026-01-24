@@ -36,6 +36,8 @@ CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-DINSTALL_BASH_COMPLETION=OFF \
 			-Wno-dev
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS =		-L${LOCALBASE}/lib -liconv -lintl
 
@@ -60,8 +62,5 @@ LIB_DEPENDS += 		databases/postgresql
 RUN_DEPENDS +=		databases/libdbi-drivers,-pgsql
 WANTLIB += 		pq
 .endif
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

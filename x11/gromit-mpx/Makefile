@@ -32,4 +32,7 @@ post-install:
 	rm -f ${PREFIX}/share/pixmaps/net.christianbeier.Gromit-MPX.active.png
 	rm -f ${PREFIX}/share/pixmaps/net.christianbeier.Gromit-MPX.png
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

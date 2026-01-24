@@ -60,4 +60,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ownCloud/
 	mv ${WRKINST}/etc/ownCloud ${PREFIX}/share/examples/
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

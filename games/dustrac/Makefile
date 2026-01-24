@@ -33,4 +33,7 @@ CONFIGURE_ARGS +=	-DReleaseBuild=ON \
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

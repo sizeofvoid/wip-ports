@@ -32,4 +32,7 @@ FIX_CRLF_FILES =	CMakeLists.txt APSCpp/APSCpp.c
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeModules/FindPNG.cmake
 
+
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

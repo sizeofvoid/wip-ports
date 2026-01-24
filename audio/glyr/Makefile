@@ -18,9 +18,8 @@ LIB_DEPENDS +=	net/curl \
 		databases/sqlite3 \
 		devel/glib2
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =	Yes
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>

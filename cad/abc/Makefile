@@ -18,6 +18,8 @@ COMPILER =	base-clang ports-gcc base-gcc
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
@@ -28,8 +30,5 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/abc ${PREFIX}/bin
-
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>
