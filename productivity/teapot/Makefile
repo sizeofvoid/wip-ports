@@ -23,6 +23,8 @@ MODULES =	devel/cmake
 # disable LaTeX documentation compilation
 CONFIGURE_ARGS +=	-DENABLE_HELP=no
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =	Yes
 
 pre-configure:

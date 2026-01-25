@@ -27,6 +27,8 @@ LIB_DEPENDS =	converters/libiconv \
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 DOCDIR =	${PREFIX}/share/doc/hidapi
 
 NO_TEST =	Yes
