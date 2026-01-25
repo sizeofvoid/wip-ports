@@ -16,6 +16,8 @@ WANTLIB += SDL SDL2 c curses form pthread
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 LIB_DEPENDS =	devel/sdl \
 		devel/sdl2
 

@@ -24,6 +24,8 @@ LIB_DEPENDS =	${MODLUA_LIB_DEPENDS} \
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		devel/luaposix
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 TESTS =	churn-direct churn-rsyncssh exclude-rsyncssh schedule \
 	churn-rsync exclude-rsync l4rsyncdata
 

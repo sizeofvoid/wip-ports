@@ -24,6 +24,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CONFIGURE_ARGS =	-DDATADIR="${PREFIX}/share/freeblocks"
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =	Yes
 
 .include <bsd.port.mk>

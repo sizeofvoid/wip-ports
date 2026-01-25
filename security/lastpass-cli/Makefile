@@ -24,6 +24,8 @@ LIB_DEPENDS =	net/curl \
 TEST_DEPENDS =	${BUILD_DEPENDS} \
 		shells/bash
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 do-test:
 	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' ${WRKSRC}/test/*
 	chmod +x ${WRKSRC}/test/tests ${WRKSRC}/test/*.sh

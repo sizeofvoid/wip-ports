@@ -24,6 +24,8 @@ WANTLIB += ${COMPILER_LIBCXX} c m pcre pcreposix
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 LIB_DEPENDS =	devel/pcre
 
 do-install:

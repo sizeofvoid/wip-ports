@@ -18,6 +18,8 @@ SITES=		https://gitlab.linphone.org/BC/public/bcg729/-/archive/${V}/
 MODULES=	devel/cmake
 CONFIGURE_ARGS=	-DENABLE_TESTS=YES
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 TEST_IS_INTERACTIVE=	Yes
 
 pre-test:
