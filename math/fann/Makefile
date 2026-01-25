@@ -21,6 +21,8 @@ MODULES=	devel/cmake
 USE_GMAKE=	Yes
 TEST_DEPENDS=	math/fann
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 do-test:
 	cd ${WRKSRC}/examples; ${MAKE_PROGRAM} runtest GCC="${CC}" \
 	    CFLAGS="${CFLAGS} -I${TRUEPREFIX}/include -L${TRUEPREFIX}/lib"

@@ -16,4 +16,6 @@ BUILD_DEPENDS =	archivers/zip
 
 RUN_DEPENDS =	games/solarus/solarus>=1.5.0
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>
