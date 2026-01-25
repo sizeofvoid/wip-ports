@@ -2,9 +2,9 @@ COMMENT =		library for nonlinear optimization
 
 GH_ACCOUNT =		stevengj
 GH_PROJECT =		nlopt
-GH_TAGNAME =		v2.7.1
+GH_TAGNAME =		v2.10.0
 
-SHARED_LIBS =		nlopt	1.0	# 0.11.0
+SHARED_LIBS =		nlopt	2.0	# 0.11.0
 
 CATEGORIES =		math
 
@@ -22,7 +22,5 @@ CONFIGURE_ARGS =	-DNLOPT_GUILE=OFF \
 			-DNLOPT_OCTAVE=OFF \
 			-DNLOPT_PYTHON=OFF \
 			-DNLOPT_SWIG=OFF
-
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 .include <bsd.port.mk>
