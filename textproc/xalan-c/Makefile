@@ -29,4 +29,6 @@ LIB_DEPENDS =		textproc/xerces-c
 
 CONFIGURE_ARGS =	-Ddoxygen=off
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

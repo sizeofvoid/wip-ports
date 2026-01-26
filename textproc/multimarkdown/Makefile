@@ -17,6 +17,8 @@ WANTLIB +=	c
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 post-install:
 	rm ${PREFIX}/{LICENSE.txt,README.txt}
 	mv ${PREFIX}/bin/{mmd,mmd2xhtml} # avoid conflict with mtools
