@@ -29,6 +29,8 @@ WRKSRC =		${WRKDIST}/src
 MODULES +=		devel/cmake
 MODULES +=		lang/python
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 MODPY_RUNDEP =		No
 
 MAKE_ENV +=	"LEAN_PATH=${WRKDIST}/bin:${WRKDIST}/library:${WRKDIST}/leanpkg"
