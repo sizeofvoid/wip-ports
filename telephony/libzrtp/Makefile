@@ -16,4 +16,6 @@ MODULES =		devel/cmake
 # C++ static lib
 COMPILER =		base-clang ports-gcc
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 .include <bsd.port.mk>

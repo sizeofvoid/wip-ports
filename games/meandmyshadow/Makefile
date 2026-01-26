@@ -31,6 +31,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CXXFLAGS +=	-Wno-narrowing
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/meandmyshadow.desktop \

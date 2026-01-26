@@ -47,6 +47,8 @@ RUN_DEPENDS =	devel/desktop-file-utils
 CONFIGURE_ARGS =	-DBUILD_PRO=ON \
 			-DVERSION_HASH=a838293
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 CFLAGS +=	`sdl2-config --cflags` -I${MODLUA_INCL_DIR}
 MODCMAKE_LDFLAGS =	`sdl2-config --libs`
 
