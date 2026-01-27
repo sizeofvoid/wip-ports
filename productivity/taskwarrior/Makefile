@@ -32,6 +32,8 @@ CONFIGURE_ARGS +=	-DTASK_DOCDIR=share/doc/taskwarrior \
 			-DTASK_MAN5DIR=man/man5 \
 			-Ddoc_FILES="README.md"
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =		Yes
 
 pre-configure:

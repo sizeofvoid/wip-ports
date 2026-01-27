@@ -23,6 +23,8 @@ LIB_DEPENDS=		net/curl
 
 MODULES=		devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST=		Yes
 
 CXXFLAGS +=		-std=c++03
