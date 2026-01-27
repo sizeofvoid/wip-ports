@@ -18,6 +18,8 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =	Yes
 
 do-install:

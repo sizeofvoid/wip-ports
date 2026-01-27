@@ -31,6 +31,8 @@ LIB_DEPENDS =		audio/freealut \
 
 CONFIGURE_ARGS +=	-DDATADIR=${PREFIX}/share/astromenace
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/AstroMenace

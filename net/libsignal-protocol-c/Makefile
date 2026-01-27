@@ -23,6 +23,8 @@ RUN_DEPENDS =	devel/protobuf-c
 CONFIGURE_ARGS =	-DBUILD_TESTING=ON \
 			-DBUILD_SHARED_LIBS=ON
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 post-extract:
 	mv ${WRKSRC}/src/utarray.h ${WRKSRC}/src/utarray_local.h
 	mv ${WRKSRC}/src/uthash.h ${WRKSRC}/src/uthash_local.h

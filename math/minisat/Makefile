@@ -21,6 +21,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=		devel/cmake
 
+CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+
 NO_TEST=		Yes
 
 .include <bsd.port.mk>
