@@ -63,8 +63,6 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--enable-sndio \
 		--mandir="${LOCALBASE}/man"
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
