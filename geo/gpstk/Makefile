@@ -26,12 +26,11 @@ CFLAGS+=               -O0
 CXXFLAGS+=             -O0
 .endif
 
+CONFIGURE_ARGS=		-DBUILD_EXT=on
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 COMPILER=		base-clang ports-gcc
 
 CXXFLAGS +=		-std=c++14
-
-CONFIGURE_ARGS=		-DBUILD_EXT=on
 
 .include <bsd.port.mk>
