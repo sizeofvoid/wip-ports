@@ -74,7 +74,7 @@ LIB_DEPENDS =		databases/kdb>=3.2.0 \
 			devel/kreport>=3.2.0 \
 			databases/mariadb
 
-CONFIGURE_ARGS =	-DBUILD_TESTING=On \
+CONFIGURE_ARGS =	-DBUILD_TESTING=OFF \
 			-DBUILD_EXAMPLES=On \
 			-DKEXI_QTGUI_RUNTIME_AVAILABLE=On \
 			-DKEXI_ENABLE_QTGUI_FOR_TESTS=Off
@@ -85,5 +85,11 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
 TEST_IS_INTERACTIVE =	X11
+
+#pre-configure:
+#	find ${WRKSRC}/ -name "CMakeLists.txt" -type f -exec sed -i \
+#	-E 's/cmake_minimum_required\([[:space:]]*VERSION[[:space:]]+[^)]+\)/cmake_minimum_required(VERSION 3.5)/g' \
+#	{} \;
+
 
 .include <bsd.port.mk>
