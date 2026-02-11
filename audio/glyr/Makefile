@@ -18,7 +18,7 @@ LIB_DEPENDS +=	net/curl \
 		databases/sqlite3 \
 		devel/glib2
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =	Yes
 

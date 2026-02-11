@@ -29,8 +29,9 @@ LIB_DEPENDS =		devel/boost \
 			devel/pcre \
 			textproc/libxml
 
-CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -std=c++14 -Wno-int-conversion" \
-			-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+CONFIGURE_ARGS =	-DCMAKE_CXX_FLAGS="${CXXFLAGS} -std=c++14 -Wno-int-conversion"
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 NO_TEST =		Yes
 

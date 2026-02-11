@@ -16,7 +16,7 @@ WANTLIB +=	m pthread ${COMPILER_LIBCXX} usb
 COMPILER =		base-clang ports-gcc base-gcc
 LIB_DEPENDS +=	devel/libusb-compat
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # libgarmindev is only needed to compile the drivers, but not on runtime
 # see comment in src/IDevice.h

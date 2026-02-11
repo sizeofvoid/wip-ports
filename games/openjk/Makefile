@@ -27,7 +27,7 @@ LIB_DEPENDS =	devel/sdl2 \
 
 NO_TEST =	Yes
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # Upstream left a .orig file in the repo
 post-extract:

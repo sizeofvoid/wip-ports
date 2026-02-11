@@ -20,7 +20,7 @@ BUILD_DEPENDS =	devel/protobuf
 # only tests are built, defer compilation to running tests
 NO_BUILD=	Yes
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 pre-test:
 	@${MODCMAKE_BUILD_TARGET}

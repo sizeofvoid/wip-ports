@@ -86,7 +86,7 @@ LIB_DEPENDS =		databases/sqlite3 \
 			x11/qt5/qtsensors>=${QT5_VERSION},<${QT5_NEXT_VERSION} \
 			x11/qt5/qtwebchannel>=${QT5_VERSION},<${QT5_NEXT_VERSION}
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 CONFIGURE_ARGS +=	-DENABLE_API_TESTS=OFF \
 			-DENABLE_QT_WEBCHANNEL=ON \
@@ -135,7 +135,7 @@ DWZ = :
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 post-install:
 	find ${WRKINST} -type f -exec perl -pi -e 's,${WRKINST},,g;' {} +

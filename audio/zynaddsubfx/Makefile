@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	-DGuiModule=zest \
 		-DPaEnable=OFF \
 		-DSndioEnable=ON
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 post-patch:
 	sed -i s,/usr/X11R6,${X11BASE}, ${WRKSRC}/src/CMakeLists.txt

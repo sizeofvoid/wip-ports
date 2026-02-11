@@ -47,6 +47,6 @@ post-install:
 	${INSTALL_MAN} ${WRKDIR}/debian/k2pdfopt.1 ${PREFIX}/man/man1
 
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

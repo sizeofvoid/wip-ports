@@ -34,7 +34,7 @@ LIB_DEPENDS =	archivers/lhasa \
 
 CONFIGURE_ARGS = -DCMAKE_INSTALL_DOCDIR=${PREFIX}/share/doc/milkytracker
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 CXXFLAGS +=	-Wno-narrowing
 
@@ -49,6 +49,6 @@ post-install:
 		${PREFIX}/share/icons/hicolor/128x128/apps/milkytracker.png
 
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

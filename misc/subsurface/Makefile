@@ -61,7 +61,7 @@ CONFIGURE_ARGS +=	-DBTSUPPORT=OFF \
 CONFIGURE_ARGS +=	-DLIBGIT2_FROM_PKGCONFIG=ON
 CONFIGURE_ARGS +=	-DWRKINST=${WRKINST}
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # It's possible to run the tests, but they fail.
 # First, add the subsurface/large-anonymous-sample-data repo to DISTFILES.

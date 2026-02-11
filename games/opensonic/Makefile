@@ -31,7 +31,7 @@ CONFIGURE_ENV =		OPENSNC_ALLEGRO_CFLAGS="`allegro-config --cflags`" \
 			OPENSNC_ALLEGRO_LIBS="`allegro-config --libs`" \
 			OPENSNC_ALLEGRO_VERSION="`allegro-config --version`"
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

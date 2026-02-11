@@ -43,6 +43,6 @@ post-install:
 	cd ${WRKDIST}/bin/data && find . | pax -rw ${PREFIX}/share/openxcom
 
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

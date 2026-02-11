@@ -22,7 +22,7 @@ LIB_DEPENDS =	devel/sdl2-mixer \
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # Talk to upstream about this?
 pre-configure:

@@ -25,7 +25,7 @@ COMPILER =		base-clang ports-gcc
 
 CXXFLAGS +=	-std=c++11 -Wno-inconsistent-missing-override
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 BUILD_DEPENDS =		math/eigen3
 LIB_DEPENDS =		devel/boost \

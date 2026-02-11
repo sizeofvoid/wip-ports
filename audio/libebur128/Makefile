@@ -16,7 +16,7 @@ WANTLIB += m
 MODULES = devel/cmake
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # enabling tests is somewhat useless: extra build dependency on
 # libsndfile, plus the test requires a wav file to be useful,

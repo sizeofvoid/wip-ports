@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	devel/cmake
 TEST_DEPENDS=	devel/boost
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 do-test:
 	cd ${WRKSRC}/tests && mkdir -p build && cd build && \

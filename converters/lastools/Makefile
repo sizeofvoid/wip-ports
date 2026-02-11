@@ -15,7 +15,7 @@ MODULES =	devel/cmake
 #c++11
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 PROGS =	laszip lasinfo lasprecision las2txt txt2las las2las lasdiff lasmerge lasindex
 post-install:

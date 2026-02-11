@@ -40,6 +40,6 @@ CXXFLAGS +=		-I${X11BASE}/include -pthread
 NO_TEST =		Yes
 
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	devel/cmake
 COMPILER =	base-clang ports-gcc
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cmake/Modules/

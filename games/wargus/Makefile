@@ -28,8 +28,9 @@ RUN_DEPENDS=		archivers/innoextract \
 			graphics/ffmpeg \
 			sysutils/cdrtools
 
-CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/ \
-			-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+CONFIGURE_ARGS+=	-DGAMEDIR=${LOCALBASE}/bin/
+
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 MODCMAKE_LDFLAGS+=	-L${LOCALBASE}/lib
 

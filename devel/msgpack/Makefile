@@ -28,7 +28,7 @@ TEST_DEPENDS =		devel/gtest>=1.11.0pl20220208
 # everything except tests
 ALL_TARGET =		msgpack-c msgpack-c-static
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # build whatever is left (ca. 22 C++ test files)
 pre-test:

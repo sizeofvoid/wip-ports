@@ -23,10 +23,9 @@ MODULES =	devel/cmake \
 CONFIGURE_ARGS=	-DUSE_QT4=OFF \
 		-DUSE_QT5=ON \
 		-DWITH_DOC=OFF \
-		-DCMAKE_DISABLE_FIND_PACKAGE_QJSON=ON \
-		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+		-DCMAKE_DISABLE_FIND_PACKAGE_QJSON=ON
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # XXX "!icon.isNull()" failed tests are normal, they do mean that
 # mentioned icon is not installed; e.g., these are the test bugs.

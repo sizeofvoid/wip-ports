@@ -31,7 +31,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 CXXFLAGS +=	-Wno-narrowing
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

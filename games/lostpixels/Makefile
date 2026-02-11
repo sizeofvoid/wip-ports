@@ -30,7 +30,7 @@ MODULES +=		devel/cmake \
 MODLUA_BUILDDEP =	No
 WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 SEPARATE_BUILD =	No
 
@@ -51,6 +51,6 @@ post-install:
 	cd ${WRKDIST}/../addons && ${MAKE_PROGRAM} install
 
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 .include <bsd.port.mk>

@@ -74,7 +74,7 @@ CONFIGURE_ARGS +=	-DWITH_PYTHON=ON \
 # The handling of the manual install dir is odd.
 CONFIGURE_ARGS +=	-DTeXworks_MAN_DIR=/man/man1
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

@@ -25,7 +25,7 @@ CXXFLAGS +=		-Wno-zero-as-null-pointer-constant \
 # Many tests fails with enabled leak detection
 CONFIGURE_ARGS +=	-DMEMORY_LEAK_DETECTION=OFF
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 # evertyhing except tests
 ALL_TARGET =		CppUTest CppUTestExt

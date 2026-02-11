@@ -25,7 +25,7 @@ EXTRACT_SUFX =	.tar.xz
 
 MODULES =	devel/cmake
 
-CONFIGURE_ARGS+=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+MODCMAKE_POLICY_VERSION_OVERRIDE = Yes
 
 LIB_DEPENDS =	archivers/bzip2 \
 		archivers/xz
