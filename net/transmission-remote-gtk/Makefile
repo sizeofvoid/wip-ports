@@ -32,6 +32,4 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 CONFIGURE_ARGS +=	-Dgeoip=disabled \
 			-Dlibappindicator=disabled
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 .include <bsd.port.mk>
