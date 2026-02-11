@@ -31,8 +31,6 @@ MODCARGO_FEATURES =	cursive/termion-backend \
 			mpris \
 			portaudio_backend
 
-CONFIGURE_ARGS +=	-DCMAKE_POLICY_VERSION_MINIMUM=3.5
-
 DOCDIR =	${PREFIX}/share/doc/ncspot/
 
 post-install:
