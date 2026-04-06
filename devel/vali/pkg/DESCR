@@ -1,0 +1,12 @@
+A Varlink C implementation and code generator.
+
+https://varlink.org/
+
+Varlink is an interface description format and protocol that aims to
+make services accessible to both humans and machines in the simplest
+feasible way.
+
+Library API
+
+The library API is documented in the header and can be browsed on the
+website: https://emersion.pages.freedesktop.org/vali/

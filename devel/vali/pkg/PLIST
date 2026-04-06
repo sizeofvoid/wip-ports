@@ -1,0 +1,4 @@
+@bin bin/vali
+include/vali.h
+@lib lib/libvali.so.${LIBvali_VERSION}
+lib/pkgconfig/vali.pc
