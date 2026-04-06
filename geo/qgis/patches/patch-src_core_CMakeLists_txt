@@ -1,0 +1,32 @@
+https://github.com/qgis/QGIS/issues/61855
+
+Index: src/core/CMakeLists.txt
+--- src/core/CMakeLists.txt.orig
++++ src/core/CMakeLists.txt
+@@ -11,7 +11,7 @@ BISON_TARGET(QgsMeshCalcParser mesh/qgsmeshcalcparser.
+ FLEX_TARGET(QgsMeshCalcLexer mesh/qgsmeshcalclexer.ll ${CMAKE_CURRENT_BINARY_DIR}/qgsmeshcalclexer.cpp)
+ ADD_FLEX_BISON_DEPENDENCY(QgsMeshCalcLexer QgsMeshCalcParser)
+ 
+-if (WITH_PDF4QT)
++if (WITH_INTERNAL_PDF4QT)
+   SET(PDF4QT_BUILD_ONLY_CORE_LIBRARY TRUE)
+   SET(PDF4QT_ENABLE_OPENGL FALSE)
+   SUBDIRS(${CMAKE_SOURCE_DIR}/external/PDF4QT)
+@@ -2675,10 +2675,15 @@ target_include_directories(qgis_core PUBLIC
+   ${CMAKE_SOURCE_DIR}/external/earcut
+ )
+ 
+-if (WITH_PDF4QT)
++if (WITH_INTERNAL_PDF4QT)
+   target_include_directories(qgis_core PRIVATE
+     ${CMAKE_SOURCE_DIR}/external/PDF4QT/Pdf4QtLibCore/sources)
+-    target_link_libraries(qgis_core Pdf4QtLibCore)
++endif()
++
++if (WITH_PDF4QT)
++  target_include_directories(qgis_core PUBLIC /usr/local/include/Pdf4QtLibCore)
++  find_library(PDF4QT_LIBRARY NAMES Pdf4QtLibCore PATHS /usr/local/lib /usr/lib)
++  target_link_libraries(qgis_core ${PDF4QT_LIBRARY})
+ endif()
+ 
+ if (WITH_EPT)
