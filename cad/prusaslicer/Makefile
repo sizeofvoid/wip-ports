@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
 V =		2.9.4
-REVISION =	1
+REVISION =	2
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -24,17 +24,17 @@ WANTLIB += TKDE TKDESTEP TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR
 WANTLIB += TKLCAF TKMath TKMesh TKPrim TKService TKShHealing TKTopAlgo
 WANTLIB += TKV3d TKVCAF TKXCAF TKXSBase TKernel X11 atk-1.0 bgcode_binarize
 WANTLIB += bgcode_convert bgcode_core boost_atomic-mt boost_charconv-mt
-WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_iostreams-mt boost_locale-mt boost_log-mt boost_nowide-mt
-WANTLIB += boost_random-mt boost_regex-mt boost_thread-mt
-WANTLIB += c cairo cairo-gobject crypto curl dbus-1 execinfo expat
-WANTLIB += fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gmpxx gobject-2.0 gtk-3 harfbuzz hidapi-libusb
-WANTLIB += intl javascriptcoregtk-4.1 jpeg m mpfr nlopt openvdb
-WANTLIB += pango-1.0 pangocairo-1.0 png qhull_r soup-3.0 ssl tbb
-WANTLIB += tbbmalloc wayland-client wayland-egl webkit2gtk-4.1
-WANTLIB += wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
-WANTLIB += wx_gtk3u_webview-3.2 z z3 boost_container-mt
+WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
+WANTLIB += boost_filesystem-mt boost_iostreams-mt boost_locale-mt
+WANTLIB += boost_log-mt boost_nowide-mt boost_random-mt boost_regex-mt
+WANTLIB += boost_thread-mt c cairo cairo-gobject crypto curl dbus-1
+WANTLIB += execinfo expat fontconfig gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gmp gmpxx gobject-2.0 gtk-3 harfbuzz
+WANTLIB += hidapi-libusb intl javascriptcoregtk-4.1 jpeg m mpfr
+WANTLIB += nlopt openvdb pango-1.0 pangocairo-1.0 png qhull_r
+WANTLIB += soup-3.0 ssl tbb tbbmalloc wayland-client wayland-egl
+WANTLIB += webkit2gtk-4.1 wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_webview-3.2 z z3
 
 FIX_CRLF_FILES =	src/slic3r/GUI/GLCanvas3D.cpp
 
