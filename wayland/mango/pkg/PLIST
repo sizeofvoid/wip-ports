@@ -1,0 +1,10 @@
+@bin bin/mango
+@bin bin/mmsg
+share/examples/mango/
+@sample ${SYSCONFDIR}/mango/
+share/examples/mango/config.conf
+@sample ${SYSCONFDIR}/mango/config.conf
+share/wayland-sessions/
+share/wayland-sessions/mango.desktop
+share/xdg-desktop-portal/
+share/xdg-desktop-portal/mango-portals.conf

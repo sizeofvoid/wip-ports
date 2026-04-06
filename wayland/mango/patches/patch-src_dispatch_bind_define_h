@@ -1,0 +1,27 @@
+Index: src/dispatch/bind_define.h
+--- src/dispatch/bind_define.h.orig
++++ src/dispatch/bind_define.h
+@@ -881,6 +881,7 @@ int32_t spawn(const Arg *arg) {
+ 		int32_t argc = 0;
+ 		char *token = strtok((char *)arg->v, " ");
+ 		while (token != NULL && argc < 63) {
++		#ifndef __OpenBSD__
+ 			wordexp_t p;
+ 			if (wordexp(token, &p, 0) == 0) {
+ 				argv[argc++] = p.we_wordv[0];
+@@ -888,6 +889,15 @@ int32_t spawn(const Arg *arg) {
+ 				argv[argc++] = token;
+ 			}
+ 			token = strtok(NULL, " ");
++		#else
++			glob_t p;
++			if (glob(token, GLOB_DOOFFS, NULL, &p) == 0) {
++				argv[argc++] = p.gl_pathv[0];
++			} else {
++				argv[argc++] = token;
++			}
++			token = strtok(NULL, " ");
++		#endif
+ 		}
+ 		argv[argc] = NULL;
+ 
