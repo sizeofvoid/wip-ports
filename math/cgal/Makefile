@@ -1,9 +1,8 @@
 COMMENT =		Computational Geometry Algorithms Library
 
-V =			5.6.2
+V =			6.1.1
 DISTNAME =		CGAL-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 
 CATEGORIES =		math
 
