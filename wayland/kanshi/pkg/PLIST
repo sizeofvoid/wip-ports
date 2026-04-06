@@ -1,3 +1,5 @@
 @bin bin/kanshi
+@bin bin/kanshictl
 @man man/man1/kanshi.1
+@man man/man1/kanshictl.1
 @man man/man5/kanshi.5
