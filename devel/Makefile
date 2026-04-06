@@ -8,6 +8,7 @@
      SUBDIR += afl++
      SUBDIR += ald
      SUBDIR += alex
+     SUBDIR += aml
      SUBDIR += angr
      SUBDIR += apache-ant
      SUBDIR += apktool
@@ -2059,6 +2060,7 @@
      SUBDIR += uuid
      SUBDIR += uv
      SUBDIR += valgrind
+     SUBDIR += vali
      SUBDIR += vanessa
      SUBDIR += vim-command-t
      SUBDIR += vim-taglist
