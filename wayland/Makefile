@@ -15,9 +15,11 @@
      SUBDIR += libei
      SUBDIR += libevdev-openbsd
      SUBDIR += libinput-openbsd
+     SUBDIR += mango
      SUBDIR += niri
      SUBDIR += plasma-wayland-protocols
      SUBDIR += regreet
+     SUBDIR += scenefx
      SUBDIR += slurp
      SUBDIR += sway
      SUBDIR += swaybg
