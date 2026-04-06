@@ -1,0 +1,4 @@
+include/aml1/
+include/aml1/aml.h
+@lib lib/libaml.so.${LIBaml_VERSION}
+lib/pkgconfig/aml1.pc
