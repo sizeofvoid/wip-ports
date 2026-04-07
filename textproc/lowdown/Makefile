@@ -1,8 +1,8 @@
 COMMENT =	simple markdown translator
-DISTNAME =	lowdown-2.0.2
+DISTNAME =	lowdown-3.0.1
 CATEGORIES =	textproc
 
-SHARED_LIBS =	lowdown		3.0	# 3
+SHARED_LIBS =	lowdown		4.0	# 3
 
 HOMEPAGE =	https://kristaps.bsd.lv/lowdown/
 MAINTAINER =	Bryan Vyhmeister <bryan@bsdjournal.net>

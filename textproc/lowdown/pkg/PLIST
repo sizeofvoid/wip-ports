@@ -28,12 +28,12 @@ lib/pkgconfig/lowdown.pc
 @man man/man3/lowdown_latex_rndr.3
 @man man/man3/lowdown_metaq_free.3
 @man man/man3/lowdown_node_free.3
-@man man/man3/lowdown_nroff_free.3
-@man man/man3/lowdown_nroff_new.3
-@man man/man3/lowdown_nroff_rndr.3
 @man man/man3/lowdown_odt_free.3
 @man man/man3/lowdown_odt_new.3
 @man man/man3/lowdown_odt_rndr.3
+@man man/man3/lowdown_roff_free.3
+@man man/man3/lowdown_roff_new.3
+@man man/man3/lowdown_roff_rndr.3
 @man man/man3/lowdown_term_free.3
 @man man/man3/lowdown_term_new.3
 @man man/man3/lowdown_term_rndr.3
