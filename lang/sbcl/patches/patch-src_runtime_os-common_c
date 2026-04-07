@@ -1,0 +1,27 @@
+Index: src/runtime/os-common.c
+--- src/runtime/os-common.c.orig
++++ src/runtime/os-common.c
+@@ -585,14 +585,23 @@ int apply_pie_relocs(long code_space_translation,
+ }
+ 
+ #ifdef LISP_FEATURE_ARM64
++# ifndef R_AARCH64_ABS64
++#  define R_AARCH64_ABS64 0x101
++# endif
+ # define ELF_MACHINE EM_AARCH64
+ # define CORE_ALIGNMENT 65536
+ # define OUR_RELOC_KIND R_AARCH64_ABS64
+ #elif defined LISP_FEATURE_PPC64 && defined LISP_FEATURE_LITTLE_ENDIAN /* assume abi v2 */
++# ifndef R_PPC64_ADDR64
++#  define R_PPC64_ADDR64 38
++# endif
+ # define ELF_MACHINE EM_PPC64
+ # define CORE_ALIGNMENT 65536
+ # define OUR_RELOC_KIND R_PPC64_ADDR64
+ #elif defined LISP_FEATURE_X86_64
++# ifndef R_X86_64_64
++#  define R_X86_64_64 1
++# endif
+ # define ELF_MACHINE EM_X86_64
+ # define CORE_ALIGNMENT 32768
+ # define OUR_RELOC_KIND R_X86_64_64
