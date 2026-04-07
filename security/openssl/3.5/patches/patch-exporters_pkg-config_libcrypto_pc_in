@@ -1,7 +1,7 @@
 Index: exporters/pkg-config/libcrypto.pc.in
 --- exporters/pkg-config/libcrypto.pc.in.orig
 +++ exporters/pkg-config/libcrypto.pc.in
-@@ -9,7 +9,7 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
+@@ -10,7 +10,7 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
                $OpenSSL::safe::installdata::libdir[0];
            } -}
  includedir={- $OUT = '';

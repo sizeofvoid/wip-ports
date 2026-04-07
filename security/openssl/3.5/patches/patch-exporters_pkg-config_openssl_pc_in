@@ -1,7 +1,7 @@
 Index: exporters/pkg-config/openssl.pc.in
 --- exporters/pkg-config/openssl.pc.in.orig
 +++ exporters/pkg-config/openssl.pc.in
-@@ -9,10 +9,10 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
+@@ -10,10 +10,10 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
                $OpenSSL::safe::installdata::libdir[0];
            } -}
  includedir={- $OUT = '';
