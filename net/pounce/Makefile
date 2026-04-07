@@ -1,7 +1,6 @@
 COMMENT =	multi-client, TLS-only IRC bouncer
 
-DISTNAME =	pounce-3.1
-REVISION =	1
+DISTNAME =	pounce-3.2
 
 CATEGORIES =	net
 
@@ -27,8 +26,7 @@ COMPILER_LANGS =	c
 FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
 
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--enable-notify \
-			--enable-palaver
+CONFIGURE_ARGS =	--enable-notify
 
 NO_TEST =	Yes
 
