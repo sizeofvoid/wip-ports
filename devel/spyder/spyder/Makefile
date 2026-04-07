@@ -4,8 +4,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 # stick to qt5 and qtwebengine. (See issue #20201).
 
 MODULES =	lang/python
-MODPY_DISTV =	6.1.3
-REVISION =	0
+MODPY_DISTV =	6.1.4
 DISTNAME =	spyder-${MODPY_DISTV}
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
@@ -13,7 +12,6 @@ HOMEPAGE =	https://github.com/spyder-ide/spyder
 RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		devel/desktop-file-utils \
 		devel/ipython>=8.15.0,<10.0.0 \
-		devel/py-atomicwrites>=1.2.0 \
 		devel/py-cloudpickle>=0.5.0 \
 		devel/py-cookiecutter>=1.6.0 \
 		devel/py-pygithub>=2.3.0 \
@@ -34,14 +32,14 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		devel/py-three-merge>=0.1.1 \
 		devel/pylint>=3.1,<5 \
 		net/py-zmq>=24.0.0 \
-		shells/py-qtconsole>=5.7.1,<5.8.0 \
+		shells/py-qtconsole>=5.7.2,<5.8.0 \
 		security/py-asyncssh>=2.14.0,<3.0.0 \
 		security/py-bcrypt>=4.3.0 \
 		security/py-keyring>=17.0.0 \
 		sysutils/py-packaging>=20.0 \
 		sysutils/py-psutil>=5.3 \
 		sysutils/py-watchdog>=0.10.3 \
-		textproc/py-chardet>=2.0.0v0 \
+		textproc/py-chardet>=5.2.0v0,<8.0.0v0 \
 		textproc/py-diff-match-patch>=20181111 \
 		textproc/py-ipython_pygments_lexers>=1.0 \
 		textproc/py-jellyfish>=0.7 \
@@ -58,7 +56,7 @@ RUN_DEPENDS =	databases/py-pickleshare>=0.4 \
 		www/py-yarl>=1.9.4 \
 		x11/py-qtpy>=2.4.0 \
 		x11/py-qtawesome>=1.4.1,<1.5.0 \
-		devel/spyder/py-spyder-kernels>=3.1.3,<3.2.0
+		devel/spyder/py-spyder-kernels>=3.1.4,<3.2.0
 
 TEST_DEPENDS =	devel/py-importlib-metadata
 
