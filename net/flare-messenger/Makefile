@@ -1,19 +1,17 @@
 COMMENT=	unofficial GUI client for Signal instant messenger
 
 DIST_TUPLE= \
-	gitlab schmiddi-on-mobile flare 0.17.5 . \
-	github whisperfish presage 194148f88ccf595c089474294bc3ff685b4e1b00 deps/presage \
-	github whisperfish libsignal-service-rs 0a3bea3fb81599590bf3a54dc00f0a93f36f56e6 deps/libsignal-service-rs \
-	github whisperfish blurhash-rs 2135e101377e514266358b3e67adab37e736bb8a deps/blurhash-rs \
+	gitlab schmiddi-on-mobile flare 0.20.3 . \
+	github whisperfish presage 7b3acf550300fa3675e65616efe7ed8dbf85774d deps/presage \
+	github whisperfish libsignal-service-rs 782c0d6bf0c4a6ab52f98d7b6d950a13f28f3020 deps/libsignal-service-rs \
+	github whisperfish blurhash-rs a46af692e783f81f4ac752c91ef13847521c5352 deps/blurhash-rs \
 	github signalapp curve25519-dalek signal-curve25519-4.1.3 deps/signal-curve25519 \
-	github signalapp libsignal v0.83.0 deps/libsignal \
+	github signalapp libsignal v0.91.0 deps/libsignal \
 	github nytopop quickcheck_async 76b13525ca93e0725e757f841fc6ccab8bae1913 deps/quickcheck_async \
-	github signalapp boring signal-v4.18.0 deps/boring \
-	github signalapp SparsePostQuantumRatchet v1.2.0 deps/spqr
+	github signalapp boring signal-v5.0.2 deps/boring \
+	github signalapp SparsePostQuantumRatchet v1.5.1 deps/spqr
 
 PKGNAME=	${DISTNAME:S/flare/flare-messenger/}
-
-REVISION =	0
 
 CATEGORIES=	net
 

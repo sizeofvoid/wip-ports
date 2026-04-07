@@ -1,7 +1,7 @@
 Index: deps/presage/Cargo.toml
 --- deps/presage/Cargo.toml.orig
 +++ deps/presage/Cargo.toml
-@@ -3,8 +3,8 @@ members = ["presage", "presage-cli", "presage-store-sl
+@@ -3,10 +3,10 @@ members = ["presage", "presage-cli", "presage-store-sq
  resolver = "2"
  
  [patch.crates-io]
@@ -9,6 +9,10 @@ Index: deps/presage/Cargo.toml
 -quickcheck_async = { git = 'https://github.com/nytopop/quickcheck_async', rev = '76b13525ca93e0725e757f841fc6ccab8bae1913' }
 +curve25519-dalek = { path = "../signal-curve25519/curve25519-dalek" }
 +quickcheck_async = { path = "../quickcheck_async" }
+ libsqlite3-sys = { version = "0.36.0", git = "https://github.com/whisperfish/rusqlite", rev = '2a42b3354c9194700d08aa070f70a131a470e7dc' }
  
+ # Uncomment if you're working with a local checkout of libsignal-service, but DO NOT commit!
  # [patch."https://github.com/whisperfish/libsignal-service-rs.git"]
- # libsignal-service = { path = "../libsignal-service-rs" }
+-# libsignal-service = { path = "../libsignal-service-rs" }
+\ No newline at end of file
++# libsignal-service = { path = "../libsignal-service-rs" }

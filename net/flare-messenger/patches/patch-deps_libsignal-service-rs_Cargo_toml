@@ -1,21 +1,27 @@
 Index: deps/libsignal-service-rs/Cargo.toml
 --- deps/libsignal-service-rs/Cargo.toml.orig
 +++ deps/libsignal-service-rs/Cargo.toml
-@@ -7,9 +7,9 @@ license = "AGPL-3.0-only"
+@@ -7,13 +7,13 @@ license = "AGPL-3.0-only"
  readme = "README.md"
  
  [dependencies]
--libsignal-protocol = { git = "https://github.com/signalapp/libsignal", tag = "v0.83.0" }
--libsignal-core = { git = "https://github.com/signalapp/libsignal", tag = "v0.83.0" }
--zkgroup = { git = "https://github.com/signalapp/libsignal", tag = "v0.83.0" }
+-libsignal-protocol = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0" }
+-libsignal-core = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0" }
 +libsignal-protocol = { path = "../libsignal/rust/protocol" }
 +libsignal-core = { path = "../libsignal/rust/core" }
+ libsignal-net = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0", optional = true }
+ libsignal-net-infra = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0", optional = true }
+-signal-crypto = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0" }
+-zkgroup = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0" }
+-usernames = { git = "https://github.com/signalapp/libsignal", tag = "v0.91.0" }
++signal-crypto = { path = "../libsignal/rust/crypto" }
 +zkgroup = { path = "../libsignal/rust/zkgroup" }
++usernames = { path = "../libsignal/rust/usernames" }
  
  aes = "0.8"
  aes-gcm = "0.10"
-@@ -53,4 +53,4 @@ anyhow = "1.0"
- tokio = { version = "1.0", features = ["macros", "rt"] }
+@@ -62,4 +62,4 @@ phonenumber = ["dep:phonenumber"]
+ cdsi = ["dep:libsignal-net", "dep:libsignal-net-infra"]
  
  [patch.crates-io]
 -curve25519-dalek = { git = 'https://github.com/signalapp/curve25519-dalek', tag = 'signal-curve25519-4.1.3' }
