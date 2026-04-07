@@ -2,7 +2,8 @@ COMMENT =	time zone object base class and factory
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-TimeZone-2.65
+DISTNAME =	DateTime-TimeZone-2.67
+CPAN_AUTHOR =	DROLSKY
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
