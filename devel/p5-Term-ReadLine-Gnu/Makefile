@@ -1,17 +1,26 @@
-COMMENT=		GNU Readline Library Wrapper Module
+COMMENT =	GNU Readline Library Wrapper Module
 
-MODULES=		cpan
-DISTNAME=		Term-ReadLine-Gnu-1.36
-CATEGORIES=		devel
-REVISION=		0
+DISTNAME =	Term-ReadLine-Gnu-1.36
+REVISION =	1
+
+CATEGORIES =	devel
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses perl readline
+WANTLIB =		c curses perl readline
 
-TEST_DEPENDS=		x11/p5-Tk
-TEST_FLAGS=		TERM=${TERM} DISPLAY=${DISPLAY}
-TEST_IS_INTERACTIVE=	x11
+MODULES =		cpan
+
+TEST_ENV =		TERM=${TERM}
+
+.include <bsd.own.mk>
+PORTS_PRIVSEP ?=
+.if ${PORTS_PRIVSEP:L} == "yes"
+TEST_ENV +=		DISPLAY=
+.else
+TEST_DEPENDS =		x11/p5-Tk
+TEST_IS_INTERACTIVE =	x11
+.endif
 
 .include <bsd.port.mk>
