@@ -1,9 +1,8 @@
 COMMENT =	unload a class
-DISTNAME =	Class-Unload-0.11
+DISTNAME =	Class-Unload-0.12
 CATEGORIES =	devel
-REVISION =	0
 
-MAINTAINER =	Andrew Fresh <afresh1@openbsd.org>
+MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE =	Yes
