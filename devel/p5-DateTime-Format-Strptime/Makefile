@@ -2,7 +2,8 @@ COMMENT =	parse and format strp and strf time patterns
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	DateTime-Format-Strptime-1.79
+DISTNAME =	DateTime-Format-Strptime-1.80
+CPAN_AUTHOR =	DROLSKY
 EPOCH =		0
 CATEGORIES =	devel
 
