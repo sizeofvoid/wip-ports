@@ -2087,6 +2087,7 @@
      SUBDIR += yyjson
      SUBDIR += z80ex
      SUBDIR += zeal
+     SUBDIR += zizmor
      SUBDIR += zmac
      SUBDIR += zug
 
