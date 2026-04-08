@@ -2,7 +2,7 @@ COMMENT=		YubiKey plugin for age clients
 
 GH_ACCOUNT=		str4d
 GH_PROJECT=		age-plugin-yubikey
-GH_TAGNAME=		v0.5.0
+GH_TAGNAME=		v0.5.1
 
 CATEGORIES=		security
 

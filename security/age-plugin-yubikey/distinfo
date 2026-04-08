@@ -1,4 +1,4 @@
-SHA256 (age-plugin-yubikey-0.5.0.tar.gz) = ZYB0A/AJhWmkc/+nYwKyBdoUin9Gth/TMbjjI5WZeLo=
+SHA256 (age-plugin-yubikey-0.5.1.tar.gz) = UeRoCtetf1ZTXk8wGFMb0BloFWWTeHCZeWF9TxcQJwA=
 SHA256 (cargo/addr2line-0.22.0.tar.gz) = bkUDxGpcDHhE6UjJpNas2fUMzLTeHEjrnikeoXRwxng=
 SHA256 (cargo/adler-1.0.2.tar.gz) = 8mIBYEyHseAb09mPjV2aj8u4FejO20H/zL60v1k6Nf4=
 SHA256 (cargo/aead-0.5.2.tar.gz) = 0SJBPyhM8tYvsbfbl+Au24zaltdpsW5EOk9hleNWYrA=
@@ -312,7 +312,7 @@ SHA256 (cargo/yubikey-0.8.0-pre.0.tar.gz) = cSQL6XJIQX4HKrSQdlc9v5bohkeEU0l+ArSZ
 SHA256 (cargo/zerocopy-0.7.35.tar.gz) = G5tP0Yq8grgTaDjaXVC6573qU3xXTY3Bo07QmNbBZvA=
 SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V41YkL64Szj4=
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
-SIZE (age-plugin-yubikey-0.5.0.tar.gz) = 57426
+SIZE (age-plugin-yubikey-0.5.1.tar.gz) = 58018
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
