@@ -2,6 +2,7 @@ COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
 XFCE_VERSION =	4.20.2
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -27,6 +28,7 @@ WANTLIB += pango-1.0 wnck-3 xfce4ui-2 xfce4util xfconf-0 xklavier
 CONFIGURE_ARGS += -Dauthentication-scheme=helper \
 		-Dsession-manager=consolekit \
 		-Ddocs=disabled \
+		-Dxscreensaverhackdir=${LOCALBASE}/libexec/xscreensaver/ \
 		-Dpasswd-helper=${LOCALBASE}/libexec/xfce4-screensaver-ask-pass
 
 post-build:
