@@ -24,6 +24,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 cWANTLIB =		EGL GL SDL2 avfilter avcodec avformat avutil c \
 			curses edit elf m png pthread sqlite3 swresample \
 			swscale z zip

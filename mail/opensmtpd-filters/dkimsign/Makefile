@@ -18,6 +18,7 @@ LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd
 # ISC
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB=	c opensmtpd crypto
 NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"

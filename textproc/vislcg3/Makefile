@@ -17,6 +17,7 @@ HOMEPAGE =		https://edu.visl.dk/cg3/chunked/
 # GPLv3+
 PERMIT_PACKAGE =		Yes
 
+# uses pledge()
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += c icudata icui18n icuio icuuc m sqlite3
 

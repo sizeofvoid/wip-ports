@@ -10,6 +10,7 @@ MAINTAINER =		Aaron Poffenberger <akp@hypernote.com>
 PERMIT_PACKAGE =	Yes
 
 # "make port-lib-depends-check" can help
+# uses pledge()
 WANTLIB +=		c expat m sqlite3
 
 SITES =			https://kristaps.bsd.lv/kcaldav/snapshots/

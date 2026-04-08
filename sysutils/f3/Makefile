@@ -9,6 +9,7 @@ CATEGORIES=	sysutils
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB=	c m
 
 USE_GMAKE=	Yes

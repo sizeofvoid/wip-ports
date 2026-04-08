@@ -12,6 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 SITES=		https://shell.uugrn.org/~naddy/
 
+# uses pledge()
 WANTLIB=	c curses util
 
 NO_TEST=	Yes

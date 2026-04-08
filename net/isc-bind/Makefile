@@ -24,6 +24,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB += c crypto execinfo iconv idn2 json-c m nghttp2
 WANTLIB += pthread ssl unistring urcu urcu-cds urcu-common uv
 WANTLIB += xml2 z

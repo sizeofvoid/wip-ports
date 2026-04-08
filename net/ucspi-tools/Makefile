@@ -13,6 +13,7 @@ MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
 # ISC
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB += c crypto ssl tls
 
 MAKE_FLAGS=	CC="${CC}"

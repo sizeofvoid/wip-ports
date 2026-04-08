@@ -13,6 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 SITES =		https://leahneukirchen.org/releases/
 
+# uses pledge()
 WANTLIB =	c iconv pthread
 LIB_DEPENDS =	converters/libiconv
 

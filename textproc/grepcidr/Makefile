@@ -16,6 +16,7 @@ FIX_EXTRACT_PERMISSIONS=Yes
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# uses pledge()
 WANTLIB += c
 
 SITES=		http://www.pc-tools.net/files/unix/

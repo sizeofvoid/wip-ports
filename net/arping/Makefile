@@ -10,6 +10,7 @@ MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB += c m pcap lib/libnet-1.1/net=11
 
 SITES =		http://www.habets.pp.se/synscan/files/
