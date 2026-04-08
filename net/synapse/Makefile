@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_DISTV =	1.150.0
+MODPY_DISTV =	1.151.0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -50,6 +50,7 @@ RUN_DEPENDS =	devel/py-jsonschema>=3.0.0 \
 		www/py-jinja2 \
 		www/py-bleach \
 		devel/py-typing-extensions>=4.14.1 \
+		devel/py-pyrsistent \
 		security/py-cryptography \
 		textproc/py-ijson \
 		devel/py-matrix-common>=1.3.0,<2.0.0 \
