@@ -1,6 +1,6 @@
 COMMENT=	test vectors for py-cryptography
 
-MODPY_DISTV=	46.0.5
+MODPY_DISTV=	46.0.7
 DISTNAME=	cryptography_vectors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
