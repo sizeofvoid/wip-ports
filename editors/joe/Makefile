@@ -1,9 +1,8 @@
 COMMENT=		Joe's Own Editor
 
-DISTNAME=		joe-4.6
+DISTNAME=		joe-4.7
 CATEGORIES=		editors
 SITES=			${SITE_SOURCEFORGE:=joe-editor/}
-REVISION=		0
 
 HOMEPAGE=		https://joe-editor.sourceforge.net/
 

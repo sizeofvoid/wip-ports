@@ -79,6 +79,8 @@ share/joe/syntax/batch.jsf
 @sample ${SYSCONFDIR}/joe/syntax/batch.jsf
 share/joe/syntax/c.jsf
 @sample ${SYSCONFDIR}/joe/syntax/c.jsf
+share/joe/syntax/classic_pascal.jsf
+@sample ${SYSCONFDIR}/joe/syntax/classic_pascal.jsf
 share/joe/syntax/clojure.jsf
 @sample ${SYSCONFDIR}/joe/syntax/clojure.jsf
 share/joe/syntax/cobol.jsf
@@ -101,6 +103,8 @@ share/joe/syntax/d.jsf
 @sample ${SYSCONFDIR}/joe/syntax/d.jsf
 share/joe/syntax/debian.jsf
 @sample ${SYSCONFDIR}/joe/syntax/debian.jsf
+share/joe/syntax/debian_changelog.jsf
+@sample ${SYSCONFDIR}/joe/syntax/debian_changelog.jsf
 share/joe/syntax/diff.jsf
 @sample ${SYSCONFDIR}/joe/syntax/diff.jsf
 share/joe/syntax/dockerfile.jsf
@@ -207,6 +211,8 @@ share/joe/syntax/sql.jsf
 @sample ${SYSCONFDIR}/joe/syntax/sql.jsf
 share/joe/syntax/swift.jsf
 @sample ${SYSCONFDIR}/joe/syntax/swift.jsf
+share/joe/syntax/systemverilog.jsf
+@sample ${SYSCONFDIR}/joe/syntax/systemverilog.jsf
 share/joe/syntax/tcl.jsf
 @sample ${SYSCONFDIR}/joe/syntax/tcl.jsf
 share/joe/syntax/tex.jsf
