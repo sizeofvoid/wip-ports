@@ -1,4 +1,4 @@
-bin/xdg-user-dir
+@bin bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
 lib/systemd/
 lib/systemd/user/

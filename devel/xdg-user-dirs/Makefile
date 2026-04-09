@@ -1,6 +1,6 @@
 COMMENT=		utilities to manage well known user directories
 
-DISTNAME=		xdg-user-dirs-0.19
+DISTNAME=		xdg-user-dirs-0.20
 EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		devel
