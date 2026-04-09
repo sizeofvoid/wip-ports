@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1797 2026/03/25 05:31:00 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.1798 2026/04/09 23:29:07 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1063,6 +1063,7 @@ setup_obsolete_reason(
 	3 => 'usmb',
 	2 => 'libgdata',
 	3 => 'py3-cookies',
+	6 => 'nix',
 );
 
 # these should be pkgnames, there was some hope that pkg_add might later
