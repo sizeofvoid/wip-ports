@@ -102,6 +102,11 @@ in several classes.
 enabled; they don't need to be installed or enabled separately.
 
 - opcache is in the main package but must be configured.
+See https://www.php.net/manual/en/opcache.configuration.php
+
+If using opcache with multiple php-fpm pools, you might want to use
+"validate-root" and/or "validate-permission".
+
 Note that a large opcache may result in slow daemon shutdown.
 If this exceeds the default 30 second timeout, you may override it:
 
