@@ -11,3 +11,8 @@ conf/nut/upsstats-single.html.sample
 @sample conf/nut/upsstats-single.html
 conf/nut/upsstats.html.sample
 @sample conf/nut/upsstats.html
+nut/
+nut/bottom.html
+nut/header.html
+nut/index.html
+nut/nut-banner.png
