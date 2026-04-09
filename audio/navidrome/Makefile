@@ -9,7 +9,7 @@ CATEGORIES =	audio
 
 HOMEPAGE =	https://www.navidrome.org/
 
-MAINTAINER =	Edd Barrett <edd@openbsd.org>
+MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 
 # Built by running "npm i; npm run build" in the `ui` directory of the source
 # code and then tarring up the resulting `build` directory:
