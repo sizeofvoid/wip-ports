@@ -1,10 +1,5 @@
-#1, #2:
 libressl doesn't yet have sk_new_reserve.
-
-#3:
-This check doesn't make sense for EC keys. (Also it ignores the default
-key size compiled into libcrypto, only looks at default_bits in openssl.cnf
-and any settings in the php file, which results in bogus failures).
+correctly check for sk_X509_push failure.
 
 Index: ext/openssl/openssl_backend_common.c
 --- ext/openssl/openssl_backend_common.c.orig
@@ -31,12 +26,3 @@ Index: ext/openssl/openssl_backend_common.c
  			xi->x509=NULL;
  		}
  		X509_INFO_free(xi);
-@@ -1444,7 +1448,7 @@ static const char *php_openssl_get_evp_pkey_name(int k
- 
- EVP_PKEY *php_openssl_generate_private_key(struct php_x509_request * req)
- {
--	if (req->priv_key_bits < MIN_KEY_LENGTH) {
-+	if (req->priv_key_type != OPENSSL_KEYTYPE_EC && req->priv_key_bits < MIN_KEY_LENGTH) {
- 		php_error_docref(NULL, E_WARNING, "Private key length must be at least %d bits, configured to %d",
- 			MIN_KEY_LENGTH, req->priv_key_bits);
- 		return NULL;

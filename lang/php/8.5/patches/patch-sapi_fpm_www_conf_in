@@ -24,9 +24,16 @@ Index: sapi/fpm/www.conf.in
  
  ; When POSIX Access Control Lists are supported you can set them using
  ; these options, value is a comma separated list of user/group names.
-@@ -417,7 +418,7 @@ pm.max_spare_servers = 3
+@@ -416,8 +417,14 @@ pm.max_spare_servers = 3
+ ; Note: chrooting is a great security feature and should be used whenever
  ;       possible. However, all PHP paths will be relative to the chroot
  ;       (error_log, sessions.save_path, ...).
++;
++;      CAUTION: if OpCache is enabled (disabled by default) and php-fpm
++;  .   pools are configured with different roots or users, you probably
++; /!\  want to set opcache.validate-root / opcache.validate-permission
++;      https://www.php.net/manual/en/opcache.configuration.php
++;
  ; Default Value: not set
 -;chroot =
 +chroot = /var/www
