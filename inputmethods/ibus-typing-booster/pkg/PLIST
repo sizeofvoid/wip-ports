@@ -404,9 +404,12 @@ share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_pango.${MODPY_PYC_MAGIC_TAG
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_sound.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_sound.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_sound.${MODPY_PYC_MAGIC_TAG}pyc
-share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
-share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util_core.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util_core.${MODPY_PYC_MAGIC_TAG}pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util_gui.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util_gui.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
+share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_util_gui.${MODPY_PYC_MAGIC_TAG}pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_version.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 share/ibus-typing-booster/engine/${MODPY_PYCACHE}itb_version.${MODPY_PYC_MAGIC_TAG}pyc
@@ -438,7 +441,8 @@ share/ibus-typing-booster/engine/itb_nltk.py
 share/ibus-typing-booster/engine/itb_ollama.py
 share/ibus-typing-booster/engine/itb_pango.py
 share/ibus-typing-booster/engine/itb_sound.py
-share/ibus-typing-booster/engine/itb_util.py
+share/ibus-typing-booster/engine/itb_util_core.py
+share/ibus-typing-booster/engine/itb_util_gui.py
 share/ibus-typing-booster/engine/itb_version.py
 share/ibus-typing-booster/engine/m17n_translit.py
 share/ibus-typing-booster/engine/main.py
