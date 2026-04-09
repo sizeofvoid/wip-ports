@@ -1,11 +1,18 @@
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS = sparc64
 
+# aws-lc-sys has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64"
+USE_NOEXECONLY =	Yes
+.endif
+
 COMMENT =	RPKI Certification Authority and Publication Server
 
 GH_ACCOUNT =	NLnetLabs
 GH_PROJECT =	krill
 GH_TAGNAME =	v0.16.0
+REVISION =	0
 
 HOMEPAGE =	https://nlnetlabs.nl/projects/routing/krill/
 CATEGORIES =	net
