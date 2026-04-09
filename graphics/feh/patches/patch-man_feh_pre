@@ -1,9 +1,9 @@
 Index: man/feh.pre
 --- man/feh.pre.orig
 +++ man/feh.pre
-@@ -1419,7 +1419,7 @@ which
+@@ -1436,7 +1436,7 @@ which
  defaults to
- .Pa ~/.config/feh/ .
+ .Pa \[ti]/.config/feh/ .
  If the files are not found in that directory, it will also try
 -.Pa /etc/feh/ .
 +.Pa ${SYSCONFDIR}/feh/ .
