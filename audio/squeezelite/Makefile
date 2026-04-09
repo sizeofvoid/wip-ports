@@ -3,10 +3,10 @@ COMMENT=	lightweight headless squeezebox player
 # Find this in squeezelite.h.
 # It's the developer's internal subversion ID before he pushes it to github:
 # https://github.com/ralph-irving/squeezelite/issues/29#issuecomment-319686292
-V=		2.0.0.1524
+V=		2.0.0.1561
 GH_ACCOUNT=	ralph-irving
 GH_PROJECT=	squeezelite
-GH_COMMIT=	db51a7b16934f41b72437394bf8114c3a85e0a91
+GH_COMMIT=	e977d1045f5f4c1a51ba0d66387f26fd19a2f42a
 DISTNAME=	squeezelite-$V
 
 CATEGORIES=	audio
