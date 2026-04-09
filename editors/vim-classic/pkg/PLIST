@@ -1477,6 +1477,7 @@ share/vim/${P}/syntax/ant.vim
 share/vim/${P}/syntax/antlr.vim
 share/vim/${P}/syntax/apache.vim
 share/vim/${P}/syntax/apachestyle.vim
+share/vim/${P}/syntax/apkbuild.vim
 share/vim/${P}/syntax/aptconf.vim
 share/vim/${P}/syntax/arch.vim
 share/vim/${P}/syntax/arduino.vim
