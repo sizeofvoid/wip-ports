@@ -1,4 +1,5 @@
 # aws-lc-sys 0.36 has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
 .if ${MACHINE_ARCH} == "amd64"
 USE_NOEXECONLY =	Yes
 .endif
