@@ -1,6 +1,6 @@
 COMMENT=	Alliance for Open Media AV1 video codec
 
-V=		3.13.2
+V=		3.13.3
 DISTNAME=	libaom-$V
 PKGNAME=	aom-$V
 CATEGORIES=	multimedia
