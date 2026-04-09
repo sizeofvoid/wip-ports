@@ -1,7 +1,7 @@
 Index: modules/setup/application/clicommands/ConfigCommand.php
 --- modules/setup/application/clicommands/ConfigCommand.php.orig
 +++ modules/setup/application/clicommands/ConfigCommand.php
-@@ -24,7 +24,7 @@ class ConfigCommand extends Command
+@@ -26,7 +26,7 @@ class ConfigCommand extends Command
       *
       *  --mode=<mode>           The access mode to use [2770]
       *
@@ -10,7 +10,7 @@ Index: modules/setup/application/clicommands/ConfigCommand.php
       *
       * EXAMPLES:
       *
-@@ -41,7 +41,7 @@ class ConfigCommand extends Command
+@@ -43,7 +43,7 @@ class ConfigCommand extends Command
              ));
          }
  

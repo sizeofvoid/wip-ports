@@ -4,12 +4,16 @@
 
 Web User Interface
 ==================
+The main Icinga 2 program should be configured first and certain features
+enabled. Communication with Icinga Web 2 requires the "command" feature to
+be enabled, and also some form of database connection, either old-style
+IDO with the 'ido-mysql' or 'ido-pgsql' feature, or the newer Icinga DB
+with the 'icingadb' feature. Consult documentation and pkg-readme for
+Icinga 2 and Icinga DB for configuration details, database schema, etc.
+Check with 'icinga2 feature list' that the relevant modules are enabled.
 
-The main Icinga 2 program should be configured first. Several features
-are required for use with Icinga Web 2: either an "ido" database module
-or "livestatus", and also "command". Consult Icinga documentation
-about using "icinga2 feature enable" to do this, for configuration
-details, database schema, etc.
+If using Icinga DB, install the 'icingadb-web' package via pkg_add.
+If using IDO, install 'icinga-web2-module-monitoring'.
 
 The majority of Icinga Web 2 configuration is web-based and simple,
 but a few things will need to be setup FIRST.

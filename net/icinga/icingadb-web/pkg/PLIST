@@ -2,7 +2,7 @@ icinga-web2/modules/icingadb/
 icinga-web2/modules/icingadb/AUTHORS
 icinga-web2/modules/icingadb/CHANGELOG.md
 icinga-web2/modules/icingadb/CONTRIBUTING.md
-icinga-web2/modules/icingadb/LICENSE
+icinga-web2/modules/icingadb/LICENSE.md
 icinga-web2/modules/icingadb/README.md
 icinga-web2/modules/icingadb/SECURITY.md
 icinga-web2/modules/icingadb/application/
@@ -312,6 +312,7 @@ icinga-web2/modules/icingadb/library/Icingadb/Setup/WelcomePage.php
 icinga-web2/modules/icingadb/library/Icingadb/Util/
 icinga-web2/modules/icingadb/library/Icingadb/Util/FeatureStatus.php
 icinga-web2/modules/icingadb/library/Icingadb/Util/ObjectSuggestionsCursor.php
+icinga-web2/modules/icingadb/library/Icingadb/Util/OptimizerHints.php
 icinga-web2/modules/icingadb/library/Icingadb/Util/PerfData.php
 icinga-web2/modules/icingadb/library/Icingadb/Util/PerfDataFormat.php
 icinga-web2/modules/icingadb/library/Icingadb/Util/PerfDataSet.php
@@ -412,12 +413,8 @@ icinga-web2/modules/icingadb/library/Icingadb/Widget/StateBadge.php
 icinga-web2/modules/icingadb/library/Icingadb/Widget/StateChange.php
 icinga-web2/modules/icingadb/library/Icingadb/Widget/TagList.php
 icinga-web2/modules/icingadb/module.info
-icinga-web2/modules/icingadb/phpstan-baseline-7x.neon
-icinga-web2/modules/icingadb/phpstan-baseline-8x.neon
-icinga-web2/modules/icingadb/phpstan-baseline-by-php-version.php
-icinga-web2/modules/icingadb/phpstan-baseline-standard.neon
+icinga-web2/modules/icingadb/phpstan-baseline.neon
 icinga-web2/modules/icingadb/phpstan.neon
-icinga-web2/modules/icingadb/phpunit.xml
 icinga-web2/modules/icingadb/public/
 icinga-web2/modules/icingadb/public/css/
 icinga-web2/modules/icingadb/public/css/common.less
@@ -486,6 +483,7 @@ icinga-web2/modules/icingadb/test/php/library/Icingadb/Command/
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Command/Transport/
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Command/Transport/CommandTransportTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Common/
+icinga-web2/modules/icingadb/test/php/library/Icingadb/Common/AuthTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Common/MacrosTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Common/StateBadgesTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Model/

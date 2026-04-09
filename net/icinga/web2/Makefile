@@ -2,18 +2,18 @@ COMMENT =	next-generation web UI for icinga
 
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icingaweb2
-GH_TAGNAME =	v2.12.6
+GH_TAGNAME =	v2.13.0
 PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
 
 MODULES=	lang/php
 
-MODPHP_PDO_ALLOWED = mysql pgsql
-MODPHP_PDO_PREF =    mysql
-
+# Two alternatives are available for the module used for monitoring services;
+# the traditional "monitoring" module using IDO - this used to be bundled
+# in icingaweb2 but was split off to web2-module-monitoring in 2.13.0 - and
+# icingadb-web using Icinga DB.
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-intl \
-		net/icinga/icinga-php-library>=0.13 \
-		net/icinga/icinga-php-thirdparty>=0.12 \
-		${MODPHP_PDO_DEPENDS}
+		net/icinga/icinga-php-library \
+		net/icinga/icinga-php-thirdparty
 
 NO_TEST =	Yes
 NO_BUILD =	Yes

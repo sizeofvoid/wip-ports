@@ -1,7 +1,7 @@
 Index: bin/icingacli
 --- bin/icingacli.orig
 +++ bin/icingacli
-@@ -4,4 +4,4 @@
+@@ -6,4 +6,4 @@
  
  require_once dirname(__DIR__) . '/library/Icinga/Application/Cli.php';
  

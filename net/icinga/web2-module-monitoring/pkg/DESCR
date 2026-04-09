@@ -1,0 +1,3 @@
+web2-module-monitoring provides the original monitoring user interface
+that accesses information from the Icinga daemon from a SQL database
+via IDO. The predecessor of Icinga DB + Icinga DB Web.
