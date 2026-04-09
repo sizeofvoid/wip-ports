@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =	Python linter and code formatter
 
-MODPY_DISTV =	0.15.7
+MODPY_DISTV =	0.15.9
 
 GH_ACCOUNT =	astral-sh
 GH_PROJECT =	ruff
@@ -11,7 +11,7 @@ GH_TAGNAME =	${MODPY_DISTV}
 
 # Rust crates downloaded via git
 LSPTYPES =	e15db0593f0ecbbd80599c3f5880e4bf5da1ca0c
-SALSA =		53421c2fff87426fa0bb51cab06632b87646de13
+SALSA =		2f687a17ceea8ec7aaa605561ccbde938ccef086
 
 DIST_TUPLE +=	github astral-sh lsp-types ${LSPTYPES} ../lsp-types
 DIST_TUPLE +=	github salsa-rs salsa ${SALSA} ../salsa
