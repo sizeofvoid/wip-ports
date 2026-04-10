@@ -1,6 +1,6 @@
-Fix build with poppler-26.02.0.
+Fix build with poppler-26.02.0 and 26.04.0.
 
-From upstream commit 3c29b709cd2b5b18776b3c15638b66bd8a7dcb07.
+First one from upstream commit 3c29b709cd2b5b18776b3c15638b66bd8a7dcb07.
 
 Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
 --- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig
@@ -61,7 +61,18 @@ Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
      printf( "drawChar %f %f %f %f %f %f %f %f %f ",
              normalize(aPositionX),
              normalize(aPositionY),
-@@ -1348,7 +1364,11 @@ poppler_bool PDFOutDev::tilingPatternFill(GfxState *st
+@@ -1098,7 +1114,9 @@ void PDFOutDev::drawChar(GfxState *state, double x, do
+     printf( "\n" );
+ }
+ 
+-#if POPPLER_CHECK_VERSION(0, 64, 0)
++#if POPPLER_CHECK_VERSION(26, 4, 0)
++void PDFOutDev::drawString(GfxState*, const std::string & /*s*/)
++#elif POPPLER_CHECK_VERSION(0, 64, 0)
+ void PDFOutDev::drawString(GfxState*, const GooString* /*s*/)
+ #else
+ void PDFOutDev::drawString(GfxState*, GooString* /*s*/)
+@@ -1348,7 +1366,11 @@ poppler_bool PDFOutDev::tilingPatternFill(GfxState *st
  
      const int nDPI = 72; // GfxState seems to have 72.0 as magic for some reason
      auto pSplashGfxState = new GfxState(nDPI, nDPI, &aBox, 0, false);
