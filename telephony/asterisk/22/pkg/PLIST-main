@@ -151,6 +151,7 @@ include/asterisk/refer.h
 include/asterisk/res_aeap.h
 include/asterisk/res_aeap_message.h
 include/asterisk/res_audiosocket.h
+include/asterisk/res_cdrel_custom.h
 include/asterisk/res_geolocation.h
 include/asterisk/res_hep.h
 include/asterisk/res_mwi_external.h
@@ -444,6 +445,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/res_ari_recordings.so
 @so lib/asterisk/modules/res_ari_sounds.so
 @so lib/asterisk/modules/res_audiosocket.so
+@so lib/asterisk/modules/res_cdrel_custom.so
 @so lib/asterisk/modules/res_clialiases.so
 @so lib/asterisk/modules/res_clioriginate.so
 @so lib/asterisk/modules/res_config_curl.so
