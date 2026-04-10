@@ -1,12 +1,19 @@
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
+# aws-lc-sys 0.36 has constants in .text
+# https://github.com/awslabs/s2n-bignum/pull/242
+.if ${MACHINE_ARCH} == "amd64"
+USE_NOEXECONLY =	Yes
+.endif
+
 COMMENT =		Python package and project manager
 
 MODPY_DISTV =		0.11.5
 GH_ACCOUNT =		astral-sh
 GH_PROJECT =		uv
 GH_TAGNAME =		${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
