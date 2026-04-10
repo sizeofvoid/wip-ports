@@ -1,9 +1,6 @@
-VER=		20.18.2
+VER=		20.19.0
 
-# keep above 7.8-stable
-REVISION-main=	0
-
-PJ_V=		2.15.1
+PJ_V=		2.16
 SHLIB_V=	0.0
 VERSION_SPEC=	>=20.0,<21.0
 
