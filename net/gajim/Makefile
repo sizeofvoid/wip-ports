@@ -1,10 +1,11 @@
 COMMENT=	fully-featured XMPP client written in Python
-MODPY_DISTV=	2.0.3
+MODPY_DISTV=	2.4.5
 DISTNAME=	gajim-${MODPY_DISTV}
 CATEGORIES=	net x11
-REVISION=	1
 
 HOMEPAGE=	https://www.gajim.org
+
+MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
 SITES=		${HOMEPAGE}/downloads/${MODPY_DISTV:R}/
 
@@ -23,23 +24,29 @@ RUN_DEPENDS=	audio/gsound \
 		devel/libsoup3 \
 		devel/pango>=1.50.0 \
 		devel/py-gobject3 \
+		fonts/noto/emoji \
 		graphics/py-Pillow \
 		graphics/py-cairo \
 		graphics/py-qrcode>=7.3.1 \
+		multimedia/gstreamer1/plugins-good \
 		multimedia/gstreamer1/py-gstreamer \
-		net/py-nbxmpp>=6.0.0 \
+		net/py-nbxmpp>=7.1.0 \
 		security/py-cryptodome \
 		security/py-cryptography \
 		security/py-gnupg \
 		security/py-keyring \
 		security/py-omemo-dr>=1.0.0 \
 		security/py-openssl \
+		security/py-truststore \
 		sysutils/py-packaging \
 		textproc/gspell \
 		textproc/py-css-parser \
 		textproc/py-emoji>=2.6.0 \
 		textproc/py-precis_i18n \
+		www/py-httpx \
+		www/py-h2 \
 		x11/dbus-python \
+		x11/gnome/libadwaita \
 		x11/gtk+4,-guic \
 		x11/gtksourceview5
 
