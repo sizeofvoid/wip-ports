@@ -25,8 +25,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}errors.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -68,7 +66,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/const.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/errors.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/http.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/language.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/__init__.py
@@ -143,6 +140,8 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}muclumbu
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}muclumbus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}nickname.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}nickname.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}ogp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}ogp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}omemo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}omemo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/${MODPY_PYCACHE}oob.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -253,6 +252,7 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/muc.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muc/util.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/muclumbus.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/nickname.py
+lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/ogp.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/omemo.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/oob.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/openpgp.py

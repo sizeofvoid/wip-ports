@@ -1,12 +1,13 @@
 COMMENT =		Python XMPP and Jabber implementation
 
-MODPY_DISTV =		6.0.2
+MODPY_DISTV =		7.1.0
 DISTNAME =		nbxmpp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net devel
-REVISION =		1
 
 HOMEPAGE =		https://python-nbxmpp.gajim.org/
+
+MAINTAINER =	Florian Viehweger <openbsd@out-of-creativity.de>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
