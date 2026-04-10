@@ -335,6 +335,7 @@
      SUBDIR += py-ssh2-python
      SUBDIR += py-tlsfuzzer
      SUBDIR += py-trustme
+     SUBDIR += py-truststore
      SUBDIR += py-yaswfp
      SUBDIR += py-zxcvbn
      SUBDIR += qca-qt5
