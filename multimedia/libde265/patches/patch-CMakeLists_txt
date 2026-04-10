@@ -1,0 +1,18 @@
+Fix pkg-config Libs.private entry
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -121,11 +121,7 @@ endif()
+ 
+ include(CheckCXXSymbolExists)
+ check_cxx_symbol_exists(_LIBCPP_VERSION cstdlib HAVE_LIBCPP)
+-if(HAVE_LIBCPP)
+-  set(LIBS_PRIVATE "-lc++")
+-else()
+-  set(LIBS_PRIVATE "-lstdc++")
+-endif()
++set(LIBS_PRIVATE "-lpthread -lm")
+ 
+ 
+ option(BUILD_SHARED_LIBS "Build shared library" ON)

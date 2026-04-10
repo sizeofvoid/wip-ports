@@ -2,7 +2,10 @@
 include/libde265/
 include/libde265/de265-version.h
 include/libde265/de265.h
-@static-lib lib/libde265.a
-lib/libde265.la
+lib/cmake/
+lib/cmake/libde265/
+lib/cmake/libde265/libde265-config${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/libde265/libde265-config-version.cmake
+lib/cmake/libde265/libde265-config.cmake
 @lib lib/libde265.so.${LIBde265_VERSION}
 lib/pkgconfig/libde265.pc
