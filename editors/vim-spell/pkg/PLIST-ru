@@ -1,7 +1,6 @@
-@pkgpath editors/vim-spell,ru
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/ru.cp1251.spl
-share/vim/vim${P}/spell/ru.koi8-r.spl
-share/vim/vim${P}/spell/ru.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/ru.cp1251.spl
+share/vim/vimfiles/spell/ru.koi8-r.spl
+share/vim/vimfiles/spell/ru.utf-8.spl

@@ -1,6 +1,5 @@
-@pkgpath editors/vim-spell,uk
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/uk.koi8-u.spl
-share/vim/vim${P}/spell/uk.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/uk.koi8-u.spl
+share/vim/vimfiles/spell/uk.utf-8.spl

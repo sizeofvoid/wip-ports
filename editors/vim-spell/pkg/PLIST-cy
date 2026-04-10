@@ -1,6 +1,5 @@
-@pkgpath editors/vim-spell,cy
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/cy.iso-8859-14.spl
-share/vim/vim${P}/spell/cy.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/cy.iso-8859-14.spl
+share/vim/vimfiles/spell/cy.utf-8.spl

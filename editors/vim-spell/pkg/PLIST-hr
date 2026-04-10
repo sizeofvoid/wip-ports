@@ -1,7 +1,6 @@
-@pkgpath editors/vim-spell,hr
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/hr.cp1250.spl
-share/vim/vim${P}/spell/hr.iso-8859-2.spl
-share/vim/vim${P}/spell/hr.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/hr.cp1250.spl
+share/vim/vimfiles/spell/hr.iso-8859-2.spl
+share/vim/vimfiles/spell/hr.utf-8.spl

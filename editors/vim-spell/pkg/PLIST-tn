@@ -1,7 +1,6 @@
-@pkgpath editors/vim-spell,tn
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/tn.cp1250.spl
-share/vim/vim${P}/spell/tn.iso-8859-2.spl
-share/vim/vim${P}/spell/tn.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/tn.cp1250.spl
+share/vim/vimfiles/spell/tn.iso-8859-2.spl
+share/vim/vimfiles/spell/tn.utf-8.spl

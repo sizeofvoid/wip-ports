@@ -1,6 +1,5 @@
-@pkgpath editors/vim-spell,tet
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/tet.latin1.spl
-share/vim/vim${P}/spell/tet.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/tet.latin1.spl
+share/vim/vimfiles/spell/tet.utf-8.spl

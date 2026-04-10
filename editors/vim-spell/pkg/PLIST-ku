@@ -1,6 +1,5 @@
-@pkgpath editors/vim-spell,ku
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/ku.iso-8859-9.spl
-share/vim/vim${P}/spell/ku.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/ku.iso-8859-9.spl
+share/vim/vimfiles/spell/ku.utf-8.spl

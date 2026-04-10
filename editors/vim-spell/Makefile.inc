@@ -3,13 +3,13 @@ LANGS =		af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		sl sv sw tet tl tn uk yi zu
 
 HOMEPAGE =	https://www.vim.org/
-VERSION =	9.2
-P =		${VERSION:C/[\.]//g}
 CATEGORIES =	editors
 SITES =		https://ftp.nluug.nl/pub/vim/runtime/spell/
 DIST_SUBDIR =	vim-spell-9.1
 EXTRACT_ONLY =
-DISTNAME =	vim-spell-${VERSION}
+
+VERSION =	9.2
+REVISION =	0
 
 # GPLv2+, LGPL, GFDL
 PERMIT_PACKAGE =	Yes
@@ -173,10 +173,10 @@ CHECKSUM_FILE =	${.CURDIR}/../distinfo
 # default
 NO_BUILD =	Yes
 
-SUBST_VARS =	LANG_NAME P
+SUBST_VARS =	LANG_NAME
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vim${P}/spell
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/spell
 .for f in ${DISTFILES}
-	${INSTALL_DATA} ${FULLDISTDIR}/${f} ${PREFIX}/share/vim/vim${P}/spell
+	${INSTALL_DATA} ${FULLDISTDIR}/${f} ${PREFIX}/share/vim/vimfiles/spell
 .endfor

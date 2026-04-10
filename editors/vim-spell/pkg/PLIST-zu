@@ -1,7 +1,6 @@
-@pkgpath editors/vim-spell,zu
 share/vim/
-share/vim/vim${P}/
-share/vim/vim${P}/spell/
-share/vim/vim${P}/spell/zu.ascii.spl
-share/vim/vim${P}/spell/zu.latin1.spl
-share/vim/vim${P}/spell/zu.utf-8.spl
+share/vim/vimfiles/
+share/vim/vimfiles/spell/
+share/vim/vimfiles/spell/zu.ascii.spl
+share/vim/vimfiles/spell/zu.latin1.spl
+share/vim/vimfiles/spell/zu.utf-8.spl
