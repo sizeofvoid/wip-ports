@@ -10,7 +10,7 @@ Index: ui/base/clipboard/clipboard.cc
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -78,7 +78,7 @@ bool Clipboard::IsSupportedClipboardBuffer(ClipboardBu
+@@ -79,7 +79,7 @@ bool Clipboard::IsSupportedClipboardBuffer(ClipboardBu
  
  // static
  bool Clipboard::IsMiddleClickPasteEnabled() {

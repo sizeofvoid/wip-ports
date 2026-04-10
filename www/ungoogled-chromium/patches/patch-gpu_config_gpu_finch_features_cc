@@ -20,7 +20,7 @@ Index: gpu/config/gpu_finch_features.cc
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -450,7 +451,7 @@ BASE_FEATURE(kGPUDriverBugListTestGroup, base::FEATURE
+@@ -457,7 +458,7 @@ BASE_FEATURE(kGPUDriverBugListTestGroup, base::FEATURE
  const base::FeatureParam<int> kGPUDriverBugListTestGroupId{
      &kGPUDriverBugListTestGroup, "test_group", 0};
  
