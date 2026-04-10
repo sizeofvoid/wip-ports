@@ -10,7 +10,7 @@ Index: chrome/renderer/chrome_content_renderer_client.cc
  #include "components/webapps/isolated_web_apps/scheme.h"
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
          // BUILDFLAG(IS_CHROMEOS)
-@@ -426,7 +426,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -428,7 +428,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
    WebSecurityPolicy::RegisterURLSchemeAsExtension(
        WebString::FromASCII(extensions::kExtensionScheme));
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -19,7 +19,7 @@ Index: chrome/renderer/chrome_content_renderer_client.cc
    WebSecurityPolicy::RegisterURLSchemeAsIsolatedApp(
        WebString::FromASCII(webapps::kIsolatedAppScheme));
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -495,7 +495,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
+@@ -497,7 +497,7 @@ void ChromeContentRendererClient::RenderThreadStarted(
        WebString::FromASCII(chrome::kChromeSearchScheme));
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

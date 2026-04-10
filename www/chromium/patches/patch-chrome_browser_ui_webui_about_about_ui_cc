@@ -19,7 +19,7 @@ Index: chrome/browser/ui/webui/about/about_ui.cc
  LinuxProxyConfigUI::LinuxProxyConfigUI()
      : AboutUIConfigBase(chrome::kChromeUILinuxProxyConfigHost) {}
  #endif
-@@ -495,7 +495,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -494,7 +494,7 @@ void AboutUIHTMLSource::StartDataRequest(
        response =
            ui::ResourceBundle::GetSharedInstance().LoadDataResourceString(idr);
      }

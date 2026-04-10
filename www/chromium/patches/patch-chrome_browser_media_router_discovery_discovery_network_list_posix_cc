@@ -46,4 +46,4 @@ Index: chrome/browser/media/router/discovery/discovery_network_list_posix.cc
 +}
  #endif
  
- void GetDiscoveryNetworkInfoListImpl(
+ base::span<const uint8_t> SocketAddressAsByteSpan(const sll* ll_addr) {

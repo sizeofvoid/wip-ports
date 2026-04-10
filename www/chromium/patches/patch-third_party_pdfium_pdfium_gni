@@ -8,5 +8,5 @@ Index: third_party/pdfium/pdfium.gni
 -  pdf_use_partition_alloc = pdf_use_partition_alloc_override
 +  pdf_use_partition_alloc = pdf_use_partition_alloc_override && use_partition_alloc_as_malloc
  
-   # Build PDFium to use Skia (experimental) for all PDFium graphics.
-   # If enabled, coexists in build with AGG graphics and the default
+   # Build PDFium to use AGG (fully supported).
+   pdf_use_agg = true

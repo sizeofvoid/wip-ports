@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc
 --- chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc.orig
 +++ chrome/browser/ui/views/data_sharing/collaboration_controller_delegate_desktop.cc
-@@ -95,7 +95,7 @@ DialogText GetPromptDialogTextFromStatus(
+@@ -96,7 +96,7 @@ DialogText GetPromptDialogTextFromStatus(
        break;
    }
  

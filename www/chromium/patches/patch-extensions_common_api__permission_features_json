@@ -120,14 +120,7 @@ Index: extensions/common/api/_permission_features.json
    },
    // Note: runtime is not actually a permission, but some systems check these
    // values to verify restrictions.
-@@ -577,13 +577,13 @@
-     "channel": "stable",
-     "extension_types": ["platform_app"],
-     // "desktop_android" is not supported.
--    "platforms": ["chromeos", "linux", "mac", "win"]
-+    "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
-   },
-   "socket": {
+@@ -582,7 +582,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.
@@ -136,7 +129,7 @@ Index: extensions/common/api/_permission_features.json
    },
    "storage": [
      {
-@@ -673,13 +673,13 @@
+@@ -672,13 +672,13 @@
        "channel": "stable",
        "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
        // "desktop_android" is not supported.
@@ -152,23 +145,7 @@ Index: extensions/common/api/_permission_features.json
        "allowlist": ["B44D08FD98F1523ED5837D78D0A606EA9D6206E5"]  // Web Store
      }
    ],
-@@ -688,13 +688,13 @@
-       "channel": "stable",
-       "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
-       // "desktop_android" is not supported.
--      "platforms": ["chromeos", "linux", "mac", "win"]
-+      "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"]
-     },
-     {
-       "channel": "stable",
-       "extension_types": ["hosted_app"],
-       // "desktop_android" is not supported.
--      "platforms": ["chromeos", "linux", "mac", "win"],
-+      "platforms": ["chromeos", "linux", "mac", "win", "openbsd", "freebsd"],
-       "allowlist": ["B44D08FD98F1523ED5837D78D0A606EA9D6206E5"]  // Web Store
-     }
-   ],
-@@ -721,7 +721,7 @@
+@@ -716,7 +716,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.
@@ -177,7 +154,7 @@ Index: extensions/common/api/_permission_features.json
    },
    "usbDevices": [
      {
-@@ -789,7 +789,7 @@
+@@ -784,7 +784,7 @@
      "channel": "stable",
      "extension_types": ["platform_app"],
      // "desktop_android" is not supported.
