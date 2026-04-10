@@ -1,10 +1,9 @@
 COMMENT=	library for network communications and cryptography
 
-DISTNAME=	libsodium-1.0.21
-REVISION=	0
+DISTNAME=	libsodium-1.0.22
 
-# grep SODIUM_LIBRARY_VERSION_M `make show=WRKSRC`/configure.ac
-SHARED_LIBS +=  sodium               11.0     # 26.3
+# grep ^SODIUM_LIBRARY_VERSION_M `make show=WRKSRC`/configure.ac
+SHARED_LIBS +=  sodium               11.1     # 26.4
 
 CATEGORIES=	security net
 
@@ -18,6 +17,11 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread
+
+# codebase is really targetted at newer compilers; at least KEM tests
+# segfault on sparc64 if built with GCC 4.2.1.
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 SEPARATE_BUILD=	Yes
 
