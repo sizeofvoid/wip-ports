@@ -1,0 +1,5 @@
+Truststore is a library which exposes native system certificate
+stores (ie "trust stores") through an ssl.SSLContext-like API. This
+means that Python applications no longer need to rely on certifi
+as a root certificate store. Native system certificate stores have
+many helpful features compared to a static certificate bundle.
