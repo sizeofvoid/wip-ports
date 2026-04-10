@@ -5,8 +5,8 @@ COMMENT ?=	simple, stable, and robust systems programming language
 CATEGORIES ?=	lang devel
 
 HOMEPAGE ?=	https://harelang.org/
-MAINTAINER ?=	Lorenz (xha) <me@xha.li>
-V ?=		0.25.2
+MAINTAINER ?=	pasta <pasta@pastatech.eu>
+V ?=		0.26.0
 
 # Compiler: GPLv3 only
 # Runtime: MPL 2.0

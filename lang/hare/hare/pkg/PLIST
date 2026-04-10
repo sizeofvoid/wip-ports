@@ -5,6 +5,7 @@
 @man man/man1/hare-deps.1
 @man man/man1/hare-run.1
 @man man/man1/hare-test.1
+@man man/man1/hare-tool.1
 @man man/man1/hare.1
 @man man/man1/haredoc.1
 @man man/man5/hare-module.5
@@ -12,6 +13,7 @@
 src/
 src/hare/
 src/hare/stdlib/
+src/hare/stdlib/README
 src/hare/stdlib/ascii/
 src/hare/stdlib/ascii/README
 src/hare/stdlib/ascii/ctype.ha
@@ -160,6 +162,7 @@ src/hare/stdlib/crypto/poly1305/+test.ha
 src/hare/stdlib/crypto/poly1305/README
 src/hare/stdlib/crypto/poly1305/poly1305.ha
 src/hare/stdlib/crypto/random/
+src/hare/stdlib/crypto/random/+dragonfly.ha
 src/hare/stdlib/crypto/random/+freebsd.ha
 src/hare/stdlib/crypto/random/+linux.ha
 src/hare/stdlib/crypto/random/+netbsd.ha
@@ -190,6 +193,14 @@ src/hare/stdlib/crypto/sha256/
 src/hare/stdlib/crypto/sha256/+test.ha
 src/hare/stdlib/crypto/sha256/README
 src/hare/stdlib/crypto/sha256/sha256.ha
+src/hare/stdlib/crypto/sha3/
+src/hare/stdlib/crypto/sha3/+test/
+src/hare/stdlib/crypto/sha3/+test/sha3_test.ha
+src/hare/stdlib/crypto/sha3/+test/shake_test.ha
+src/hare/stdlib/crypto/sha3/README
+src/hare/stdlib/crypto/sha3/keccak.ha
+src/hare/stdlib/crypto/sha3/sha3.ha
+src/hare/stdlib/crypto/sha3/shake.ha
 src/hare/stdlib/crypto/sha512/
 src/hare/stdlib/crypto/sha512/+test.ha
 src/hare/stdlib/crypto/sha512/README
@@ -202,6 +213,10 @@ src/hare/stdlib/debug/
 src/hare/stdlib/debug/+aarch64/
 src/hare/stdlib/debug/+aarch64/getfp.s
 src/hare/stdlib/debug/+aarch64/walk.ha
+src/hare/stdlib/debug/+dragonfly/
+src/hare/stdlib/debug/+dragonfly/+x86_64/
+src/hare/stdlib/debug/+dragonfly/+x86_64/ucontext.ha
+src/hare/stdlib/debug/+dragonfly/translate.ha
 src/hare/stdlib/debug/+freebsd/
 src/hare/stdlib/debug/+freebsd/+aarch64/
 src/hare/stdlib/debug/+freebsd/+aarch64/ucontext.ha
@@ -257,6 +272,7 @@ src/hare/stdlib/debug/image/
 src/hare/stdlib/debug/image/README
 src/hare/stdlib/debug/image/open.ha
 src/hare/stdlib/debug/image/sections.ha
+src/hare/stdlib/debug/image/self+dragonfly.ha
 src/hare/stdlib/debug/image/self+freebsd.ha
 src/hare/stdlib/debug/image/self+linux.ha
 src/hare/stdlib/debug/image/self+netbsd.ha
@@ -343,6 +359,7 @@ src/hare/stdlib/format/elf/README
 src/hare/stdlib/format/elf/arch+aarch64.ha
 src/hare/stdlib/format/elf/arch+riscv64.ha
 src/hare/stdlib/format/elf/arch+x86_64.ha
+src/hare/stdlib/format/elf/platform+dragonfly.ha
 src/hare/stdlib/format/elf/platform+freebsd.ha
 src/hare/stdlib/format/elf/platform+linux.ha
 src/hare/stdlib/format/elf/platform+netbsd.ha
@@ -373,6 +390,7 @@ src/hare/stdlib/hare/ast/decl.ha
 src/hare/stdlib/hare/ast/expr.ha
 src/hare/stdlib/hare/ast/ident.ha
 src/hare/stdlib/hare/ast/import.ha
+src/hare/stdlib/hare/ast/loc.ha
 src/hare/stdlib/hare/ast/type.ha
 src/hare/stdlib/hare/ast/unit.ha
 src/hare/stdlib/hare/lex/
@@ -408,32 +426,6 @@ src/hare/stdlib/hare/parse/import.ha
 src/hare/stdlib/hare/parse/parse.ha
 src/hare/stdlib/hare/parse/type.ha
 src/hare/stdlib/hare/parse/unit.ha
-src/hare/stdlib/hare/types/
-src/hare/stdlib/hare/types/+aarch64/
-src/hare/stdlib/hare/types/+aarch64/writesize.ha
-src/hare/stdlib/hare/types/+riscv64/
-src/hare/stdlib/hare/types/+riscv64/writesize.ha
-src/hare/stdlib/hare/types/+test.ha
-src/hare/stdlib/hare/types/+x86_64/
-src/hare/stdlib/hare/types/+x86_64/writesize.ha
-src/hare/stdlib/hare/types/README
-src/hare/stdlib/hare/types/arch.ha
-src/hare/stdlib/hare/types/builtins.ha
-src/hare/stdlib/hare/types/class.ha
-src/hare/stdlib/hare/types/hash.ha
-src/hare/stdlib/hare/types/lookup.ha
-src/hare/stdlib/hare/types/store.ha
-src/hare/stdlib/hare/types/types.ha
-src/hare/stdlib/hare/unit/
-src/hare/stdlib/hare/unit/+test.ha
-src/hare/stdlib/hare/unit/check.ha
-src/hare/stdlib/hare/unit/context.ha
-src/hare/stdlib/hare/unit/errors.ha
-src/hare/stdlib/hare/unit/expr.ha
-src/hare/stdlib/hare/unit/process.ha
-src/hare/stdlib/hare/unit/scan.ha
-src/hare/stdlib/hare/unit/scope.ha
-src/hare/stdlib/hare/unit/unit.ha
 src/hare/stdlib/hare/unparse/
 src/hare/stdlib/hare/unparse/README
 src/hare/stdlib/hare/unparse/decl.ha
@@ -470,6 +462,12 @@ src/hare/stdlib/hash/siphash/+test.ha
 src/hare/stdlib/hash/siphash/README
 src/hare/stdlib/hash/siphash/siphash.ha
 src/hare/stdlib/io/
+src/hare/stdlib/io/+dragonfly/
+src/hare/stdlib/io/+dragonfly/dup.ha
+src/hare/stdlib/io/+dragonfly/mmap.ha
+src/hare/stdlib/io/+dragonfly/platform_file.ha
+src/hare/stdlib/io/+dragonfly/sync.ha
+src/hare/stdlib/io/+dragonfly/vector.ha
 src/hare/stdlib/io/+freebsd/
 src/hare/stdlib/io/+freebsd/dup.ha
 src/hare/stdlib/io/+freebsd/mmap.ha
@@ -497,6 +495,7 @@ src/hare/stdlib/io/+openbsd/vector.ha
 src/hare/stdlib/io/+test/
 src/hare/stdlib/io/+test/limit_test.ha
 src/hare/stdlib/io/+test/stream_test.ha
+src/hare/stdlib/io/+test/unread_test.ha
 src/hare/stdlib/io/README
 src/hare/stdlib/io/arch+aarch64.ha
 src/hare/stdlib/io/arch+riscv64.ha
@@ -510,6 +509,7 @@ src/hare/stdlib/io/limit.ha
 src/hare/stdlib/io/stream.ha
 src/hare/stdlib/io/tee.ha
 src/hare/stdlib/io/types.ha
+src/hare/stdlib/io/unread.ha
 src/hare/stdlib/io/util.ha
 src/hare/stdlib/io/zero.ha
 src/hare/stdlib/linux/
@@ -567,6 +567,7 @@ src/hare/stdlib/memio/README
 src/hare/stdlib/memio/ops.ha
 src/hare/stdlib/memio/stream.ha
 src/hare/stdlib/mime/
+src/hare/stdlib/mime/+dragonfly.ha
 src/hare/stdlib/mime/+freebsd.ha
 src/hare/stdlib/mime/+linux.ha
 src/hare/stdlib/mime/+netbsd.ha
@@ -578,6 +579,7 @@ src/hare/stdlib/mime/lookup.ha
 src/hare/stdlib/mime/parse.ha
 src/hare/stdlib/mime/system.ha
 src/hare/stdlib/net/
+src/hare/stdlib/net/+dragonfly.ha
 src/hare/stdlib/net/+freebsd.ha
 src/hare/stdlib/net/+linux.ha
 src/hare/stdlib/net/+netbsd.ha
@@ -599,6 +601,7 @@ src/hare/stdlib/net/dns/strdomain.ha
 src/hare/stdlib/net/dns/types.ha
 src/hare/stdlib/net/errors.ha
 src/hare/stdlib/net/ip/
+src/hare/stdlib/net/ip/+dragonfly.ha
 src/hare/stdlib/net/ip/+freebsd.ha
 src/hare/stdlib/net/ip/+linux.ha
 src/hare/stdlib/net/ip/+netbsd.ha
@@ -608,6 +611,7 @@ src/hare/stdlib/net/ip/ip.ha
 src/hare/stdlib/net/ip/test+test.ha
 src/hare/stdlib/net/msg.ha
 src/hare/stdlib/net/tcp/
+src/hare/stdlib/net/tcp/+dragonfly.ha
 src/hare/stdlib/net/tcp/+freebsd.ha
 src/hare/stdlib/net/tcp/+linux.ha
 src/hare/stdlib/net/tcp/+netbsd.ha
@@ -617,6 +621,7 @@ src/hare/stdlib/net/tcp/listener.ha
 src/hare/stdlib/net/tcp/options.ha
 src/hare/stdlib/net/types.ha
 src/hare/stdlib/net/udp/
+src/hare/stdlib/net/udp/+dragonfly.ha
 src/hare/stdlib/net/udp/+freebsd.ha
 src/hare/stdlib/net/udp/+linux.ha
 src/hare/stdlib/net/udp/+netbsd.ha
@@ -624,6 +629,7 @@ src/hare/stdlib/net/udp/+openbsd.ha
 src/hare/stdlib/net/udp/README
 src/hare/stdlib/net/udp/options.ha
 src/hare/stdlib/net/unix/
+src/hare/stdlib/net/unix/+dragonfly.ha
 src/hare/stdlib/net/unix/+freebsd.ha
 src/hare/stdlib/net/unix/+linux.ha
 src/hare/stdlib/net/unix/+netbsd.ha
@@ -643,6 +649,17 @@ src/hare/stdlib/net/uri/parse.ha
 src/hare/stdlib/net/uri/query.ha
 src/hare/stdlib/net/uri/uri.ha
 src/hare/stdlib/os/
+src/hare/stdlib/os/+dragonfly/
+src/hare/stdlib/os/+dragonfly/dirfdfs.ha
+src/hare/stdlib/os/+dragonfly/exit+libc-test.ha
+src/hare/stdlib/os/+dragonfly/exit+test.ha
+src/hare/stdlib/os/+dragonfly/exit.ha
+src/hare/stdlib/os/+dragonfly/fcntl.ha
+src/hare/stdlib/os/+dragonfly/fs.ha
+src/hare/stdlib/os/+dragonfly/platform_environ.ha
+src/hare/stdlib/os/+dragonfly/shm.ha
+src/hare/stdlib/os/+dragonfly/status.ha
+src/hare/stdlib/os/+dragonfly/stdfd.ha
 src/hare/stdlib/os/+freebsd/
 src/hare/stdlib/os/+freebsd/dirfdfs.ha
 src/hare/stdlib/os/+freebsd/exit+libc-test.ha
@@ -692,6 +709,10 @@ src/hare/stdlib/os/README
 src/hare/stdlib/os/bufio.ha
 src/hare/stdlib/os/environ.ha
 src/hare/stdlib/os/exec/
+src/hare/stdlib/os/exec/+dragonfly/
+src/hare/stdlib/os/exec/+dragonfly/exec.ha
+src/hare/stdlib/os/exec/+dragonfly/platform_cmd.ha
+src/hare/stdlib/os/exec/+dragonfly/process.ha
 src/hare/stdlib/os/exec/+freebsd/
 src/hare/stdlib/os/exec/+freebsd/exec.ha
 src/hare/stdlib/os/exec/+freebsd/platform_cmd.ha
@@ -714,6 +735,7 @@ src/hare/stdlib/os/exec/env+test.ha
 src/hare/stdlib/os/exec/types.ha
 src/hare/stdlib/os/os.ha
 src/hare/stdlib/path/
+src/hare/stdlib/path/+dragonfly.ha
 src/hare/stdlib/path/+freebsd.ha
 src/hare/stdlib/path/+linux.ha
 src/hare/stdlib/path/+netbsd.ha
@@ -738,6 +760,29 @@ src/hare/stdlib/rt/+aarch64/cpuid.s
 src/hare/stdlib/rt/+aarch64/fenv.s
 src/hare/stdlib/rt/+aarch64/longjmp.s
 src/hare/stdlib/rt/+aarch64/setjmp.s
+src/hare/stdlib/rt/+dragonfly/
+src/hare/stdlib/rt/+dragonfly/+x86_64.ha
+src/hare/stdlib/rt/+dragonfly/env.ha
+src/hare/stdlib/rt/+dragonfly/errno.ha
+src/hare/stdlib/rt/+dragonfly/hare+libc.sc
+src/hare/stdlib/rt/+dragonfly/hare.sc
+src/hare/stdlib/rt/+dragonfly/initfini.ha
+src/hare/stdlib/rt/+dragonfly/platform_abort.ha
+src/hare/stdlib/rt/+dragonfly/platformstart-libc.ha
+src/hare/stdlib/rt/+dragonfly/random.ha
+src/hare/stdlib/rt/+dragonfly/segmalloc.ha
+src/hare/stdlib/rt/+dragonfly/signal.ha
+src/hare/stdlib/rt/+dragonfly/socket.ha
+src/hare/stdlib/rt/+dragonfly/start+libc.ha
+src/hare/stdlib/rt/+dragonfly/start+test+libc.ha
+src/hare/stdlib/rt/+dragonfly/start+test.ha
+src/hare/stdlib/rt/+dragonfly/start+x86_64-libc.s
+src/hare/stdlib/rt/+dragonfly/start.ha
+src/hare/stdlib/rt/+dragonfly/syscall+x86_64.s
+src/hare/stdlib/rt/+dragonfly/syscallno.ha
+src/hare/stdlib/rt/+dragonfly/syscalls.ha
+src/hare/stdlib/rt/+dragonfly/sysctl.ha
+src/hare/stdlib/rt/+dragonfly/types.ha
 src/hare/stdlib/rt/+freebsd/
 src/hare/stdlib/rt/+freebsd/+aarch64.ha
 src/hare/stdlib/rt/+freebsd/+riscv64.ha
@@ -879,6 +924,7 @@ src/hare/stdlib/sort/cmp/
 src/hare/stdlib/sort/cmp/README
 src/hare/stdlib/sort/cmp/cmp.ha
 src/hare/stdlib/sort/search.ha
+src/hare/stdlib/sort/shuffle.ha
 src/hare/stdlib/sort/sort.ha
 src/hare/stdlib/sort/types.ha
 src/hare/stdlib/strconv/
@@ -926,6 +972,8 @@ src/hare/stdlib/test/fail+test.ha
 src/hare/stdlib/test/util+test.ha
 src/hare/stdlib/test/util.ha
 src/hare/stdlib/time/
+src/hare/stdlib/time/+dragonfly/
+src/hare/stdlib/time/+dragonfly/functions.ha
 src/hare/stdlib/time/+freebsd/
 src/hare/stdlib/time/+freebsd/functions.ha
 src/hare/stdlib/time/+linux/
@@ -940,6 +988,7 @@ src/hare/stdlib/time/+openbsd/functions.ha
 src/hare/stdlib/time/README
 src/hare/stdlib/time/arithm.ha
 src/hare/stdlib/time/chrono/
+src/hare/stdlib/time/chrono/+dragonfly.ha
 src/hare/stdlib/time/chrono/+freebsd.ha
 src/hare/stdlib/time/chrono/+linux.ha
 src/hare/stdlib/time/chrono/+netbsd.ha
@@ -951,6 +1000,7 @@ src/hare/stdlib/time/chrono/moment.ha
 src/hare/stdlib/time/chrono/timescale.ha
 src/hare/stdlib/time/chrono/utc.ha
 src/hare/stdlib/time/date/
+src/hare/stdlib/time/date/+dragonfly.ha
 src/hare/stdlib/time/date/+freebsd.ha
 src/hare/stdlib/time/date/+linux.ha
 src/hare/stdlib/time/date/+netbsd.ha
@@ -994,6 +1044,12 @@ src/hare/stdlib/types/c/types.ha
 src/hare/stdlib/types/classes.ha
 src/hare/stdlib/types/limits.ha
 src/hare/stdlib/unix/
+src/hare/stdlib/unix/+dragonfly/
+src/hare/stdlib/unix/+dragonfly/creds.ha
+src/hare/stdlib/unix/+dragonfly/nice.ha
+src/hare/stdlib/unix/+dragonfly/pipe.ha
+src/hare/stdlib/unix/+dragonfly/rlimit.ha
+src/hare/stdlib/unix/+dragonfly/umask.ha
 src/hare/stdlib/unix/+freebsd/
 src/hare/stdlib/unix/+freebsd/creds.ha
 src/hare/stdlib/unix/+freebsd/nice.ha
@@ -1020,6 +1076,7 @@ src/hare/stdlib/unix/+openbsd/rlimit.ha
 src/hare/stdlib/unix/+openbsd/umask.ha
 src/hare/stdlib/unix/README
 src/hare/stdlib/unix/hosts/
+src/hare/stdlib/unix/hosts/+dragonfly.ha
 src/hare/stdlib/unix/hosts/+freebsd.ha
 src/hare/stdlib/unix/hosts/+linux.ha
 src/hare/stdlib/unix/hosts/+netbsd.ha
@@ -1034,6 +1091,7 @@ src/hare/stdlib/unix/passwd/group.ha
 src/hare/stdlib/unix/passwd/passwd.ha
 src/hare/stdlib/unix/passwd/types.ha
 src/hare/stdlib/unix/poll/
+src/hare/stdlib/unix/poll/+dragonfly.ha
 src/hare/stdlib/unix/poll/+freebsd.ha
 src/hare/stdlib/unix/poll/+linux.ha
 src/hare/stdlib/unix/poll/+netbsd.ha
@@ -1051,6 +1109,7 @@ src/hare/stdlib/unix/resolvconf/load.ha
 src/hare/stdlib/unix/resolvconf/reader.ha
 src/hare/stdlib/unix/resolvconf/types.ha
 src/hare/stdlib/unix/signal/
+src/hare/stdlib/unix/signal/+dragonfly.ha
 src/hare/stdlib/unix/signal/+freebsd.ha
 src/hare/stdlib/unix/signal/+linux.ha
 src/hare/stdlib/unix/signal/+netbsd.ha
@@ -1059,6 +1118,13 @@ src/hare/stdlib/unix/signal/README
 src/hare/stdlib/unix/signal/signal+test.ha
 src/hare/stdlib/unix/signal/types.ha
 src/hare/stdlib/unix/tty/
+src/hare/stdlib/unix/tty/+dragonfly/
+src/hare/stdlib/unix/tty/+dragonfly/isatty.ha
+src/hare/stdlib/unix/tty/+dragonfly/open.ha
+src/hare/stdlib/unix/tty/+dragonfly/pgid.ha
+src/hare/stdlib/unix/tty/+dragonfly/pty.ha
+src/hare/stdlib/unix/tty/+dragonfly/termios.ha
+src/hare/stdlib/unix/tty/+dragonfly/winsize.ha
 src/hare/stdlib/unix/tty/+freebsd/
 src/hare/stdlib/unix/tty/+freebsd/isatty.ha
 src/hare/stdlib/unix/tty/+freebsd/open.ha

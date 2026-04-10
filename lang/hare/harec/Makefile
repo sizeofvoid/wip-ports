@@ -1,8 +1,6 @@
 DISTNAME =	harec-${V}
 DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 
-REVISION =	0
-
 WANTLIB += c m
 
 # C11
