@@ -226,10 +226,10 @@ share/examples/rspamd/worker-controller.inc
 @sample ${ETC}/rspamd/worker-controller.inc
 share/examples/rspamd/worker-fuzzy.inc
 @sample ${ETC}/rspamd/worker-fuzzy.inc
-share/examples/rspamd/worker-hs_helper.conf
-@sample ${ETC}/rspamd/worker-hs_helper.conf
-share/examples/rspamd/worker-hs_helper.inc
-@sample ${ETC}/rspamd/worker-hs_helper.inc
+${HYPERSCAN_ONLY}share/examples/rspamd/worker-hs_helper.conf
+${HYPERSCAN_ONLY}@sample ${ETC}/rspamd/worker-hs_helper.conf
+${HYPERSCAN_ONLY}share/examples/rspamd/worker-hs_helper.inc
+${HYPERSCAN_ONLY}@sample ${ETC}/rspamd/worker-hs_helper.inc
 share/examples/rspamd/worker-normal.inc
 @sample ${ETC}/rspamd/worker-normal.inc
 share/examples/rspamd/worker-proxy.inc

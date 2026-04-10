@@ -67,7 +67,7 @@ CONFIGURE_ARGS+= \
 # to line up @samples in plist
 ETC=		${SYSCONFDIR}
 FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
-SUBST_VARS+=	ETC FLAVOR_STRING
+SUBST_VARS+=	ETC FLAVOR_STRING HYPERSCAN_ONLY
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
@@ -90,6 +90,9 @@ WANTLIB+=	${MODLUA_WANTLIB}
 CONFIGURE_ARGS+= -DENABLE_HYPERSCAN=ON
 LIB_DEPENDS+=	textproc/hyperscan
 WANTLIB+=	hs
+HYPERSCAN_ONLY=
+.else
+HYPERSCAN_ONLY=	"@comment "
 .endif
 
 NO_TEST=	Yes
