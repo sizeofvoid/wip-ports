@@ -1,6 +1,6 @@
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.124
+V=			0.1.126
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -9,7 +9,7 @@ SUBST_VARS=		API_VERSION
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS += babl-0.1                  1.8 # 0.223.1
+SHARED_LIBS += babl-0.1                  1.8 # 0.225.1
 
 HOMEPAGE=		https://gegl.org/babl/
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS +=	devel/git
 LIB_DEPENDS=		graphics/lcms2
 
 # needs /proc/self/exe
-CONFIGURE_ARGS +=	-Drelocatable=disabled
+CONFIGURE_ARGS +=	-Drelocatable-bundle=no
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS +=	-Denable-sse=false \
