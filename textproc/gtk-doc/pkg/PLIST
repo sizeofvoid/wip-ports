@@ -112,6 +112,10 @@ share/help/sl/
 share/help/sl/gtk-doc-manual/
 share/help/sl/gtk-doc-manual/fdl-appendix.xml
 share/help/sl/gtk-doc-manual/index.docbook
+share/help/sr/
+share/help/sr/gtk-doc-manual/
+share/help/sr/gtk-doc-manual/fdl-appendix.xml
+share/help/sr/gtk-doc-manual/index.docbook
 share/help/sv/
 share/help/sv/gtk-doc-manual/
 share/help/sv/gtk-doc-manual/fdl-appendix.xml

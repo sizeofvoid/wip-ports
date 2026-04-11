@@ -3,7 +3,7 @@ PKG_ARCH=		*
 
 COMMENT=		GTK C code documentation system
 
-GNOME_VERSION=		1.36.0
+GNOME_VERSION=		1.36.1
 GNOME_PROJECT=		gtk-doc
 
 CATEGORIES=		textproc devel
