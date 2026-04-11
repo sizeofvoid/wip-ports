@@ -2749,7 +2749,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_attrib.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_crl.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_exten.c
-share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_info.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_name.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_pubkey.c
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/crypto/x509/x_req.c
@@ -3121,6 +3120,10 @@ share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/include/openss
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/include/openssl/x509_vfy.h
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/include/openssl/x509v3.h
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/include/openssl/x509v3_errors.h
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/pkgconfig/
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/pkgconfig/libcrypto.pc.in
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/pkgconfig/libssl.pc.in
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/pkgconfig/product.pc.in
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/sources.cmake
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/ssl/
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/aws-lc/ssl/CMakeLists.txt
@@ -4011,6 +4014,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/builder/prebuilt-nasm
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/builder/prebuilt-nasm/vpaes-x86_64.obj
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/builder/prebuilt-nasm/x86_64-mont.obj
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/builder/prebuilt-nasm/x86_64-mont5.obj
+share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/builder/printenv.bat
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/builder/sys_bindgen.rs
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/generated-include/
 share/rust-openssl-tests/modcargo-crates/${VER_aws-lc-sys}/generated-include/openssl/
