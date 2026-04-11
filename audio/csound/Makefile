@@ -44,6 +44,10 @@ LIB_DEPENDS =		audio/liblo \
 			devel/gettext,-runtime \
 			net/curl
 
+.if ${MACHINE_ARCH} == "powerpc"
+CFLAGS +=		-DPFFFT_SIMD_DISABLE
+.endif
+
 TEST_ENV =		OPCODE7DIR64=${WRKBUILD}
 PORTHOME =		${WRKDIR}
 
