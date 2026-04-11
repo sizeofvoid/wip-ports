@@ -3,6 +3,7 @@ COMMENT =		library for accessing OGC Web Services
 MODPY_DISTV =	0.35.0
 DISTNAME =		owslib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		geo devel
 
@@ -16,6 +17,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	www/py-requests \
+		textproc/py-lxml \
 		textproc/py-yaml \
 		geo/py-proj \
 		devel/py-tz \
