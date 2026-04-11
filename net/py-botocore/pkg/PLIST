@@ -1763,6 +1763,13 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-deployment/20
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-deployment/2023-01-25/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-deployment/2023-01-25/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-deployment/2023-01-25/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/2026-02-05/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/2026-02-05/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/2026-02-05/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/2026-02-05/paginators-1.sdk-extras.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/2026-02-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-discovery/2026-02-05/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/2017-01-11/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/marketplace-entitlement/2017-01-11/endpoint-rule-set-1.json
@@ -2366,6 +2373,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/endp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3control/2018-08-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3files/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3files/2025-05-05/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3files/2025-05-05/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3files/2025-05-05/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3files/2025-05-05/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/s3files/2025-05-05/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3outposts/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3outposts/2017-07-25/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/s3outposts/2017-07-25/endpoint-rule-set-1.json
