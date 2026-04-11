@@ -1,5 +1,6 @@
 /dev/dri rwx
 /dev/null rw
+/usr/X11R6/lib/gbm r
 /usr/X11R6/lib/modules/dri r
 /usr/X11R6/share/libdrm r
 /usr/X11R6/share/vulkan r

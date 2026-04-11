@@ -8,7 +8,7 @@ Index: third_party/blink/renderer/platform/graphics/begin_frame_provider.cc
 +  // pledge(2)
 +  // stop this baloney
 +#if !defined(OS_OPENBSD)
-   base::PlatformThread::SetCurrentThreadType(base::ThreadType::kPresentation);
+   lease_.emplace(base::ThreadType::kPresentation);
 +#endif
  
    mojo::Remote<mojom::blink::EmbeddedFrameSinkProvider> provider;

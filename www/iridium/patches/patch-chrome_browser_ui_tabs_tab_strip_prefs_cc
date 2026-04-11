@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/tabs/tab_strip_prefs.cc
 --- chrome/browser/ui/tabs/tab_strip_prefs.cc.orig
 +++ chrome/browser/ui/tabs/tab_strip_prefs.cc
-@@ -21,7 +21,7 @@ namespace tabs {
+@@ -27,7 +27,7 @@ namespace tabs {
  
  bool GetDefaultTabSearchRightAligned() {
    // These platforms are all left aligned, the others should be right.
