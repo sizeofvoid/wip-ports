@@ -1,6 +1,6 @@
 COMMENT =		manipulate and analyse climate and NWP model data
 
-DISTNAME =		cdo-2.5.4
+DISTNAME =		cdo-2.6.0
 
 CATEGORIES =		geo
 
@@ -12,7 +12,7 @@ MAINTAINER =		Marco van Hulten <marco@hulten.org>
 PERMIT_PACKAGE =	Yes
 
 # number changes at newer version
-SITES =			https://code.mpimet.mpg.de/attachments/download/30128/
+SITES =			https://code.mpimet.mpg.de/attachments/download/30182/
 
 COMPILER =		base-clang ports-gcc
 
