@@ -1,6 +1,6 @@
 COMMENT=	PolicyKit authentication agent for Qt
 
-V=		0.200.0
+V=		0.201.1
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt5-${V}
 
