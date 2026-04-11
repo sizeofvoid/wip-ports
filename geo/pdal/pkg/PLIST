@@ -370,8 +370,8 @@ lib/cmake/PDAL/PDALTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/PDAL/PDALTargets.cmake
 lib/cmake/PDAL/pluginmacros.cmake
 @so lib/libpdal_plugin_kernel_fauxplugin.so
+@comment lib/libpdalcpp.so
 @so lib/libpdal_plugin_reader_pgpointcloud.so
 @so lib/libpdal_plugin_writer_pgpointcloud.so
-@comment lib/libpdalcpp.so
 @lib lib/libpdalcpp.so.${LIBpdalcpp_VERSION}
 lib/pkgconfig/pdal.pc
