@@ -247,7 +247,6 @@ lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/base.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/debug.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/files.py
 lib/python${MODPY_VERSION}/site-packages/nbconvert/writers/stdout.py
-share/jupyter/
 share/jupyter/nbconvert/
 share/jupyter/nbconvert/templates/
 share/jupyter/nbconvert/templates/asciidoc/
