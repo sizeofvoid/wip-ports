@@ -1,6 +1,6 @@
 COMMENT =		CLI tools to manipulate and analyse netCDF/HDF/DAP data
 
-DIST_TUPLE +=		github nco nco 5.3.6 .
+DIST_TUPLE +=		github nco nco 5.3.8 .
 
 SHARED_LIBS +=		nco	0.0 # 0.0
 
