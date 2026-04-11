@@ -41,6 +41,14 @@ lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}s3.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscrt/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscrt/_test.py
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/__init__.py
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscrt/aio/http.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/auth.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/cbor.py
 lib/python${MODPY_VERSION}/site-packages/awscrt/checksums.py
