@@ -1,8 +1,6 @@
-BROKEN-sparc64=	fatal error: bit: No such file or directory
-
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V =		15.2
+V =		15.3
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
 
