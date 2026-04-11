@@ -1,7 +1,6 @@
 COMMENT =		universal command line environment v2 for AWS
 
-MODPY_DISTV =		2.28.4
-REVISION =		0
+MODPY_DISTV =		2.34.29
 
 GH_ACCOUNT =		aws
 GH_PROJECT =		aws-cli
@@ -12,7 +11,7 @@ MAINTAINER =		Joel Knight <knight.joel@gmail.com>
 MODULES=		lang/python
 MODPY_PYBUILD =		flit_core
 
-RUN_DEPENDS +=		devel/py-awscrt>=0.27.5 \
+RUN_DEPENDS +=		devel/py-awscrt>=0.31.2 \
 			devel/py-colorama \
 			devel/py-dateutil \
 			devel/py-jmespath \
@@ -24,7 +23,7 @@ RUN_DEPENDS +=		devel/py-awscrt>=0.27.5 \
 			textproc/py-ruamel.yaml.clib \
 			www/py-urllib3
 
-BUILD_DEPENDS =		devel/py-awscrt>=0.27.5 \
+BUILD_DEPENDS =		devel/py-awscrt>=0.31.2 \
 			devel/py-colorama \
 			devel/py-dateutil \
 			textproc/py-docutils \
