@@ -515,6 +515,9 @@ lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_150101.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_180101.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_180601.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_190101.dtd
+lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_230101.dtd
+lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_240101.dtd
+lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/pubmed_250101.dtd
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/references.ent
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/section.ent
 lib/python${MODPY_VERSION}/site-packages/Bio/Entrez/DTDs/taxon.dtd
@@ -1372,7 +1375,6 @@ lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/META
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/py-biopython/
