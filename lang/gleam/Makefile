@@ -3,9 +3,8 @@ COMMENT =		statically typed language for Erlang VM and JavaScript
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
-GH_ACCOUNT =		gleam-lang
-GH_PROJECT =		gleam
-GH_TAGNAME =		v1.15.3
+V =			1.15.4
+DIST_TUPLE =		github gleam-lang gleam v${V} .
 
 HOMEPAGE =		https://gleam.run
 
