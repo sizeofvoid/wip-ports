@@ -1,6 +1,5 @@
 COMMENT =	KDE Plasma ssh-add helper
 DISTNAME =	ksshaskpass-${VERSION}
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n KF6WidgetsAddons
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Widgets c m qt6keychain

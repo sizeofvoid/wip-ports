@@ -1,12 +1,11 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
-REVISION =	1
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
 MODKDE_DOCS =		Yes
 
-SHARED_LIBS +=	kglobalaccelmodel         0.1 # 0.0
+SHARED_LIBS +=	kglobalaccelmodel         0.2 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6AuthCore KF6Baloo
 WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
