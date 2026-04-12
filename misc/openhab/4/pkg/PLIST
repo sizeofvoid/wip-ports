@@ -1330,6 +1330,8 @@ share/examples/openhab/userdata/etc/
 @owner _openhab
 @group _openhab
 @sample /var/db/openhab/
+@exec rm -rf /var/db/openhab/cache/*
+@sample /var/db/openhab/cache/
 @sample /var/db/openhab/etc/
 @owner
 @group
