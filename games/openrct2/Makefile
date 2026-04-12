@@ -1,12 +1,12 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.4.24
-TITLE_V =	0.4.14
-OBJECTS_V =	1.7.1
-OPENSFX_V =	1.0.5
-OPENMSX_V =	1.6
-REPLAYS_V =	0.0.87
+V =		0.4.32
+TITLE_V =	0.4.26
+OBJECTS_V =	1.7.6
+OPENSFX_V =	1.0.6
+OPENMSX_V =	1.6.1
+REPLAYS_V =	0.0.92
 COMMENT =	open source re-implementation of RollerCoaster Tycoon 2
 DISTFILES =	openrct2-${V}{v${V}}.tar.gz
 DISTFILES.a = 	title-sequences-${TITLE_V}{title-sequences}.zip
@@ -16,7 +16,6 @@ DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
 DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
 CATEGORIES =	games x11
-REVISION =	1
 
 HOMEPAGE =	https://openrct2.org/
 
@@ -24,8 +23,7 @@ HOMEPAGE =	https://openrct2.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL SDL2 c crypto curl fontconfig
-WANTLIB += freetype icuuc m ogg png speexdsp ssl vorbisfile z
-WANTLIB += zip
+WANTLIB += freetype icuuc m ogg png ssl vorbisfile z zip zstd
 
 # Upstream does not make proper source releases.
 # See: https://github.com/OpenRCT2/OpenRCT2/issues/5887
@@ -51,9 +49,9 @@ BUILD_DEPENDS =	archivers/unzip \
 		textproc/nlohmann-json
 
 LIB_DEPENDS =	archivers/libzip \
+		archivers/zstd \
 		audio/flac \
 		audio/libvorbis \
-		audio/speexdsp \
 		devel/sdl2 \
 		graphics/png \
 		net/curl \
@@ -64,13 +62,13 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
-			-DDOWNLOAD_OPENMSX=OFF \
+			-DDOWNLOAD_OPENMUSIC=OFF \
 			-DDOWNLOAD_OPENSFX=OFF \
 			-DDOWNLOAD_REPLAYS=OFF \
 			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 			-DDISABLE_DISCORD_RPC=ON \
 			-DOPENRCT2_BRANCH=master \
-			-DOPENRCT2_COMMIT_SHA1_SHORT="76ca840"
+			-DOPENRCT2_COMMIT_SHA1_SHORT="25c7379"
 
 # Downloads things. See: https://github.com/OpenRCT2/OpenRCT2/issues/5710
 NO_TEST =	Yes

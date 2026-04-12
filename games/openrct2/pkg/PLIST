@@ -3,10 +3,10 @@
 @static-lib lib/libopenrct2.a
 @man man/man6/openrct2-cli.6
 @man man/man6/openrct2.6
-share/applications/openrct2-savegame.desktop
-share/applications/openrct2-scenario.desktop
-share/applications/openrct2-uri.desktop
-share/applications/openrct2.desktop
+share/applications/io.openrct2.openrct2.desktop
+share/applications/io.openrct2.savegame.desktop
+share/applications/io.openrct2.scenario.desktop
+share/applications/io.openrct2.uri.desktop
 share/doc/openrct2/
 share/doc/openrct2/PRIVACY.md
 share/doc/openrct2/changelog.txt
@@ -26,7 +26,7 @@ share/icons/hicolor/64x64/apps/openrct2.png
 share/icons/hicolor/96x96/apps/openrct2.png
 share/icons/hicolor/scalable/apps/openrct2.svg
 share/metainfo/
-share/metainfo/openrct2.appdata.xml
+share/metainfo/io.openrct2.openrct2.appdata.xml
 share/mime/packages/openrct2.xml
 share/openrct2/
 share/openrct2/fonts.dat
@@ -114,6 +114,7 @@ share/openrct2/object/official/scenario_meta/rct1dlc.scenario_meta.steel_roller_
 share/openrct2/object/official/scenario_meta/rct1dlc.scenario_meta.steel_twister_roller_coaster_competition.parkobj
 share/openrct2/object/official/scenario_meta/rct1dlc.scenario_meta.suspended_roller_coaster_competition.parkobj
 share/openrct2/object/official/scenario_meta/rct1dlc.scenario_meta.wooden_roller_coaster_competition.parkobj
+share/openrct2/object/official/scenario_meta/rct1tw.scenario_meta.taiwan_park.parkobj
 share/openrct2/object/official/scenario_meta/rct2dlc.scenario_meta.panda_world.parkobj
 share/openrct2/object/official/scenario_meta/uces.scenario_meta.beneath_the_christmas_tree.parkobj
 share/openrct2/object/official/scenario_meta/uces.scenario_meta.bigrock_blast.parkobj
@@ -1427,7 +1428,7 @@ share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.hrbwal11.json
 share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.jailxx17.json
 share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.jailxx18.json
 share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan1.json
-share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan2.json
+share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan2.parkobj
 share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.jetplan3.json
 share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.majoroak.json
 share/openrct2/object/rct2tt/scenery_large/rct2tt.scenery_large.mcastl01.json
@@ -2036,11 +2037,11 @@ share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.3x3hmsen.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.3x3mantr.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.50rocket.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.adultele.json
-share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.afrclion.json
-share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.afrrhino.json
-share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.afrzebra.json
+share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.afrclion.parkobj
+share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.afrrhino.parkobj
+share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.afrzebra.parkobj
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.atomium.json
-share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.atractor.json
+share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.atractor.parkobj
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.bamborf1.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.bamborf2.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.bamborf3.json
@@ -2067,8 +2068,8 @@ share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.goodsam.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.gwoctur1.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.gwoctur2.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.helipad.json
-share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo01.json
-share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo02.json
+share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo01.parkobj
+share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.hippo02.parkobj
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.icefor01.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.icefor02.json
 share/openrct2/object/rct2ww/scenery_large/rct2ww.scenery_large.indianst.json
@@ -2643,6 +2644,7 @@ share/openrct2/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind03.json
 share/openrct2/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind04.json
 share/openrct2/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind05.json
 share/openrct2/object/rct2ww/scenery_wall/rct2ww.scenery_wall.wwind06.json
+share/openrct2/palettes.dat
 share/openrct2/scenario_patches/
 share/openrct2/scenario_patches/0153987.parkpatch
 share/openrct2/scenario_patches/020ed74.parkpatch
