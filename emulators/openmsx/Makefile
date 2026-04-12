@@ -1,7 +1,6 @@
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 BROKEN-hppa =	OOM when building src/cpu/CPUCore.cc
 BROKEN-alpha =	OOM when building src/cpu/CPUCore.cc
-BROKEN-sparc64 =ports-gcc does not know c++20
 
 COMMENT =	MSX home computer emulator
 
