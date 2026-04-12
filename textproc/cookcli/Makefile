@@ -1,6 +1,6 @@
 COMMENT =		command line tool for working with Cooklang recipes
 
-V =			0.27.2
+V =			0.28.1
 GH_ACCOUNT =		cooklang
 GH_PROJECT =		cookcli
 GH_TAGNAME =		v${V}
@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-WANTLIB += ${MODCARGO_WANTLIB} crypto m sqlite3 ssl
+WANTLIB += ${MODCARGO_WANTLIB} m sqlite3
 
 DISTFILES.css =		cookcli-$V-output.css
 SITES.css =		https://distfiles.stumpf.co/
