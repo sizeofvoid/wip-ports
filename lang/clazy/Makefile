@@ -2,8 +2,9 @@ BROKEN-sparc64 = Uses clang-cpp libraries and fails to link with either ports-gc
 
 COMMENT =	static source code analyzer for Qt-based C++
 
-V =		1.17
-DISTNAME =	clazy-${V}
+V =		1.17.1
+DISTNAME =	clazy-v${V}
+PKGNAME =	clazy-${V}
 
 CATEGORIES =	lang devel
 
