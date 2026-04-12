@@ -16,6 +16,7 @@ DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
 DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
 CATEGORIES =	games x11
+REVISION =	1
 
 HOMEPAGE =	https://openrct2.org/
 
@@ -68,7 +69,8 @@ CONFIGURE_ARGS =	-DDOWNLOAD_OBJECTS=OFF \
 			-DDOWNLOAD_TITLE_SEQUENCES=OFF \
 			-DDISABLE_DISCORD_RPC=ON \
 			-DOPENRCT2_BRANCH=master \
-			-DOPENRCT2_COMMIT_SHA1_SHORT="25c7379"
+			-DOPENRCT2_COMMIT_SHA1_SHORT="25c7379" \
+			-DOPENRCT2_USE_CCACHE=OFF
 
 # Downloads things. See: https://github.com/OpenRCT2/OpenRCT2/issues/5710
 NO_TEST =	Yes
