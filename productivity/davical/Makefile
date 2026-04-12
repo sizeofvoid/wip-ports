@@ -1,5 +1,3 @@
-BROKEN-sparc64 = PHP 8.1 not available on sparc64
-
 COMMENT =	CalDAV/CardDav calendar/contacts server
 
 DISTNAME =	davical_1.1.12.orig
