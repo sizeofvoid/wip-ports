@@ -1,5 +1,3 @@
-BROKEN-sparc64 = src/link/script.y:17:11: fatal error: bit: No such file or directory
-
 COMMENT =	Game Boy development system
 
 V =		1.0.0
