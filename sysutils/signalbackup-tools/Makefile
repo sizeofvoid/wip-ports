@@ -5,8 +5,7 @@ COMMENT =	tool to work with Signal backup files
 
 GH_ACCOUNT =	bepaald
 GH_PROJECT =	signalbackup-tools
-GH_TAGNAME =	20251229
-REVISION =	0
+GH_TAGNAME =	20260404
 
 CATEGORIES =	sysutils
 
