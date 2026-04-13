@@ -1,5 +1,3 @@
-BROKEN-sparc64 =	fatal error: span: No such file or directory
-
 COMMENT =		mpd client to scrobble track info to last.fm
 
 V =			0.25
