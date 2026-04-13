@@ -216,7 +216,7 @@ SHA256 (cargo/httparse-1.10.1.tar.gz) = bb89555R89WGq0y51cPiwUqijtI9GAz4m03wRUpp
 SHA256 (cargo/httpdate-1.0.3.tar.gz) = 3ztGQCqdWttMhqDPRj9C4ZmU4+6JEQGxhB8wpUXLSak=
 SHA256 (cargo/hyper-0.14.32.tar.gz) = Qd/HgP3sk3PAG65DKJ6jTJcuQO48n2s8iAGjXzVYbOc=
 SHA256 (cargo/hyper-1.9.0.tar.gz) = YpnwFrJGqUIH5j2lTb6AdlW/ngAET3Pe1Cw6xTBfvMo=
-SHA256 (cargo/hyper-rustls-0.27.7.tar.gz) = 48k+thFoGyB+H+VdWnHs+RVy7IpnBc22hX99jVJCz1g=
+SHA256 (cargo/hyper-rustls-0.27.8.tar.gz) = wrUvhtHUvA1rTmgm2WCxszMhfgfTa4gtylcKXhxIiVs=
 SHA256 (cargo/hyper-util-0.1.20.tar.gz) = llR8JVbsnRL7FXjE6vRIsEmT5/t5y6rZMKZWiApr36A=
 SHA256 (cargo/iana-time-zone-0.1.65.tar.gz) = 4xvJrZlLoA5ECoqlye8Oxn1cteXLDMf4t0SjWzicxHA=
 SHA256 (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 8xgnogb1avMuWQulbV0tCF9VhQgZJZN0PxayMGSVJp8=
@@ -339,7 +339,7 @@ SHA256 (cargo/piper-0.2.5.tar.gz) = yDVHmkRD3tNx1sU1y/2NMa2SxdI66XcKYbwVXkmSo8E=
 SHA256 (cargo/pkcs1-0.7.5.tar.gz) = yP+58Q+gR4eTFeZiWvA8FksWlipTaNck7RYyO2is5H8=
 SHA256 (cargo/pkcs5-0.7.1.tar.gz) = 6EfiyRoYv6iH3QKOwz8v5vJdt32zYZAkdkkUr/6LaaY=
 SHA256 (cargo/pkcs8-0.10.2.tar.gz) = +VCyN3hFzr5c+LUWXLPMGl4Ppc+j4ff1VwfY/YLgp7c=
-SHA256 (cargo/pkg-config-0.3.32.tar.gz) = ft3b0LUtcyshrZpfq1xwTBTNlJ5emh7Fkpok/e0bkEw=
+SHA256 (cargo/pkg-config-0.3.33.tar.gz) = GfEyyE7KVSvzTKuOyB8cHcwim4EWOPnSg9zqvljFVp4=
 SHA256 (cargo/polling-3.11.0.tar.gz) = XQ5PWQhdR9gkHIjq0PJ06KDLVR82JSY8BeuN2JfDQhg=
 SHA256 (cargo/portable-atomic-1.13.1.tar.gz) = wzqUcYlvHGnOzvjSDL4veszRJSfOYIRf9EwVO7KiG0k=
 SHA256 (cargo/portable-atomic-util-0.2.6.tar.gz) = CROXvmGgHUvljnhBWVvUv+2xXxzVSXfXm4Jx6U7XmaM=
@@ -396,7 +396,7 @@ SHA256 (cargo/rocket_ws-0.1.1.tar.gz) = JfGHdmjJN7cBF3w0nyE4PFVs07tLqPodB/qWzLOo
 SHA256 (cargo/rpassword-7.4.0.tar.gz) = ZtTItk8EnGch7IzOw33fw9ZBxKf8pX6PKoneUJxz3zk=
 SHA256 (cargo/rsa-0.9.10.tar.gz) = uFc/A/WIPcrr389HJcqh7LnBWy71DEOge4FuBnmbsS0=
 SHA256 (cargo/rsqlite-vfs-0.1.0.tar.gz) = qKHyMVA272sfus0ZcujudogDCwohIe38KmVQ/r1BV00=
-SHA256 (cargo/rtoolbox-0.0.3.tar.gz) = p8yXCySfvlJ9bgLgoid2LJEIsvSdgQlP41f/xtFNf28=
+SHA256 (cargo/rtoolbox-0.0.4.tar.gz) = MntyiZFZ366AYMUaH2rr6VUkW82cxJl+7Q9iPK6gIuQ=
 SHA256 (cargo/rust-ini-0.21.3.tar.gz) = eW6NK2aWOSpDvqWBFrZn+0wpcn3Fq9J9as8zi7T2iMc=
 SHA256 (cargo/rustc-hash-2.1.2.tar.gz) = lDAKvz8a4uK4/7e1gEPePTmcc/pvS3OCZAKlxFdhTb4=
 SHA256 (cargo/rustc_version-0.4.1.tar.gz) = z8s6Iu9G6FtF3m7n550GMxnrtllPqvzxwiXqkqtum5I=
@@ -621,7 +621,7 @@ SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (dani-garcia-vaultwarden-1.35.5.tar.gz) = DWQiZOq/bIe2YbI2+08hll9GShIlV5agXzXFyfoSVlc=
+SHA256 (dani-garcia-vaultwarden-1.35.6.tar.gz) = e43l1E9EOHRWU9WlKFDWOzj7rs2gAe4eGwarbn3bHAk=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -840,7 +840,7 @@ SIZE (cargo/httparse-1.10.1.tar.gz) = 45190
 SIZE (cargo/httpdate-1.0.3.tar.gz) = 10639
 SIZE (cargo/hyper-0.14.32.tar.gz) = 199622
 SIZE (cargo/hyper-1.9.0.tar.gz) = 160126
-SIZE (cargo/hyper-rustls-0.27.7.tar.gz) = 35435
+SIZE (cargo/hyper-rustls-0.27.8.tar.gz) = 22663
 SIZE (cargo/hyper-util-0.1.20.tar.gz) = 112807
 SIZE (cargo/iana-time-zone-0.1.65.tar.gz) = 34079
 SIZE (cargo/iana-time-zone-haiku-0.1.2.tar.gz) = 7185
@@ -963,7 +963,7 @@ SIZE (cargo/piper-0.2.5.tar.gz) = 23908
 SIZE (cargo/pkcs1-0.7.5.tar.gz) = 35790
 SIZE (cargo/pkcs5-0.7.1.tar.gz) = 41902
 SIZE (cargo/pkcs8-0.10.2.tar.gz) = 26360
-SIZE (cargo/pkg-config-0.3.32.tar.gz) = 21370
+SIZE (cargo/pkg-config-0.3.33.tar.gz) = 21590
 SIZE (cargo/polling-3.11.0.tar.gz) = 59387
 SIZE (cargo/portable-atomic-1.13.1.tar.gz) = 197001
 SIZE (cargo/portable-atomic-util-0.2.6.tar.gz) = 52478
@@ -1020,7 +1020,7 @@ SIZE (cargo/rocket_ws-0.1.1.tar.gz) = 12075
 SIZE (cargo/rpassword-7.4.0.tar.gz) = 123730
 SIZE (cargo/rsa-0.9.10.tar.gz) = 86417
 SIZE (cargo/rsqlite-vfs-0.1.0.tar.gz) = 19992
-SIZE (cargo/rtoolbox-0.0.3.tar.gz) = 10149
+SIZE (cargo/rtoolbox-0.0.4.tar.gz) = 10484
 SIZE (cargo/rust-ini-0.21.3.tar.gz) = 22939
 SIZE (cargo/rustc-hash-2.1.2.tar.gz) = 14754
 SIZE (cargo/rustc_version-0.4.1.tar.gz) = 12245
@@ -1245,4 +1245,4 @@ SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (dani-garcia-vaultwarden-1.35.5.tar.gz) = 720828
+SIZE (dani-garcia-vaultwarden-1.35.6.tar.gz) = 720909
