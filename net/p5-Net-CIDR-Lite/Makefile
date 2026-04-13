@@ -1,13 +1,19 @@
-COMMENT=	Perl extension for merging IPv4 or IPv6 CIDR addresses
+COMMENT =	Perl extension for merging IPv4 or IPv6 CIDR addresses
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Net-CIDR-Lite-0.22
-CATEGORIES=	net
+DISTNAME =	Net-CIDR-Lite-0.23
+CPAN_AUTHOR =	STIGTSP
 
-# GPL/Artistic
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	net
 
-MAKE_ENV=	TEST_POD=Yes
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
+
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+MAKE_ENV =		TEST_POD=Yes
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
