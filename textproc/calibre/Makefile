@@ -1,7 +1,7 @@
 COMMENT =		ebook management application
 
 V =			8.0.1
-REVISION =		0
+REVISION =		1
 DISTNAME =		calibre-$V
 
 CATEGORIES =		textproc
@@ -81,6 +81,7 @@ LDFLAGS +=		-L${LOCALBASE}/lib
 MAKE_ENV +=		CALIBRE_PY3_PORT=1 \
 			FT_LIB_DIR="${X11BASE}/lib" \
 			LDFLAGS="${LDFLAGS}" \
+			MAKE_JOBS=${MAKE_JOBS} \
 			OVERRIDE_CFLAGS="${CFLAGS}" \
 			OVERRIDE_LDFLAGS="${LDFLAGS}" \
 			PODOFO_INC_DIR="${LOCALBASE}/include/podofo" \
