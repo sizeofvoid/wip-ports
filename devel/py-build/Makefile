@@ -1,6 +1,6 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_DISTV=	1.4.2
+MODPY_DISTV=	1.4.3
 DISTNAME=	build-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
