@@ -50,6 +50,7 @@ share/es-de/licenses/pugixml
 share/es-de/licenses/rlottie
 share/es-de/licenses/slate-es-de
 share/es-de/licenses/ubuntu-font-licence-1.0
+share/es-de/licenses/zstd
 share/es-de/resources/
 share/es-de/resources/MAME/
 share/es-de/resources/MAME/mamebioses.xml
@@ -288,6 +289,9 @@ share/es-de/resources/locale/sr_RS/LC_MESSAGES/sr_RS.mo
 share/es-de/resources/locale/sv_SE/
 share/es-de/resources/locale/sv_SE/LC_MESSAGES/
 share/es-de/resources/locale/sv_SE/LC_MESSAGES/sv_SE.mo
+share/es-de/resources/locale/vi_VN/
+share/es-de/resources/locale/vi_VN/LC_MESSAGES/
+share/es-de/resources/locale/vi_VN/LC_MESSAGES/vi_VN.mo
 share/es-de/resources/locale/zh_CN/
 share/es-de/resources/locale/zh_CN/LC_MESSAGES/
 share/es-de/resources/locale/zh_CN/LC_MESSAGES/zh_CN.mo
@@ -330,6 +334,10 @@ share/es-de/resources/systems/linux/
 share/es-de/resources/systems/linux/es_find_rules.xml
 share/es-de/resources/systems/linux/es_import_rules.xml
 share/es-de/resources/systems/linux/es_systems.xml
+share/es-de/resources/systems/linuxarm/
+share/es-de/resources/systems/linuxarm/es_find_rules.xml
+share/es-de/resources/systems/linuxarm/es_import_rules.xml
+share/es-de/resources/systems/linuxarm/es_systems.xml
 share/es-de/resources/systems/macos/
 share/es-de/resources/systems/macos/es_find_rules.xml
 share/es-de/resources/systems/macos/es_import_rules.xml
@@ -794,6 +802,7 @@ share/es-de/themes/linear-es-de/system/metadata-custom/zxspectrum.xml
 share/es-de/themes/linear-es-de/system/metadata/3do.xml
 share/es-de/themes/linear-es-de/system/metadata/README.md
 share/es-de/themes/linear-es-de/system/metadata/_default.xml
+share/es-de/themes/linear-es-de/system/metadata/_labels.xml
 share/es-de/themes/linear-es-de/system/metadata/adam.xml
 share/es-de/themes/linear-es-de/system/metadata/ags.xml
 share/es-de/themes/linear-es-de/system/metadata/amiga.xml
