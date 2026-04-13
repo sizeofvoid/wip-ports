@@ -1,13 +1,14 @@
-PKG_ARCH =		*
-
 COMMENT =		highly legible font designed for aircraft cockpits
+
+MODFONT_FAMILY =	b612
+MODFONT_VERSION =	1.008
 
 GH_ACCOUNT =		polarsys
 GH_PROJECT =		b612
-GH_TAGNAME =		1.008
+GH_TAGNAME =		${MODFONT_VERSION}
 PKGNAME =		b612-font-${GH_TAGNAME}
 
-CATEGORIES =		fonts
+MODULES =		font
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
@@ -19,9 +20,6 @@ PERMIT_PACKAGE =	Yes
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/b612
-	${INSTALL_DATA} ${WRKSRC}/fonts/ttf/*.ttf \
-		${PREFIX}/share/fonts/b612
+MODFONT_FONTFILES =	fonts/ttf/*.ttf
 
 .include <bsd.port.mk>
