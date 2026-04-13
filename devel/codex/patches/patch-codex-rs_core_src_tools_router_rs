@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/tools/router.rs
 --- codex-rs/core/src/tools/router.rs.orig
 +++ codex-rs/core/src/tools/router.rs
-@@ -63,16 +63,26 @@ impl ToolRouter {
+@@ -62,16 +62,26 @@ impl ToolRouter {
          );
          let (specs, registry) = builder.build();
          let model_visible_specs = if config.code_mode_only_enabled {

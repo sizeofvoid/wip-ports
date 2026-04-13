@@ -1,0 +1,59 @@
+Index: codex-rs/tools/src/tool_registry_plan.rs
+--- codex-rs/tools/src/tool_registry_plan.rs.orig
++++ codex-rs/tools/src/tool_registry_plan.rs
+@@ -13,6 +13,7 @@ use crate::ToolSpec;
+ use crate::ToolsConfig;
+ use crate::ViewImageToolOptions;
+ use crate::WebSearchToolOptions;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::collect_code_mode_exec_prompt_tool_definitions;
+ use crate::collect_tool_search_source_infos;
+ use crate::collect_tool_suggest_entries;
+@@ -20,6 +21,7 @@ use crate::create_apply_patch_freeform_tool;
+ use crate::create_apply_patch_json_tool;
+ use crate::create_close_agent_tool_v1;
+ use crate::create_close_agent_tool_v2;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::create_code_mode_tool;
+ use crate::create_exec_command_tool;
+ use crate::create_followup_task_tool;
+@@ -50,6 +52,7 @@ use crate::create_update_plan_tool;
+ use crate::create_view_image_tool;
+ use crate::create_wait_agent_tool_v1;
+ use crate::create_wait_agent_tool_v2;
++#[cfg(not(target_os = "openbsd"))]
+ use crate::create_wait_tool;
+ use crate::create_web_search_tool;
+ use crate::create_write_stdin_tool;
+@@ -70,6 +73,7 @@ pub fn build_tool_registry_plan(
+     let mut plan = ToolRegistryPlan::new();
+     let exec_permission_approvals_enabled = config.exec_permission_approvals_enabled;
+ 
++    #[cfg(not(target_os = "openbsd"))]
+     if config.code_mode_enabled {
+         let namespace_descriptions = params
+             .tool_namespaces
+@@ -517,6 +521,7 @@ pub fn build_tool_registry_plan(
+     plan
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ fn compare_code_mode_tool_names(
+     left_name: &str,
+     right_name: &str,
+@@ -534,6 +539,7 @@ fn compare_code_mode_tool_names(
+         .then_with(|| left_name.cmp(right_name))
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ fn code_mode_namespace_name<'a>(
+     name: &str,
+     namespace_descriptions: &'a BTreeMap<String, codex_code_mode::ToolNamespaceDescription>,
+@@ -543,6 +549,7 @@ fn code_mode_namespace_name<'a>(
+         .map(|namespace_description| namespace_description.name.as_str())
+ }
+ 
++#[cfg(not(target_os = "openbsd"))]
+ fn code_mode_function_name<'a>(name: &'a str, namespace: Option<&str>) -> &'a str {
+     namespace
+         .and_then(|namespace| {

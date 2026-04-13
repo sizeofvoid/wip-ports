@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/agent/role.rs
 --- codex-rs/core/src/agent/role.rs.orig
 +++ codex-rs/core/src/agent/role.rs
-@@ -254,6 +254,7 @@ mod reload {
+@@ -261,6 +261,7 @@ mod reload {
          ConfigOverrides {
              cwd: Some(config.cwd.to_path_buf()),
              model_provider: preserve_current_provider.then(|| config.model_provider_id.clone()),

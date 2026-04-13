@@ -9,7 +9,7 @@ Index: codex-rs/Cargo.toml
      "cloud-requirements",
      "cloud-tasks",
      "cloud-tasks-client",
-@@ -51,7 +50,6 @@ members = [
+@@ -58,7 +57,6 @@ members = [
      "otel",
      "tui",
      "tools",
@@ -17,25 +17,23 @@ Index: codex-rs/Cargo.toml
      "utils/absolute-path",
      "utils/cargo-bin",
      "git-utils",
-@@ -99,7 +97,7 @@ app_test_support = { path = "app-server/tests/common" 
- codex-ansi-escape = { path = "ansi-escape" }
+@@ -106,6 +104,7 @@ app_test_support = { path = "app-server/tests/common" 
  codex-analytics = { path = "analytics" }
+ codex-ansi-escape = { path = "ansi-escape" }
  codex-api = { path = "codex-api" }
--codex-code-mode = { path = "code-mode" }
 +codex-package-manager = { path = "package-manager" }
  codex-app-server = { path = "app-server" }
  codex-app-server-client = { path = "app-server-client" }
  codex-app-server-protocol = { path = "app-server-protocol" }
-@@ -150,7 +148,7 @@ codex-stdio-to-uds = { path = "stdio-to-uds" }
+@@ -165,6 +164,7 @@ codex-stdio-to-uds = { path = "stdio-to-uds" }
  codex-terminal-detection = { path = "terminal-detection" }
  codex-tools = { path = "tools" }
  codex-tui = { path = "tui" }
--codex-v8-poc = { path = "v8-poc" }
 +codex-tui-app-server = { path = "tui_app_server" }
  codex-utils-absolute-path = { path = "utils/absolute-path" }
  codex-utils-approval-presets = { path = "utils/approval-presets" }
  codex-utils-cache = { path = "utils/cache" }
-@@ -239,7 +237,7 @@ maplit = "1.0.2"
+@@ -254,7 +254,7 @@ maplit = "1.0.2"
  mime_guess = "2.0.5"
  multimap = "0.10.0"
  notify = "8.2.0"
@@ -44,16 +42,16 @@ Index: codex-rs/Cargo.toml
  once_cell = "1.20.2"
  openssl-sys = "*"
  opentelemetry = "0.31.0"
-@@ -263,7 +261,7 @@ regex = "1.12.3"
+@@ -278,7 +278,7 @@ regex = "1.12.3"
  regex-lite = "0.1.8"
  reqwest = "0.12"
  rmcp = { version = "0.15.0", default-features = false }
 -runfiles = { git = "https://github.com/dzbarsky/rules_rust", rev = "b56cbaa8465e74127f1ea216f813cd377295ad81" }
 +runfiles = { path = "../runfiles/rust/runfiles" }
- v8 = "=146.4.0"
  rustls = { version = "0.23", default-features = false, features = [
      "ring",
-@@ -390,7 +388,6 @@ ignored = [
+     "std",
+@@ -406,7 +406,6 @@ ignored = [
      "openssl-sys",
      "codex-utils-readiness",
      "codex-utils-template",
@@ -61,7 +59,7 @@ Index: codex-rs/Cargo.toml
  ]
  
  [profile.release]
-@@ -410,14 +407,7 @@ opt-level = 0
+@@ -426,14 +425,7 @@ opt-level = 0
  
  [patch.crates-io]
  # Uncomment to debug local changes.

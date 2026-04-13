@@ -1,7 +1,7 @@
 Index: codex-rs/core/src/tools/handlers/mod.rs
 --- codex-rs/core/src/tools/handlers/mod.rs.orig
 +++ codex-rs/core/src/tools/handlers/mod.rs
-@@ -31,7 +31,9 @@ use std::path::PathBuf;
+@@ -30,7 +30,9 @@ use std::path::Path;
  use crate::codex::Session;
  use crate::function_tool::FunctionCallError;
  use crate::sandboxing::SandboxPermissions;
