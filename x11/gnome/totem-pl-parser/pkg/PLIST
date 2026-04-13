@@ -6,7 +6,6 @@ include/totem-pl-parser/1/plparser/totem-pl-parser-features.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-mini.h
 include/totem-pl-parser/1/plparser/totem-pl-parser.h
 include/totem-pl-parser/1/plparser/totem-pl-playlist.h
-lib/girepository-1.0/
 lib/girepository-1.0/TotemPlParser-1.0.typelib
 @lib lib/libtotem-plparser-mini.so.${LIBtotem-plparser-mini_VERSION}
 @lib lib/libtotem-plparser.so.${LIBtotem-plparser_VERSION}
@@ -14,8 +13,8 @@ lib/pkgconfig/totem-plparser-mini.pc
 lib/pkgconfig/totem-plparser.pc
 libexec/totem-pl-parser/
 libexec/totem-pl-parser/README-videosite-script.md
-share/gir-1.0/
 share/gir-1.0/TotemPlParser-1.0.gir
+share/locale/ab/LC_MESSAGES/totem-pl-parser.mo
 share/locale/af/LC_MESSAGES/totem-pl-parser.mo
 share/locale/am/LC_MESSAGES/totem-pl-parser.mo
 share/locale/an/LC_MESSAGES/totem-pl-parser.mo
@@ -59,11 +58,16 @@ share/locale/he/LC_MESSAGES/totem-pl-parser.mo
 share/locale/hi/LC_MESSAGES/totem-pl-parser.mo
 share/locale/hr/LC_MESSAGES/totem-pl-parser.mo
 share/locale/hu/LC_MESSAGES/totem-pl-parser.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/totem-pl-parser.mo
 share/locale/id/LC_MESSAGES/totem-pl-parser.mo
+share/locale/ie/LC_MESSAGES/totem-pl-parser.mo
 share/locale/is/LC_MESSAGES/totem-pl-parser.mo
 share/locale/it/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ja/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ka/LC_MESSAGES/totem-pl-parser.mo
+share/locale/kab/LC_MESSAGES/totem-pl-parser.mo
 share/locale/kk/LC_MESSAGES/totem-pl-parser.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
@@ -71,6 +75,9 @@ share/locale/km/LC_MESSAGES/totem-pl-parser.mo
 share/locale/kn/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ko/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ku/LC_MESSAGES/totem-pl-parser.mo
+share/locale/kw/
+share/locale/kw/LC_MESSAGES/
+share/locale/kw/LC_MESSAGES/totem-pl-parser.mo
 share/locale/lt/LC_MESSAGES/totem-pl-parser.mo
 share/locale/lv/LC_MESSAGES/totem-pl-parser.mo
 share/locale/mai/LC_MESSAGES/totem-pl-parser.mo
@@ -112,6 +119,9 @@ share/locale/th/LC_MESSAGES/totem-pl-parser.mo
 share/locale/tr/LC_MESSAGES/totem-pl-parser.mo
 share/locale/ug/LC_MESSAGES/totem-pl-parser.mo
 share/locale/uk/LC_MESSAGES/totem-pl-parser.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/totem-pl-parser.mo
 share/locale/uz@cyrillic/
 share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/totem-pl-parser.mo
