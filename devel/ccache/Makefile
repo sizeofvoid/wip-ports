@@ -1,7 +1,8 @@
 COMMENT=	C/C++ compiler front-end to cache compiled object code
 
-V=		4.13.2
+V=		4.13.3
 DISTNAME=	ccache-$V
+SITES=		https://github.com/ccache/ccache/releases/download/v$V/
 
 D=		2.4.12
 DISTFILES.dt=	doctest-$D{doctest}.h
@@ -11,7 +12,6 @@ EXTRACT_ONLY=	${DISTFILES}
 CATEGORIES=	devel
 
 HOMEPAGE=	https://ccache.dev/
-SITES=		https://github.com/ccache/ccache/releases/download/v$V/
 
 # GPLv3+
 PERMIT_PACKAGE=	 Yes
