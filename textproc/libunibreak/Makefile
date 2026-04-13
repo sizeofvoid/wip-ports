@@ -1,12 +1,12 @@
 COMMENT=	implementation of the line and word breaking
 
-V=		6.1
+V=		7.0
 DISTNAME=	libunibreak-${V}
 
 HOMEPAGE=	https://github.com/adah1972/libunibreak/
 SITES=		https://github.com/adah1972/libunibreak/releases/download/libunibreak_${V:S/./_/}/
 
-SHARED_LIBS +=  unibreak             1.1      # 6.1
+SHARED_LIBS +=  unibreak             1.2      # 7.0
 
 CATEGORIES=	textproc
 
