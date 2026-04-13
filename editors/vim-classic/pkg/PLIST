@@ -1643,6 +1643,7 @@ share/vim/${P}/syntax/fvwm2m4.vim
 share/vim/${P}/syntax/gdb.vim
 share/vim/${P}/syntax/gdmo.vim
 share/vim/${P}/syntax/gedcom.vim
+share/vim/${P}/syntax/gemtext.vim
 share/vim/${P}/syntax/git.vim
 share/vim/${P}/syntax/gitcommit.vim
 share/vim/${P}/syntax/gitconfig.vim
