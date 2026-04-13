@@ -1,5 +1,4 @@
 COMMENT =	easy to use 2D geometry library in C++
-BROKEN-sparc64=	no c++20 support on ports-gcc archs
 
 V =		1.4
 DISTNAME =	lib2geom-${V}
