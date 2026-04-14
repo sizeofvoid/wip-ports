@@ -1073,10 +1073,12 @@ lib/${EOPENSSL_V}/man/man3/
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_mem_leaks_cb.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_mem_leaks_fp.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_memcmp.3
+@man lib/${EOPENSSL_V}/man/man3/CRYPTO_memdup.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_new_ex_data.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_realloc.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_realloc_array.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_realloc_fn.3
+@man lib/${EOPENSSL_V}/man/man3/CRYPTO_secure_actual_size.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_secure_allocated.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_secure_calloc.3
 @man lib/${EOPENSSL_V}/man/man3/CRYPTO_secure_clear_free.3
