@@ -621,7 +621,7 @@ SHA256 (cargo/zmij-1.0.21.tar.gz) = uISO5n7Miu268+QSIhev+JJjkjG+/GobWNKf/0wsq6o=
 SHA256 (cargo/zstd-0.13.3.tar.gz) = 6R7jEaVpwycXFlFWbgeXIgDnb8/iJCpPpEYUmjiBwIo=
 SHA256 (cargo/zstd-safe-7.2.4.tar.gz) = j0nE1fCrtgKpP7hzavKk9N2VEuNvf1cNZuZf+GftO50=
 SHA256 (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = keGevCrcj4PkMDnnl3bj/ajKkZEy1oof7WpfrKJoN0g=
-SHA256 (dani-garcia-vaultwarden-1.35.6.tar.gz) = e43l1E9EOHRWU9WlKFDWOzj7rs2gAe4eGwarbn3bHAk=
+SHA256 (dani-garcia-vaultwarden-1.35.7.tar.gz) = 3pV9ZQwPYVruYwX3F9WhNv8KI6QQGAKFAiDQ3b3gTMg=
 SIZE (cargo/adler2-2.0.1.tar.gz) = 13366
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
 SIZE (cargo/ahash-0.8.12.tar.gz) = 43413
@@ -1245,4 +1245,4 @@ SIZE (cargo/zmij-1.0.21.tar.gz) = 26665
 SIZE (cargo/zstd-0.13.3.tar.gz) = 30514
 SIZE (cargo/zstd-safe-7.2.4.tar.gz) = 29350
 SIZE (cargo/zstd-sys-2.0.16+zstd.1.5.7.tar.gz) = 775620
-SIZE (dani-garcia-vaultwarden-1.35.6.tar.gz) = 720909
+SIZE (dani-garcia-vaultwarden-1.35.7.tar.gz) = 720893
