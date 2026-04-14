@@ -15,6 +15,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			147.0.7727.55
 UGV=			${V}-1
+REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -189,7 +190,7 @@ MAKE_ENV+=	RUSTC_BOOTSTRAP=1
 GN_ARGS+=	enable_rust=true \
 		rust_sysroot_absolute=\"${LOCALBASE}\"
 
-PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom.*cpudetect.*|vpx)"
+PATCH_LIST!!=	cd ${.CURDIR}/patches && ls -1 patch-* | grep -Ev "third_party_lib(aom.*cpudetect.*|vpx.*cpudetect.*)"
 
 # pull in our patched sources for libaom and libvpx
 GN_ARGS+=	use_vaapi=true
