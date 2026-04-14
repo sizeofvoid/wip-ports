@@ -9,7 +9,7 @@ CATEGORIES =		wayland
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
-# GPLv3
+# MIT
 PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc
