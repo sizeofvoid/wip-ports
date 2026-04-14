@@ -1,6 +1,6 @@
 COMMENT =	interface for controlling and interacting with Ansible
 
-MODPY_DISTV =	2.4.2
+MODPY_DISTV =	2.4.3
 
 DISTNAME =	ansible_runner-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/_/-/}
@@ -21,6 +21,14 @@ MODPY_PYBUILD =		setuptools_scm
 
 RUN_DEPENDS =		devel/py-pexpect \
 			sysutils/ansible \
-			sysutils/py-daemon
+			sysutils/py-daemon \
+			textproc/py-yaml
+
+TEST_DEPENDS =		devel/py-test-cov \
+			devel/py-test-mock \
+			devel/py-test-timeout \
+			devel/py-test-xdist \
+			devel/py-yamllint \
+			security/py-cryptography
 
 .include <bsd.port.mk>
