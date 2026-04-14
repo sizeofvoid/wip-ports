@@ -1,10 +1,10 @@
-@option no-default-conflict
-@option is-branch
 @conflict python-tests->=3,<4
-@pkgpath lang/python/3.8,-tests
-@pkgpath lang/python/3.9,-tests
+@option is-branch
+@option no-default-conflict
 @pkgpath lang/python/3.10,-tests
 @pkgpath lang/python/3.11,-tests
+@pkgpath lang/python/3.8,-tests
+@pkgpath lang/python/3.9,-tests
 lib/python3.13/test/
 lib/python3.13/test/NormalizationTest-3.2.0.txt
 lib/python3.13/test/__init__.py
@@ -91,6 +91,9 @@ lib/python3.13/test/__pycache__/mp_preload.cpython-313.pyc
 lib/python3.13/test/__pycache__/mp_preload_flush.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/mp_preload_flush.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/mp_preload_flush.cpython-313.pyc
+lib/python3.13/test/__pycache__/mp_preload_large_sysargv.cpython-313.opt-1.pyc
+lib/python3.13/test/__pycache__/mp_preload_large_sysargv.cpython-313.opt-2.pyc
+lib/python3.13/test/__pycache__/mp_preload_large_sysargv.cpython-313.pyc
 lib/python3.13/test/__pycache__/mp_preload_main.cpython-313.opt-1.pyc
 lib/python3.13/test/__pycache__/mp_preload_main.cpython-313.opt-2.pyc
 lib/python3.13/test/__pycache__/mp_preload_main.cpython-313.pyc
@@ -1785,6 +1788,7 @@ lib/python3.13/test/mock_socket.py
 lib/python3.13/test/mp_fork_bomb.py
 lib/python3.13/test/mp_preload.py
 lib/python3.13/test/mp_preload_flush.py
+lib/python3.13/test/mp_preload_large_sysargv.py
 lib/python3.13/test/mp_preload_main.py
 lib/python3.13/test/mp_preload_sysargv.py
 lib/python3.13/test/multibytecodec_support.py
@@ -3490,8 +3494,8 @@ lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/_
 lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-313.opt-1.pyc
 lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-313.opt-2.pyc
 lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__/a_test.cpython-313.pyc
-lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test/
 lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test.py
+lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test/
 lib/python3.13/test/test_importlib/namespace_pkgs/module_and_namespace_package/a_test/empty
 lib/python3.13/test/test_importlib/namespace_pkgs/nested_portion1.zip
 lib/python3.13/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/
@@ -4051,9 +4055,6 @@ lib/python3.13/test/test_pyrepl/__pycache__/__init__.cpython-313.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/__main__.cpython-313.opt-1.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/__main__.cpython-313.opt-2.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/__main__.cpython-313.pyc
-lib/python3.13/test/test_pyrepl/__pycache__/eio_test_script.cpython-313.opt-1.pyc
-lib/python3.13/test/test_pyrepl/__pycache__/eio_test_script.cpython-313.opt-2.pyc
-lib/python3.13/test/test_pyrepl/__pycache__/eio_test_script.cpython-313.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/support.cpython-313.opt-1.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/support.cpython-313.opt-2.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/support.cpython-313.pyc
@@ -4084,7 +4085,6 @@ lib/python3.13/test/test_pyrepl/__pycache__/test_utils.cpython-313.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/test_windows_console.cpython-313.opt-1.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/test_windows_console.cpython-313.opt-2.pyc
 lib/python3.13/test/test_pyrepl/__pycache__/test_windows_console.cpython-313.pyc
-lib/python3.13/test/test_pyrepl/eio_test_script.py
 lib/python3.13/test/test_pyrepl/support.py
 lib/python3.13/test/test_pyrepl/test_eventqueue.py
 lib/python3.13/test/test_pyrepl/test_input.py
@@ -4314,11 +4314,11 @@ lib/python3.13/test/test_tomllib/__pycache__/test_misc.cpython-313.pyc
 lib/python3.13/test/test_tomllib/burntsushi.py
 lib/python3.13/test/test_tomllib/data/
 lib/python3.13/test/test_tomllib/data/invalid/
-lib/python3.13/test/test_tomllib/data/invalid/array/
 lib/python3.13/test/test_tomllib/data/invalid/array-missing-comma.toml
 lib/python3.13/test/test_tomllib/data/invalid/array-of-tables/
 lib/python3.13/test/test_tomllib/data/invalid/array-of-tables/overwrite-array-in-parent.toml
 lib/python3.13/test/test_tomllib/data/invalid/array-of-tables/overwrite-bool-with-aot.toml
+lib/python3.13/test/test_tomllib/data/invalid/array/
 lib/python3.13/test/test_tomllib/data/invalid/array/file-end-after-val.toml
 lib/python3.13/test/test_tomllib/data/invalid/array/unclosed-after-item.toml
 lib/python3.13/test/test_tomllib/data/invalid/array/unclosed-empty.toml
@@ -4333,8 +4333,8 @@ lib/python3.13/test/test_tomllib/data/invalid/dotted-keys/access-non-table.toml
 lib/python3.13/test/test_tomllib/data/invalid/dotted-keys/extend-defined-aot.toml
 lib/python3.13/test/test_tomllib/data/invalid/dotted-keys/extend-defined-table-with-subtable.toml
 lib/python3.13/test/test_tomllib/data/invalid/dotted-keys/extend-defined-table.toml
-lib/python3.13/test/test_tomllib/data/invalid/inline-table/
 lib/python3.13/test/test_tomllib/data/invalid/inline-table-missing-comma.toml
+lib/python3.13/test/test_tomllib/data/invalid/inline-table/
 lib/python3.13/test/test_tomllib/data/invalid/inline-table/define-twice-in-subtable.toml
 lib/python3.13/test/test_tomllib/data/invalid/inline-table/define-twice.toml
 lib/python3.13/test/test_tomllib/data/invalid/inline-table/file-end-after-key-val.toml
@@ -4416,6 +4416,9 @@ lib/python3.13/test/test_tools/__pycache__/__init__.cpython-313.pyc
 lib/python3.13/test/test_tools/__pycache__/__main__.cpython-313.opt-1.pyc
 lib/python3.13/test/test_tools/__pycache__/__main__.cpython-313.opt-2.pyc
 lib/python3.13/test/test_tools/__pycache__/__main__.cpython-313.pyc
+lib/python3.13/test/test_tools/__pycache__/test_compute_changes.cpython-313.opt-1.pyc
+lib/python3.13/test/test_tools/__pycache__/test_compute_changes.cpython-313.opt-2.pyc
+lib/python3.13/test/test_tools/__pycache__/test_compute_changes.cpython-313.pyc
 lib/python3.13/test/test_tools/__pycache__/test_freeze.cpython-313.opt-1.pyc
 lib/python3.13/test/test_tools/__pycache__/test_freeze.cpython-313.opt-2.pyc
 lib/python3.13/test/test_tools/__pycache__/test_freeze.cpython-313.pyc
@@ -4467,6 +4470,7 @@ lib/python3.13/test/test_tools/msgfmt_data/fuzzy.po
 lib/python3.13/test/test_tools/msgfmt_data/general.json
 lib/python3.13/test/test_tools/msgfmt_data/general.mo
 lib/python3.13/test/test_tools/msgfmt_data/general.po
+lib/python3.13/test/test_tools/test_compute_changes.py
 lib/python3.13/test/test_tools/test_freeze.py
 lib/python3.13/test/test_tools/test_i18n.py
 lib/python3.13/test/test_tools/test_makefile.py

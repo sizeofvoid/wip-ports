@@ -2,6 +2,8 @@
 @option is-branch
 @conflict python->=3,<4
 @conflict python3-*
+@conflict glade-*
+@conflict py3-bsddb3-*
 @pkgpath lang/python/3.8,-main
 @pkgpath lang/python/3.9,-main
 @pkgpath lang/python/3.10,-main
@@ -9,8 +11,6 @@
 @pkgpath meta/python3
 @pkgpath devel/glade
 @pkgpath databases/py-bsddb3
-@conflict glade-*
-@conflict py3-bsddb3-*
 bin/pydoc3
 bin/pydoc3.13
 bin/python3
@@ -1809,7 +1809,7 @@ lib/python3.13/ensurepip/__pycache__/_uninstall.cpython-313.opt-1.pyc
 lib/python3.13/ensurepip/__pycache__/_uninstall.cpython-313.opt-2.pyc
 lib/python3.13/ensurepip/__pycache__/_uninstall.cpython-313.pyc
 lib/python3.13/ensurepip/_bundled/
-lib/python3.13/ensurepip/_bundled/pip-25.3-py3-none-any.whl
+lib/python3.13/ensurepip/_bundled/pip-26.0.1-py3-none-any.whl
 lib/python3.13/ensurepip/_uninstall.py
 lib/python3.13/enum.py
 lib/python3.13/filecmp.py
