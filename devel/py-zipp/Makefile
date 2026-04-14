@@ -1,6 +1,6 @@
 COMMENT=	backport of pathlib-compatible object wrapper for zip files
 
-MODPY_DISTV=	3.23.0
+MODPY_DISTV=	3.23.1
 DISTNAME=	zipp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -21,6 +21,7 @@ BUILD_DEPENDS=	misc/py-coherent.licensed
 MODPY_PYTEST_ARGS= --ignore tests/test_path.py \
 		--ignore tests/write-alpharep.py
 TEST_DEPENDS=	devel/py-jaraco-functools \
+		devel/py-jaraco-test \
 		devel/py-more-itertools
 
 .include <bsd.port.mk>
