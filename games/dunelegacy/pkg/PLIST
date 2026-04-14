@@ -1,7 +1,10 @@
 @bin bin/dunelegacy
 share/applications/dunelegacy.desktop
-share/doc/dunelegacy/
-share/doc/dunelegacy/README
+share/doc/DuneLegacy/
+share/doc/DuneLegacy/AUTHORS
+share/doc/DuneLegacy/COPYING
+share/doc/DuneLegacy/NEWS
+share/doc/DuneLegacy/README
 share/doc/pkg-readmes/${PKGSTEM}
 share/dunelegacy/
 share/dunelegacy/Dune2-Versions.txt
@@ -64,6 +67,34 @@ share/dunelegacy/maps/singleplayer/4P - 64x64 - 3 vs 1.ini
 share/dunelegacy/maps/singleplayer/5P - 128x128 - All against Atreides.ini
 share/dunelegacy/maps/singleplayer/5P - 128x128 - Sardaukar Base Easy.ini
 share/dunelegacy/maps/singleplayer/5P - 128x128 - Sardaukar Base.ini
-share/pixmaps/
-share/pixmaps/dunelegacy.png
+share/dunelegacy/maps/singleplayer/LDCPUL.TXT
+share/dunelegacy/maps/singleplayer/RWRK_SCENA001.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA002.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA003.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA004.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA005.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA006.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA007.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA008.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA009.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA010.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA011.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA021.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENA022.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENF001.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENF011.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENG017.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENG018.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENG020.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENH001.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENH002.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENH003.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENM001.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENM022.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENO001.INI
+share/dunelegacy/maps/singleplayer/RWRK_SCENS001.INI
+share/icons/hicolor/128x128/apps/dunelegacy.png
+share/icons/hicolor/48x48/apps/dunelegacy.png
+share/icons/hicolor/scalable/apps/dunelegacy.svg
+@tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -1,10 +1,11 @@
 COMMENT =		improved opensource version of Dune 2
 
 DISTNAME =		dunelegacy-0.98.5
+REVISION =		0
 
 CATEGORIES =		games x11
 
-HOMEPAGE =		https://dunelegacy.sourceforge.net/
+HOMEPAGE =		https://dunelegacy.com/
 
 MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
@@ -15,37 +16,23 @@ WANTLIB =		SDL2 SDL2_mixer SDL2_ttf c enet m pthread ${COMPILER_LIBCXX}
 
 SITES = 		http://www.linklevel.net/distfiles/
 
+MODULES = 		devel/cmake
+
 COMPILER = 		base-clang ports-gcc
 
 LIB_DEPENDS =		devel/sdl2-mixer \
 			devel/sdl2-ttf \
 			net/enet
-RUN_DEPENDS = 		devel/desktop-file-utils
+RUN_DEPENDS = 		devel/desktop-file-utils \
+			x11/gtk+4,-guic
 TEST_DEPENDS = 		devel/cppunit
 
-MAKE_FLAGS +=		CXXFLAGS="${CXXFLAGS} -DXTHREADS" LDADD+=-lenet
-
-SEPARATE_BUILD = 	Yes
-
-CONFIGURE_STYLE =	autoreconf
-AUTOCONF_VERSION =      2.69
-AUTOMAKE_VERSION =      1.16
-AUTORECONF =            autoreconf -i
-
-CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL2 \
-			-I${X11BASE}/include"
+CONFIGURE_ARGS += 	-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -L${LOCALBASE}/lib -lenet"
+CXXFLAGS += 		-DDUNELEGACY_DATADIR=\\\"${PREFIX}/share/dunelegacy\\\"
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
 post-extract:
 	rm -r ${WRKSRC}/include/enet
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dunelegacy/
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/dunelegacy/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/dunelegacy.desktop ${PREFIX}/share/applications/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/dunelegacy.png ${PREFIX}/share/pixmaps/dunelegacy.png
 
 .include <bsd.port.mk>
