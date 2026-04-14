@@ -1,9 +1,8 @@
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.8.0
+VERSION=		2.8.1
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
-REVISION=		0
 
 CATEGORIES=		geo devel
 
