@@ -149,6 +149,7 @@ include/duckdb/common/enums/compression_type.hpp
 include/duckdb/common/enums/copy_option_mode.hpp
 include/duckdb/common/enums/copy_overwrite_mode.hpp
 include/duckdb/common/enums/cte_materialize.hpp
+include/duckdb/common/enums/current_transaction_state.hpp
 include/duckdb/common/enums/database_modification_type.hpp
 include/duckdb/common/enums/date_part_specifier.hpp
 include/duckdb/common/enums/debug_initialize.hpp
@@ -1239,11 +1240,11 @@ include/duckdb/planner/parsed_data/bound_create_function_info.hpp
 include/duckdb/planner/parsed_data/bound_create_table_info.hpp
 include/duckdb/planner/planner.hpp
 include/duckdb/planner/planner_extension.hpp
-include/duckdb/planner/pragma_handler.hpp
 include/duckdb/planner/query_node/
 include/duckdb/planner/query_node/bound_select_node.hpp
 include/duckdb/planner/query_node/bound_set_operation_node.hpp
 include/duckdb/planner/query_node/list.hpp
+include/duckdb/planner/statement_preprocessor.hpp
 include/duckdb/planner/subquery/
 include/duckdb/planner/subquery/flatten_dependent_join.hpp
 include/duckdb/planner/subquery/has_correlated_expressions.hpp
