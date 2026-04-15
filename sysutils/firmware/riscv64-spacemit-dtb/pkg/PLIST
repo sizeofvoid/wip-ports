@@ -1,0 +1,5 @@
+firmware/dtb/
+firmware/dtb/spacemit/
+firmware/dtb/spacemit/k1-bananapi-f3.dtb
+firmware/dtb/spacemit/k1-milkv-jupiter.dtb
+firmware/dtb/spacemit/k1-orangepi-rv2.dtb

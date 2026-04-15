@@ -1,0 +1,144 @@
+Index: src/riscv/spacemit/k1-bananapi-f3.dts
+--- src/riscv/spacemit/k1-bananapi-f3.dts.orig
++++ src/riscv/spacemit/k1-bananapi-f3.dts
+@@ -33,7 +33,7 @@
+ 		};
+ 	};
+ 
+-	pcie_vcc_3v3: pcie-vcc3v3 {
++	pcie_vcc_3v3: regulator-pcie-vcc3v3 {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "PCIE_VCC3V3";
+ 		regulator-min-microvolt = <3300000>;
+@@ -41,7 +41,7 @@
+ 		regulator-always-on;
+ 	};
+ 
+-	reg_dc_in: dc-in-12v {
++	reg_dc_in: regulator-dc-in-12v {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "dc_in_12v";
+ 		regulator-min-microvolt = <12000000>;
+@@ -50,8 +50,18 @@
+ 		regulator-always-on;
+ 	};
+ 
+-	reg_vcc_4v: vcc-4v {
++	reg_vcc5v0_sys: regulator-vcc5v0-sys {
+ 		compatible = "regulator-fixed";
++		regulator-name = "vcc5v0_sys";
++		regulator-min-microvolt = <5000000>;
++		regulator-max-microvolt = <5000000>;
++		regulator-boot-on;
++		regulator-always-on;
++		vin-supply = <&reg_dc_in>;
++	};
++
++	reg_vcc_4v: regulator-vcc-4v {
++		compatible = "regulator-fixed";
+ 		regulator-name = "vcc_4v";
+ 		regulator-min-microvolt = <4000000>;
+ 		regulator-max-microvolt = <4000000>;
+@@ -60,29 +70,30 @@
+ 		vin-supply = <&reg_dc_in>;
+ 	};
+ 
+-	usb3-vbus-5v {
++	reg_5v_vbus: regulator-usb3-vbus-5v {
+ 		compatible = "regulator-fixed";
+-		regulator-name = "USB30_VBUS";
++		regulator-name = "5V_VBUS";
+ 		regulator-min-microvolt = <5000000>;
+ 		regulator-max-microvolt = <5000000>;
+ 		regulator-always-on;
++		vin-supply = <&reg_vcc5v0_sys>;
+ 		gpio = <&gpio K1_GPIO(97) GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
+ 	};
+ 
+-	usb3_hub_5v: usb3-hub-5v {
++	usb3_hub_5v: regulator-usb3-hub-5v {
+ 		compatible = "regulator-fixed";
+-		regulator-name = "USB30_HUB";
++		regulator-name = "VCC5V0_HUB";
+ 		regulator-min-microvolt = <5000000>;
+ 		regulator-max-microvolt = <5000000>;
++		regulator-always-on;
++		vin-supply = <&reg_vcc5v0_sys>;
+ 		gpio = <&gpio K1_GPIO(123) GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
+ 	};
+ };
+ 
+ &combo_phy {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&pcie0_3_cfg>;
+ 	status = "okay";
+ };
+ 
+@@ -190,7 +201,15 @@
+ 		compatible = "spacemit,p1";
+ 		reg = <0x41>;
+ 		interrupts = <64>;
+-		vin-supply = <&reg_vcc_4v>;
++		vin1-supply = <&reg_vcc_4v>;
++		vin2-supply = <&reg_vcc_4v>;
++		vin3-supply = <&reg_vcc_4v>;
++		vin4-supply = <&reg_vcc_4v>;
++		vin5-supply = <&reg_vcc_4v>;
++		vin6-supply = <&reg_vcc_4v>;
++		aldoin-supply = <&reg_vcc_4v>;
++		dldoin1-supply = <&buck5>;
++		dldoin2-supply = <&buck5>;
+ 
+ 		regulators {
+ 			buck1 {
+@@ -221,7 +240,7 @@
+ 				regulator-always-on;
+ 			};
+ 
+-			buck5 {
++			buck5: buck5 {
+ 				regulator-min-microvolt = <500000>;
+ 				regulator-max-microvolt = <3450000>;
+ 				regulator-ramp-delay = <5000>;
+@@ -305,6 +324,7 @@
+ 
+ &pcie1_port {
+ 	phys = <&pcie1_phy>;
++	vpcie3v3-supply = <&pcie_vcc_3v3>;
+ };
+ 
+ &pcie1 {
+@@ -320,6 +340,7 @@
+ 
+ &pcie2_port {
+ 	phys = <&pcie2_phy>;
++	vpcie3v3-supply = <&pcie_vcc_3v3>;
+ };
+ 
+ &pcie2 {
+@@ -341,12 +362,13 @@
+ 	dr_mode = "host";
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
++	vbus-supply = <&usb3_hub_5v>;
+ 	status = "okay";
+ 
+ 	hub_2_0: hub@1 {
+ 		compatible = "usb2109,2817";
+ 		reg = <0x1>;
+-		vdd-supply = <&usb3_hub_5v>;
++		vdd-supply = <&reg_5v_vbus>;
+ 		peer-hub = <&hub_3_0>;
+ 		reset-gpios = <&gpio K1_GPIO(124) GPIO_ACTIVE_LOW>;
+ 	};
+@@ -354,7 +376,7 @@
+ 	hub_3_0: hub@2 {
+ 		compatible = "usb2109,817";
+ 		reg = <0x2>;
+-		vdd-supply = <&usb3_hub_5v>;
++		vdd-supply = <&reg_5v_vbus>;
+ 		peer-hub = <&hub_2_0>;
+ 		reset-gpios = <&gpio K1_GPIO(124) GPIO_ACTIVE_LOW>;
+ 	};
