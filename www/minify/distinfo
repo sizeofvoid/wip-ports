@@ -27,7 +27,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = ThgX+WTKNOVFuBr9oDJaXonPWN4uQT2CB8Cv3dD9wVw=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (minify-v2.24.11.zip) = +daaq6OBPbpZq9j3aToG5EKgikSv0QTu1QJ59Yv0iH0=
+SHA256 (minify-v2.24.12.zip) = x9MxMUqqCiiTMyNNQRd3FTcxqrcGl9no3LQDLScRyNU=
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.mod) = 40
 SIZE (go_modules/filippo.io/edwards25519/@v/v1.1.0.zip) = 55809
 SIZE (go_modules/github.com/djherbis/atime/@v/v1.1.0.mod) = 42
@@ -57,4 +57,4 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) = 39844
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (minify-v2.24.11.zip) = 7885766
+SIZE (minify-v2.24.12.zip) = 7884575
