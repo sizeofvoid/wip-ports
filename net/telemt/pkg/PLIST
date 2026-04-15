@@ -3,6 +3,8 @@
 @rcscript ${RCDIR}/telemt
 @bin bin/telemt
 share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/telemt
+@sample ${SYSCONFDIR}/login.conf.d/telemt
 share/examples/telemt/
 share/examples/telemt/config.toml
 @mode 750
