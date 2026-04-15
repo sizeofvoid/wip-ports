@@ -17,39 +17,36 @@ MODGO_MODULES =	\
 	github.com/russross/blackfriday/v2	 v2.1.0 \
 	github.com/stretchr/testify		 v1.7.1 \
 	github.com/urfave/cli/v2		 v2.27.7 \
-	github.com/xrash/smetrics		 v0.0.0-20240521201337-686a1a2994c1 \
+	github.com/xrash/smetrics		 v0.0.0-20250705151800-55b8f293f342 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	go.uber.org/automaxprocs		 v1.6.0 \
-	golang.org/x/crypto			 v0.39.0 \
-	golang.org/x/mod			 v0.25.0 \
-	golang.org/x/net			 v0.41.0 \
-	golang.org/x/sync			 v0.15.0 \
-	golang.org/x/sys			 v0.33.0 \
-	golang.org/x/telemetry			 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term			 v0.32.0 \
-	golang.org/x/text			 v0.26.0 \
-	golang.org/x/tools			 v0.34.0 \
+	golang.org/x/crypto			 v0.41.0 \
+	golang.org/x/mod			 v0.27.0 \
+	golang.org/x/net			 v0.43.0 \
+	golang.org/x/sync			 v0.16.0 \
+	golang.org/x/sys			 v0.35.0 \
+	golang.org/x/telemetry			 v0.0.0-20250807160809-1a19826ec488 \
+	golang.org/x/term			 v0.34.0 \
+	golang.org/x/text			 v0.28.0 \
+	golang.org/x/tools			 v0.36.0 \
 	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/yaml.v3			 v3.0.1 \
-	mvdan.cc/gofumpt			 v0.8.0 \
-	software.sslmate.com/src/go-pkcs12	 v0.5.0
+	mvdan.cc/gofumpt			 v0.9.0 \
+	software.sslmate.com/src/go-pkcs12	 v0.6.0
 
 MODGO_MODFILES =	\
 	github.com/google/go-cmp	 v0.6.0 \
 	github.com/kr/pretty		 v0.1.0 \
 	github.com/mattn/go-colorable	 v0.1.13 \
+	github.com/xrash/smetrics	 v0.0.0-20240521201337-686a1a2994c1 \
 	golang.org/x/crypto		 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto		 v0.11.0 \
-	golang.org/x/mod		 v0.24.0 \
 	golang.org/x/net		 v0.0.0-20200202094626-16171245cfb2 \
-	golang.org/x/net		 v0.21.0 \
-	golang.org/x/sync		 v0.13.0 \
+	golang.org/x/net		 v0.42.0 \
 	golang.org/x/sys		 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys		 v0.25.0 \
 	golang.org/x/sys		 v0.29.0 \
-	golang.org/x/sys		 v0.32.0 \
 	golang.org/x/sys		 v0.6.0 \
 	golang.org/x/text		 v0.3.0 \
-	golang.org/x/tools		 v0.13.0 \
-	golang.org/x/tools		 v0.32.0
+	golang.org/x/tools		 v0.35.0
 
