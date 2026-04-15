@@ -1,7 +1,7 @@
 Index: exporters/cmake/OpenSSLConfig.cmake.in
 --- exporters/cmake/OpenSSLConfig.cmake.in.orig
 +++ exporters/cmake/OpenSSLConfig.cmake.in
-@@ -207,12 +207,12 @@ else()
+@@ -208,12 +208,12 @@ else()
  {- output_on() unless $lib_info{libcrypto}->{shared_import};
     output_off() if $lib_info{libcrypto}->{shared_import}; "" -}
    # Dependencies are assumed to be implied in the shared libraries
