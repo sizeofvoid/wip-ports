@@ -1,4 +1,4 @@
-@rcscript ${RCDIR}/lldpd
+@rcscript ${RCDIR}/elldpd
 include/lldp-const.h
 include/lldpctl.h
 include/lldpctl.hpp
