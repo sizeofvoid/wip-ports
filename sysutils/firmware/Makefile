@@ -40,6 +40,7 @@
      SUBDIR += qwx
      SUBDIR += qwz
      SUBDIR += radeondrm
+     SUBDIR += riscv64-spacemit-dtb
      SUBDIR += uath
      SUBDIR += ulpt
      SUBDIR += upgt
