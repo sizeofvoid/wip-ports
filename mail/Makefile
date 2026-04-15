@@ -37,11 +37,6 @@
      SUBDIR += elm
      SUBDIR += evolution
      SUBDIR += evolution-ews
-     SUBDIR += exim
-     SUBDIR += exim,ldap
-     SUBDIR += exim,mysql
-     SUBDIR += exim,mysql,postgresql,ldap
-     SUBDIR += exim,postgresql
      SUBDIR += exmh2
      SUBDIR += extsmail
      SUBDIR += fdm

@@ -1,4 +1,0 @@
-sendmail        ${TRUEPREFIX}/bin/exim
-send-mail       ${TRUEPREFIX}/bin/exim
-mailq           ${TRUEPREFIX}/bin/exim -bp
-newaliases      /usr/bin/true

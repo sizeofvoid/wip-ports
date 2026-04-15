@@ -1,8 +1,0 @@
-#!/bin/ksh
-
-daemon="${TRUEPREFIX}/bin/exim -bd"
-daemon_flags="-q30m"
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1
