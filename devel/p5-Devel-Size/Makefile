@@ -1,7 +1,7 @@
 COMMENT =	finding memory usage of perl variables
 
 MODULES =	cpan
-DISTNAME =	Devel-Size-0.86
+DISTNAME =	Devel-Size-0.87
 CATEGORIES =	devel
 
 # perl
