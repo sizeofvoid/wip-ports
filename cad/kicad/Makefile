@@ -8,7 +8,7 @@ V =			9.0.7
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
@@ -58,6 +58,7 @@ WANTLIB += absl_synchronization absl_throw_delegate absl_time
 WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal atk-1.0 boost_charconv-mt
 WANTLIB += boost_chrono-mt boost_locale-mt boost_thread-mt
+WANTLIB += boost_atomic-mt boost_container-mt boost_date_time-mt
 WANTLIB += c cairo cairo-gobject curl fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 git2 glib-2.0 gobject-2.0 gtk-3
 WANTLIB += harfbuzz intl iodbc m ngspice nng pango-1.0 pangocairo-1.0
