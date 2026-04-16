@@ -19,6 +19,10 @@ HOMEPAGE = https://docs.zizmor.sh/
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
