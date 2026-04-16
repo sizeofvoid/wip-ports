@@ -9,11 +9,9 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 COMMENT =		WebRTC build for Telegram
 
 # No releases or tags, use commit from tdesktop's snap/snapcraft.yaml
-# 04.08.2024 HEAD to include merged PRs
 DIST_TUPLE =		github	desktop-app	tg_owt	\
-			5c5c71258777d0196dbb3a09cc37d2f56ead28ab	.
-PKGNAME =		tg_owt-0.0.0.20250913
-REVISION =		0
+			89df288dd6ba5b2ec95b3c5eaf1e7e0c3a870fc4	.
+PKGNAME =		tg_owt-0.0.0.20260409
 
 CATEGORIES =		net
 
@@ -84,6 +82,9 @@ LIB_DEPENDS =		audio/opus \
 # See: https://github.com/desktop-app/tg_owt/pull/146
 CXXFLAGS +=	       -march=armv8-a+dotprod+i8mm
 .endif
+
+# starting with 20260409 src/api/scoped_refptr.h is flooding this
+CXXFLAGS +=	       -Wno-nullability-completeness
 
 # look for system libraries and build a shared library, despite upstream
 # treating it as "community effort" with less support
