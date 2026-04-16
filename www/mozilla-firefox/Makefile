@@ -8,6 +8,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 MOZILLA_PROFDATA_TASKID =	PvQF0o4eRcq-jZgZEFodUQ
+REVISION =		0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
@@ -38,6 +39,9 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-libc
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools
+
+# audio/video support
+RUN_DEPENDS =		graphics/ffmpeg
 
 # uses pledge()
 WANTLIB += Xrandr Xtst
