@@ -7,6 +7,7 @@ MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
 MOZILLA_DIST =		firefox
 MOZILLA_PROFDATA_TASKID = Vd0znenNTH2bKjyrnJe6wg
+REVISION =		0
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
@@ -40,6 +41,9 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-libc
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools
+
+# audio/video support
+RUN_DEPENDS =		graphics/ffmpeg
 
 # uses pledge()
 WANTLIB += Xrandr Xtst

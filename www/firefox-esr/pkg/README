@@ -99,13 +99,6 @@ If a session bus is not running, this port fakes the existence of one
 GLIB can still try to spawn a session bus which can then lead to a 'proc'
 pledge violation in the content process.
 
-HTML5 audio/video support
-=========================
-For a full multimedia experience, such as playing MP3 audio or MPEG
-videos, install the "ffmpeg" package:
-
-# pkg_add ffmpeg
-
 WebRTC support
 ==============
 For WebRTC to work properly, you need to enable audio and video recording:
