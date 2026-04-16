@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			6.7.5
+V =			6.7.6
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -42,9 +42,6 @@ WANTLIB += xcb-screensaver xxhash z
 # C++20
 COMPILER =		base-clang ports-gcc
 
-# precompiled headers need this to be cached, see ccache(1) PRECOMPILED HEADERS
-# CCACHE_ENV +=		CCACHE_SLOPPINESS=pch_defines,time_macros
-
 MODULES =		devel/cmake \
 			lang/python \
 			x11/qt6
@@ -71,7 +68,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			graphics/ffmpeg>=8.0p2v1 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20250913 \
+			net/tg_owt>=0.0.0.20260409 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			www/ada \
