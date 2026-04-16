@@ -1,39 +1,7 @@
 Index: codex-rs/Cargo.toml
 --- codex-rs/Cargo.toml.orig
 +++ codex-rs/Cargo.toml
-@@ -14,7 +14,6 @@ members = [
-     "feedback",
-     "features",
-     "codex-backend-openapi-models",
--    "code-mode",
-     "cloud-requirements",
-     "cloud-tasks",
-     "cloud-tasks-client",
-@@ -58,7 +57,6 @@ members = [
-     "otel",
-     "tui",
-     "tools",
--    "v8-poc",
-     "utils/absolute-path",
-     "utils/cargo-bin",
-     "git-utils",
-@@ -106,6 +104,7 @@ app_test_support = { path = "app-server/tests/common" 
- codex-analytics = { path = "analytics" }
- codex-ansi-escape = { path = "ansi-escape" }
- codex-api = { path = "codex-api" }
-+codex-package-manager = { path = "package-manager" }
- codex-app-server = { path = "app-server" }
- codex-app-server-client = { path = "app-server-client" }
- codex-app-server-protocol = { path = "app-server-protocol" }
-@@ -165,6 +164,7 @@ codex-stdio-to-uds = { path = "stdio-to-uds" }
- codex-terminal-detection = { path = "terminal-detection" }
- codex-tools = { path = "tools" }
- codex-tui = { path = "tui" }
-+codex-tui-app-server = { path = "tui_app_server" }
- codex-utils-absolute-path = { path = "utils/absolute-path" }
- codex-utils-approval-presets = { path = "utils/approval-presets" }
- codex-utils-cache = { path = "utils/cache" }
-@@ -254,7 +254,7 @@ maplit = "1.0.2"
+@@ -260,7 +260,7 @@ maplit = "1.0.2"
  mime_guess = "2.0.5"
  multimap = "0.10.0"
  notify = "8.2.0"
@@ -42,7 +10,7 @@ Index: codex-rs/Cargo.toml
  once_cell = "1.20.2"
  openssl-sys = "*"
  opentelemetry = "0.31.0"
-@@ -278,7 +278,7 @@ regex = "1.12.3"
+@@ -284,7 +284,7 @@ regex = "1.12.3"
  regex-lite = "0.1.8"
  reqwest = "0.12"
  rmcp = { version = "0.15.0", default-features = false }
@@ -51,21 +19,13 @@ Index: codex-rs/Cargo.toml
  rustls = { version = "0.23", default-features = false, features = [
      "ring",
      "std",
-@@ -406,7 +406,6 @@ ignored = [
-     "openssl-sys",
-     "codex-utils-readiness",
-     "codex-utils-template",
--    "codex-v8-poc",
- ]
- 
- [profile.release]
-@@ -426,14 +425,7 @@ opt-level = 0
+@@ -432,14 +432,7 @@ opt-level = 0
  
  [patch.crates-io]
  # Uncomment to debug local changes.
 -# ratatui = { path = "../../ratatui" }
--crossterm = { git = "https://github.com/nornagon/crossterm", branch = "nornagon/color-query" }
--ratatui = { git = "https://github.com/nornagon/ratatui", branch = "nornagon-v0.29.0-patch" }
+-crossterm = { git = "https://github.com/nornagon/crossterm", rev = "87db8bfa6dc99427fd3b071681b07fc31c6ce995" }
+-ratatui = { git = "https://github.com/nornagon/ratatui", rev = "9b2ad1298408c45918ee9f8241a6f95498cdbed2" }
 -tokio-tungstenite = { git = "https://github.com/openai-oss-forks/tokio-tungstenite", rev = "132f5b39c862e3a970f731d709608b3e6276d5f6" }
 -tungstenite = { git = "https://github.com/openai-oss-forks/tungstenite-rs", rev = "9200079d3b54a1ff51072e24d81fd354f085156f" }
 -

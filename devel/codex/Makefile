@@ -1,9 +1,12 @@
-# ring-v0.17 does not support this arch
-NOT_FOR_ARCHS = 	sparc64
+ONLY_FOR_ARCHS =	amd64 aarch64
 
 COMMENT =		OpenAI terminal-based coding agent
 
-V =			0.120.0
+DPB_PROPERTIES =	parallel
+
+USE_WXNEEDED =		Yes
+
+V =			0.121.0
 GH_ACCOUNT =		openai
 GH_PROJECT =		codex
 GH_TAGNAME =		rust-v${V}
@@ -19,6 +22,8 @@ DIST_TUPLE += github openai-oss-forks tungstenite-rs 9200079d3b54a1ff51072e24d81
 DIST_TUPLE += github helix-editor nucleo 4253de9faabb4e5c6d81d946a5e35a90f87347ee ./nucleo
 DIST_TUPLE += github dzbarsky rules_rust b56cbaa8465e74127f1ea216f813cd377295ad81 ./runfiles
 
+MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
+
 CATEGORIES =		devel
 
 HOMEPAGE =		https://github.com/openai/codex
@@ -26,11 +31,13 @@ HOMEPAGE =		https://github.com/openai/codex
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto dbus-1 lzma m onig ssl
-WANTLIB += util z
+WANTLIB += ${MODCARGO_WANTLIB} bz2 crypto dbus-1 execinfo lzma
+WANTLIB += m onig ssl util z
 
 BUILD_DEPENDS =		devel/cmake/core \
 			devel/git \
+			devel/gn \
+			devel/ninja \
 			databases/sqlite3
 
 LIB_DEPENDS =		textproc/oniguruma \
@@ -40,18 +47,42 @@ RUN_DEPENDS =		lang/python/3 \
 			textproc/ripgrep
 
 MODULES =		devel/cargo
+
 CONFIGURE_STYLE = 	cargo
+
+COMPILER =		base-clang
 
 # libclang.so
 MODULES +=		lang/clang
-MODCARGO_ENV +=		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
+MODCARGO_ENV +=		CLANG_BASE_PATH=/usr \
+			LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 			LD_LIBRARY_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 MODCARGO_CRATES_KEEP +=	zstd-sys
 
+MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
+			GN=${LOCALBASE}/bin/gn \
+			NINJA=${LOCALBASE}/bin/ninja \
+			GN_ARGS="clang_use_chrome_plugins=false \
+			extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+			extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\" \
+			fatal_linker_warnings=false \
+			is_clang=true \
+			use_custom_libcxx=true \
+			use_custom_libunwind=true \
+			use_libcxx_modules=false \
+			use_sysroot=false \
+			use_glib=false \
+			v8_enable_cet_ibt=true"
+
+# Makes the build look more alive while compiling v8
+MODCARGO_BUILD_ARGS +=	-vv
+
 # install the CLI crate ('codex')
 MODCARGO_INSTALL_TARGET_PATHS = cli
+
+MAKE_ENV =		${MODCARGO_ENV}
 
 # test suite expects network access and a configured OpenAI account
 NO_TEST =	Yes

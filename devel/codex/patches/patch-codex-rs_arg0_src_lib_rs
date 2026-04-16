@@ -1,7 +1,7 @@
 Index: codex-rs/arg0/src/lib.rs
 --- codex-rs/arg0/src/lib.rs.orig
 +++ codex-rs/arg0/src/lib.rs
-@@ -181,6 +181,9 @@ where
+@@ -186,6 +186,9 @@ where
      // async entry-point.
      let runtime = build_runtime()?;
      runtime.block_on(async move {
@@ -11,7 +11,7 @@ Index: codex-rs/arg0/src/lib.rs
          let current_exe = std::env::current_exe().ok();
          let paths = Arg0DispatchPaths {
              codex_self_exe: current_exe.clone(),
-@@ -314,6 +317,9 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+@@ -319,6 +322,9 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
          #[cfg(unix)]
          EXECVE_WRAPPER_ARG0,
      ] {
@@ -21,7 +21,7 @@ Index: codex-rs/arg0/src/lib.rs
          let exe = std::env::current_exe()?;
  
          #[cfg(unix)]
-@@ -360,7 +366,16 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
+@@ -365,7 +371,16 @@ pub fn prepend_path_entry_for_codex_aliases() -> std::
      }
  
      let paths = Arg0DispatchPaths {

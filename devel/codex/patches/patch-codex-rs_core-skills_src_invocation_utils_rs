@@ -1,7 +1,7 @@
 Index: codex-rs/core-skills/src/invocation_utils.rs
 --- codex-rs/core-skills/src/invocation_utils.rs.orig
 +++ codex-rs/core-skills/src/invocation_utils.rs
-@@ -48,8 +48,8 @@ fn tokenize_command(command: &str) -> Vec<String> {
+@@ -47,8 +47,8 @@ fn tokenize_command(command: &str) -> Vec<String> {
  }
  
  fn script_run_token(tokens: &[String]) -> Option<&str> {
