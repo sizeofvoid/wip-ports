@@ -1,0 +1,23 @@
+From d9b731ce1e1590539516828a44cf02daba759801 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=D0=90=D0=BD=D1=82=D0=BE=D0=BD=20=D0=9A=D0=B0=D1=81=D0=B8?=
+ =?UTF-8?q?=D0=BC=D0=BE=D0=B2?= <kasimov.an@gmail.com>
+Date: Sun, 12 Apr 2026 09:59:34 +0200
+Subject: [PATCH] openbsd: allow unix sockets in pledge (#3381)
+
+Add the `unix` promise to the OpenBSD pledge profile so
+`gopass age agent` can create its Unix-domain socket.
+
+Signed-off-by: Anton Kasimov <kasimov@radium-it.ru>
+
+Index: main.go
+--- main.go.orig
++++ main.go
+@@ -52,7 +52,7 @@ func main() {
+ 	// Example: https://go.dev/play/p/8214zCX6hVq.
+ 	defer writeCPUProfile()()
+ 
+-	if err := protect.Pledge("stdio rpath wpath cpath tty proc exec fattr"); err != nil {
++	if err := protect.Pledge("stdio rpath wpath cpath tty proc exec fattr unix"); err != nil {
+ 		panic(err)
+ 	}
+ 
