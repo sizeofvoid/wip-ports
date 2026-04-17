@@ -1,7 +1,7 @@
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.28
-REVISION=	4
+REVISION=	5
 SHARED_LIBS=	djvulibre	27.0	# 28.0
 CATEGORIES=	graphics print
 
