@@ -9,6 +9,7 @@ COMMENT=	screen saver and locker for the X Window System
 # Ideally this wants a bsdauth driver to be written, change to being
 # installed setgid auth, and figure out any issues resulting.
 DISTNAME=	xscreensaver-6.15
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -36,7 +37,10 @@ MODULES=	textproc/intltool
 BUILD_DEPENDS=	archivers/gtar
 TAR=		gtar
 
-RUN_DEPENDS=	devel/desktop-file-utils
+# xshadertoy-based hacks use "exec -a <name> xshadertoy" which is not
+# supported by standard shells in base
+RUN_DEPENDS=	devel/desktop-file-utils \
+		shells/bash
 
 LIB_DEPENDS=	graphics/gle \
 		wayland/wayland \
@@ -60,6 +64,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	install_prefix=${WRKINST}
+
+post-extract:
+	find ${WRKSRC}/hacks/glx -type f -perm 755 -exec \
+		sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' {} +
 
 post-install:
 # remove conflicts (misc/deco, games/circuit)
