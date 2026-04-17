@@ -4,7 +4,7 @@ and https://github.com/prometheus/prometheus/pull/9085
 to make tsdb only use mmap and work around missing UBC support.
 
 diff --git go.mod go.mod
-index 7a27951ac..eee4405dd 100644
+index 00bc50070..5dec05223 100644
 --- go.mod
 +++ go.mod
 @@ -17,7 +17,6 @@ require (
@@ -12,11 +12,11 @@ index 7a27951ac..eee4405dd 100644
  	github.com/digitalocean/godo v1.152.0
  	github.com/docker/docker v28.5.2+incompatible
 -	github.com/edsrzf/mmap-go v1.2.0
- 	github.com/envoyproxy/go-control-plane/envoy v1.32.4
- 	github.com/envoyproxy/protoc-gen-validate v1.2.1
+ 	github.com/envoyproxy/go-control-plane/envoy v1.36.0
+ 	github.com/envoyproxy/protoc-gen-validate v1.3.0
  	github.com/facette/natsort v0.0.0-20181210072756-2cd4dd1e2dcb
 diff --git go.sum go.sum
-index 8ed834bcf..00ff455ac 100644
+index 301c10c76..c986e6e90 100644
 --- go.sum
 +++ go.sum
 @@ -122,8 +122,6 @@ github.com/docker/go-connections v0.4.0 h1:El9xVISelRB7BuFusrZozjnkIM5YnzCViNKoh
@@ -27,7 +27,7 @@ index 8ed834bcf..00ff455ac 100644
 -github.com/edsrzf/mmap-go v1.2.0/go.mod h1:19H/e8pUPLicwkyNgOykDXkJ9F0MHE+Z52B8EIth78Q=
  github.com/emicklei/go-restful/v3 v3.11.0 h1:rAQeMHw1c7zTmncogyy8VvRZwtkmkZ4FxERmMY4rD+g=
  github.com/emicklei/go-restful/v3 v3.11.0/go.mod h1:6n3XBCmQQb25CM2LCACGz8ukIrRry+4bhvbpWn3mrbc=
- github.com/envoyproxy/go-control-plane/envoy v1.32.4 h1:jb83lalDRZSpPWW2Z7Mck/8kXZ5CQAFYVjQcdVIr83A=
+ github.com/envoyproxy/go-control-plane/envoy v1.36.0 h1:yg/JjO5E7ubRyKX3m07GF3reDNEnfOboJ0QySbH736g=
 diff --git promql/query_logger.go promql/query_logger.go
 index c0a70b66d..8aac517e2 100644
 --- promql/query_logger.go
@@ -230,7 +230,7 @@ index eb06e513e..ef2f85cfd 100644
  
  	f, err := os.Open(fpath)
 diff --git tsdb/chunks/chunks.go tsdb/chunks/chunks.go
-index 034106238..9d9606512 100644
+index 034106238..7e9366d2b 100644
 --- tsdb/chunks/chunks.go
 +++ tsdb/chunks/chunks.go
 @@ -280,7 +280,7 @@ func checkCRC32(data, sum []byte) error {
@@ -341,7 +341,7 @@ index 034106238..9d9606512 100644
  	}
  
  	// Write header metadata for new file.
-@@ -454,29 +445,35 @@ func cutSegmentFile(dirFile *os.File, magicNumber uint32, chunksFormat byte, all
+@@ -454,29 +445,38 @@ func cutSegmentFile(dirFile *os.File, magicNumber uint32, chunksFormat byte, all
  	binary.BigEndian.PutUint32(metab[:MagicChunksSize], magicNumber)
  	metab[4] = chunksFormat
  
@@ -350,10 +350,10 @@ index 034106238..9d9606512 100644
  	if err != nil {
 -		return 0, nil, 0, fmt.Errorf("write header: %w", err)
 +		return 0, nil, nil, 0, fmt.Errorf("write header: %w", err)
-+	}
+ 	}
 +	if err := mw.Close(); err != nil {
 +		return 0, nil, nil, 0, fmt.Errorf("close temp mmap: %w", err)
- 	}
++	}
 +	mw = nil
  	if err := f.Close(); err != nil {
 -		return 0, nil, 0, fmt.Errorf("close temp file: %w", err)
@@ -368,11 +368,14 @@ index 034106238..9d9606512 100644
  
 -	f, err = os.OpenFile(p, os.O_WRONLY, 0o666)
 +	f, err = os.OpenFile(p, os.O_RDWR, 0o666)
++	if err != nil {
++		return 0, nil, nil, 0, fmt.Errorf("open final file: %w", err)
++	}
++	mw, err = fileutil.NewMmapWriterWithSize(f, int(allocSize))
  	if err != nil {
 -		return 0, nil, 0, fmt.Errorf("open final file: %w", err)
-+		return 0, nil, nil, 0, fmt.Errorf("open final file: %w", err)
++		return 0, nil, nil, 0, fmt.Errorf("new writer for final file: %w", err)
  	}
-+	mw, err = fileutil.NewMmapWriterWithSize(f, int(allocSize))
 +
  	// Skip header for further writes.
  	offset := int64(n)

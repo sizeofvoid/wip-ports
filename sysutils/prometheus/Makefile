@@ -1,6 +1,6 @@
 COMMENT =		systems monitoring and alerting toolkit
 
-V =			3.5.1
+V =			3.5.2
 GH_ACCOUNT =		prometheus
 GH_PROJECT =		prometheus
 GH_TAGNAME =		v${V}
