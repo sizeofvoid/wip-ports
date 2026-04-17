@@ -4,6 +4,10 @@ CATEGORIES =	textproc
 
 SHARED_LIBS =	lowdown		4.0	# 3
 
+# base-gcc doesn't support deprecation attribute with message
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
+
 HOMEPAGE =	https://kristaps.bsd.lv/lowdown/
 MAINTAINER =	Bryan Vyhmeister <bryan@bsdjournal.net>
 
