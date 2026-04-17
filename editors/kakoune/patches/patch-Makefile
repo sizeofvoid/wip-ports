@@ -15,7 +15,7 @@ Index: Makefile
  # to get format compatible with GitHub archive use "gzip -S .gz" here
  compress_bin = bzip2
  
-@@ -13,10 +13,8 @@ compress-suffix-bzip2 = bz2
+@@ -16,10 +16,8 @@ compress-suffix-bzip2 = bz2
  compress-suffix-zstd = zst
  
  CPPFLAGS-debug-yes = -DKAK_DEBUG
@@ -26,7 +26,7 @@ Index: Makefile
  tag-debug-no = .opt
  
  CXXFLAGS-sanitize-address = -fsanitize=address
-@@ -40,7 +38,7 @@ bindir = $(DESTDIR)$(PREFIX)/bin
+@@ -43,7 +41,7 @@ bindir = $(DESTDIR)$(PREFIX)/bin
  libexecdir = $(DESTDIR)$(PREFIX)/libexec/kak
  sharedir = $(DESTDIR)$(PREFIX)/share/kak
  docdir = $(DESTDIR)$(PREFIX)/share/doc/kak

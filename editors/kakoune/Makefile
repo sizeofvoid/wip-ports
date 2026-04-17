@@ -1,13 +1,13 @@
 COMMENT =		modal code editor with a focus on interactivity
 
-V =			2025.06.03
+V =			2026.04.12
 DISTNAME =		kakoune-${V}
 
 CATEGORIES =		editors
 
 HOMEPAGE =		https://kakoune.org/
 
-MAINTAINER=		Solène Rapenne <solene@openbsd.org>
+MAINTAINER =		Lydia Sobot <chilledfrogs@disroot.org>
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 
