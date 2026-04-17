@@ -24,7 +24,7 @@ Index: resources/config.jsonc
 -        "network",
 -        "power-profiles-daemon",
 +        //"mpd",
-+        "sndio",
++        "custom/sndio",
          "cpu",
          "memory",
 -        "temperature",
@@ -67,7 +67,7 @@ Index: resources/config.jsonc
          "format-alt": "{:%Y-%m-%d}"
      },
      "cpu": {
-@@ -122,98 +111,30 @@
+@@ -122,98 +111,32 @@
      "memory": {
          "format": "{}% "
      },
@@ -98,11 +98,13 @@ Index: resources/config.jsonc
 -        // "format-good": "", // An empty format will hide the module
 -        // "format-full": "",
 -        "format-icons": ["", "", "", "", ""]
-+    "sndio": {
-+         "scroll-step": "1",
-+         "format": "   {volume}% ",
-+         "on-scroll-down": "sndioctl output.level=-0.01",
-+         "on-scroll-up": "sndioctl output.level=+0.01"
++    "custom/sndio": {
++         "format": "   {}% ",
++         "interval": 10,
++         "exec": "if [ $(sndioctl -n output.mute) -eq 1 ]; then echo \"--\"; else sndioctl -n output.level | awk '{printf \"%.0f\\n\", $1 * 100}'; fi",
++         "on-click": "sndioctl output.mute=! > /dev/null",
++         "on-scroll-down": "sndioctl output.level=-0.01 > /dev/null",
++         "on-scroll-up": "sndioctl output.level=+0.01 > /dev/null"
      },
 -    "battery#bat2": {
 -        "bat": "BAT2"

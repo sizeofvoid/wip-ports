@@ -49,11 +49,12 @@ Index: resources/style.css
  label:focus {
      background-color: #000000;
  }
-@@ -203,6 +226,16 @@ label:focus {
+@@ -203,6 +226,17 @@ label:focus {
      color: #2a5c45;
  }
  
-+#sndio {
++#sndio,
++#custom-sndio {
 +    background-color: #f1c40f;
 +    color: #000;
 +}
@@ -66,7 +67,7 @@ Index: resources/style.css
  #wireplumber {
      background-color: #fff0f5;
      color: #000000;
-@@ -227,6 +260,10 @@ label:focus {
+@@ -227,6 +261,10 @@ label:focus {
  }
  
  #temperature {
