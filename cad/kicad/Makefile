@@ -4,11 +4,10 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			9.0.7
+V =			9.0.8
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		2
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
@@ -22,16 +21,14 @@ HOMEPAGE =		https://www.kicad.org
 # GPLv3, MIT, Boost
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL GLU TKBO TKBRep TKBin TKBinL
-WANTLIB += TKBinTObj TKBinXCAF TKBool TKCAF TKCDF TKDEGLTF TKDEIGES
-WANTLIB += TKDEPLY TKDESTEP TKDESTL TKDEVRML TKFeat TKFillet TKG2d
-WANTLIB += TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath TKMesh
-WANTLIB += TKMeshVS TKOffset TKOpenGl TKPrim TKRWMesh TKService
-WANTLIB += TKShHealing TKTObj TKTopAlgo TKV3d TKXCAF TKXMesh TKXSBase
-WANTLIB += TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel absl_base
-WANTLIB += absl_borrowed_fixup_buffer absl_city absl_civil_time
-WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
-WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += ${COMPILER_LIBCXX} EGL GL GLU TKBO TKBRep TKBool TKCAF
+WANTLIB += TKCDF TKDEGLTF TKDEIGES TKDEPLY TKDESTEP TKDESTL TKDEVRML
+WANTLIB += TKG2d TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath
+WANTLIB += TKMesh TKPrim TKRWMesh TKService TKShHealing TKTopAlgo
+WANTLIB += TKV3d TKXCAF TKXSBase TKernel absl_base absl_borrowed_fixup_buffer
+WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
 WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
@@ -56,17 +53,16 @@ WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
 WANTLIB += absl_strerror absl_strings absl_strings_internal absl_symbolize
 WANTLIB += absl_synchronization absl_throw_delegate absl_time
 WANTLIB += absl_time_zone absl_tracing_internal absl_utf8_for_code_point
-WANTLIB += absl_vlog_config_internal atk-1.0 boost_charconv-mt
-WANTLIB += boost_chrono-mt boost_locale-mt boost_thread-mt
-WANTLIB += boost_atomic-mt boost_container-mt boost_date_time-mt
-WANTLIB += c cairo cairo-gobject curl fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 git2 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl iodbc m ngspice nng pango-1.0 pangocairo-1.0
-WANTLIB += pixman-1 protobuf python3.13 secret-1 utf8_validity
-WANTLIB += wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
-WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
-WANTLIB += wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2
-WANTLIB += z zstd
+WANTLIB += absl_vlog_config_internal atk-1.0 boost_atomic-mt boost_charconv-mt
+WANTLIB += boost_chrono-mt boost_container-mt boost_date_time-mt
+WANTLIB += boost_locale-mt boost_thread-mt c cairo cairo-gobject
+WANTLIB += curl fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += git2 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl iodbc
+WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 protobuf
+WANTLIB += ${MODPY_WANTLIB} secret-1 utf8_validity wx_baseu-3.2 wx_baseu_net-3.2
+WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
+WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2
+WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 z zstd
 
 SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
