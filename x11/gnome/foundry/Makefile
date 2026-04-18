@@ -2,6 +2,7 @@ COMMENT=		framework for developer tooling
 
 GNOME_PROJECT=		foundry
 GNOME_VERSION=		1.0.1
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -40,5 +41,9 @@ LIB_DEPENDS=		devel/json-glib \
 CONFIGURE_ARGS=		-Dfeature-flatpak=false
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/plugins/cmake/plugin-cmake-build-addin.c \
+		${WRKSRC}/plugins/fallbacks/host-sdk/plugin-host-documentation-provider.c
 
 .include <bsd.port.mk>
