@@ -1,0 +1,15 @@
+Do not clean gem artifacts after build. Doing so can lead to rebuilds
+and failures.
+
+Index: lib/rb_sys/mkmf.rb
+--- lib/rb_sys/mkmf.rb.orig
++++ lib/rb_sys/mkmf.rb
+@@ -139,8 +139,6 @@ module RbSys
+         \t$(INSTALL_PROG) $(DLLIB) $(RUBYARCHDIR)
+ 
+         gemclean:
+-        \t$(ECHO) Cleaning gem artifacts
+-        \t-$(Q)$(RM_RF) $(RUBYGEMS_CLEAN_DIRS) 2> /dev/null || true
+ 
+         install: #{builder.clean_after_install ? "install-so gemclean" : "install-so"}
+ 
