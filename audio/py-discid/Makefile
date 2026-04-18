@@ -1,6 +1,6 @@
 COMMENT=	Python binding of libdiscid
 
-MODPY_DISTV=	1.3.0
+MODPY_DISTV=	1.4.0
 DISTNAME=	discid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

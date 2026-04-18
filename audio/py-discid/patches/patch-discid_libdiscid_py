@@ -4,21 +4,12 @@ if the libdiscid major gets bumped.
 Index: discid/libdiscid.py
 --- discid/libdiscid.py.orig
 +++ discid/libdiscid.py
-@@ -59,7 +59,7 @@ def _find_library(name, version=0):
+@@ -62,7 +62,7 @@ def _find_library(name: str, version: int = 0) -> str:
      else:
          # that would be linux/UNIX-like
          # these need to prepend ./
--        lib_name = "./lib%s.so.%d" % (name, version)
-+        lib_name = "./lib%s.so" % (name)
+-        lib_name = f"./lib{name}.so.{version}"
++        lib_name = f"./lib{name}.so"
          if os.path.isfile(lib_name):
              lib_file = lib_name
- 
-@@ -88,7 +88,7 @@ def _find_library(name, version=0):
-         elif sys.platform == "cygwin":
-             lib_file = "cyg%s-%d.dll" % (name, version)
-         else:
--            lib_file = "lib%s.so.%d" % (name, version)
-+            lib_file = "lib%s.so" % (name)
- 
-     return lib_file
  
