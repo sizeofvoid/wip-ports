@@ -7,5 +7,6 @@
   SUBDIR += web2
   SUBDIR += web2-module-director
   SUBDIR += web2-module-incubator
+  SUBDIR += web2-module-monitoring
 
 .include <bsd.port.subdir.mk>
