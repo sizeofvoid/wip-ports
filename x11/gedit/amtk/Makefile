@@ -1,12 +1,12 @@
-COMMENT=		Actions, Menus and Toolbars Kit
+COMMENT=		The Good Morning Toolkit
 
-DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.9.2 .
+DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.10.0 .
 
-SHARED_LIBS += gedit-amtk-5              0.0 # 0
+SHARED_LIBS += gedit-amtk-5              0.1 # 0
 
 CATEGORIES=		devel
 
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
+WANTLIB += gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
 
 MODULES=		devel/meson \
 			x11/gnome

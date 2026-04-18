@@ -1,3 +1,8 @@
-Amtk is the acronym for "Actions, Menus and Toolbars Kit". It is a basic
-GtkUIManager replacement based on GAction. It is suitable for both a traditional
-UI or a modern UI with a GtkHeaderBar.
+libgedit-amtk is part of Gedit Technology.
+
+It is a library that extends GTK at the exception of GtkTextView which is
+extended by libgedit-gtksourceview.
+
+Amtk initially was the acronym for "Actions, Menus and Toolbars Kit". It
+provides a basic GtkUIManager replacement based on GAction that is suitable for
+both a traditional UI or a modern UI with a GtkHeaderBar.
