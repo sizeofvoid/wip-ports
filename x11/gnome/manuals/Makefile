@@ -1,7 +1,7 @@
 COMMENT=		read documentation
 
 DIST_TUPLE=		gnome GNOME manuals 49.1 .
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 
