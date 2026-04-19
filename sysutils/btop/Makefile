@@ -4,6 +4,8 @@ GH_ACCOUNT=	aristocratos
 GH_PROJECT=	btop
 GH_TAGNAME=	v1.4.6
 
+REVISION=	0
+
 CATEGORIES=	sysutils
 
 # Apache 2.0
@@ -12,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c kvm m
 
 # C++23
-COMPILER =	base-clang
+COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS=	textproc/lowdown
 RUN_DEPENDS=	devel/desktop-file-utils \
