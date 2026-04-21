@@ -1,13 +1,9 @@
 COMMENT =	lightweight C++17 Distributed Hash Table implementation
 
-V =		3.4.0
-DISTNAME =	opendht-${V}
-
 GH_ACCOUNT =	savoirfairelinux
 GH_PROJECT =	opendht
-GH_TAGNAME =	v${V}
+GH_TAGNAME =	v3.4.0
 
-SHARED_LIBS  =	opendht-c	0.0 # 0.0
 SHARED_LIBS +=	opendht		0.0 # 0.0
 
 CATEGORIES =	devel
@@ -35,5 +31,6 @@ LIB_DEPENDS =		security/argon2 \
 			devel/jsoncpp \
 
 CONFIGURE_STYLE =	cmake
+CONFIGURE_ARGS =	-DOPENDHT_DOCUMENTATION=off
 
 .include <bsd.port.mk>
