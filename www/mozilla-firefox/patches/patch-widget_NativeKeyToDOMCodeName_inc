@@ -1,7 +1,7 @@
 Index: widget/NativeKeyToDOMCodeName.inc
 --- widget/NativeKeyToDOMCodeName.inc.orig
 +++ widget/NativeKeyToDOMCodeName.inc
-@@ -379,7 +379,9 @@ CODE_MAP_ANDROID(Tab, 0x000F)
+@@ -377,7 +377,9 @@ CODE_MAP_ANDROID(Tab, 0x000F)
  
  // IME keys
  CODE_MAP_WIN(Convert, 0x0079)
@@ -11,7 +11,7 @@ Index: widget/NativeKeyToDOMCodeName.inc
  CODE_MAP_ANDROID(Convert, 0x005C)
  
  CODE_MAP_WIN(Lang1, 0x0072)  // for non-Korean layout
-@@ -399,7 +401,9 @@ CODE_MAP_X11(KanaMode, 0x0065)
+@@ -397,7 +399,9 @@ CODE_MAP_X11(KanaMode, 0x0065)
  CODE_MAP_ANDROID(KanaMode, 0x005D)
  
  CODE_MAP_WIN(NonConvert, 0x007B)
@@ -21,7 +21,7 @@ Index: widget/NativeKeyToDOMCodeName.inc
  CODE_MAP_ANDROID(NonConvert, 0x005E)
  
  // Control pad section
-@@ -439,22 +443,38 @@ CODE_MAP_ANDROID(PageUp, 0x0068)
+@@ -437,22 +441,38 @@ CODE_MAP_ANDROID(PageUp, 0x0068)
  // Arrow pad section
  CODE_MAP_WIN(ArrowDown, 0xE050)
  CODE_MAP_MAC(ArrowDown, kVK_DownArrow)
@@ -60,7 +60,7 @@ Index: widget/NativeKeyToDOMCodeName.inc
  CODE_MAP_ANDROID(ArrowUp, 0x0067)
  
  // Numpad section
-@@ -536,7 +556,9 @@ CODE_MAP_ANDROID(NumpadDivide, 0x0062)
+@@ -534,7 +554,9 @@ CODE_MAP_ANDROID(NumpadDivide, 0x0062)
  CODE_MAP_WIN(NumpadEnter, 0xE01C)
  CODE_MAP_MAC(NumpadEnter, kVK_ANSI_KeypadEnter)
  CODE_MAP_MAC(NumpadEnter, kVK_Powerbook_KeypadEnter)
