@@ -25,6 +25,7 @@ share/doc/librenms/Alerting/Creating-Transport.md
 share/doc/librenms/Alerting/Device-Dependencies.md
 share/doc/librenms/Alerting/Entities.md
 share/doc/librenms/Alerting/Macros.md
+share/doc/librenms/Alerting/Operations.md
 share/doc/librenms/Alerting/Rules.md
 share/doc/librenms/Alerting/Scheduled-Maintenances.md
 share/doc/librenms/Alerting/Templates.md
@@ -57,10 +58,12 @@ share/doc/librenms/Alerting/Transports/Mail.md
 share/doc/librenms/Alerting/Transports/Matrix.md
 share/doc/librenms/Alerting/Transports/Messagebird-Voice.md
 share/doc/librenms/Alerting/Transports/Messagebird.md
+share/doc/librenms/Alerting/Transports/Microsoft-Teams.md
 share/doc/librenms/Alerting/Transports/Nagios-Compatible.md
 share/doc/librenms/Alerting/Transports/OS-Ticket.md
 share/doc/librenms/Alerting/Transports/Ops-Genie.md
 share/doc/librenms/Alerting/Transports/PagerDuty.md
+share/doc/librenms/Alerting/Transports/PagerTree.md
 share/doc/librenms/Alerting/Transports/Philips-Hue.md
 share/doc/librenms/Alerting/Transports/Play-SMS.md
 share/doc/librenms/Alerting/Transports/Pushbullet.md
@@ -73,6 +76,7 @@ share/doc/librenms/Alerting/Transports/Sensu.md
 share/doc/librenms/Alerting/Transports/Signal-CLI.md
 share/doc/librenms/Alerting/Transports/Signl4.md
 share/doc/librenms/Alerting/Transports/Slack.md
+share/doc/librenms/Alerting/Transports/Snmptrap.md
 share/doc/librenms/Alerting/Transports/Splunk.md
 share/doc/librenms/Alerting/Transports/Syslog.md
 share/doc/librenms/Alerting/Transports/Telegram.md
@@ -204,6 +208,7 @@ share/doc/librenms/Extensions/Applications/Wireguard.md
 share/doc/librenms/Extensions/Applications/XCP-NG Virtual Machines.md
 share/doc/librenms/Extensions/Applications/ZFS.md
 share/doc/librenms/Extensions/Authentication.md
+share/doc/librenms/Extensions/Authorization.md
 share/doc/librenms/Extensions/Auto-Discovery.md
 share/doc/librenms/Extensions/Availability-Map.md
 share/doc/librenms/Extensions/Billing-Module.md
@@ -358,6 +363,8 @@ share/doc/librenms/img/socialite-saml-google-6.png
 share/doc/librenms/img/validate-config-icon.png
 share/doc/librenms/img/validate-results.png
 share/doc/librenms/img/varnish_block.png
+share/doc/librenms/img/webui-roles-management.png
+share/doc/librenms/img/webui-user-edit-permissions.png
 share/doc/librenms/img/webui_add_device.png
 share/doc/librenms/img/world-map-widget-settings.png
 share/doc/librenms/index.md
