@@ -1,6 +1,6 @@
 COMMENT =	rsync for cloud storage
 
-V =		1.73.4
+V =		1.73.5
 DISTNAME =	rclone-v${V}
 PKGNAME =	rclone-${V}
 
