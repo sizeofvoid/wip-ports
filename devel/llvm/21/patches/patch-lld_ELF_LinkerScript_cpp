@@ -6,8 +6,8 @@ Index: lld/ELF/LinkerScript.cpp
                        ".tdata",       ".ARM.exidx",  ".ARM.extab",
                        ".ctors",       ".dtors",      ".sbss",
 -                      ".sdata",       ".srodata"})
-+                      ".sdata",       ".srodata"     ".openbsd.randomdata",
-+		      ".openbsd.mutable"})
++                      ".sdata",       ".srodata",    ".openbsd.randomdata",
++                      ".openbsd.mutable"})
      if (isSectionPrefix(v, s->name))
        return v;
  

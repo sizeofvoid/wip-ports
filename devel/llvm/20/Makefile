@@ -5,10 +5,10 @@ LLVM_MAJOR =	20
 LLVM_VERSION =	${LLVM_MAJOR}.1.8
 LLVM_PKGSPEC =	>=20,<21
 
-REVISION-main =		5
-REVISION-libcxx =	0
-REVISION-lldb =		0
-REVISION-python =	1
+REVISION-main =		6
+REVISION-libcxx =	1
+REVISION-lldb =		1
+REVISION-python =	2
 
 SHARED_LIBS +=	LLVM		0.0 \
 		LTO		0.0 \
