@@ -1,6 +1,7 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
 V =			26.03
+REVISION =		0
 JQUERY_V =		4.0.0
 BOOTSTRAP_V =		5.3.8
 DIST_TUPLE +=		github processone ejabberd ${V} .
@@ -71,9 +72,11 @@ CONFIGURE_ARGS =	--with-rebar=${REBAR_BIN} \
 			--enable-user=_ejabberd \
 			--enable-group=_ejabberd \
 
-CFLAGS +=		"-I${LOCALBASE}/include"
-CPPFLAGS +=		"-I${LOCALBASE}/include"
-LDFLAGS +=		"-L${LOCALBASE}/lib"
+CFLAGS +=		-I${LOCALBASE}/include
+CPPFLAGS +=		-I${LOCALBASE}/include
+# ezlib links agains libei.a, prevent conflict with libei.so
+LDFLAGS +=		-L${MODERL_BASEDIR}/usr/lib \
+			-L${LOCALBASE}/lib
 
 CONFIGURE_ENV =		CFLAGS="${CFLAGS}" \
 			CPPFLAGS="${CPPFLAGS}" \
