@@ -1,0 +1,67 @@
+orc_riscv_target_get_cpu_flags is Linux-specific, rename it and only call it
+on Linux.
+
+Implement orc_riscv_target_flush_cache on OpenBSD + clang/compiler-rt.
+
+Fix orc_riscv_target_get_default_flags: the V extension can't be assumed.
+On the other hand, on OpenBSD the C extension can be assumed.
+
+Index: orc/riscv/orcriscvtarget.c
+--- orc/riscv/orcriscvtarget.c.orig
++++ orc/riscv/orcriscvtarget.c
+@@ -69,7 +69,7 @@ orc_riscv_target_detect_extension (const char *exts, c
+ }
+ 
+ static orc_uint32
+-orc_riscv_target_get_cpu_flags (void)
++orc_riscv_target_get_cpu_flags_linux (void)
+ {
+   orc_uint32 ret = 0;
+ 
+@@ -114,29 +114,29 @@ orc_riscv_target_get_cpu_flags (void)
+ static void
+ orc_riscv_target_flush_cache (OrcCode *code)
+ {
+-#if defined(HAVE_RISCV) && defined(__linux__)
+-#if __has_builtin(__builtin___clear_cache)
++#if defined(HAVE_RISCV)
++#if __has_builtin(__builtin___clear_cache) /* compiler-specific */
+   __builtin___clear_cache ((char*)code->code, (char*)code->code + code->code_size);
+   if ((void *) code->exec != (void *) code->code)
+     __builtin___clear_cache ((char*)code->exec, (char*)code->exec + code->code_size);
+-#else
++#elif defined(__linux__) /* __clear_cache not really Linux-specific */
+   __clear_cache (code->code, code->code + code->code_size);
+   if ((void *) code->exec != (void *) code->code)
+     __clear_cache (code->exec, code->exec + code->code_size);
+-#endif // __builtin___clear_cache
+ #else
+   ORC_ERROR ("Couldn't flush icache");
+   ORC_ASSERT (0);
+ #endif
++#endif /* HAVE_RISCV */
+ }
+ 
+ static orc_uint32
+ orc_riscv_target_get_default_flags (void)
+ {
+ #if defined(HAVE_RISCV) && defined(__linux__)
+-  return orc_riscv_target_get_cpu_flags ();
++  return orc_riscv_target_get_cpu_flags_linux ();
+ #else
+-  return ORC_TARGET_RISCV_64BIT | ORC_TARGET_RISCV_V;
++  return ORC_TARGET_RISCV_64BIT | ORC_TARGET_RISCV_C;
+ #endif
+ }
+ 
+@@ -162,8 +162,8 @@ static OrcTarget orc_riscv_target = {
+ OrcTarget *
+ orc_riscv_target_init (void)
+ {
+-#ifdef HAVE_RISCV
+-  if (orc_riscv_target_get_cpu_flags () & ORC_TARGET_RISCV_V) {
++#if defined(HAVE_RISCV) && defined(__linux__)
++  if (orc_riscv_target_get_cpu_flags_linux () & ORC_TARGET_RISCV_V) {
+     ORC_INFO ("This RISC-V CPU supports RVV");
+   }
+ #endif
