@@ -27,6 +27,10 @@ CONFIGURE_STYLE= gnu
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+# Review on update:
+# configure picks up xgettext and it is used during the build, but
+# to no effect.
+CONFIGURE_ENV+=	ac_cv_path_XGETTEXT=:
 TEST_ENV=	PAGER=cat
 
 # known test failures:
