@@ -6,6 +6,8 @@ GH_PROJECT =	llvmlite
 GH_TAGNAME =	v${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
+REVISION =	0
+
 CATEGORIES =	devel
 
 MAINTAINER =	Aisha Tammy <aisha@openbsd.org>

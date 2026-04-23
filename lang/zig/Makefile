@@ -7,6 +7,8 @@ COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.15.2
 
+REVISION =	0
+
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
 GH_COMMIT =	${ZIG_COMMIT}
