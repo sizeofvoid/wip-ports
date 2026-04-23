@@ -36,6 +36,7 @@ WANTLIB += m manifold mpfr opencsg qscintilla2_qt6 tbb xml2 zip
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/bison \
+			devel/catch2 \
 			devel/gettext,-tools \
 			devel/sanitizers-cmake \
 			graphics/glslang \
