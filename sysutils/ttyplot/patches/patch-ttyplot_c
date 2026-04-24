@@ -12,3 +12,26 @@ Index: ttyplot.c
  #define _XOPEN_SOURCE_EXTENDED
  #else
  // This is needed for musl libc
+@@ -923,10 +923,6 @@ int main(int argc, char *argv[]) {
+         exit(1);
+     }
+ 
+-#ifdef __OpenBSD__
+-    if (pledge("stdio tty", NULL) == -1)
+-        err(1, "pledge");
+-#endif
+ 
+     // Check if any colors are defined
+     bool has_colors = false;
+@@ -986,6 +982,11 @@ int main(int argc, char *argv[]) {
+ 
+     signal(SIGWINCH, signal_handler);
+     signal(SIGINT, signal_handler);
++
++#ifdef __OpenBSD__
++    if (pledge("stdio tty", NULL) == -1)
++        err(1, "pledge");
++#endif
+ 
+     while (1) {
+         struct timeval timeout = calculate_clock_refresh_timeout_from(now.tv_usec);
