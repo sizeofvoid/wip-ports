@@ -12,11 +12,11 @@ COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
+SHARED_LIBS +=  Qt6Pdf                        2.1 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
 SHARED_LIBS +=  Qt6PdfWidgets                 1.0 # 0.0
-SHARED_LIBS +=  Qt6WebEngineCore              2.0 # 0.0
-SHARED_LIBS +=  Qt6WebEngineQuick             2.0 # 0.0
+SHARED_LIBS +=  Qt6WebEngineCore              2.1 # 0.0
+SHARED_LIBS +=  Qt6WebEngineQuick             3.0 # 0.0
 SHARED_LIBS +=  Qt6WebEngineQuickDelegatesQml 1.0 # 0.0
 SHARED_LIBS +=  Qt6WebEngineWidgets           1.1 # 0.0
 
