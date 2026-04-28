@@ -27,7 +27,7 @@ WANTLIB += Qt6QuickWidgets Qt6WebChannel Qt6WebChannelQuick Qt6Widgets
 WANTLIB += Qt6Xml X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr
 WANTLIB += Xrender Xtst c cbor crypto dbus-1 drm epoll-shim execinfo
 WANTLIB += expat fido2 fontconfig freetype gbm harfbuzz harfbuzz-subset
-WANTLIB += jpeg kvm lcms2 m minizip nspr4
+WANTLIB += icudata icui18n icuuc jpeg kvm lcms2 m minizip nspr4
 WANTLIB += nss3 nssutil3 openh264 openjp2 opus plc4 plds4 png
 WANTLIB += smime3 snappy tiff udev usbhid util vpx webp webpdemux
 WANTLIB += webpmux xcb xcb-dri3 xkbcommon xkbfile xml2 xshmfence
@@ -129,10 +129,12 @@ CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_proprietary_codecs=ON \
 GN_SYSTEM_LIBS=	fontconfig freetype harfbuzz-ng libxml libxslt openh264 opus
 
 # XXX broken with icu4c >=78.1; check at next release + update WANTLIB
-#CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
-#LIB_DEPENDS +=		textproc/icu4c
+CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_system_icu=ON
+LIB_DEPENDS +=		textproc/icu4c
 
 CONFIGURE_ARGS +=	-DQT_FEATURE_webengine_vaapi=OFF
+
+CONFIGURE_ARGS +=	-DQT_SHOW_EXTRA_IDE_SOURCES=OFF
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 

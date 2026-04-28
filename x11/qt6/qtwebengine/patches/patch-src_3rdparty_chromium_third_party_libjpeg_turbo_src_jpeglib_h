@@ -1,0 +1,9 @@
+Qt6.11: Chromiums jpeglib.h is missing from Qt 6.11 tarball.
+Index: src/3rdparty/chromium/third_party/libjpeg_turbo/src/jpeglib.h
+--- src/3rdparty/chromium/third_party/libjpeg_turbo/src/jpeglib.h.orig
++++ src/3rdparty/chromium/third_party/libjpeg_turbo/src/jpeglib.h
+@@ -0,0 +1,4 @@
++#ifdef MANGLE_JPEG_NAMES
++#include "jpeglibmangler.h"
++#endif
++#include_next <jpeglib.h>
