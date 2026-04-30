@@ -1,0 +1,23 @@
+Index: src/parsers/plan2/FlexLexer.h
+--- src/parsers/plan2/FlexLexer.h.orig
++++ src/parsers/plan2/FlexLexer.h
+@@ -147,7 +147,7 @@ class yyFlexLexer : public FlexLexer (protected)
+     int yyinput();
+ 
+     void yy_load_buffer_state();
+-    void yy_init_buffer(yy_buffer_state *b, std::istream &s);
++    void yy_init_buffer(yy_buffer_state *b, std::istream *s);
+     void yy_flush_buffer(yy_buffer_state *b);
+ 
+     int yy_start_stack_ptr;
+@@ -162,8 +162,8 @@ class yyFlexLexer : public FlexLexer (protected)
+     yy_state_type yy_try_NUL_trans(yy_state_type current_state);
+     int yy_get_next_buffer();
+ 
+-    std::istream yyin; // input source for default LexerInput
+-    std::ostream yyout; // output sink for default LexerOutput
++    std::istream *yyin; // input source for default LexerInput
++    std::ostream *yyout; // output sink for default LexerOutput
+ 
+     // yy_hold_char holds the character lost when yytext is formed.
+     char yy_hold_char;

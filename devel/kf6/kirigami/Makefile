@@ -3,7 +3,7 @@ DISTNAME =	kirigami-${VERSION}
 
 SHARED_LIBS +=  Kirigami                  1.0 # 0.0
 SHARED_LIBS +=  KirigamiDelegates         0.1 # 0.0
-SHARED_LIBS +=  KirigamiPlatform          0.2 # 0.0
+SHARED_LIBS +=  KirigamiPlatform          1.0 # 0.0
 SHARED_LIBS +=  KirigamiDialogs           0.0 # 0.0
 SHARED_LIBS +=  KirigamiLayouts           0.0 # 0.0
 SHARED_LIBS +=  KirigamiPrimitives        0.0 # 0.0
