@@ -1,6 +1,7 @@
 Index: src/parsers/plan2/FlexLexer.h
 --- src/parsers/plan2/FlexLexer.h.orig
 +++ src/parsers/plan2/FlexLexer.h
+<<<<<<< HEAD
 @@ -125,16 +125,22 @@ class yyFlexLexer : public FlexLexer (public)
  
      void yy_switch_to_buffer(yy_buffer_state *new_buffer) override;
@@ -28,11 +29,15 @@ Index: src/parsers/plan2/FlexLexer.h
      virtual int yywrap();
  
 @@ -147,7 +153,11 @@ class yyFlexLexer : public FlexLexer (public)
+=======
+@@ -147,7 +147,7 @@ class yyFlexLexer : public FlexLexer (protected)
+>>>>>>> 964c279af9e (Update kf6 to 6.25.0)
      int yyinput();
  
      void yy_load_buffer_state();
 -    void yy_init_buffer(yy_buffer_state *b, std::istream &s);
 +    void yy_init_buffer(yy_buffer_state *b, std::istream *s);
+<<<<<<< HEAD
 +
 +    void yy_init_buffer(yy_buffer_state *b, std::istream &s) {
 +       yy_init_buffer(b, &s);
@@ -41,6 +46,12 @@ Index: src/parsers/plan2/FlexLexer.h
  
      int yy_start_stack_ptr;
 @@ -162,8 +172,8 @@ class yyFlexLexer : public FlexLexer (public)
+=======
+     void yy_flush_buffer(yy_buffer_state *b);
+ 
+     int yy_start_stack_ptr;
+@@ -162,8 +162,8 @@ class yyFlexLexer : public FlexLexer (protected)
+>>>>>>> 964c279af9e (Update kf6 to 6.25.0)
      yy_state_type yy_try_NUL_trans(yy_state_type current_state);
      int yy_get_next_buffer();
  

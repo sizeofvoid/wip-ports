@@ -31,7 +31,6 @@ LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
-		devel/kf6/solid>=${MODKF6_VERSION} \
 		x11/qt6/qtdeclarative
 
 LIB_DEPENDS +=	net/libaccounts-qt \
