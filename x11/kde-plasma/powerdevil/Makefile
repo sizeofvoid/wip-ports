@@ -53,7 +53,6 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		wayland/wayland \
 		x11/kde-plasma/libkscreen>=${VERSION} \
 		x11/kde-plasma/libplasma>=${VERSION} \
-		x11/kde-plasma/knighttime>=${VERSION} \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/plasma-workspace>=${VERSION} \
 		x11/qt6/qtdeclarative \
