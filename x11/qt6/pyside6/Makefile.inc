@@ -14,8 +14,10 @@ SITES =			${QTSRC}/pyside6/PySide6-${VERSION}-src/
 
 SITES.rpm =		https://src.fedoraproject.org/rpms/python-pyside6/raw/rawhide/f/
 
-PATCHFILES.rpm =	0001-Fix-installation.patch \
-			0001-Revert-Modify-headers-installation-for-CMake-builds.patch
+PATCHFILES.rpm =	0001-Always-link-to-python-libraries.patch \
+			0001-Revert-Modify-headers-installation-for-CMake-builds.patch \
+			0001-shiboken6-Fix-build-with-clang-22.patch
+
 PATCH_DIST_STRIP =	-p1
 
 CONFIGURE_ARGS +=	-Dis_pyside6_superproject_build=1
