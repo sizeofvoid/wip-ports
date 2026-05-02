@@ -5,12 +5,16 @@ include/audiocdplugins/audiocdencoder.h
 include/audiocdplugins/audiocdplugins_export.h
 include/audiocdplugins/audiocdplugins_version.h
 @lib lib/libaudiocdplugins.so.${LIBaudiocdplugins_VERSION}
+lib/qt6/plugins/kf6/kio/
 @so lib/qt6/plugins/kf6/kio/audiocd.so
 @so lib/qt6/plugins/libaudiocd_encoder_flac.so
 @so lib/qt6/plugins/libaudiocd_encoder_lame.so
 @so lib/qt6/plugins/libaudiocd_encoder_opus.so
 @so lib/qt6/plugins/libaudiocd_encoder_vorbis.so
 @so lib/qt6/plugins/libaudiocd_encoder_wav.so
+lib/qt6/plugins/plasma/
+lib/qt6/plugins/plasma/kcms/
+lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
 @so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_audiocd.so
 share/applications/kcm_audiocd.desktop
 share/config.kcfg/
@@ -22,6 +26,7 @@ share/doc/HTML/ca/kcontrol/
 share/doc/HTML/ca/kcontrol/kcmaudiocd/
 share/doc/HTML/ca/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/ca/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/ca/kioworker6/
 share/doc/HTML/ca/kioworker6/audiocd/
 share/doc/HTML/ca/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/ca/kioworker6/audiocd/index.docbook
@@ -29,6 +34,7 @@ share/doc/HTML/de/kcontrol/
 share/doc/HTML/de/kcontrol/kcmaudiocd/
 share/doc/HTML/de/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/de/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/de/kioworker6/
 share/doc/HTML/de/kioworker6/audiocd/
 share/doc/HTML/de/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/de/kioworker6/audiocd/index.docbook
@@ -42,6 +48,7 @@ share/doc/HTML/en/kcontrol/kcmaudiocd/mp3.png
 share/doc/HTML/en/kcontrol/kcmaudiocd/names.png
 share/doc/HTML/en/kcontrol/kcmaudiocd/ogg.png
 share/doc/HTML/en/kcontrol/kcmaudiocd/opus.png
+share/doc/HTML/en/kioworker6/
 share/doc/HTML/en/kioworker6/audiocd/
 share/doc/HTML/en/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/en/kioworker6/audiocd/index.docbook
@@ -49,12 +56,15 @@ share/doc/HTML/es/kcontrol/
 share/doc/HTML/es/kcontrol/kcmaudiocd/
 share/doc/HTML/es/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/es/kioworker6/
 share/doc/HTML/es/kioworker6/audiocd/
 share/doc/HTML/es/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/es/kioworker6/audiocd/index.docbook
+share/doc/HTML/et/kioworker6/
 share/doc/HTML/et/kioworker6/audiocd/
 share/doc/HTML/et/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/et/kioworker6/audiocd/index.docbook
+share/doc/HTML/fr/kioworker6/
 share/doc/HTML/fr/kioworker6/audiocd/
 share/doc/HTML/fr/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/fr/kioworker6/audiocd/index.docbook
@@ -62,6 +72,7 @@ share/doc/HTML/it/kcontrol/
 share/doc/HTML/it/kcontrol/kcmaudiocd/
 share/doc/HTML/it/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/it/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/it/kioworker6/
 share/doc/HTML/it/kioworker6/audiocd/
 share/doc/HTML/it/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/it/kioworker6/audiocd/index.docbook
@@ -69,6 +80,7 @@ share/doc/HTML/nl/kcontrol/
 share/doc/HTML/nl/kcontrol/kcmaudiocd/
 share/doc/HTML/nl/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/nl/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/nl/kioworker6/
 share/doc/HTML/nl/kioworker6/audiocd/
 share/doc/HTML/nl/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/nl/kioworker6/audiocd/index.docbook
@@ -76,13 +88,16 @@ share/doc/HTML/pl/kioworker6/
 share/doc/HTML/pl/kioworker6/audiocd/
 share/doc/HTML/pl/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/pl/kioworker6/audiocd/index.docbook
+share/doc/HTML/pt/kioworker6/
 share/doc/HTML/pt/kioworker6/audiocd/
 share/doc/HTML/pt/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/pt/kioworker6/audiocd/index.docbook
+share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kcontrol/
 share/doc/HTML/pt_BR/kcontrol/kcmaudiocd/
 share/doc/HTML/pt_BR/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/pt_BR/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/pt_BR/kioworker6/
 share/doc/HTML/pt_BR/kioworker6/audiocd/
 share/doc/HTML/pt_BR/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/pt_BR/kioworker6/audiocd/index.docbook
@@ -90,6 +105,7 @@ share/doc/HTML/ru/kcontrol/
 share/doc/HTML/ru/kcontrol/kcmaudiocd/
 share/doc/HTML/ru/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/ru/kioworker6/
 share/doc/HTML/ru/kioworker6/audiocd/
 share/doc/HTML/ru/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/ru/kioworker6/audiocd/index.docbook
@@ -97,12 +113,16 @@ share/doc/HTML/sl/kcontrol/
 share/doc/HTML/sl/kcontrol/kcmaudiocd/
 share/doc/HTML/sl/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/sl/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/sl/kioworker6/
 share/doc/HTML/sl/kioworker6/audiocd/
 share/doc/HTML/sl/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/sl/kioworker6/audiocd/index.docbook
+share/doc/HTML/sr/kioworker6/
 share/doc/HTML/sr/kioworker6/audiocd/
 share/doc/HTML/sr/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/sr/kioworker6/audiocd/index.docbook
+share/doc/HTML/sr@latin/
+share/doc/HTML/sr@latin/kioworker6/
 share/doc/HTML/sr@latin/kioworker6/audiocd/
 share/doc/HTML/sr@latin/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/sr@latin/kioworker6/audiocd/index.docbook
@@ -110,6 +130,7 @@ share/doc/HTML/sv/kcontrol/
 share/doc/HTML/sv/kcontrol/kcmaudiocd/
 share/doc/HTML/sv/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/sv/kioworker6/
 share/doc/HTML/sv/kioworker6/audiocd/
 share/doc/HTML/sv/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/sv/kioworker6/audiocd/index.docbook
@@ -117,6 +138,7 @@ share/doc/HTML/tr/kcontrol/
 share/doc/HTML/tr/kcontrol/kcmaudiocd/
 share/doc/HTML/tr/kcontrol/kcmaudiocd/index.cache.bz2
 share/doc/HTML/tr/kcontrol/kcmaudiocd/index.docbook
+share/doc/HTML/tr/kioworker6/
 share/doc/HTML/tr/kioworker6/audiocd/
 share/doc/HTML/tr/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/tr/kioworker6/audiocd/index.docbook
@@ -130,6 +152,7 @@ share/doc/HTML/uk/kcontrol/kcmaudiocd/mp3.png
 share/doc/HTML/uk/kcontrol/kcmaudiocd/names.png
 share/doc/HTML/uk/kcontrol/kcmaudiocd/ogg.png
 share/doc/HTML/uk/kcontrol/kcmaudiocd/opus.png
+share/doc/HTML/uk/kioworker6/
 share/doc/HTML/uk/kioworker6/audiocd/
 share/doc/HTML/uk/kioworker6/audiocd/index.cache.bz2
 share/doc/HTML/uk/kioworker6/audiocd/index.docbook
