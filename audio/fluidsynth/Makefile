@@ -20,7 +20,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_PACKAGES =	devel/gcem
+BUILD_DEPENDS =		devel/gcem
 
 LIB_DEPENDS =		audio/libsndfile \
 			devel/gettext,-runtime \
