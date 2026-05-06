@@ -1,12 +1,12 @@
 COMMENT =	music player
 
 VERSION =	1.4.1
+PL =		76
 GH_ACCOUNT =	clementine-player
 GH_PROJECT =	Clementine
-GH_TAGNAME =	${VERSION}-76-gfd1617827
-PKGNAME =	clementine-${VERSION}
+GH_TAGNAME =	${VERSION}-${PL}-gfd1617827
+PKGNAME =	clementine-${VERSION}pl${PL}
 EPOCH =		0
-REVISION =	3
 
 CATEGORIES =	audio x11
 
