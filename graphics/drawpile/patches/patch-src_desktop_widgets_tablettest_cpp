@@ -11,7 +11,7 @@ Index: src/desktop/widgets/tablettest.cpp
  	update();
  }
 @@ -118,7 +118,7 @@ void TabletTester::tabletEvent(QTabletEvent *e)
- 	msg += QString(" X=%1 Y=%2 B=%3 P=%4% XT=%5° YT=%6° R=%7° T=%8 %9")
+ 	msg += QString(" X=%1 Y=%2 B=%3 P=%4% XT=%5Â° YT=%6Â° R=%7Â° T=%8 %9")
  			   .arg(posF.x(), 0, 'f', 2)
  			   .arg(posF.y(), 0, 'f', 2)
 -			   .arg(e->buttons())
