@@ -18,17 +18,47 @@ lib/cmake/ownCloud/
 lib/cmake/ownCloud/ownCloudConfig${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/ownCloud/ownCloudConfig.cmake
 lib/cmake/ownCloud/ownCloudConfigVersion.cmake
-@lib lib/libowncloudResources.so.${LIBowncloudResources_VERSION}
-@lib lib/libowncloud_csync.so.${LIBowncloud_csync_VERSION}
-@lib lib/libowncloudsync.so.${LIBowncloudsync_VERSION}
+@lib lib/libownCloudCsync.so.${LIBownCloudCsync_VERSION}
+@lib lib/libownCloudLibSync.so.${LIBownCloudLibSync_VERSION}
+@lib lib/libownCloudResources.so.${LIBownCloudResources_VERSION}
+@so lib/libowncloudGui.so
 lib/ownCloud/
 lib/ownCloud/plugins/
-@so lib/ownCloud/plugins/owncloudsync_vfs_off.so
-@so lib/ownCloud/plugins/owncloudsync_vfs_suffix.so
+@so lib/ownCloud/plugins/ownCloud_vfs_off.so
+@so lib/ownCloud/plugins/ownCloud_vfs_suffix.so
+lib/qt6/qml/
+lib/qt6/qml/org/
+lib/qt6/qml/org/ownCloud/
+lib/qt6/qml/org/ownCloud/gui/
+lib/qt6/qml/org/ownCloud/gui/kde-qmlmodule.version
+@so lib/qt6/qml/org/ownCloud/gui/libowncloudGuiplugin.so
+lib/qt6/qml/org/ownCloud/gui/owncloudGui.qmltypes
+lib/qt6/qml/org/ownCloud/gui/qml/
+lib/qt6/qml/org/ownCloud/gui/qml/AccountBar.qml
+lib/qt6/qml/org/ownCloud/gui/qml/AccountButton.qml
+lib/qt6/qml/org/ownCloud/gui/qml/FolderDelegate.qml
+lib/qt6/qml/org/ownCloud/gui/qml/FolderError.qml
+lib/qt6/qml/org/ownCloud/gui/qml/credentials/
+lib/qt6/qml/org/ownCloud/gui/qml/credentials/BasicAuthCredentials.qml
+lib/qt6/qml/org/ownCloud/gui/qml/credentials/Credentials.qml
+lib/qt6/qml/org/ownCloud/gui/qml/credentials/OAuthCredentials.qml
+lib/qt6/qml/org/ownCloud/gui/qmldir
+lib/qt6/qml/org/ownCloud/gui/spaces/
+lib/qt6/qml/org/ownCloud/gui/spaces/qml/
+lib/qt6/qml/org/ownCloud/gui/spaces/qml/SpaceDelegate.qml
+lib/qt6/qml/org/ownCloud/gui/spaces/qml/SpacesView.qml
+lib/qt6/qml/org/ownCloud/libsync/
+lib/qt6/qml/org/ownCloud/libsync/kde-qmlmodule.version
+@so lib/qt6/qml/org/ownCloud/libsync/liblibsyncplugin.so
+lib/qt6/qml/org/ownCloud/libsync/libsync.qmltypes
+lib/qt6/qml/org/ownCloud/libsync/qmldir
+lib/qt6/qml/org/ownCloud/resources/
+lib/qt6/qml/org/ownCloud/resources/kde-qmlmodule.version
+@so lib/qt6/qml/org/ownCloud/resources/libowncloudResourcesplugin.so
+lib/qt6/qml/org/ownCloud/resources/owncloudResources.qmltypes
+lib/qt6/qml/org/ownCloud/resources/qmldir
 share/applications/owncloud.desktop
-share/caja-python/
-share/caja-python/extensions/
-share/caja-python/extensions/syncstate-ownCloud.py
+share/applications/owncloudcmd.desktop
 share/examples/ownCloud/
 @sample ${SYSCONFDIR}/ownCloud/
 share/examples/ownCloud/sync-exclude.lst
@@ -36,76 +66,14 @@ share/examples/ownCloud/sync-exclude.lst
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
 share/icons/hicolor/1024x1024/apps/owncloud.png
-share/icons/hicolor/128x128/apps/ownCloud_error.png
-share/icons/hicolor/128x128/apps/ownCloud_error_shared.png
-share/icons/hicolor/128x128/apps/ownCloud_ok.png
-share/icons/hicolor/128x128/apps/ownCloud_ok_shared.png
-share/icons/hicolor/128x128/apps/ownCloud_sync.png
-share/icons/hicolor/128x128/apps/ownCloud_sync_shared.png
-share/icons/hicolor/128x128/apps/ownCloud_warn.png
-share/icons/hicolor/128x128/apps/ownCloud_warn_shared.png
 share/icons/hicolor/128x128/apps/owncloud.png
-share/icons/hicolor/16x16/apps/ownCloud_error.png
-share/icons/hicolor/16x16/apps/ownCloud_error_shared.png
-share/icons/hicolor/16x16/apps/ownCloud_ok.png
-share/icons/hicolor/16x16/apps/ownCloud_ok_shared.png
-share/icons/hicolor/16x16/apps/ownCloud_sync.png
-share/icons/hicolor/16x16/apps/ownCloud_sync_shared.png
-share/icons/hicolor/16x16/apps/ownCloud_warn.png
-share/icons/hicolor/16x16/apps/ownCloud_warn_shared.png
 share/icons/hicolor/16x16/apps/owncloud.png
 share/icons/hicolor/24x24/apps/owncloud.png
-share/icons/hicolor/256x256/apps/ownCloud_error.png
-share/icons/hicolor/256x256/apps/ownCloud_error_shared.png
-share/icons/hicolor/256x256/apps/ownCloud_ok.png
-share/icons/hicolor/256x256/apps/ownCloud_ok_shared.png
-share/icons/hicolor/256x256/apps/ownCloud_sync.png
-share/icons/hicolor/256x256/apps/ownCloud_sync_shared.png
-share/icons/hicolor/256x256/apps/ownCloud_warn.png
-share/icons/hicolor/256x256/apps/ownCloud_warn_shared.png
 share/icons/hicolor/256x256/apps/owncloud.png
-share/icons/hicolor/32x32/apps/ownCloud_error.png
-share/icons/hicolor/32x32/apps/ownCloud_error_shared.png
-share/icons/hicolor/32x32/apps/ownCloud_ok.png
-share/icons/hicolor/32x32/apps/ownCloud_ok_shared.png
-share/icons/hicolor/32x32/apps/ownCloud_sync.png
-share/icons/hicolor/32x32/apps/ownCloud_sync_shared.png
-share/icons/hicolor/32x32/apps/ownCloud_warn.png
-share/icons/hicolor/32x32/apps/ownCloud_warn_shared.png
 share/icons/hicolor/32x32/apps/owncloud.png
-share/icons/hicolor/48x48/apps/ownCloud_error.png
-share/icons/hicolor/48x48/apps/ownCloud_error_shared.png
-share/icons/hicolor/48x48/apps/ownCloud_ok.png
-share/icons/hicolor/48x48/apps/ownCloud_ok_shared.png
-share/icons/hicolor/48x48/apps/ownCloud_sync.png
-share/icons/hicolor/48x48/apps/ownCloud_sync_shared.png
-share/icons/hicolor/48x48/apps/ownCloud_warn.png
-share/icons/hicolor/48x48/apps/ownCloud_warn_shared.png
 share/icons/hicolor/48x48/apps/owncloud.png
-share/icons/hicolor/64x64/apps/ownCloud_error.png
-share/icons/hicolor/64x64/apps/ownCloud_error_shared.png
-share/icons/hicolor/64x64/apps/ownCloud_ok.png
-share/icons/hicolor/64x64/apps/ownCloud_ok_shared.png
-share/icons/hicolor/64x64/apps/ownCloud_sync.png
-share/icons/hicolor/64x64/apps/ownCloud_sync_shared.png
-share/icons/hicolor/64x64/apps/ownCloud_warn.png
-share/icons/hicolor/64x64/apps/ownCloud_warn_shared.png
 share/icons/hicolor/64x64/apps/owncloud.png
-share/icons/hicolor/72x72/apps/ownCloud_error.png
-share/icons/hicolor/72x72/apps/ownCloud_error_shared.png
-share/icons/hicolor/72x72/apps/ownCloud_ok.png
-share/icons/hicolor/72x72/apps/ownCloud_ok_shared.png
-share/icons/hicolor/72x72/apps/ownCloud_sync.png
-share/icons/hicolor/72x72/apps/ownCloud_sync_shared.png
-share/icons/hicolor/72x72/apps/ownCloud_warn.png
-share/icons/hicolor/72x72/apps/ownCloud_warn_shared.png
 share/mime/packages/owncloud.xml
-share/nautilus-python/
-share/nautilus-python/extensions/
-share/nautilus-python/extensions/syncstate-ownCloud.py
-share/nemo-python/
-share/nemo-python/extensions/
-share/nemo-python/extensions/syncstate-ownCloud.py
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
