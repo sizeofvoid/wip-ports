@@ -4,10 +4,9 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			9.0.8
+V =			10.0.1
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
-EPOCH =			0
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
@@ -108,6 +107,7 @@ LIB_DEPENDS =		archivers/zstd \
 			x11/gnome/libsecret \
 			x11/gtk+3 \
 			x11/wxWidgets \
+			x11/wxWidgets,-webview \
 			${MODPY_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	-DNANODBC_ENABLE_BOOST=ON \
@@ -125,8 +125,7 @@ CONFIGURE_ARGS +=	-DKICAD_BUILD_I18N=ON \
 			-DKICAD_USE_SENTRY=OFF \
 			-DKICAD_SIGNAL_INTEGRITY=ON \
 			-DKICAD_BUILD_QA_TESTS=ON \
-			-DKICAD_USE_EGL=ON \
-			-DKICAD_WAYLAND=OFF
+			-DKICAD_USE_PCH=OFF
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 

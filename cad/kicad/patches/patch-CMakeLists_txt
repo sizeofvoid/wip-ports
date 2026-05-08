@@ -1,12 +1,15 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -764,7 +764,7 @@ endif()
- # Find OpenGL library, required
- #
- if( KICAD_USE_EGL )
--    find_package( OpenGL REQUIRED COMPONENTS OpenGL EGL )
-+    find_package( OpenGL REQUIRED )
- else()
-     set( OpenGL_GL_PREFERENCE "LEGACY" )     # CMake 3.11+ setting; see 'cmake --help-policy CMP0072'
-     find_package( OpenGL REQUIRED )
+@@ -1117,11 +1117,6 @@ else()
+     message( FATAL_ERROR "Unable to detect wxWidgets port")
+ endif()
+ 
+-if( NOT MSVC )
+-    if( ${wxWidgets_VERSION_STRING} VERSION_LESS 3.2 )
+-        message( FATAL_ERROR "wxWidgets 3.2.0 or greater is required" )
+-    endif()
+-endif()
+ 
+ if( MINGW )
+     # This needs to be on a separate line to protect against a broken FindWxWidgets.cmake in vcpkg
