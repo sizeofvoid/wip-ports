@@ -1,8 +1,4 @@
 @bin bin/tst_plugin
-<<<<<<< HEAD
-=======
-lib/qt6/qml/
->>>>>>> d5a56210ca7 (Add accounts-qml-module)
 lib/qt6/qml/SSO/
 lib/qt6/qml/SSO/OnlineAccounts/
 @so lib/qt6/qml/SSO/OnlineAccounts/libAccounts.so
