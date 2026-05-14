@@ -12,7 +12,7 @@ WANTLIB += m
 MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
-BUILD_DEPENDS =	textproc/intltool
+MODULES =	textproc/intltool
 
 LIB_DEPENDS =	devel/kf6/kcompletion \
 		devel/kf6/kconfig \
